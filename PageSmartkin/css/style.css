@@ -1,0 +1,17 @@
+body{
+	background-image: url('../images/fondo.jpg');
+}
+
+h1.page-header{
+	color: lightgrey;
+}
+
+ol.breadcrumb{
+	background-color: lightgrey;
+	opacity: 0.7;
+}
+
+div.well{
+	background-color: lightgrey;
+	opacity: 0.7;
+}
