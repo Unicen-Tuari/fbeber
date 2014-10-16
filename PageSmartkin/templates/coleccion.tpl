@@ -8,5 +8,5 @@
 </select> 
 	
 
-{include file="lateral.tpl"}
+
 	

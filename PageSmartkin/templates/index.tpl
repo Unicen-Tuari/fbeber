@@ -64,9 +64,6 @@
         </a>
     </header>
     </div>
-    <!--Contenido de la pagina-->
-    <div class="container">
-
-        <h2>futuros link a redes sociales</h2>
+    
 
 {include file="footer.tpl"}

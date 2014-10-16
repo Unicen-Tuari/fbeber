@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-16 04:55:40
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-16 07:05:09
          compiled from "./templates/coleccion.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1376930157543f175db45927-35189922%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2bf921cf82d2b65980ab8c747462926fd39f434b' => 
     array (
       0 => './templates/coleccion.tpl',
-      1 => 1413428131,
+      1 => 1413435898,
       2 => 'file',
     ),
   ),
@@ -46,6 +46,5 @@ $_smarty_tpl->tpl_vars['nombre']->_loop = true;
 </select> 
 	
 
-<?php echo $_smarty_tpl->getSubTemplate ("lateral.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 	<?php }} ?>

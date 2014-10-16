@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -13,9 +13,10 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/elastislide.css" />
     <link rel="stylesheet" type="text/css" href="css/modern-business.css">
     <script type="text/javascript" src = "./js/main.js"> </script>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 </head>
 
@@ -49,15 +50,13 @@
                     <li>
                         <a href="contacto.php">Contacto</a>
                     </li>
+
+                    <select id="id_categoria" onChange = "getData();">
+                        {foreach $categorias as $nombre}
+                            <option value="{$nombre.id_categoria}">{$nombre.nombre_categoria}</option>
+                        {/foreach}
+                    </select>
                 </ul>
             </div>
         </div>
     </nav>
-    <select id="id_categoria" onChange = "getData();">
-    {foreach $categorias as $nombre}
-      <option value="{$nombre.id_categoria}">{$nombre.nombre_categoria}</option>
-    {/foreach}
-
-    
-  </select>
-

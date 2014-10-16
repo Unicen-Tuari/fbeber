@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-16 04:22:14
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-16 05:48:54
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:832489001543f103d416611-60431611%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c0360d049dff10f364dfc53ba2cc3958abf6ee6d' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1413426116,
+      1 => 1413431332,
       2 => 'file',
     ),
   ),
@@ -86,10 +86,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         </a>
     </header>
     </div>
-    <!--Contenido de la pagina-->
-    <div class="container">
-
-        <h2>futuros link a redes sociales</h2>
+    
 
 <?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>
