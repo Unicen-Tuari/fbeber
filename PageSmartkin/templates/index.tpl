@@ -1,10 +1,6 @@
 {include file="header.tpl"}
 <br>
-<select id="id_categoria" onChange = "getData();">
-    {foreach $categorias as $nombre}
-      <option value="{$nombre.id_categoria}">{$nombre.nombre_categoria}</option>
-    {/foreach}
-  </select>
+
 
   <div id="tableData">
 

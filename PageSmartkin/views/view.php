@@ -16,5 +16,12 @@ class View
 		$smarty->assign("colecciones", $nombresCategorias);
 		$smarty->display('coleccion.tpl');
     }
+
+    public function imprimirModelos($nombresColecciones){
+     
+		$smarty = new Smarty;
+		$smarty->assign("modelos", $nombresColecciones);
+		$smarty->display('modelos.tpl');
+    }
 }
 ?>

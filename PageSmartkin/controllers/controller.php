@@ -18,5 +18,10 @@ class Controller
 	{
 		$this->view->imprimirColecciones($this->model->getColecciones($id_categoria));
 	}
+
+	public function imprimirModelos($id_coleccion)
+	{
+		$this->view->imprimirModelos($this->model->getModelos($id_coleccion));
+	}
 }
 ?>

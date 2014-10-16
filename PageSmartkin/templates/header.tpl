@@ -53,4 +53,11 @@
             </div>
         </div>
     </nav>
+    <select id="id_categoria" onChange = "getData();">
+    {foreach $categorias as $nombre}
+      <option value="{$nombre.id_categoria}">{$nombre.nombre_categoria}</option>
+    {/foreach}
+
+    
+  </select>
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-16 03:30:47
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-16 04:24:57
          compiled from "./templates/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1031393623543f1bb66f50a4-51375130%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '97c13ae6868bbc459509c9f1b968154acd23eecc' => 
     array (
       0 => './templates/header.tpl',
-      1 => 1413423043,
+      1 => 1413426282,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.14',
   'unifunc' => 'content_543f1bb671d6a0_33905662',
+  'variables' => 
+  array (
+    'categorias' => 0,
+    'nombre' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_543f1bb671d6a0_33905662')) {function content_543f1bb671d6a0_33905662($_smarty_tpl) {?><!DOCTYPE html>
@@ -74,5 +79,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             </div>
         </div>
     </nav>
+    <select id="id_categoria" onChange = "getData();">
+    <?php  $_smarty_tpl->tpl_vars['nombre'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['nombre']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['categorias']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['nombre']->key => $_smarty_tpl->tpl_vars['nombre']->value){
+$_smarty_tpl->tpl_vars['nombre']->_loop = true;
+?>
+      <option value="<?php echo $_smarty_tpl->tpl_vars['nombre']->value['id_categoria'];?>
+"><?php echo $_smarty_tpl->tpl_vars['nombre']->value['nombre_categoria'];?>
+</option>
+    <?php } ?>
+
+    
+  </select>
 
 <?php }} ?>

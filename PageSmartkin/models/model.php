@@ -38,5 +38,17 @@ class Model
 		
 		return $resultado->fetchAll(PDO::FETCH_ASSOC);
 	}
+
+	public function getModelos($id_coleccion){
+		$sql = "SELECT * FROM modelo m JOIN dispositivo d
+		ON (m.id_modelo=d.id_modelo)  WHERE id_coleccion =  '".$id_coleccion."'";
+		$resultado = $this->conn->prepare($sql);
+		$resultado->execute();
+		if(!$resultado){
+			die(print($this->conn->errorInfo()[2]));
+		}
+		
+		return $resultado->fetchAll(PDO::FETCH_ASSOC);
+	}
 }
 ?>

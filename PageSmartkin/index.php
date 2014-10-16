@@ -11,6 +11,10 @@ if(isset($_GET["id_categoria"]))
 {
 	$controller->imprimirColecciones($_GET["id_categoria"]);
 }
+else if(isset($_GET["id_coleccion"]))
+{
+	$controller->imprimirModelos($_GET["id_coleccion"]);
+}
 else
 {
 	$controller->imprimirPagina();
