@@ -16,11 +16,11 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                {section name=lnombres loop=$nombre_categoria}
+                                {foreach $categorias as $nombre}
                                 <li>
-                                <a href="./consulta_colecciones.php">{$nombre_categoria[lnombres]}
+                                    <button onClick = "getDataColecciones({$nombre.id_categoria});">{$nombre.nombre_categoria}</buttom>
                                 </li>
-                                {/section}
+                            {/foreach}
                             </ul>
                         </div>
                     </div>

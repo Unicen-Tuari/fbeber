@@ -1,4 +1,4 @@
-function getData()
+function getDataColecciones(id_categoria)
 {
 	xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange=function()
@@ -9,13 +9,15 @@ function getData()
 	       document.getElementById("tableData").innerHTML=xmlhttp.responseText;
 	    }
 	  }
-	 e = document.getElementById("id_categoria");
-	 id_categoria = e.options[e.selectedIndex].value;
+	 
+	 /*e = document.getElementById("id_categoria");
+	 id_categoria = e.options[e.selectedIndex].value;*/
+	 
 	xmlhttp.open("GET","index.php?id_categoria=" + id_categoria,true);
 	xmlhttp.send();
 }
 
-function getMata()
+function getDataModelos(id_coleccion)
 {
 	xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange=function()
@@ -26,8 +28,6 @@ function getMata()
 	       document.getElementById("tableData").innerHTML=xmlhttp.responseText;
 	    }
 	  }
-	colecc = document.getElementById("id_coleccion");
-	 id_coleccion = colecc.options[colecc.selectedIndex].value;
 	xmlhttp.open("GET","index.php?id_coleccion=" + id_coleccion,true);
 	xmlhttp.send();
 }

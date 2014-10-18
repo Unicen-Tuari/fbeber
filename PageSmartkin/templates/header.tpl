@@ -44,19 +44,20 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categor&iacute;as<b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                                                           
+                            {foreach $categorias as $nombre}
+                                <li>
+                                    <button onClick = "getDataColecciones({$nombre.id_categoria});">{$nombre.nombre_categoria}</buttom>
+                                </li>
+                            {/foreach}
                         </ul>
                     </li>
 
                     <li>
                         <a href="contacto.php">Contacto</a>
                     </li>
-
-                    <select id="id_categoria" onChange = "getData();">
-                        {foreach $categorias as $nombre}
-                            <option value="{$nombre.id_categoria}">{$nombre.nombre_categoria}</option>
-                        {/foreach}
-                    </select>
                 </ul>
             </div>
         </div>
     </nav>
+    {include file="lateral.tpl"}

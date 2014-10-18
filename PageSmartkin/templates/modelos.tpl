@@ -1,8 +1,9 @@
 {foreach $modelos as $dato}
-    <button data-toggle="modal" data-target="#myModal">
-  <img src="./images/catalogo/{$dato.img_modelo}" width="100px">
-</button>
-    
+  {$dato.nombre_modelo}
+  <button onClick = "getDataModelos({$dato.id_modelo});">{$dato.nombre_modelo}</button>
+  <button data-toggle="modal" data-target="#myModal">
+    <img class="img-hover" src="./images/catalogo/{$dato.img_modelo}" onClick = "getDataModelos({$dato.id_modelo});" alt="{$dato.nombre_modelo}">
+  </button>
 {/foreach}
 
 

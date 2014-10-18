@@ -1,29 +1,30 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-16 03:48:05
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-17 15:01:16
          compiled from "./templates/lateral.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:883859619543f23d5cbd8e2-69664352%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:4481607665441131ca8e1b5-24631608%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8a1c9fc409d38d4abea41978e01399b62d2cc405' => 
     array (
       0 => './templates/lateral.tpl',
-      1 => 1413413193,
+      1 => 1413550673,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '883859619543f23d5cbd8e2-69664352',
+  'nocache_hash' => '4481607665441131ca8e1b5-24631608',
   'function' => 
   array (
   ),
   'variables' => 
   array (
-    'nombre_categoria' => 0,
+    'categorias' => 0,
+    'nombre' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_543f23d5dbd1c1_35791234',
+  'unifunc' => 'content_5441131cac17d4_67514300',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_543f23d5dbd1c1_35791234')) {function content_543f23d5dbd1c1_35791234($_smarty_tpl) {?>            <div class="col-md-4">
+<?php if ($_valid && !is_callable('content_5441131cac17d4_67514300')) {function content_5441131cac17d4_67514300($_smarty_tpl) {?>            <div class="col-md-4">
 
                 <div class="well">
                     <h4>Buscar</h4>
@@ -41,35 +42,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']);
-$_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['name'] = 'lnombres';
-$_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['nombre_categoria']->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
-$_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['show'] = true;
-$_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['loop'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['step'] = 1;
-$_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['loop']-1;
-if ($_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['show']) {
-    $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['loop'];
-    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['total'] == 0)
-        $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['show'] = false;
-} else
-    $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['total'] = 0;
-if ($_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['show']):
-
-            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['iteration'] = 1;
-                 $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['total'];
-                 $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['iteration']++):
-$_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['iteration'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['step'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['step'];
-$_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['iteration'] == 1);
-$_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['lnombres']['total']);
+                                <?php  $_smarty_tpl->tpl_vars['nombre'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['nombre']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['categorias']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['nombre']->key => $_smarty_tpl->tpl_vars['nombre']->value){
+$_smarty_tpl->tpl_vars['nombre']->_loop = true;
 ?>
                                 <li>
-                                <a href="./consulta_colecciones.php"><?php echo $_smarty_tpl->tpl_vars['nombre_categoria']->value[$_smarty_tpl->getVariable('smarty')->value['section']['lnombres']['index']];?>
-
+                                    <button onClick = "getDataColecciones(<?php echo $_smarty_tpl->tpl_vars['nombre']->value['id_categoria'];?>
+);"><?php echo $_smarty_tpl->tpl_vars['nombre']->value['nombre_categoria'];?>
+</buttom>
                                 </li>
-                                <?php endfor; endif; ?>
+                            <?php } ?>
                             </ul>
                         </div>
                     </div>
