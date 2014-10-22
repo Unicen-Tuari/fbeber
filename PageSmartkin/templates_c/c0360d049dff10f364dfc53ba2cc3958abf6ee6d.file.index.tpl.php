@@ -1,32 +1,25 @@
-<<<<<<< HEAD
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-22 01:21:46
+<?php /* Smarty version Smarty-3.1.14, created on 2014-10-22 03:56:22
          compiled from "./templates/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:12464416585446ea8a446268-15219320%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-=======
-<?php /* Smarty version Smarty-3.1.14, created on 2014-10-17 20:44:53
-         compiled from "./templates/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:21419493125440b457b4f610-43347813%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
->>>>>>> 74beeb35f7ee36a93d45a7fdbe3933dc4e888ced
+<?php /*%%SmartyHeaderCode:2551376754470ec63c0dc6-56241577%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c0360d049dff10f364dfc53ba2cc3958abf6ee6d' => 
     array (
       0 => './templates/index.tpl',
-<<<<<<< HEAD
       1 => 1413933496,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12464416585446ea8a446268-15219320',
+  'nocache_hash' => '2551376754470ec63c0dc6-56241577',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5446ea8a60a249_56425958',
+  'unifunc' => 'content_54470ec642ef36_17070132',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5446ea8a60a249_56425958')) {function content_5446ea8a60a249_56425958($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_54470ec642ef36_17070132')) {function content_54470ec642ef36_17070132($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 	<div class="jumbotron">
 		<div id="tableData">
@@ -55,26 +48,5 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 		</div>
 	</div>
-=======
-      1 => 1413551211,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '21419493125440b457b4f610-43347813',
-  'function' => 
-  array (
-  ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5440b457c0c3c5_25697885',
-  'has_nocache_code' => false,
-),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5440b457c0c3c5_25697885')) {function content_5440b457c0c3c5_25697885($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
-<br>
-
-  <div id="tableData">
-        algo relativamente copado
-    </div>
->>>>>>> 74beeb35f7ee36a93d45a7fdbe3933dc4e888ced
 <?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>
