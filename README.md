@@ -4,9 +4,8 @@ fbeber
 Tema: Smartkin
 
 1ra Entrega
-MVC, Bootrstrap y Smarty.
-La nueva funcionalidad (Creador de Juegos)  maquetada (Sin funcionalidad)
-Ajax: Carga de Colecciones y Modelos
+*MVC, Bootrstrap y Smarty.
+*Ajax: Carga de Colecciones y Modelos
 Lista de favoritos (HTML) sin funcionalidad
 
 2da Entrega

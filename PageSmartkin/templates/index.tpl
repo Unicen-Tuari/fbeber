@@ -1,4 +1,5 @@
 {include file="header.tpl"}
+<<<<<<< HEAD
 	<div class="jumbotron">
 		<div id="tableData">
 	    	<h3>Bienvenido a Smartkin!</h3>
@@ -26,4 +27,11 @@
 			</div>
 		</div>
 	</div>
+=======
+<br>
+
+  <div id="tableData">
+        algo relativamente copado
+    </div>
+>>>>>>> 74beeb35f7ee36a93d45a7fdbe3933dc4e888ced
 {include file="footer.tpl"}
