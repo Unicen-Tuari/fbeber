@@ -1,36 +1,24 @@
 <?php
-require('./libs/Smarty.class.php');
+		
+	include 'models/model.php';
+	include 'views/view.php';
+	include 'controllers/controller.php';
 
-$smarty = new Smarty;
-
-//Configuración
-$host 	= "localhost";
-$db	= "smartkin";
-$user	= "root";
-$pass	= "";
-
-//Conexión
-try{
-$conn = new PDO("mysql:host=$host;dbname=$db",$user,$pass);
-}
-catch(PDOException $pe)
-{
-	die('Error de conexion, Mensaje: ' -$pe->getMessage());
-}
-
-//Consulta
-$sql = "SELECT * FROM smartkin.categoria";
-$q	 = $conn->query($sql);
-
-while($r = $q->fetch()){
-	$categoria = $r ['nombre_categoria'];
+	$model = new Model();
+	$view = new View();
+	$controller = new Controller($model, $view);
 	
-}
-
-$smarty->debugging = true;
-$smarty->caching = true;
-$smarty->cache_lifetime = 120;
-
-$smarty->display('index.tpl');
+	if(isset($_GET["id_categoria"]))
+	{
+		$controller->imprimirColecciones($_GET["id_categoria"]);
+	}
+	else if(isset($_GET["id_coleccion"]))
+	{
+		$controller->imprimirModelos($_GET["id_coleccion"]);
+	}
+	else
+	{
+		$controller->imprimirPagina();
+	}
 
 ?>
