@@ -2,12 +2,50 @@
   
 <!--HEADER-->
 
-    <!-- Full Width Image Header -->
     <header id="inicio">
-        <div class="headline">
-            <div class="container">
-                <img src="images/smartkin9.jpg">
+    <br>
+        <div class="row">
+    <!--ACA VA LA SESION ADMIN-->
+            <div id="sesion" class="col-sm-2 col-md-12"> 
+                <div class="col-sm-2 col-md-12 text-right"><!--configuracion--> 
+                    <span class="glyphicon glyphicon-plus text-rigth" aria-hidden="true">config</span>               
+                </div>
+                <div class="col-sm-2 col-md-12"> 
+                    <h2><!--info personal-->
+                        <img src="./images/anonimo.jpg"class="icono_redes">Administrador
+                    </h2>
+                    <h4 class="text-center">
+                        usuarios | galerias | mis diseños | favoritos | likes | consultas | mensajes | noticias | informacion
+                    </h4>
+                    <br>
+                    <br>
+                </div>
             </div>
+        <!--ACA VA LA SESION USUARIO-->
+            <div id="sesion" class="col-sm-2 col-md-12"> 
+                <div class="col-sm-2 col-md-12 text-right"><!--configuracion--> 
+                    <span class="glyphicon glyphicon-plus text-rigth" aria-hidden="true">config</span>               
+                </div>
+                <div class="col-sm-2 col-md-12"> 
+                    <h2><!--info personal-->
+                        <img src="./images/anonimo.jpg"class="icono_redes">Nombre
+                    </h2>
+                    <h4 class="text-center">
+                        mis diseños | favoritos | likes | consultas | mensajes
+                    </h4>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>        
+            <div class="col-sm-2 col-md-12">
+                <div class="headline">
+                    <div class="container">
+                        <img src="images/smartkin9.jpg">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
 

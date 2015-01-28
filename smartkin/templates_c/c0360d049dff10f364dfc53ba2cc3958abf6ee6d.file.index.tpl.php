@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-01-28 04:51:56
+<?php /* Smarty version Smarty-3.1.14, created on 2015-01-28 12:00:45
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:91873963454c39de65b4209-69621764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c0360d049dff10f364dfc53ba2cc3958abf6ee6d' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1422417114,
+      1 => 1422442841,
       2 => 'file',
     ),
   ),
@@ -35,12 +35,50 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   
 <!--HEADER-->
 
-    <!-- Full Width Image Header -->
     <header id="inicio">
-        <div class="headline">
-            <div class="container">
-                <img src="images/smartkin9.jpg">
+    <br>
+        <div class="row">
+    <!--ACA VA LA SESION ADMIN-->
+            <div id="sesion" class="col-sm-2 col-md-12"> 
+                <div class="col-sm-2 col-md-12 text-right"><!--configuracion--> 
+                    <span class="glyphicon glyphicon-plus text-rigth" aria-hidden="true">config</span>               
+                </div>
+                <div class="col-sm-2 col-md-12"> 
+                    <h2><!--info personal-->
+                        <img src="./images/anonimo.jpg"class="icono_redes">Administrador
+                    </h2>
+                    <h4 class="text-center">
+                        usuarios | galerias | mis diseños | favoritos | likes | consultas | mensajes | noticias | informacion
+                    </h4>
+                    <br>
+                    <br>
+                </div>
             </div>
+        <!--ACA VA LA SESION USUARIO-->
+            <div id="sesion" class="col-sm-2 col-md-12"> 
+                <div class="col-sm-2 col-md-12 text-right"><!--configuracion--> 
+                    <span class="glyphicon glyphicon-plus text-rigth" aria-hidden="true">config</span>               
+                </div>
+                <div class="col-sm-2 col-md-12"> 
+                    <h2><!--info personal-->
+                        <img src="./images/anonimo.jpg"class="icono_redes">Nombre
+                    </h2>
+                    <h4 class="text-center">
+                        mis diseños | favoritos | likes | consultas | mensajes
+                    </h4>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>        
+            <div class="col-sm-2 col-md-12">
+                <div class="headline">
+                    <div class="container">
+                        <img src="images/smartkin9.jpg">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
 

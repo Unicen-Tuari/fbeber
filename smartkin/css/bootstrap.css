@@ -14,6 +14,17 @@ body {
   margin: 0;
 }
 
+#sesion{
+  margin-top: 7%;
+  margin-left: 3%;
+  border-style: solid;
+  border-color: lightgrey;
+  border-radius: 20px;
+  border-width: 0.5px;
+  padding: 5px;
+  width: 80%;
+}
+
 .aplicacion{
   border-style: solid;
   border-color: lightgrey;

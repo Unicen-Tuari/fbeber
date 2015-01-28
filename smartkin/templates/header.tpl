@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Smartkin</title>
-     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/one-page-wonder.css" rel="stylesheet">
 
@@ -79,10 +79,12 @@
                                         Nombre
                                     </p>   
                                     <div class="form-group text-center">
+                                    <a href="#inicio">
                                     <button type="button" class="btn btn-default btn-sm">
                                       <span class="glyphicon glyphicon-picture" aria-hidden="true"></span> 
                                       Mi sesión
                                     </button>
+                                    </a>
                                     </div>
                                     <div class="form-group text-center">
                                         <button type="button" class="btn btn-danger">Salir</button>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-01-28 04:18:15
+<?php /* Smarty version Smarty-3.1.14, created on 2015-01-28 11:59:54
          compiled from "./templates/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:80348318254c53918b02d38-14484763%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '97c13ae6868bbc459509c9f1b968154acd23eecc' => 
     array (
       0 => './templates/header.tpl',
-      1 => 1422415093,
+      1 => 1422442790,
       2 => 'file',
     ),
   ),
@@ -36,7 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <meta name="author" content="">
 
     <title>Smartkin</title>
-     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/one-page-wonder.css" rel="stylesheet">
 
@@ -111,10 +111,12 @@ $_smarty_tpl->tpl_vars['nombre']->_loop = true;
                                         Nombre
                                     </p>   
                                     <div class="form-group text-center">
+                                    <a href="#inicio">
                                     <button type="button" class="btn btn-default btn-sm">
                                       <span class="glyphicon glyphicon-picture" aria-hidden="true"></span> 
                                       Mi sesión
                                     </button>
+                                    </a>
                                     </div>
                                     <div class="form-group text-center">
                                         <button type="button" class="btn btn-danger">Salir</button>
