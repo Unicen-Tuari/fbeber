@@ -14,6 +14,17 @@ body {
   margin: 0;
 }
 
+.aplicacion{
+  border-style: solid;
+  border-color: lightgrey;
+  border-radius: 20px;
+  border-width: 0.5px;
+  margin: 5px;
+  padding: 5px;
+  width: 80%;
+  float: center;
+}
+
 .icono_user{
   border-style: solid;
   border-color: lightgrey;
@@ -30,7 +41,7 @@ body {
   border-width: 0.5px;
   margin: 5px;
   padding: 5px;
-  width: 40%;
+  width: 60px;
 }
 
 .icono_redes{
@@ -40,7 +51,7 @@ body {
   border-width: 0.5px;
   margin: 10px;
   padding: 5px;
-  width: 6%;
+  width: 15%;
 }
 
 .img_user{

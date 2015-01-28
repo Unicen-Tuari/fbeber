@@ -17,7 +17,7 @@
     <link rel="icon" type="image/jpg" href="./images/fb.jpg"/>
 </head>
 
-<body>
+<body onload="ocultar();">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
@@ -42,24 +42,21 @@
                         <a href="#inicio">Inicio</a>
                     </li>
                     <li class="dropdown">
-                                <a href="#galerias" class="dropdown-toggle" data-toggle="dropdown">Galerías<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    {foreach $categorias as $nombre}
-                                    <li>
-                                      <a onClick = "getColeccion({$nombre.id_cat});">{$nombre.id_cat}</a>
-                                    </li>
-                                    {/foreach}
-                                </ul>
+                        <a id="dLabel"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Galerías
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                       {foreach $categoria as $nombre}
+                            <li>
+                                <a href="#galerias" onClick = "getColeccion({$nombre.id_cat});">{$nombre.id_cat}</a>
                             </li>
+                        {/foreach}
+                        </ul>
+                    </li>
                     <li>
-                        <select id="categoria" onChange = "getColeccion();">
-                            {foreach $categorias as $categoria}
-                                <option value="{$categoria.id_cat}">{$categoria.id_cat}</option>
-                            {/foreach}
-                        </select>
                     </li>
                     <li class="dropdown">
-                        <a href="#app" style="color:green">Haz tu propio diseño!!</a>
+                        <a href="#app" style="color:violet">Haz tu propio diseño!!</a>
                     </li>
                     <li class="dropdown">
                         <a href="#portfolio">Portfolio</a>
@@ -75,69 +72,26 @@
                         <div id="popover-content" style="display: none" >
                             <div class="container-fluid">
                             <div class="row">
-                                <label id="sample">
-                            
-                                    
-                                    <div class="form-group text-right">
-                                    <button type="button" class="btn btn-default btn-md text-right">
-                                      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 
-                                    </button>
-                                    </div>
-
+                                <label id="sample">                                    
                                     <p class="lead text-center">
+                                    <a href="#" data-toggle="modal" data-target="#loguearse">Ingresar</a>
                                         <img src="./images/anonimo.jpg" class="icono_user"> 
-                                        <br>
                                         Nombre
                                     </p>   
                                     <div class="form-group text-center">
-                                    <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#disenios">
+                                    <button type="button" class="btn btn-default btn-sm">
                                       <span class="glyphicon glyphicon-picture" aria-hidden="true"></span> 
                                       Mi sesión
                                     </button>
                                     </div>
-
-
                                     <div class="form-group text-center">
                                         <button type="button" class="btn btn-danger">Salir</button>
                                     </div>
-
-
-                                <!--INICIO DE SESION-->  
-                                     ----------------
-                                        <div class="form-group">
-                                        <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#disenios">
-                                      <span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Mis Diseños
-                                    </button>
-                                            
-                                            <div class="col-sm-12">
-                                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <div class="col-sm-12">
-                                                <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
-                                            </div>
-                                        </div>
-                                                     
-                                        <div class="form-group text-center">
-                                            <div class="col-sm-offset-1 col-sm-8">
-                                                <button type="button" class="btn btn-info">Entrar</button>
-                                                <p class="text-center">ó<br> 
-                                                    <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
-                                                      Registrarse
-                                                    </button>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </label>
+                                </div> 
                             </div>
-                        </div> 
                         </div>
 
-                    <a href="#nada" rel="popover" data-content='' data-placement="">Login</a>
+                    <a href="#nada" rel="popover" data-content='' data-placement="">Mi sesión</a>
                  </li>
                 </ul>
             </div>

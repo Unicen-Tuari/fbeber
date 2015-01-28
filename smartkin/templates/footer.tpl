@@ -7,62 +7,86 @@
             </div>
         </footer>
 
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- Modal login-->
+<div class="modal fade" id="loguearse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header text-center">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <img src="./images/smartkinlogo.png" width="80%">
       </div>
-      <div class="modal-body">
-        <h4>Complete sus datos...</h4>
-            
-            <form id="formComments" class="appnitro form-horizontal"  method="post" action="">
-            
-            <div class="form-group">
-                <div class=" text-center">
-                    <img src="./images/anonimo.jpg" width="95%" class="img_user">
+      <div class="modal-body text-center">
+        <h4>Bienvenido!</h4>
+      <!--INICIO DE SESION-->  
+        <form id="formComments" class="appnitro form-horizontal"  method="post" action="">
+            <div class="form-group text-center">
+                <div class="col-sm-offset-1 col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
                 </div>
             </div>
-            
-            <div class="form-group">
-                <label class="col-sm-1 control-label">
-                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                </label>
-                <div class="col-sm-8">
-                    <input id="name_user" name= "new_name_user" class="form-control" placeholder="Nombre" maxlength="20" value=""/>
+                                        
+            <div class="form-group text-center">
+                <div class="col-sm-offset-1 col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-1 control-label">
-                    <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-                </label>
-                <div class="col-sm-8">
-                    <input id="pass" name= "new_pass" class="form-control" type="password" placeholder="Contraseña" maxlength="20" value=""/>
+                                                     
+            <div class="form-group text-center">
+                <div class="col-sm-offset-1 col-sm-10">
+                    <button type="button" class="btn btn-info">Entrar</button>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-1 control-label">
-                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                </label>
-                <div class="col-sm-8">
-                    <input id="email" name= "new_email" class="form-control" placeholder="Email" maxlength="200" value=""/>
-                </div>
-            </div>
-          
-         
-            <!-- Indicates a successful or positive action -->
-            <div class="text-center">
-            <input id="saveForm" class="btn btn-success" type="submit" name="saveForm" value="Listo!" />
-            </div>
-      </form> 
-                           
-    </div>
-  </div>
-</div>
+            <br><br>
 
+            <p style="color:grey">*Si usted no posee una cuenta en nuestro sistema, puede registrarse de manera muy simple haciendo un click <a onclick="ocultar();">aquí</a>.</p>
+          
+            <div id="ocultar">
+                <div class="modal-body">
+                    <h4>Complete sus datos...</h4>
+            
+                    <form id="formComments" class="appnitro form-horizontal"  method="post" action="">
+            
+                    <div class="form-group">
+                        <div class=" text-center">
+                            <img src="./images/anonimo.jpg" width="95%" class="img_user">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="name_user" name= "new_name_user" class="form-control" placeholder="Nombre" maxlength="20" value=""/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">
+                            <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="pass" name= "new_pass" class="form-control" type="password" placeholder="Contraseña" maxlength="20" value=""/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        </label>
+                        <div class="col-sm-8">
+                            <input id="email" name= "new_email" class="form-control" placeholder="Email" maxlength="200" value=""/>
+                        </div>
+                    </div>
+                  
+                    <div class="text-center">
+                    <input id="saveForm" class="btn btn-success" type="submit" name="saveForm" value="Listo!" />
+                    </div>
+                    </form>                
+                </div>
+            </div>
+            <p class="text-center" style="color:grey">Muchas Gracias por confiar en nosotros.</p>
+        </div>
+        </div>
+    </div>
 
 </div>    <!-- /.container -->
 
@@ -82,6 +106,22 @@
     placement: 'bottom',
     content : function() {
         return $('#popover-content').html();
+    }
+    })
+
+    $('a[rel=registrarse]').popover({
+        html: 'true',
+    placement: 'rigth',
+    content : function() {
+        return $('#registro-content').html();
+    }
+    })
+
+    $('a[rel=consulta_portfolio]').popover({
+        html: 'true',
+    placement: 'top',
+    content : function() {
+        return $('#consulta_portfolio').html();
     }
     })
 

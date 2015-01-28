@@ -28,9 +28,48 @@ class Model
 		 return $resultado->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	public function getUsers(){
+	
+		$sql = "SELECT * FROM user";
+		$resultado = $this->conn->prepare($sql);
+		$resultado->execute();
+		if(!$resultado){
+			die(print($this->conn->errorInfo()[2]));
+		}
+		 return $resultado->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function grabarComentario($formulario){
+		$sql = "INSERT INTO comentario (id_user, comentario) VALUES (:new_id_user,:new_comentario)";
+		$query = $this->conn->prepare($sql);
+		$query->execute($formulario);
+	}
+
 	public function getContacto(){
 	
 		$sql = "SELECT * FROM info";
+		$resultado = $this->conn->prepare($sql);
+		$resultado->execute();
+		if(!$resultado){
+			die(print($this->conn->errorInfo()[2]));
+		}
+		 return $resultado->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function getPortfolio(){
+	
+		$sql = "SELECT * FROM portfolio";
+		$resultado = $this->conn->prepare($sql);
+		$resultado->execute();
+		if(!$resultado){
+			die(print($this->conn->errorInfo()[2]));
+		}
+		 return $resultado->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function getComentario(){
+	
+		$sql = "SELECT * FROM comentario c JOIN user u ON (c.id_user = u.id_user) ORDER BY fecha DESC";
 		$resultado = $this->conn->prepare($sql);
 		$resultado->execute();
 		if(!$resultado){

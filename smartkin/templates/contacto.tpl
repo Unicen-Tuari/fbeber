@@ -1,3 +1,4 @@
+<div class="col-md-5 text-center">
 {foreach $info as $dato} 
   <p class="lead" >
     <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
@@ -18,4 +19,4 @@
   <a href="http://{$dato.google}"><img src="./images/google.png"  class="icono_redes"></a>
   <a href="http://{$dato.mercado_libre}"><img src="./images/mercadolibre.png"  class="icono_redes"></a>
 {/foreach}
-	
+</div>

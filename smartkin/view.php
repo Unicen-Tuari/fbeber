@@ -3,18 +3,15 @@ require('./libs/Smarty.class.php');
 class View
 {
      
-    public function imprimirCategorias($categoriasCategorias){
+    public function imprimirPagina($categoriasCategorias,$info,$port,$comentario,$users){
        
 		$smarty = new Smarty;
-		$smarty->assign("categorias", $categoriasCategorias);
+		$smarty->assign("categoria", $categoriasCategorias);
+		$smarty->assign("info",$info);
+		$smarty->assign("port",$port);
+		$smarty->assign("comentario",$comentario);
+		$smarty->assign("users", $users);
 		$smarty->display('index.tpl');
-    }
-
-    public function imprimirContacto($info){
-       
-		$smarty = new Smarty;
-		$smarty->assign("info", $info);
-		$smarty->display('contacto.tpl');
     }
 	
     public function imprimirColecciones($categoriasCategorias){

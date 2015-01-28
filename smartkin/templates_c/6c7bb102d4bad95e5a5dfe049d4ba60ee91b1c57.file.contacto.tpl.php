@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-01-26 18:54:24
+<?php /* Smarty version Smarty-3.1.14, created on 2015-01-27 02:35:23
          compiled from "./templates/contacto.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:214456752354c6541738ecb3-45347004%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6c7bb102d4bad95e5a5dfe049d4ba60ee91b1c57' => 
     array (
       0 => './templates/contacto.tpl',
-      1 => 1422294856,
+      1 => 1422322521,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_54c654174636c9_50329370')) {function content_54c654174636c9_50329370($_smarty_tpl) {?><?php  $_smarty_tpl->tpl_vars['dato'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['dato']->_loop = false;
+<?php if ($_valid && !is_callable('content_54c654174636c9_50329370')) {function content_54c654174636c9_50329370($_smarty_tpl) {?><div class="col-md-5 text-center">
+<?php  $_smarty_tpl->tpl_vars['dato'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['dato']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['info']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['dato']->key => $_smarty_tpl->tpl_vars['dato']->value){
 $_smarty_tpl->tpl_vars['dato']->_loop = true;
@@ -55,4 +56,4 @@ $_smarty_tpl->tpl_vars['dato']->_loop = true;
   <a href="http://<?php echo $_smarty_tpl->tpl_vars['dato']->value['mercado_libre'];?>
 "><img src="./images/mercadolibre.png"  class="icono_redes"></a>
 <?php } ?>
-	<?php }} ?>
+</div><?php }} ?>

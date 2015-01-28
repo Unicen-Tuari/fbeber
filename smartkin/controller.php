@@ -9,14 +9,10 @@ class Controller
 		$this->view = $view;
     }
 	
-	public function imprimirCategorias()
+	public function imprimirPagina()
 	{
-		$this->view->imprimirCategorias($this->model->getcategoriasNombres());
-	}
-
-	public function imprimirContacto()
-	{
-		$this->view->imprimirContacto($this->model->getContacto());
+		$this->view->imprimirPagina($this->model->getcategoriasNombres(), $this->model->getContacto(), $this->model->getPortfolio(),$this->model->getComentario(),$this->model->getUsers());
+		
 	}
 	
 	public function imprimirColecciones($categoria)
@@ -36,6 +32,21 @@ class Controller
 		{
 			$this->view->MensajeError($error);
 		}
+		
+	}
+
+	public function grabarComentario($formulario)
+	{
+	    /*$error = $this->verificarFormulario($formulario);
+		if(!$error)
+		{*/
+			$this->model->grabarComentario($formulario);
+			$this->view->MensajeExito();
+		/*}
+		else
+		{
+			$this->view->MensajeError($error);
+		}*/
 		
 	}
 	
