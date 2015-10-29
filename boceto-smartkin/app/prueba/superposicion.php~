@@ -1,0 +1,33 @@
+<?php
+// Cargar la estampa y la foto para aplicarle la marca de agua
+$im = imagecreatefromjpeg('fondo.jpg');
+
+// Primero crearemos nuestra imagen de la estampa manualmente desde GD
+$estampa = imagecreatefrompng('estampa.png');
+
+// Obtener el alto/ancho de la imagen de la estampa
+$ancho_fondo=imagesx($im);
+$alto_fondo=imagesy($im);
+
+$ancho = imagesx($estampa);
+$alto = imagesy($estampa);
+
+// Fusionar la estampa con nuestra foto con una opacidad del 50%
+
+imagecopymerge($im, $estampa, $ancho_fondo - $ancho, $alto_fondo - $alto, 0, 0, imagesx($estampa), imagesy($estampa), 70);
+//imagecopyresized($im, $estampa, 0, 0, 0, 0, imagesx($im), imagesy($im), $ancho, $alto);
+
+
+// Guardar la imagen en un archivo y liberar memoria
+imagepng($estampa, 'resultado.png');
+imagedestroy($im);
+
+?>
+<html>
+	<head></head>
+	<body>
+		<img src="resultado.png">
+	</body>
+</html>
+
+
