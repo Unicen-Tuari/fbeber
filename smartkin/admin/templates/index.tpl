@@ -2,13 +2,13 @@
     
 
 
-		{foreach $admin as $info}
-            
-            <h1>{$info['name_admin']}</h1>
-            <button id="logout" class="btn btn-primary">Logout</button>            
-        {/foreach}
-
-        
+	
+{if isset($admin)}
+    {foreach $admin as $info}
+        {include file="user.tpl"}
+ 
+        <h1>INFORMACION</h1>
+        {include file="admin_informacion.tpl"}
         
         <h1>USUARIOS</h1>
         {include file="admin_usuarios.tpl"}
@@ -21,12 +21,30 @@
         
         <h1>COMENTARIOS</h1>
         {include file="admin_comentarios.tpl"}
+    {/foreach}  
+{else}
+<div class="col-md-12 form-login">
+  <form id="formlogin" class="form-signin" method="post" >
+        <h4 class="">Inciar Sesión</h4>
         
-        <h1>INFORMACION</h1>
-        {include file="admin_informacion.tpl"}
+        <input id="email_user" name="email_user" type="text" class="form-control" placeholder="Correo Electrónico" autofocus="">
+        <input id="pass_user" name="pass_user" type="password" class="form-control" placeholder="Contraseña">
+        <div id="error" class="alert alert-danger" style="display: none;">
+            <p class="text-center">Olvide mi contraseña!!</p>
+        </div>
+        <div class="text-right">
+        <button id="signin" class="btn btn-success" type="submit">Entrar 
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 
+        </button>
+        </div>
+        
+    </form>
+    <a href="#registrarse">REGISTRARSE</a>
+</div>      
+
+{/if}  
 
         
-
     </div> <!-- /container -->
 
 <!-- Footer -->

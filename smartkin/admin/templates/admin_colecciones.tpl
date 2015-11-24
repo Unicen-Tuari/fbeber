@@ -37,13 +37,27 @@
 			{foreach $colecciones as $coleccion}	
 			<tr>
 				{if !$coleccion['publico']}
-					<td><s>{$coleccion.name_col}</s></td>
+					<td><s>{$coleccion.name_col}</s>
+						<form action="index.php?action=modificar_name_col&id_col={$coleccion['id_col']}" method="POST" enctype="multipart/form-data">
+		            <input type="text" class="form-control" id="upd_name_col" name="upd_name_col" value="{$coleccion.name_col}"> 
+	            
+			        <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
+	    			</form>
+					</td>
 					<td><a class="glyphicon glyphicon-ok" href="index.php?action=no_publicar_coleccion&id_col={$coleccion['id_col']}"><button type="submit" class="btn btn-default">Publicar</button></a></td>
+					
 
 				{else}
                     {$coleccion['name_col']}
-                    <td>{$coleccion.name_col}</td>
+                    <td>{$coleccion.name_col}
+                    <form action="index.php?action=modificar_name_col&id_col={$coleccion['id_col']}" method="POST" enctype="multipart/form-data">
+		            <input type="text" class="form-control" id="upd_name_col" name="upd_name_col" value="{$coleccion.name_col}"> 
+	            
+			        <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
+	    			</form>
+	    			</td>
 					<td><a class="glyphicon glyphicon-ok" href="index.php?action=publicar_coleccion&id_col={$coleccion['id_col']}"><button type="submit" class="btn btn-default">No Publicar</button></a></td>
+
 				{/if}
 
 					<td><a class="glyphicon glyphicon-trash" href="index.php?action=borrar_coleccion&id_col={$coleccion['id_col']}"></a></td>
@@ -51,10 +65,22 @@
 				
 					
 				<td class="text-left">
-				<button type="submit" class="btn btn-default"> <a class="botonAgregarImagenes" href="index.php?action=agregar_modelos&id_col={$coleccion['id_col']}">Agregar<br>Modelos</button></a>
+				<form action="index.php?action=agregar_modelos&id_col={$coleccion['id_col']}" method="POST" enctype="multipart/form-data">
+        
+          <div class="bordes col-md-3">
+        
+                <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
+        
+        
+              <button type="submit" class="btn btn-default">Listo!</button>       
+        
+        
+          </div>
+                  
+          </form>
 				{foreach $coleccion['imagenes'] as $imagen}
                   
-                  <img src="{$imagen['path_mod']}" alt="{$imagen['id_mod']}-{$coleccion['id_col']}" class="img-thumbnail" width="100px" id="{$imagen['id_mod']}" />
+                  <img src="{$imagen['img_mod']}" alt="{$imagen['id_mod']}-{$coleccion['id_col']}" class="img-thumbnail" width="100px" id="{$imagen['id_mod']}" />
                   <a class="glyphicon glyphicon-trash" href="index.php?action=borrar_modelo&id_mod={$imagen['id_mod']}"></a>
 
                 {/foreach}

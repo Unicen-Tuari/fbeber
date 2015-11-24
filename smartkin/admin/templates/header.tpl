@@ -11,6 +11,7 @@
     <title>SMARTKIN | Admin</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/admin.css" rel="stylesheet">
+    
     <link rel="icon" type="image/jpg" href="./images/fb.jpg"/>
 </head>
 

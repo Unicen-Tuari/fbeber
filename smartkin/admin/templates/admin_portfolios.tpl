@@ -36,16 +36,34 @@
         
       {foreach $portfolios as $portfolio}  
       <tr>
-          <td>{$portfolio.name_port}</td>
+          <td>{$portfolio.name_port}
+          <form action="index.php?action=modificar_name_port&id_port={$portfolio['id_port']}" method="POST" enctype="multipart/form-data">
+                <input type="text" class="form-control" id="upd_name_port" name="upd_name_port" value="{$portfolio.name_port}"> 
+              
+              <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
+            </form></td>
           <td>{$portfolio.descrip_port}</td>
           <td><a class="glyphicon glyphicon-trash" href="index.php?action=borrar_portfolio&id_port={$portfolio['id_port']}"></a></td>
           
         <td class="text-left">
-        <button type="submit" class="btn btn-default"> <a class="botonAgregarImagenes" href="index.php?action=agregar_img_portfolio&id_port={$portfolio['id_port']}">Agregar<br>Portfolios</button></a>
-        {foreach $portfolios['imagenes'] as $imagen}
+        
+        <form action="index.php?action=agregar_img_port&id_port={$portfolio['id_port']}" method="POST" enctype="multipart/form-data">
+        
+          <div class="bordes col-md-3">
+        
+                <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
+        
+        
+              <button type="submit" class="btn btn-default">Listo!</button>       
+        
+        
+          </div>
                   
-                  <img src="{$imagen['img_mod']}" alt="{$imagen['id_img_port']}-{$portfolio['id_img_port']}" class="img-thumbnail" width="100px" id="{$imagen['id_img_port']}" />
-                  <a class="glyphicon glyphicon-trash" href="index.php?action=borrar_img_portfolio&id_img_port={$imagen['id_img_port']}"></a>
+          </form>
+        {foreach $portfolio['imagenes'] as $imagen}
+                  
+                  <img src="{$imagen.img_port}" alt="{$imagen['id_img_port']}-{$portfolio['id_port']}" class="img-thumbnail" width="100px" id="{$imagen.id_img_port}" />
+                  <a class="glyphicon glyphicon-trash" href="index.php?action=borrar_img_portfolio&id_img_port={$imagen.id_img_port}"></a>
 
                 {/foreach}
         </td>

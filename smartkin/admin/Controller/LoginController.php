@@ -12,7 +12,7 @@ class LoginController
 	public function mostrarHome()
 	{
 		session_start();
-		if(!isset($_SESSION["email"]))
+		if(!isset($_SESSION["email_admin"]) && !isset($_SESSION["pass_admin"]))
 		{
 			$this->view->mostrarHome();
 		}
@@ -22,24 +22,25 @@ class LoginController
 		}
 	}
 	
-	public function loginAdmin($formulario)
+	public function loginUsuario($formulario)
 	{
 	    $error = $this->verificarFormulario($formulario);
 		if(!$error)
 		{
-			$user = $this->model->getAdmin($formulario["email"]);
+			$user = $this->model->getUsuario($formulario["email_admin"]);
 			
 			if(empty($user))
 			{
 				$this->view->MensajeError("Error: Usuario Inexistente");
 			} 	
-			if($user[0]["pass_admin"] !=($formulario["pass_admin"]))
+			if($user[0]["pass_admin"] != md5($formulario["pass_admin"]))
 			{
 				$this->view->MensajeError("Error: Password Inválida");
 			}
 			
 			session_start();
-			$_SESSION["email"]=$formulario["email"];
+			$_SESSION["email_admin"]=$formulario["email_admin"];
+
 			echo "index.php";
 			
 		}
@@ -52,7 +53,7 @@ class LoginController
 	
 	private function verificarFormulario($formulario)
 	{
-		if(!$this->verificaremail($formulario["email"]))
+		if(!$this->verificaremail($formulario["email_admin"]))
 			return "Error: Email Inválido";
 		if(strlen($formulario["pass_admin"])<=0)
 			return "Error: La password es vacía";

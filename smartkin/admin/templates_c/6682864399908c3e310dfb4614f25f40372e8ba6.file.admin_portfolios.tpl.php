@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-23 02:27:14
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 01:32:27
          compiled from "./templates/admin_portfolios.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11515432915638b91e49a9b8-68356748%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6682864399908c3e310dfb4614f25f40372e8ba6' => 
     array (
       0 => './templates/admin_portfolios.tpl',
-      1 => 1448241989,
+      1 => 1448324945,
       2 => 'file',
     ),
   ),
@@ -68,24 +68,44 @@ $_smarty_tpl->tpl_vars['portfolio']->_loop = true;
 ?>  
       <tr>
           <td><?php echo $_smarty_tpl->tpl_vars['portfolio']->value['name_port'];?>
-</td>
+
+          <form action="index.php?action=modificar_name_port&id_port=<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
+" method="POST" enctype="multipart/form-data">
+                <input type="text" class="form-control" id="upd_name_port" name="upd_name_port" value="<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['name_port'];?>
+"> 
+              
+              <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
+            </form></td>
           <td><?php echo $_smarty_tpl->tpl_vars['portfolio']->value['descrip_port'];?>
 </td>
           <td><a class="glyphicon glyphicon-trash" href="index.php?action=borrar_portfolio&id_port=<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
 "></a></td>
           
         <td class="text-left">
-        <button type="submit" class="btn btn-default"> <a class="botonAgregarImagenes" href="index.php?action=agregar_img_portfolio&id_port=<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
-">Agregar<br>Portfolios</button></a>
+        
+        <form action="index.php?action=agregar_img_port&id_port=<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
+" method="POST" enctype="multipart/form-data">
+        
+          <div class="bordes col-md-3">
+        
+                <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
+        
+        
+              <button type="submit" class="btn btn-default">Listo!</button>       
+        
+        
+          </div>
+                  
+          </form>
         <?php  $_smarty_tpl->tpl_vars['imagen'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['imagen']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['portfolios']->value['imagenes']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['portfolio']->value['imagenes']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['imagen']->key => $_smarty_tpl->tpl_vars['imagen']->value){
 $_smarty_tpl->tpl_vars['imagen']->_loop = true;
 ?>
                   
-                  <img src="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['img_mod'];?>
+                  <img src="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['img_port'];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_img_port'];?>
--<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_img_port'];?>
+-<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
 " class="img-thumbnail" width="100px" id="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_img_port'];?>
 " />
                   <a class="glyphicon glyphicon-trash" href="index.php?action=borrar_img_portfolio&id_img_port=<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_img_port'];?>

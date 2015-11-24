@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-16 14:44:03
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 20:17:36
          compiled from "./templates/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4559495485638b91e4906d9-06007772%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '97c13ae6868bbc459509c9f1b968154acd23eecc' => 
     array (
       0 => './templates/header.tpl',
-      1 => 1447681393,
+      1 => 1448392627,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <title>SMARTKIN | Admin</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/admin.css" rel="stylesheet">
+    
     <link rel="icon" type="image/jpg" href="./images/fb.jpg"/>
 </head>
 

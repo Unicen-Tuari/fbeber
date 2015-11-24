@@ -12,7 +12,7 @@ class LoginController
 	public function mostrarHome()
 	{
 		session_start();
-		if(!isset($_SESSION["email_user"]))
+		if(!isset($_SESSION["email_user"]) && !isset($_SESSION["pass_user"]))
 		{
 			$this->view->mostrarHome();
 		}
@@ -40,6 +40,7 @@ class LoginController
 			
 			session_start();
 			$_SESSION["email_user"]=$formulario["email_user"];
+
 			echo "index.php";
 			
 		}

@@ -8,11 +8,23 @@ class IndexModel
   private $likes;
   private $formulario;
   private $comentarios;
+  private $portfolios;
   private $db;
 
   function __construct() {
       $this->db = new PDO('mysql:host=localhost;dbname=smartkin;charset=utf8', 'root', '');
       $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  }
+
+//IMAGENES
+  private function subirImagenes($imagenes){
+    $carpeta = "./images/";
+    $destinos_finales = array();
+    foreach ($imagenes["tmp_name"] as $key => $value) {
+      $destinos_finales[] = $carpeta.uniqid().$imagenes["name"][$key];
+      move_uploaded_file($value, end($destinos_finales));
+    }
+    return $destinos_finales;
   }
   
 //LOGIN de USUARIO
@@ -28,15 +40,29 @@ function agregarUsuario($new_email,$new_name,$new_pass){
     $consulta->execute(array($new_email,$new_name,$new_pass));
   }
 
+//MODIFICAR USUARIO
 function modificarNameUser($upd_name,$id_usuario){
       $consulta = $this->db->prepare('UPDATE usuario SET name_user=? WHERE id_user=?');
       $consulta->execute(array($upd_name,$id_usuario));
   }
-
-
 function modificarPassUser($upd_pass,$id_usuario){
       $consulta = $this->db->prepare('UPDATE usuario SET pass_user=? WHERE id_user=?');
       $consulta->execute(array($upd_pass,$id_usuario));
+  }
+//agregar
+    function agregarImgUser($imagenes,$id_user){
+    try{
+      $destinos_finales=$this->subirImagenes($imagenes);
+      $this->db->beginTransaction();
+      foreach ($destinos_finales as $key => $value) {
+        $consulta = $this->db->prepare('UPDATE usuario SET img_user=? WHERE id_user=?');
+        $consulta->execute(array($value,$id_user));
+      }
+      $this->db->commit();
+    }
+    catch(Exception $e){
+    $this->db->rollBack();
+    }
   }
   
 
@@ -55,6 +81,10 @@ function modificarPassUser($upd_pass,$id_usuario){
     $consulta = $this->db->prepare('INSERT INTO comentario(fk_id_user,comentario) VALUES(?,?)');
     
     $consulta->execute(array($new_fk_user,$new_com));
+  }
+  function modificarComentario($upd_com,$id_com){
+      $consulta = $this->db->prepare('UPDATE comentario SET comentario=? WHERE id_com=?');
+      $consulta->execute(array($upd_com,$id_com));
   }
   
   
@@ -81,7 +111,7 @@ function modificarPassUser($upd_pass,$id_usuario){
 
 //comentarios
   function getComentarios(){
-    $consulta = $this->db->prepare("SELECT * FROM comentario JOIN usuario WHERE bloqueado is false GROUP BY id_com");
+    $consulta = $this->db->prepare("SELECT * FROM comentario JOIN usuario WHERE fk_id_user=id_user");
     $consulta->execute();
     $comentarios = $consulta->fetchAll(PDO::FETCH_ASSOC);
       return $comentarios;
@@ -134,7 +164,7 @@ function modificarPassUser($upd_pass,$id_usuario){
     $consulta->execute();
 
     while($portfolio = $consulta->fetch(PDO::FETCH_ASSOC)) {
-      $consultaImgPort = $this->db->prepare("SELECT * FROM img_portfolio where fk_id_port=?");
+      $consultaImgPort = $this->db->prepare("SELECT * FROM img_port where fk_id_port=?");
       $consultaImgPort->execute(array($portfolio['id_port']));
       $imagenes_portfolio = $consultaImgPort->fetchAll();
       $portfolio['imagenes'] = $imagenes_portfolio;

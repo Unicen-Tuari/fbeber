@@ -22,6 +22,8 @@ class LoginModel
 		$query->execute();
 		return $query->fetchAll();
 	}
+
+	
 	
 }
 ?>

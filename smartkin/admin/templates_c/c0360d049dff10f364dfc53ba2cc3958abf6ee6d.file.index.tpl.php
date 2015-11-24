@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-23 02:16:56
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 14:09:03
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1179966125563612d9bdefc3-48537508%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c0360d049dff10f364dfc53ba2cc3958abf6ee6d' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1448241415,
+      1 => 1448370541,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'admin' => 0,
-    'info' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -29,18 +28,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     
 
 
-		<?php  $_smarty_tpl->tpl_vars['info'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['info']->_loop = false;
+	
+<?php if (isset($_smarty_tpl->tpl_vars['admin']->value)){?>
+    <?php  $_smarty_tpl->tpl_vars['info'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['info']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['admin']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['info']->key => $_smarty_tpl->tpl_vars['info']->value){
 $_smarty_tpl->tpl_vars['info']->_loop = true;
 ?>
-            
-            <h1><?php echo $_smarty_tpl->tpl_vars['info']->value['name_admin'];?>
-</h1>
-            <button id="logout" class="btn btn-primary">Logout</button>            
-        <?php } ?>
+        <?php echo $_smarty_tpl->getSubTemplate ("user.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-        
+ 
+        <h1>INFORMACION</h1>
+        <?php echo $_smarty_tpl->getSubTemplate ("admin_informacion.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
         
         <h1>USUARIOS</h1>
         <?php echo $_smarty_tpl->getSubTemplate ("admin_usuarios.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
@@ -57,13 +57,30 @@ $_smarty_tpl->tpl_vars['info']->_loop = true;
         <h1>COMENTARIOS</h1>
         <?php echo $_smarty_tpl->getSubTemplate ("admin_comentarios.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
+    <?php } ?>  
+<?php }else{ ?>
+<div class="col-md-12 form-login">
+  <form id="formlogin" class="form-signin" method="post" >
+        <h4 class="">Inciar Sesión</h4>
         
-        <h1>INFORMACION</h1>
-        <?php echo $_smarty_tpl->getSubTemplate ("admin_informacion.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+        <input id="email_user" name="email_user" type="text" class="form-control" placeholder="Correo Electrónico" autofocus="">
+        <input id="pass_user" name="pass_user" type="password" class="form-control" placeholder="Contraseña">
+        <div id="error" class="alert alert-danger" style="display: none;">
+            <p class="text-center">Olvide mi contraseña!!</p>
+        </div>
+        <div class="text-right">
+        <button id="signin" class="btn btn-success" type="submit">Entrar 
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 
+        </button>
+        </div>
+        
+    </form>
+    <a href="#registrarse">REGISTRARSE</a>
+</div>      
 
+<?php }?>  
 
         
-
     </div> <!-- /container -->
 
 <!-- Footer -->

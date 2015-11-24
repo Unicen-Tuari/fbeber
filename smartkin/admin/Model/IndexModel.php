@@ -17,27 +17,15 @@ class IndexModel
       $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
 
-  
-//USUARIOS
-	function getUsuarios(){
-    $consulta = $this->db->prepare("SELECT * FROM usuario");
-    $consulta->execute();
-    $usuarios = $consulta->fetchAll(PDO::FETCH_ASSOC);
-    
-    return $usuarios;
-  }
-
 //ADMINISTRADOR
   function getAdmin($email){
     $consulta = $this->db->prepare("SELECT * FROM admin WHERE email_admin = '$email'");
     $consulta->execute();
-    $admin = $consulta->fetchAll(PDO::FETCH_ASSOC);
-    
+    $admin = $consulta->fetchAll(PDO::FETCH_ASSOC);   
     return $admin;
   }
 
 //IMAGENES
-    
   private function subirImagenes($imagenes){
     $carpeta = "../images/";
     $destinos_finales = array();
@@ -45,29 +33,33 @@ class IndexModel
       $destinos_finales[] = $carpeta.uniqid().$imagenes["name"][$key];
       move_uploaded_file($value, end($destinos_finales));
     }
-
     return $destinos_finales;
-  }
+  } 
 
 //USUARIOS
-
+  function getUsuarios(){
+    $consulta = $this->db->prepare("SELECT * FROM usuario");
+    $consulta->execute();
+    $usuarios = $consulta->fetchAll(PDO::FETCH_ASSOC);
+    return $usuarios;
+  }
   function habilitarUsuario($id_usuario){
     $consulta = $this->db->prepare('UPDATE usuario SET bloqueado=0 WHERE id_user=?');
     $consulta->execute(array($id_usuario));
   }
-
   function NoHabilitarUsuario($id_usuario){
     $consulta = $this->db->prepare('UPDATE usuario SET bloqueado=1 WHERE id_user=?');
     $consulta->execute(array($id_usuario));
   }
+
+
 //COMENTARIOS
   function getComentarios(){
-    $consulta = $this->db->prepare("SELECT * FROM comentario JOIN usuario GROUP BY id_com");
+    $consulta = $this->db->prepare("SELECT * FROM comentario JOIN usuario WHERE fk_id_user=id_user GROUP BY id_user");
     $consulta->execute();
     $comentarios = $consulta->fetchAll(PDO::FETCH_ASSOC);
       return $comentarios;
   }
-
   function borrarComentario($id_comentario){
     $consulta = $this->db->prepare('DELETE FROM comentario WHERE id_com=?');
     $consulta->execute(array($id_comentario));
@@ -77,9 +69,23 @@ class IndexModel
   function getInformacion(){
     $consulta = $this->db->prepare("SELECT * FROM informacion");
     $consulta->execute();
-    $informacion = $consulta->fetchAll(PDO::FETCH_ASSOC);
-    
+    $informacion = $consulta->fetchAll(PDO::FETCH_ASSOC);    
     return $informacion;
+  }
+//agregar
+  function agregarInfo($new_email,$new_tel,$new_wh,$new_dir,$new_fb,$new_tw,$new_g,$new_mercado,$new_olx){
+    $consulta = $this->db->prepare('INSERT INTO informacion(email_info,tel_info,wh_info,dir_info,fb_info,tw_info,g_info,mercado_info,olx_info) VALUES(?,?,?,?,?,?,?,?,?)');
+    $consulta->execute(array($new_email,$new_tel,$new_wh,$new_dir,$new_fb,$new_tw,$new_g,$new_mercado,$new_olx));
+  }
+//borrar
+  function borrarInfo($id_info){
+    $consulta = $this->db->prepare('DELETE FROM informacion WHERE id_info=?');
+    $consulta->execute(array($id_info));
+  }
+//modificar
+  function modificarInfo($upd_email,$upd_tel,$upd_wh,$upd_dir,$upd_fb,$upd_tw,$upd_g,$upd_mercado,$upd_olx,$id_info){
+      $consulta = $this->db->prepare('UPDATE informacion SET email_info=?,tel_info=?,wh_info=?,dir_info=?,fb_info=?,tw_info=?,g_info=?,mercado_info=?,olx_info=? WHERE id_info=?');
+      $consulta->execute(array($upd_email,$upd_tel,$upd_wh,$upd_dir,$upd_fb,$upd_tw,$upd_g,$upd_mercado,$upd_olx,$id_info));
   }
 
 //COLECCIONES
@@ -87,7 +93,6 @@ class IndexModel
     $colecciones = array();
     $consulta = $this->db->prepare("SELECT * FROM coleccion");
     $consulta->execute();
-
     while($coleccion = $consulta->fetch(PDO::FETCH_ASSOC)) {
       $consultaImagenes = $this->db->prepare("SELECT * FROM modelo where fk_id_col=?");
       $consultaImagenes->execute(array($coleccion['id_col']));
@@ -95,59 +100,71 @@ class IndexModel
       $coleccion['imagenes'] = $imagenes_coleccion;
       $colecciones[]=$coleccion;
     }
-
     return $colecciones;
   }
-
+//agregar
   function agregarColeccion($coleccion, $imagenes){
+    try{
+        $destinos_finales=$this->subirImagenes($imagenes);
+      $this->db->beginTransaction();
+      $consulta = $this->db->prepare('INSERT INTO coleccion(name_col) VALUES(?)');
+      $consulta->execute(array($coleccion));
+      $id_coleccion = $this->db->lastInsertId();
 
-try{
-
-  $destinos_finales=$this->subirImagenes($imagenes);
-//Inserto la tarea
-    $this->db->beginTransaction();
-    $consulta = $this->db->prepare('INSERT INTO coleccion(name_col) VALUES(?)');
-    $consulta->execute(array($coleccion));
-    $id_coleccion = $this->db->lastInsertId();
-//Insertar las imagenes
-    foreach ($destinos_finales as $key => $value) {
-      $consulta = $this->db->prepare('INSERT INTO modelo(fk_id_col,img_mod) VALUES(?,?)');
-      $consulta->execute(array($id_coleccion, $value));
+      foreach ($destinos_finales as $key => $value) {
+        $consulta = $this->db->prepare('INSERT INTO modelo(fk_id_col,img_mod) VALUES(?,?)');
+        $consulta->execute(array($id_coleccion, $value));
+      }
+      $this->db->commit();
     }
-    $this->db->commit();
-  }
-  catch(Exception $e){
-
+    catch(Exception $e){
     $this->db->rollBack();
+    }
   }
-  }
-
+//borrar
   function borrarColeccion($id_coleccion){
     $consulta = $this->db->prepare('DELETE FROM coleccion WHERE id_col=?');
     $consulta->execute(array($id_coleccion));
   }
-
-  function borrarModelo($id_modelo){
-    $consulta = $this->db->prepare('DELETE FROM modelo WHERE id_mod=?');
-    $consulta->execute(array($id_modelo));
+//modificar
+  function modificarNameCol($upd_name_col,$id_coleccion){
+      $consulta = $this->db->prepare('UPDATE coleccion SET name_col=? WHERE id_col=?');
+      $consulta->execute(array($upd_name_col,$id_coleccion));
   }
-
+//publicar
   function publicarColeccion($id_coleccion){
     $consulta = $this->db->prepare('UPDATE coleccion SET publico=0 WHERE id_col=?');
     $consulta->execute(array($id_coleccion));
   }
-
+//no publicar
   function noPublicarColeccion($id_coleccion){
     $consulta = $this->db->prepare('UPDATE coleccion SET publico=1 WHERE id_col=?');
     $consulta->execute(array($id_coleccion));
   }
 
-  function agregarModelos($id_tarea, $imagenes){
-    $rutas=$this->subirImagenesAjax($imagenes);
-    $consulta = $this->db->prepare('INSERT INTO modelo(fk_id_col,img_mod) VALUES(?,?)');
-    foreach($rutas as $ruta){
-      $consulta->execute(array($id_tarea,$ruta));
+//MODELOS
+  function borrarModelo($id_modelo){
+    $consulta = $this->db->prepare('DELETE FROM modelo WHERE id_mod=?');
+    $consulta->execute(array($id_modelo));
+  }
+//agregar
+    function agregarModelos($id_col, $imagenes){
+    try{
+      $destinos_finales=$this->subirImagenes($imagenes);
+      $this->db->beginTransaction();
+      foreach ($destinos_finales as $key => $value) {
+        $consulta = $this->db->prepare('INSERT INTO modelo(fk_id_col,img_mod) VALUES(?,?)');
+        $consulta->execute(array($id_col, $value));
+      }
+      $this->db->commit();
     }
+    catch(Exception $e){
+    $this->db->rollBack();
+    }
+  }
+  function borrarImgPortfolio($id_img_port){
+    $consulta = $this->db->prepare('DELETE FROM img_port WHERE id_img_port=?');
+    $consulta->execute(array($id_img_port));
   }
   
 //PORTFOLIOS
@@ -155,60 +172,60 @@ try{
     $portfolios = array();
     $consulta = $this->db->prepare("SELECT * FROM portfolio");
     $consulta->execute();
-//Todas las tareas
     while($portfolio = $consulta->fetch(PDO::FETCH_ASSOC)) {
-      $consultaImgPort = $this->db->prepare("SELECT * FROM img_portfolio where fk_id_port=?");
+      $consultaImgPort = $this->db->prepare("SELECT * FROM img_port where fk_id_port=?");
       $consultaImgPort->execute(array($portfolio['id_port']));
       $imagenes_portfolio = $consultaImgPort->fetchAll();
       $portfolio['imagenes'] = $imagenes_portfolio;
       $portfolios[]=$portfolio;
     }
-
     return $portfolios;
   }
-
-  function agregarPortfolio($portfolio, $imagenes_portfolio){
-
-try{
-
-  $destinos_finales=$this->subirImagenes($imagenes_portfolio);
-//Inserto la tarea
-    $this->db->beginTransaction();
-    $consulta = $this->db->prepare('INSERT INTO portfolio(name_port) VALUES(?)');
-    $consulta->execute(array($portfolio));
-    $id_portfolio = $this->db->lastInsertId();
-//Insertar las imagenes
-    foreach ($destinos_finales as $key => $value) {
-      $consulta = $this->db->prepare('INSERT INTO img_portfolio(fk_id_port,img_port) VALUES(?,?)');
-      $consulta->execute(array($id_portfolio, $value));
+//agregar
+  function agregarPortfolio($portfolio, $imagenes){
+    try{
+      $destinos_finales=$this->subirImagenes($imagenes);
+      $this->db->beginTransaction();
+      $consulta = $this->db->prepare('INSERT INTO portfolio(name_port) VALUES(?)');
+      $consulta->execute(array($portfolio));
+      $id_portfolio = $this->db->lastInsertId();
+      foreach ($destinos_finales as $key => $value) {
+        $consulta = $this->db->prepare('INSERT INTO img_port(fk_id_port,img_port) VALUES(?,?)');
+        $consulta->execute(array($id_portfolio, $value));
+      }
+      $this->db->commit();
     }
-    $this->db->commit();
-  }
-  catch(Exception $e){
-
+    catch(Exception $e){
     $this->db->rollBack();
+    }
   }
-  }
-
+//borrar
   function borrarPortfolio($id_portfolio){
     $consulta = $this->db->prepare('DELETE FROM portfolio WHERE id_port=?');
     $consulta->execute(array($id_portfolio));
   }
-
-  function borrarImgPortfolio($id_img_port){
-    $consulta = $this->db->prepare('DELETE FROM img_portfolio WHERE id_img_port=?');
-    $consulta->execute(array($id_img_port));
+//modificar
+  function modificarNamePort($upd_name_port,$id_portfolio){
+      $consulta = $this->db->prepare('UPDATE portfolio SET name_port=? WHERE id_port=?');
+      $consulta->execute(array($upd_name_port,$id_portfolio));
   }
 
-  function actualizarColeccion($id_coleccion, $entity){
-    $consulta = $this->db->prepare('UPDATE coleccion SET name_col=:name_col, publico=:publico WHERE id_col=:id_col');
-    $consulta->execute(array(
-      "name_col" => $entity->name_col,
-      "public" => $entity->public,
-      "id_col" => $id_coleccion
-      )
-    );
+//IMG_PORTFOLIOS
+  function agregarImgPort($id_port, $imagenes){
+    try{
+      $destinos_finales=$this->subirImagenes($imagenes);
+      $this->db->beginTransaction();
+      foreach ($destinos_finales as $key => $value) {
+        $consulta = $this->db->prepare('INSERT INTO img_port(fk_id_port,img_port) VALUES(?,?)');
+        $consulta->execute(array($id_port, $value));
+      }
+      $this->db->commit();
+    }
+    catch(Exception $e){
+    $this->db->rollBack();
+    }
   }
+
 
   private function subirImagenesAjax($imagenes){
     $carpeta = "uploads/portfolios/";
@@ -224,19 +241,11 @@ try{
 
   function agregarImgPortfolio($id_tarea, $imagenes){
     $rutas=$this->subirImagenesAjax($imagenes);
-    $consulta = $this->db->prepare('INSERT INTO img_portfolio(fk_id_port,path_port) VALUES(?,?)');
+    $consulta = $this->db->prepare('INSERT INTO img_port(fk_id_port,img_port) VALUES(?,?)');
     foreach($rutas as $ruta){
       $consulta->execute(array($id_tarea,$ruta));
     }
   }
-
-  public function grabarUsuario($User){
-    $sql = "INSERT INTO user (name_user,pass_user,email_user) VALUES (:new_name_user,:new_pass_user,:new_email)";
-    $query = $this->conn->prepare($sql);
-    $query->execute($User);
-  }
-
-
 
 }
 ?>

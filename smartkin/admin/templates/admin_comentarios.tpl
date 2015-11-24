@@ -15,7 +15,7 @@
 		<tbody>
 			{foreach $comentarios as $comentario}
 			<tr>
-				<td>{$comentario.img_user}</td>
+				<td><img src=".{$comentario.img_user}" class="icon_user"></td>
 					{if !$comentario['bloqueado']}
 				<td> 
 					<a class="" href="index.php?action=no_habilitar_usuario&id_user={$comentario['id_user']}">Bloquear</a> | {$comentario.name_user}

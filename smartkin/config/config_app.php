@@ -7,12 +7,14 @@ class ConfigApp {
   
 //INFORMACION DE USUARIO
     public static $ACTION_AGREGAR_USUARIO = 'agregar_usuario';
+    public static $ACTION_AGREGAR_IMG_USER = 'agregar_img_user';
     public static $ACTION_MODIFICAR_NAMEUSER = 'modificar_name_user';
     public static $ACTION_MODIFICAR_PASSUSER = 'modificar_pass_user';
 
 //COMENTARIOS
   public static $ACTION_BORRAR_COMENTARIO = 'borrar_comentario';
   public static $ACTION_AGREGAR_COMENTARIO = 'agregar_comentario';
+  public static $ACTION_MODIFICAR_COMENTARIO = 'modificar_comentario';
 
 //FAVORITO
   public static $ACTION_AGREGAR_FAVORITO = 'agregar_favorito';

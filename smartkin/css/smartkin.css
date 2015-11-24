@@ -1,5 +1,6 @@
 body {
-  position: relative;
+  
+  
 }
 html {
   font-family: sans-serif;
@@ -12,13 +13,20 @@ html {
   border-width: 1px;
   margin: 10px;
 }
+
 /*--------------*/
 
+iframe{
+  border:0px;
+}
 
 .mod {
     width: 130px;
     height: 100px;
     margin: 0px auto;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: black;
     transform-style: preserve-3d;
     transform: perspective(500px) rotateX(-10deg) rotateY(-30deg);
   
@@ -30,6 +38,7 @@ html {
     
     position: relative;
     z-index: 1000;
+    
      -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
      -ms-transform: scale(2,2); /* IE 9 */
@@ -150,6 +159,8 @@ html {
   color: white;
   background-color: black;
   opacity: 0.8;
+  margin-top: 40%;
+  padding: 1px;
 }
 
 .h3-bloqueado{
@@ -169,6 +180,7 @@ html {
   border-width: 0.5px;
   padding: 5px;
   margin: 20px;
+  background-size:cover;
 }
 
 .div-coleccion{

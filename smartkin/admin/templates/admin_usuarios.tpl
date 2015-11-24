@@ -4,7 +4,7 @@
 	<h4 class=" text-center">Usuarios Activos</h4>
 	{foreach $usuarios as $usuario}			
 	    {if !$usuario['bloqueado']}
-	      	<img src="./images/{$usuario.img_user}" class="icon_user" width="35px">
+	      	<img src=".{$usuario.img_user}" class="icon_user">
 	      	{$usuario.email_user}
 	        <a class="glyphicon glyphicon-ok" href="index.php?action=no_habilitar_usuario&id_user={$usuario['id_user']}"><button type="submit" class="btn btn-default">Deshabilitar</button></a>  <br>
 	    {/if}
@@ -16,7 +16,7 @@
 	{foreach $usuarios as $usuario}			
     	{if $usuario['bloqueado']}
 
-	      	<img src="./images/{$usuario.img_user}" class="icon_user" width="35px">
+	      	<img src=".{$usuario.img_user}" class="icon_user">
 
             {$usuario.email_user}
           	<a class="glyphicon glyphicon-ok" href="index.php?action=habilitar_usuario&id_user={$usuario['id_user']}"><button type="submit" class="btn btn-default">Habilitar</button></a><br>

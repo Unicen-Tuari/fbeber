@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-11 13:44:58
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 13:59:27
          compiled from "./templates/login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:603432920563612db7f31e8-37107736%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f5f63cf8bf5077cbe9e40e023158dd20352e878a' => 
     array (
       0 => './templates/login.tpl',
-      1 => 1447245879,
+      1 => 1448198185,
       2 => 'file',
     ),
   ),
@@ -43,7 +43,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
       <form id="formloginadmin" class="form-signin" method="post" >
         <h2 class="form-signin-heading">Inciar Sesión</h2>
-        <input id="email" name="email" type="text" class="form-control" placeholder="Email address" autofocus="">
+        <input id="email_admin" name="email_admin" type="text" class="form-control" placeholder="Email address" autofocus="">
         <input id="pass_admin" name="pass_admin" type="password" class="form-control" placeholder="Password">
         <div id="error" class="alert alert-danger" style="display: none;"></div>
         <button id="signin" class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>

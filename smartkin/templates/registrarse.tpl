@@ -1,5 +1,4 @@
 <div class="col-md-12"id="registrarse">
-<div class="page-header"></div>  
 
 {if !isset($usuario)}
 

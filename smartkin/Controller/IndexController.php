@@ -13,19 +13,53 @@ class IndexController {
   }
 
 //MOSTRAR PAGINA
-	public function mostrarHomeAdmin()
+	
+  public function mostrarHomeColecciones()
+  {
+    session_start();
+    if(isset($_SESSION["email_user"]))
+    {
+      $this->view->mostrarHomeColecciones($this->model->getAdmin($_SESSION["email_user"]),$this->model->getColecciones(),$this->model->getFavoritos());
+    }
+    else
+    {
+     $this->view->mostrarHomeColecciones(null,$this->model->getColecciones(),$this->model->getFavoritos()); 
+    }    
+  }
+
+  public function mostrarHomePortfolios()
+  {
+      $this->view->mostrarHomePortfolios($this->model->getPortfolios());    
+  }
+  public function mostrarHomeComentarios()
+  {
+    session_start();
+    if(isset($_SESSION["email_user"]))
+    {
+      $this->view->mostrarHomeComentarios($this->model->getAdmin($_SESSION["email_user"]),$this->model->getComentarios());
+    }
+    else
+    {
+     $this->view->mostrarHomeComentarios(null,$this->model->getComentarios()); 
+    }    
+  }
+
+  public function mostrarHomeAdmin()
 	{
 		session_start();
 		if(isset($_SESSION["email_user"]))
 		{
-      $this->view->mostrarHomeAdmin($this->model->getAdmin($_SESSION["email_user"]), $this->model->getComentariosUser($_SESSION["email_user"]), $this->model->getLikes($_SESSION["email_user"]),$this->model->getPortfolios(),$this->model->getColecciones(),$this->model->getComentarios(),$this->model->getInformacion(),$this->model->getFavoritos());
+      $this->view->mostrarHomeAdmin($this->model->getAdmin($_SESSION["email_user"]), $this->model->getComentariosUser($_SESSION["email_user"]), $this->model->getLikes($_SESSION["email_user"]),$this->model->getInformacion());
     }
 		else
 		{	
-      $this->view->mostrarHomeAdmin(null,null,null,$this->model->getPortfolios(),$this->model->getColecciones(),$this->model->getComentarios(),$this->model->getInformacion(),$this->model->getFavoritos());
-		}
+      $this->view->mostrarHomeAdmin(null,null,null,$this->model->getColecciones(),$this->model->getInformacion());
+		  
+    }
 	}
 
+
+/*funciones*/
 //AGREGAR USUARIO
   function agregarUsuario(){
     if(isset($_REQUEST['new_email']) && isset($_REQUEST['new_name']) && isset($_REQUEST['new_pass'])){
@@ -38,7 +72,15 @@ class IndexController {
     $this->mostrarHomeAdmin();
   }
 //MODIFICAR DATOS USUARIO
-
+function agregarImgUser(){
+    if(isset($_FILES['imagesToUpload']) && isset($_REQUEST['id_user']) ){
+        $this->model->agregarImgUser($_FILES['imagesToUpload'],$_REQUEST['id_user']);
+      }
+    else{
+      $this->view->mostrarError('La tarea que intenta crear esta vacia');
+    }
+    $this->mostrarHomeAdmin();
+  }
  function modificarNameUser(){
     if(isset($_REQUEST['upd_name']) && isset($_REQUEST['id_user'])){
       $this->model->modificarNameUser($_REQUEST['upd_name'],$_REQUEST['id_user']);
@@ -88,8 +130,18 @@ public function enviaMail($datos)
   }
   
 //COMENTARIOS
+//agregar
+   function agregarComentario(){
+    if(isset($_REQUEST['new_fk_user']) && isset($_REQUEST['new_com'])){
+        $this->model->agregarComentario($_REQUEST['new_fk_user'],$_REQUEST['new_com']);    
+      }
+    else{
+      $this->view->mostrarError('cuack');
+    }
+    $this->mostrarHomeComentarios();
+  }
 //borrar
-	function borrarComentario(){
+  function borrarComentario(){
     if(isset($_REQUEST['id_com'])){
       $this->model->borrarComentario($_REQUEST['id_com']);
     }
@@ -98,17 +150,18 @@ public function enviaMail($datos)
     }
     $this->mostrarHomeAdmin();
   }
-//agregar
-   function agregarComentario(){
-    if(isset($_REQUEST['new_fk_user']) && isset($_REQUEST['new_com'])){
-        $this->model->agregarComentario($_REQUEST['new_fk_user'],$_REQUEST['new_com']);
-        
-      }
+//modificar
+  function modificarComentario(){
+    if(isset($_REQUEST['upd_com']) && isset($_REQUEST['id_com'])){
+      $this->model->modificarComentario($_REQUEST['upd_com'],$_REQUEST['id_com']);
+    }
+    
     else{
-      $this->view->mostrarError('cuack');
+      $this->view->mostrarError('La tarea que intenta realizar no existe');
     }
     $this->mostrarHomeAdmin();
   }
+
 
 //FAVORITOS
 //agregar a favoritos
@@ -119,7 +172,7 @@ public function enviaMail($datos)
     else{
       $this->view->mostrarError('cuack');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeColecciones();
   }
 
 //sacar de favorito

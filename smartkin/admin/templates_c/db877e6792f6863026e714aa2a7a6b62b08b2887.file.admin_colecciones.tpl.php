@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-23 11:24:31
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 01:19:15
          compiled from "./templates/admin_colecciones.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21431813875638beb87154b1-17067861%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'db877e6792f6863026e714aa2a7a6b62b08b2887' => 
     array (
       0 => './templates/admin_colecciones.tpl',
-      1 => 1448274270,
+      1 => 1448324352,
       2 => 'file',
     ),
   ),
@@ -69,17 +69,35 @@ $_smarty_tpl->tpl_vars['coleccion']->_loop = true;
 			<tr>
 				<?php if (!$_smarty_tpl->tpl_vars['coleccion']->value['publico']){?>
 					<td><s><?php echo $_smarty_tpl->tpl_vars['coleccion']->value['name_col'];?>
-</s></td>
+</s>
+						<form action="index.php?action=modificar_name_col&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
+" method="POST" enctype="multipart/form-data">
+		            <input type="text" class="form-control" id="upd_name_col" name="upd_name_col" value="<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['name_col'];?>
+"> 
+	            
+			        <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
+	    			</form>
+					</td>
 					<td><a class="glyphicon glyphicon-ok" href="index.php?action=no_publicar_coleccion&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
 "><button type="submit" class="btn btn-default">Publicar</button></a></td>
+					
 
 				<?php }else{ ?>
                     <?php echo $_smarty_tpl->tpl_vars['coleccion']->value['name_col'];?>
 
                     <td><?php echo $_smarty_tpl->tpl_vars['coleccion']->value['name_col'];?>
-</td>
+
+                    <form action="index.php?action=modificar_name_col&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
+" method="POST" enctype="multipart/form-data">
+		            <input type="text" class="form-control" id="upd_name_col" name="upd_name_col" value="<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['name_col'];?>
+"> 
+	            
+			        <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
+	    			</form>
+	    			</td>
 					<td><a class="glyphicon glyphicon-ok" href="index.php?action=publicar_coleccion&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
 "><button type="submit" class="btn btn-default">No Publicar</button></a></td>
+
 				<?php }?>
 
 					<td><a class="glyphicon glyphicon-trash" href="index.php?action=borrar_coleccion&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
@@ -88,15 +106,27 @@ $_smarty_tpl->tpl_vars['coleccion']->_loop = true;
 				
 					
 				<td class="text-left">
-				<button type="submit" class="btn btn-default"> <a class="botonAgregarImagenes" href="index.php?action=agregar_modelos&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
-">Agregar<br>Modelos</button></a>
+				<form action="index.php?action=agregar_modelos&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
+" method="POST" enctype="multipart/form-data">
+        
+          <div class="bordes col-md-3">
+        
+                <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
+        
+        
+              <button type="submit" class="btn btn-default">Listo!</button>       
+        
+        
+          </div>
+                  
+          </form>
 				<?php  $_smarty_tpl->tpl_vars['imagen'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['imagen']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['coleccion']->value['imagenes']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['imagen']->key => $_smarty_tpl->tpl_vars['imagen']->value){
 $_smarty_tpl->tpl_vars['imagen']->_loop = true;
 ?>
                   
-                  <img src="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['path_mod'];?>
+                  <img src="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['img_mod'];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_mod'];?>
 -<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
 " class="img-thumbnail" width="100px" id="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_mod'];?>

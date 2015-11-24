@@ -22,11 +22,13 @@
   background-color: blue;
 }
 .icon_user{
+  width: 45px;
+  height: 45px;
   border-style: solid;
   border-color: lightgrey;
   border-radius: 100px;
   border-width: 0.5px;
-  padding: 5px;
+  padding: 1px;
 }
 
 .div-coleccion{

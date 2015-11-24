@@ -28,7 +28,7 @@
         
         <div class="col-md-8 text-center menu">
             <br><br>
-            <a href="#inicio" class="a-menu"><span class="glyphicon glyphicon-home"><br>Inicio</span></a>
+            <a href="./index.php" class="a-menu"><span class="glyphicon glyphicon-home"><br>Inicio</span></a>
             
             <a href="#colecciones" class="a-menu"><span class="glyphicon glyphicon-picture"><br>Colecciones</span> </a>
             

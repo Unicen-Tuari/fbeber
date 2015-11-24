@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-22 12:10:29
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 12:01:09
          compiled from "./templates/slides.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:8224671825640ac6e2e91b6-58506966%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:121675921356544375ba8119-24477326%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,19 +11,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8224671825640ac6e2e91b6-58506966',
+  'nocache_hash' => '121675921356544375ba8119-24477326',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5640ac6e2eb713_45032506',
   'variables' => 
   array (
     'slide' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_56544375bbe3c7_33464731',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5640ac6e2eb713_45032506')) {function content_5640ac6e2eb713_45032506($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_56544375bbe3c7_33464731')) {function content_56544375bbe3c7_33464731($_smarty_tpl) {?>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">

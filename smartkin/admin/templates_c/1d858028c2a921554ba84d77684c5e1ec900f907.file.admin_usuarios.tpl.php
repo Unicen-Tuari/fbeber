@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-23 02:17:57
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 02:12:12
          compiled from "./templates/admin_usuarios.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19551420485638beb880d054-51900266%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1d858028c2a921554ba84d77684c5e1ec900f907' => 
     array (
       0 => './templates/admin_usuarios.tpl',
-      1 => 1448241476,
+      1 => 1448327531,
       2 => 'file',
     ),
   ),
@@ -34,8 +34,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['usuario']->key => $_smarty_tpl->tpl_v
 $_smarty_tpl->tpl_vars['usuario']->_loop = true;
 ?>			
 	    <?php if (!$_smarty_tpl->tpl_vars['usuario']->value['bloqueado']){?>
-	      	<img src="./images/<?php echo $_smarty_tpl->tpl_vars['usuario']->value['img_user'];?>
-" class="icon_user" width="35px">
+	      	<img src=".<?php echo $_smarty_tpl->tpl_vars['usuario']->value['img_user'];?>
+" class="icon_user">
 	      	<?php echo $_smarty_tpl->tpl_vars['usuario']->value['email_user'];?>
 
 	        <a class="glyphicon glyphicon-ok" href="index.php?action=no_habilitar_usuario&id_user=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id_user'];?>
@@ -53,8 +53,8 @@ $_smarty_tpl->tpl_vars['usuario']->_loop = true;
 ?>			
     	<?php if ($_smarty_tpl->tpl_vars['usuario']->value['bloqueado']){?>
 
-	      	<img src="./images/<?php echo $_smarty_tpl->tpl_vars['usuario']->value['img_user'];?>
-" class="icon_user" width="35px">
+	      	<img src=".<?php echo $_smarty_tpl->tpl_vars['usuario']->value['img_user'];?>
+" class="icon_user">
 
             <?php echo $_smarty_tpl->tpl_vars['usuario']->value['email_user'];?>
 

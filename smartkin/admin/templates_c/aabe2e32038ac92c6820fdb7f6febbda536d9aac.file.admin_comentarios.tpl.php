@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-23 02:40:11
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 11:27:10
          compiled from "./templates/admin_comentarios.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:17259982225638beb878cf10-90456387%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aabe2e32038ac92c6820fdb7f6febbda536d9aac' => 
     array (
       0 => './templates/admin_comentarios.tpl',
-      1 => 1448242811,
+      1 => 1448360829,
       2 => 'file',
     ),
   ),
@@ -45,8 +45,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['comentario']->key => $_smarty_tpl->tp
 $_smarty_tpl->tpl_vars['comentario']->_loop = true;
 ?>
 			<tr>
-				<td><?php echo $_smarty_tpl->tpl_vars['comentario']->value['img_user'];?>
-</td>
+				<td><img src=".<?php echo $_smarty_tpl->tpl_vars['comentario']->value['img_user'];?>
+" class="icon_user"></td>
 					<?php if (!$_smarty_tpl->tpl_vars['comentario']->value['bloqueado']){?>
 				<td> 
 					<a class="" href="index.php?action=no_habilitar_usuario&id_user=<?php echo $_smarty_tpl->tpl_vars['comentario']->value['id_user'];?>

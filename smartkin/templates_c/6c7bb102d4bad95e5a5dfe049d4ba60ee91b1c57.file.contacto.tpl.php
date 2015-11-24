@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-22 12:14:22
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 12:19:55
          compiled from "./templates/contacto.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:10342736795640ac6e31a458-33060786%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:93021293456544375c94f41-27939706%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6c7bb102d4bad95e5a5dfe049d4ba60ee91b1c57' => 
     array (
       0 => './templates/contacto.tpl',
-      1 => 1448190861,
+      1 => 1448363994,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10342736795640ac6e31a458-33060786',
+  'nocache_hash' => '93021293456544375c94f41-27939706',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5640ac6e31c681_33702333',
+  'unifunc' => 'content_56544375cdd5d8_57142226',
   'variables' => 
   array (
     'informacion' => 0,
@@ -24,23 +24,34 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5640ac6e31c681_33702333')) {function content_5640ac6e31c681_33702333($_smarty_tpl) {?><div class="page-header"></div>  
-<div class="col-md-12">
+<?php if ($_valid && !is_callable('content_56544375cdd5d8_57142226')) {function content_56544375cdd5d8_57142226($_smarty_tpl) {?><div class="col-md-12">
 <h1>Contacto</h1>
     
-      <div class="col-md-6 bordes">
+      <div class="col-md-6 bordes text-left">
+      <br><br><br>
         <?php  $_smarty_tpl->tpl_vars['dato'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['dato']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['informacion']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['dato']->key => $_smarty_tpl->tpl_vars['dato']->value){
 $_smarty_tpl->tpl_vars['dato']->_loop = true;
 ?> 
-        <br><br><br>
-        <h3>
-            <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"> <?php echo $_smarty_tpl->tpl_vars['dato']->value['tel1'];?>
-</span> | <span class="glyphicon glyphicon-phone" aria-hidden="true"><?php echo $_smarty_tpl->tpl_vars['dato']->value['tel2'];?>
-</span> | <span class="glyphicon glyphicon-home" aria-hidden="true"> <?php echo $_smarty_tpl->tpl_vars['dato']->value['otro'];?>
-</span>
-        </h3>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"><?php echo $_smarty_tpl->tpl_vars['dato']->value['email_info'];?>
+</span></h4>
+        <h4><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"> <?php echo $_smarty_tpl->tpl_vars['dato']->value['tel_info'];?>
+</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"><?php echo $_smarty_tpl->tpl_vars['dato']->value['wh_info'];?>
+</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"><?php echo $_smarty_tpl->tpl_vars['dato']->value['dir_info'];?>
+</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"><?php echo $_smarty_tpl->tpl_vars['dato']->value['fb_info'];?>
+</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"><?php echo $_smarty_tpl->tpl_vars['dato']->value['tw_info'];?>
+</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"><?php echo $_smarty_tpl->tpl_vars['dato']->value['g_info'];?>
+</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"><?php echo $_smarty_tpl->tpl_vars['dato']->value['mercado_info'];?>
+</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"><?php echo $_smarty_tpl->tpl_vars['dato']->value['olx_info'];?>
+</span></h4>
         
         <?php } ?>
     </div>

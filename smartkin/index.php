@@ -7,7 +7,7 @@ $model = new IndexModel();
 $view = new IndexView();
 $controller = new IndexController($model, $view);
 
-if(isset($_POST["email_user"]))
+if(isset($_POST["email_user"]) && isset($_POST['pass_user']))
 {
   $formulario["email_user"] = $_POST["email_user"];
   $formulario["pass_user"] = $_POST["pass_user"];
@@ -32,6 +32,10 @@ else {
     case ConfigApp::$ACTION_MODIFICAR_NAMEUSER:
       $controller = new IndexController();
       $controller->modificarNameUser();
+      break;
+    case ConfigApp::$ACTION_AGREGAR_IMG_USER:
+      $controller = new IndexController();
+      $controller->agregarImgUser();
       break; 
     case ConfigApp::$ACTION_MODIFICAR_PASSUSER:
       $controller = new IndexController();
@@ -45,15 +49,13 @@ else {
       $controller = new IndexController();
       $controller->agregarUsuario();
       break;
-      break;
-    case ConfigApp::$ACTION_AGREGAR_COMENTARIO:
+      
+//comentarios    
+   
+    case ConfigApp::$ACTION_MODIFICAR_COMENTARIO:
       $controller = new IndexController();
-      $controller->agregarComentario();
-      break;
-    case ConfigApp::$ACTION_AGREGAR_FAVORITO:
-      $controller = new IndexController();
-      $controller->agregarFavorito();
-      break;
+      $controller->modificarComentario();
+      break; 
     default:
       echo 'Pagina no encontrada';
       break;

@@ -1,4 +1,4 @@
-
+<br><br>
 {if isset($usuario)}
 		{foreach $usuario as $info}
                     
@@ -8,7 +8,7 @@
             {else}
             <div class="col-md-12">
                 <div class="col-md-6 text-center">
-                    <div class="text-center icon-user" style="background:url('./images/images_sys/anonimo.jpg') center;"><br>
+                    <div class="text-center icon-user" style="background:url('{$info.img_user}'); background-size:100%;"><br>
                         <h3 class="h3-bloqueado">FAIL</h3>
                     </div>
                 </div>

@@ -1,13 +1,18 @@
-<div class="page-header"></div>  
 <div class="col-md-12">
 <h1>Contacto</h1>
     
-      <div class="col-md-6 bordes">
+      <div class="col-md-6 bordes text-left">
+      <br><br><br>
         {foreach $informacion as $dato} 
-        <br><br><br>
-        <h3>
-            <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"> {$dato.tel1}</span> | <span class="glyphicon glyphicon-phone" aria-hidden="true">{$dato.tel2}</span> | <span class="glyphicon glyphicon-home" aria-hidden="true"> {$dato.otro}</span>
-        </h3>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true">{$dato.email_info}</span></h4>
+        <h4><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"> {$dato.tel_info}</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true">{$dato.wh_info}</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true">{$dato.dir_info}</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true">{$dato.fb_info}</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true">{$dato.tw_info}</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true">{$dato.g_info}</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true">{$dato.mercado_info}</span></h4>
+        <h4><span class="glyphicon glyphicon-phone" aria-hidden="true">{$dato.olx_info}</span></h4>
         
         {/foreach}
     </div>

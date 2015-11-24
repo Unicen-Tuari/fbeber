@@ -2,8 +2,8 @@
 		<div class="col-md-12">
 			<div class="col-md-6 text-center">
 			{foreach $usuario as $user}
-				<div class="text-center icon-user" style="background:url('./images/images_sys/{$user.img_user}');"><br><br>
-					<h3 class="h3-user">{$user.name_user}</h3>
+				<div class="text-center icon-user" style="background:url('{$user.img_user}'); background-size:100%;"><br><br>
+					<h4 class="h3-user">{$user.name_user}</h4>
 	        	</div>
 	        {/foreach}
 	        </div>
@@ -27,6 +27,7 @@
     <div id="conf-user" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head-conf-user">
       <div class="panel-body">
         {foreach $usuario as $user}
+          
         	Nombre de Usuario: {$user.name_user}
    			
    			<button name="mostrar" onclick="mostrar('name_user')" type="button" class="btn btn-default" aria-label="Left Align">
@@ -41,7 +42,12 @@
 			        <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
 	    			</form>
 				</div>
-
+			<div class="col-md-10">
+        		<form action="index.php?action=agregar_img_user&id_user={$user['id_user']}" method="POST" enctype="multipart/form-data">
+            	    <input type="file" name="imagesToUpload[]" id="imagesToUpload"/>
+              		<button type="submit" class="btn btn-default">Listo!</button>         
+          		</form>
+          	</div>
 				<button name="mostrar" onclick="mostrar('pass_user')" type="button" class="btn btn-default" aria-label="Left Align" onclick="mostrar('pass_user')">
   				<span class="glyphicon glyphicon-pencil" aria-hidden="true">
 				</span>Contraseña
@@ -93,18 +99,27 @@
       </h4>
     </div>
     <div id="com-user" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head-com-user">
-    			{foreach $comentariosUser as $comentario}
+    {foreach $comentariosUser as $comentario}
 
-      <div class="panel-body coment-user">
-        
-
-			<a class="glyphicon glyphicon-trash text-right" href="index.php?action=borrar_comentario&id_com={$comentario['id_com']}"></a>
+      	<div class="panel-body coment-user">
+        	<a class="glyphicon glyphicon-trash text-right" href="index.php?action=borrar_comentario&id_com={$comentario['id_com']}"></a>
 			
 			|{$comentario.fecha_com}|
 			{$comentario.comentario}
-			
-	
-    </div>			{/foreach}
+			<button name="mostrar" onclick="mostrar('coment')" type="button" class="btn btn-default" aria-label="Left Align">
+  				<span class="glyphicon glyphicon-pencil" aria-hidden="true">
+				</span>
+			</button>        	
+		
+				<div id="coment" style="display:none;"><br>
+					<form action="index.php?action=modificar_comentario&id_com={$comentario['id_com']}" method="POST" enctype="multipart/form-data">
+		            <input type="text" class="form-control" id="upd_com" name="upd_com" value="{$comentario.comentario}"> 
+	            
+			        <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
+	    			</form>
+				</div>
+		</div>			
+	{/foreach}
 
     </div>
     
