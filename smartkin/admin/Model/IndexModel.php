@@ -55,7 +55,7 @@ class IndexModel
 
 //COMENTARIOS
   function getComentarios(){
-    $consulta = $this->db->prepare("SELECT * FROM comentario JOIN usuario WHERE fk_id_user=id_user GROUP BY id_user");
+    $consulta = $this->db->prepare("SELECT * FROM comentario JOIN usuario WHERE fk_id_user=id_user");
     $consulta->execute();
     $comentarios = $consulta->fetchAll(PDO::FETCH_ASSOC);
       return $comentarios;

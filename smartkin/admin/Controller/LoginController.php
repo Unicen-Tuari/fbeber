@@ -9,12 +9,12 @@ class LoginController
 		$this->view = $view;
     }
 	
-	public function mostrarHome()
+	public function imprimirPagina()
 	{
 		session_start();
-		if(!isset($_SESSION["email_admin"]) && !isset($_SESSION["pass_admin"]))
+		if(!isset($_SESSION["email_admin"]))
 		{
-			$this->view->mostrarHome();
+			$this->view->imprimirPagina();
 		}
 		else
 		{
@@ -40,7 +40,6 @@ class LoginController
 			
 			session_start();
 			$_SESSION["email_admin"]=$formulario["email_admin"];
-
 			echo "index.php";
 			
 		}

@@ -20,19 +20,19 @@
 
     <div class="container">
 
-      <form id="formloginadmin" class="form-signin" method="post" >
-        <h2 class="form-signin-heading">Inciar Sesión</h2>
+      <form id="formlogin" class="form-signin" method="post" >
+        <h2 class="form-signin-heading">Please sign in</h2>
         <input id="email_admin" name="email_admin" type="text" class="form-control" placeholder="Email address" autofocus="">
         <input id="pass_admin" name="pass_admin" type="password" class="form-control" placeholder="Password">
         <div id="error" class="alert alert-danger" style="display: none;"></div>
-        <button id="signin" class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
+        <button id="signin" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
-	  <div class="row">
-		<div class="col-md-4"></div>
-		<div class="col-md-4"></div>
-		<div class="col-md-4"><a href="index.php">Ir a Smartkin</a></div>
-		
-	  </div>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"><a href="index.php"> Go to index...</a></div>
+        
+      </div>
     </div> <!-- /container -->
 
 

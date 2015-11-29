@@ -1,3 +1,4 @@
+{include file="header.tpl"}
 <br>
 <br><p>El poder tener un listado del total de los comentarios con la opcion de eliminarlos, nos posibilita eliminar aquellos comentarios con palabras inadecuadas, y acorde a esto tomar la desicion de bloquear al usuario en cuestión. </p>
 
@@ -16,18 +17,18 @@
 			{foreach $comentarios as $comentario}
 			<tr>
 				<td><img src=".{$comentario.img_user}" class="icon_user"></td>
-					{if !$comentario['bloqueado']}
+					
 				<td> 
-					<a class="" href="index.php?action=no_habilitar_usuario&id_user={$comentario['id_user']}">Bloquear</a> | {$comentario.name_user}
+					{$comentario.name_user}
 				</td>
-				{else}
+				
 				<td>
 					<s>{$comentario.name_user}</s>
 				</td>	
-				{/if}
+				
 				<td>{$comentario.fecha_com}</td>
 				<td>{$comentario.comentario}</td>
-				<td><a class="glyphicon glyphicon-trash" href="index.php?action=borrar_comentario&id_com={$comentario['id_com']}"></a></td>
+				<td><a class="glyphicon glyphicon-trash" href="admin_comentarios.php?action=borrar_comentario&id_com={$comentario['id_com']}"></a></td>
 			</tr>
 			{/foreach}
 		</tbody>

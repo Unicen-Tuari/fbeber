@@ -3,7 +3,7 @@ require('./libs/Smarty.class.php');
 class LoginView
 {
      
-    public function mostrarHome(){
+    public function imprimirPagina(){
        
 		$smarty = new Smarty;
 		$smarty->display('login.tpl');

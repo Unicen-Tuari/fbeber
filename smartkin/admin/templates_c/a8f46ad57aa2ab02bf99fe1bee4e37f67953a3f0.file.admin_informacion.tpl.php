@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 00:34:57
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-25 21:58:52
          compiled from "./templates/admin_informacion.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2301521465638beb87d4d69-82745472%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a8f46ad57aa2ab02bf99fe1bee4e37f67953a3f0' => 
     array (
       0 => './templates/admin_informacion.tpl',
-      1 => 1448321695,
+      1 => 1448485121,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5638beb88045a0_28053687')) {function content_5638beb88045a0_28053687($_smarty_tpl) {?><br>
+<?php if ($_valid && !is_callable('content_5638beb88045a0_28053687')) {function content_5638beb88045a0_28053687($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+<br>
 <br>
 <p class="text-center">Esta información se publicará en la sección "Contacto" del sitio web Smartkin.<br>
 
@@ -52,11 +54,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['info']->key => $_smarty_tpl->tpl_vars
 $_smarty_tpl->tpl_vars['info']->_loop = true;
 ?>
 			<tr>
-			<form action="index.php?action=modificar_info&id_info=<?php echo $_smarty_tpl->tpl_vars['info']->value['id_info'];?>
+			<form action="admin_info.php?action=modificar_info&id_info=<?php echo $_smarty_tpl->tpl_vars['info']->value['id_info'];?>
 " method="POST" enctype="multipart/form-data">
 		             
 			        
-				<td><a class="glyphicon glyphicon-trash" href="index.php?action=borrar_info&id_info=<?php echo $_smarty_tpl->tpl_vars['info']->value['id_info'];?>
+				<td><a class="glyphicon glyphicon-trash" href="admin_info.php?action=borrar_info&id_info=<?php echo $_smarty_tpl->tpl_vars['info']->value['id_info'];?>
 "></a></td>
 				<td><?php echo $_smarty_tpl->tpl_vars['info']->value['dir_info'];?>
 
@@ -102,7 +104,7 @@ $_smarty_tpl->tpl_vars['info']->_loop = true;
 	</table>
 
 <h2>agregar info</h2>
- <form action="index.php?action=agregar_info" method="POST" enctype="multipart/form-data">
+ <form action="admin_info.php?action=agregar_info" method="POST" enctype="multipart/form-data">
       
             <input type="text" class="form-control" id="new_email" name="new_email" placeholder="Correo Electrónico"> 
             <input type="text" class="form-control" id="new_tel" name="new_tel" placeholder="Telefono"> 
@@ -116,4 +118,7 @@ $_smarty_tpl->tpl_vars['info']->_loop = true;
             
           <button type="submit" class="btn btn-default">Listo!</button>       
               
-      </form><?php }} ?>
+      </form>
+
+<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php }} ?>

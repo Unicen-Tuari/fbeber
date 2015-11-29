@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 13:51:36
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-25 12:59:45
          compiled from "./templates/colecciones.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:52049411256544375bc53e5-01675341%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a55d257e897b17782b5c03fd65792a52ceee0fa' => 
     array (
       0 => './templates/colecciones.tpl',
-      1 => 1448369495,
+      1 => 1448452782,
       2 => 'file',
     ),
   ),
@@ -49,6 +49,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['coleccion']->key => $_smarty_tpl->tpl_vars['coleccion']->value){
 $_smarty_tpl->tpl_vars['coleccion']->_loop = true;
 ?>
+          <div class="col-md-6">
 
   <?php if ($_smarty_tpl->tpl_vars['coleccion']->value['publico']){?>
   <h4><?php echo $_smarty_tpl->tpl_vars['coleccion']->value['name_col'];?>
@@ -60,9 +61,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['imagen']->key => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['imagen']->_loop = true;
 ?>
 
-          <div class="col-md-12">
 
-            
+          <div class="col-md-2">
             <div class="mod" style="background:url('./images/<?php echo $_smarty_tpl->tpl_vars['imagen']->value['img_mod'];?>
 '); background-size:cover">
 
@@ -100,10 +100,10 @@ $_smarty_tpl->tpl_vars['fav']->_loop = true;
                     
               </div>  
           </div>
-
             <?php } ?>
           <?php }?>
         
-        
+        </div>
+
 <?php } ?>
 </body></html><?php }} ?>

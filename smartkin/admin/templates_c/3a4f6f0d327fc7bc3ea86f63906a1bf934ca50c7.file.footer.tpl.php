@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-16 14:41:11
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-27 13:51:52
          compiled from "./templates/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18427446895638b91e4f4629-93978145%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3a4f6f0d327fc7bc3ea86f63906a1bf934ca50c7' => 
     array (
       0 => './templates/footer.tpl',
-      1 => 1447681270,
+      1 => 1448628541,
       2 => 'file',
     ),
   ),
@@ -19,62 +19,31 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5638b91e509be4_22121702',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5638b91e509be4_22121702')) {function content_5638b91e509be4_22121702($_smarty_tpl) {?><!-- Footer -->
+<?php if ($_valid && !is_callable('content_5638b91e509be4_22121702')) {function content_5638b91e509be4_22121702($_smarty_tpl) {?>
+        <!-- Footer -->
 <div class="bordes col-lg-12">
     <div class="page-header"></div>
-    <p class="text-center"><img src="./images/fb.jpg" width="40px"> FB Diseño & Diagramación | 2015 Copyright &copy; | 
-    <a href="../index.php">Ir a Smartkin</a>
-    </p>
+    <p class="text-center"><img src="./images/images_sys/fb.jpg" width="40px"> FB Programación Web II | 2015 Copyright &copy; | 
+    <a href="./admin/">Administrador</a></p>
 </div>
 
 
+
+
     <!-- jQuery -->
+    <script src="js/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script src="./js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
 
     <!-- Main -->
-    <script src="./js/admin.js"></script>
-   
-    <script src="./js/logout.js"></script>
-    <script>
-      $(".botonAgregarImagenes").on("click", function(event){
-        event.preventDefault();
-
-        var archivos = $("#imagesToUpload").prop('files');
-
-        if(typeof(archivos) == 'undefined'){
-          mostrarMensaje("No pusiste imagenes");
-          return;
-        }
-
-        var datos = new FormData();
-
-        $.each(archivos, function(key,value){
-          datos.append(key,value);
-        });
-
-        $.ajax({
-          type: "POST",
-          dataType: "json",
-          url: event.target.href,
-          data: datos,
-          success: function(data){
-            alert(data.result);
-          },
-          error: function(){
-            alert("No anduvo la llamada AJAX");
-          },
-          contentType : false,
-          processData : false
-        });
-
-      });
-    </script>
+    <script src="./js/main.js"></script>
+    <script src="./js/index.js"></script>
+    
 
     
 </body>
 
-</html>    
-<?php }} ?>
+</html><?php }} ?>

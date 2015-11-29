@@ -16,14 +16,12 @@ class LoginModel
 		}
     }
 	
-	public function getAdmin($mail){
+	public function getUsuario($mail){
 		$sql = "Select * from admin where email_admin = '$mail'";
 		$query = $this->conn->prepare($sql);
 		$query->execute();
 		return $query->fetchAll();
 	}
-
-	
 	
 }
 ?>

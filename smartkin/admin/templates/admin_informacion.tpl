@@ -1,3 +1,4 @@
+{include file="header.tpl"}
 <br>
 <br>
 <p class="text-center">Esta información se publicará en la sección "Contacto" del sitio web Smartkin.<br>
@@ -22,10 +23,10 @@ Para modificar, borrar o agregar información solo haz click en el icono corresp
 		<tbody>
 			{foreach $informacion as $info}
 			<tr>
-			<form action="index.php?action=modificar_info&id_info={$info['id_info']}" method="POST" enctype="multipart/form-data">
+			<form action="admin_info.php?action=modificar_info&id_info={$info['id_info']}" method="POST" enctype="multipart/form-data">
 		             
 			        
-				<td><a class="glyphicon glyphicon-trash" href="index.php?action=borrar_info&id_info={$info['id_info']}"></a></td>
+				<td><a class="glyphicon glyphicon-trash" href="admin_info.php?action=borrar_info&id_info={$info['id_info']}"></a></td>
 				<td>{$info.dir_info}
 				<input type="text" class="form-control" id="upd_dir" name="upd_dir" value="{$info.dir_info}"></td>
 				<td>{$info.email_info}
@@ -52,7 +53,7 @@ Para modificar, borrar o agregar información solo haz click en el icono corresp
 	</table>
 
 <h2>agregar info</h2>
- <form action="index.php?action=agregar_info" method="POST" enctype="multipart/form-data">
+ <form action="admin_info.php?action=agregar_info" method="POST" enctype="multipart/form-data">
       
             <input type="text" class="form-control" id="new_email" name="new_email" placeholder="Correo Electrónico"> 
             <input type="text" class="form-control" id="new_tel" name="new_tel" placeholder="Telefono"> 
@@ -67,3 +68,5 @@ Para modificar, borrar o agregar información solo haz click en el icono corresp
           <button type="submit" class="btn btn-default">Listo!</button>       
               
       </form>
+
+{include file="footer.tpl"}

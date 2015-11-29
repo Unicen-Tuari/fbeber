@@ -12,18 +12,94 @@ class IndexController {
     $this->view = new IndexView();
   }
 
+//usuarios
+  public function mostrarHomeUsuarios()
+  {
+    
+    if(isset($_SESSION["email_admin"]))
+    {
+        $this->view->mostrarHomeUsuarios($this->model->getUsuarios());
+      }
+    else
+    {
+        
+    $this->view->mostrarHomeUsuarios($this->model->getUsuarios());
+    }
+  }
+
+//mostrar colecciones
+  public function mostrarHomeColecciones()
+  {
+    
+    if(isset($_SESSION["email_admin"]))
+    {
+        $this->view->mostrarHomeColecciones($this->model->getColecciones());
+      }
+    else
+    {
+        
+    $this->view->mostrarHomeColecciones($this->model->getColecciones());
+    }
+  }
+//mostrar comentarios
+  public function mostrarHomeComentarios()
+  {
+    
+    if(isset($_SESSION["email_admin"]))
+    {
+        $this->view->mostrarHomeComentarios($this->model->getComentarios());
+      }
+    else
+    {
+        
+    $this->view->mostrarHomeComentarios($this->model->getComentarios());
+    }
+  }
+
+//mostrar portfolios
+  public function mostrarHomePortfolios()
+  {
+    
+    if(isset($_SESSION["email_admin"]))
+    {
+        $this->view->mostrarHomePortfolios($this->model->getPortfolios());
+      }
+    else
+    {
+        
+    $this->view->mostrarHomePortfolios($this->model->getPortfolios());
+    }
+  }
+
+//mostrar info
+  public function mostrarHomeInfo()
+  {
+    
+    if(isset($_SESSION["email_admin"]))
+    {
+        $this->view->mostrarHomeInfo($this->model->getInformacion());
+      }
+    else
+    {
+        
+    $this->view->mostrarHomeInfo($this->model->getInformacion());
+    }
+  }
+
+  
+
 	
 	public function mostrarHomeAdmin()
 	{
 		
 		if(isset($_SESSION["email_admin"]))
 		{
-      	$this->view->mostrarHomeAdmin($this->model->getAdmin($_SESSION["email_admin"]), $this->model->getPortfolios(),$this->model->getColecciones(),$this->model->getComentarios(),$this->model->getInformacion(),$this->model->getUsuarios());
+      	$this->view->mostrarHomeAdmin($this->model->getAdmin($_SESSION["email_admin"]));
     	}
 		else
 		{
 	   		
-		$this->view->mostrarHomeAdmin(null, $this->model->getPortfolios(),$this->model->getColecciones(),$this->model->getComentarios(),$this->model->getInformacion(),$this->model->getUsuarios());
+		$this->view->mostrarHomeAdmin(null);
 		}
 	}
 
@@ -36,7 +112,7 @@ class IndexController {
     else{
       $this->view->mostrarError('cuack');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeInfo();
   }
 //borrar
   function borrarInfo(){
@@ -46,10 +122,9 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta borrar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeInfo();
   }
 //modicar
-  //modificar
   function modificarInfo(){
     if(isset($_REQUEST['upd_email']) && isset($_REQUEST['upd_tel']) && isset($_REQUEST['upd_wh']) && isset($_REQUEST['upd_dir']) && isset($_REQUEST['upd_fb']) && isset($_REQUEST['upd_tw']) && isset($_REQUEST['upd_g']) && isset($_REQUEST['upd_mercado']) && isset($_REQUEST['upd_olx']) && isset($_REQUEST['id_info'])){
       $this->model->modificarInfo($_REQUEST['upd_email'],$_REQUEST['upd_tel'],$_REQUEST['upd_wh'],$_REQUEST['upd_dir'],$_REQUEST['upd_fb'],$_REQUEST['upd_tw'],$_REQUEST['upd_g'],$_REQUEST['upd_mercado'],$_REQUEST['upd_olx'],$_REQUEST['id_info']);
@@ -57,7 +132,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta realizar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeInfo();
   }
 //COMENTARIOS
   function borrarComentario(){
@@ -67,7 +142,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta borrar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeComentarios();
   }
 
 //USUARIO
@@ -78,7 +153,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta realizar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeUsuarios();
   }
 
   function NoHabilitarUsuario(){
@@ -88,7 +163,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta realizar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeUsuarios();
   }
 
 //COLECCIONES
@@ -100,7 +175,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta crear esta vacia');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeColecciones();
   }
 //borrar
   function borrarColeccion(){
@@ -110,7 +185,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta borrar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeColecciones();
   }
 //modificar
   function modificarNameCol(){
@@ -120,7 +195,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta realizar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeColecciones();
   }
 //MODELOS
    function agregarModelos(){
@@ -130,7 +205,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta crear esta vacia');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeColecciones();
   }
   function borrarModelo(){
     if(isset($_REQUEST['id_mod'])){
@@ -139,7 +214,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta borrar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeColecciones();
   }
 
   function publicarColeccion(){
@@ -149,7 +224,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta realizar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeColecciones();
   }
 
   function noPublicarColeccion(){
@@ -159,7 +234,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta realizar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomeColecciones();
   }
 
 
@@ -172,7 +247,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta crear esta vacia');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomePortfolios();
   }
 //borrar
   function borrarPortfolio(){
@@ -182,7 +257,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta borrar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomePortfolios();
   }
 //modificar
   function modificarNamePort(){
@@ -192,7 +267,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta realizar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomePortfolios();
   }
 
   function borrarImgPortfolio(){
@@ -202,7 +277,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta borrar no existe');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomePortfolios();
   }
 
   function agregarImgPort(){
@@ -212,7 +287,7 @@ class IndexController {
     else{
       $this->view->mostrarError('La tarea que intenta crear esta vacia');
     }
-    $this->mostrarHomeAdmin();
+    $this->mostrarHomePortfolios();
   }
 
 

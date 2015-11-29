@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 01:32:27
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-25 22:17:32
          compiled from "./templates/admin_portfolios.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11515432915638b91e49a9b8-68356748%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6682864399908c3e310dfb4614f25f40372e8ba6' => 
     array (
       0 => './templates/admin_portfolios.tpl',
-      1 => 1448324945,
+      1 => 1448486173,
       2 => 'file',
     ),
   ),
@@ -25,9 +25,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5638b91e4ed8f8_43011744')) {function content_5638b91e4ed8f8_43011744($_smarty_tpl) {?><p>Por defecto los Nuevo Portfolios no se publicarán. Para poder visualizarlas en la sección "Portfolios" en el sitio web, haga click en el botón "Publicar".</p>
+<?php if ($_valid && !is_callable('content_5638b91e4ed8f8_43011744')) {function content_5638b91e4ed8f8_43011744($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<form action="index.php?action=agregar_portfolio" method="POST" enctype="multipart/form-data">
+
+<p>Por defecto los Nuevo Portfolios no se publicarán. Para poder visualizarlas en la sección "Portfolios" en el sitio web, haga click en el botón "Publicar".</p>
+
+<form action="admin_portfolios.php?action=agregar_portfolio" method="POST" enctype="multipart/form-data">
 <div class="bordes col-md-12">
 <h2>Nuevo Portfolio</h2>
 <div class="bordes col-md-2"></div>
@@ -69,7 +72,7 @@ $_smarty_tpl->tpl_vars['portfolio']->_loop = true;
       <tr>
           <td><?php echo $_smarty_tpl->tpl_vars['portfolio']->value['name_port'];?>
 
-          <form action="index.php?action=modificar_name_port&id_port=<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
+          <form action="admin_portfolios.php?action=modificar_name_port&id_port=<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
 " method="POST" enctype="multipart/form-data">
                 <input type="text" class="form-control" id="upd_name_port" name="upd_name_port" value="<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['name_port'];?>
 "> 
@@ -78,12 +81,12 @@ $_smarty_tpl->tpl_vars['portfolio']->_loop = true;
             </form></td>
           <td><?php echo $_smarty_tpl->tpl_vars['portfolio']->value['descrip_port'];?>
 </td>
-          <td><a class="glyphicon glyphicon-trash" href="index.php?action=borrar_portfolio&id_port=<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
+          <td><a class="glyphicon glyphicon-trash" href="admin_portfolios.php?action=borrar_portfolio&id_port=<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
 "></a></td>
           
         <td class="text-left">
         
-        <form action="index.php?action=agregar_img_port&id_port=<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
+        <form action="admin_portfolios.php?action=agregar_img_port&id_port=<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
 " method="POST" enctype="multipart/form-data">
         
           <div class="bordes col-md-3">
@@ -108,7 +111,7 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
 -<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
 " class="img-thumbnail" width="100px" id="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_img_port'];?>
 " />
-                  <a class="glyphicon glyphicon-trash" href="index.php?action=borrar_img_portfolio&id_img_port=<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_img_port'];?>
+                  <a class="glyphicon glyphicon-trash" href="admin_portfolios.php?action=borrar_img_portfolio&id_img_port=<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_img_port'];?>
 "></a>
 
                 <?php } ?>
@@ -118,7 +121,9 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
 </table>
                  
    </div>               
-                  
+       
+<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+           
                   
                   
 

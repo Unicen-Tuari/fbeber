@@ -1,4 +1,6 @@
-<h3>Listado de Usuarios</h3>
+{include file="header.tpl"}
+
+<h3 class="text-center">Listado de Usuarios</h3>
 <br>
 <div class="col-md-6 bordes">
 	<h4 class=" text-center">Usuarios Activos</h4>
@@ -6,7 +8,7 @@
 	    {if !$usuario['bloqueado']}
 	      	<img src=".{$usuario.img_user}" class="icon_user">
 	      	{$usuario.email_user}
-	        <a class="glyphicon glyphicon-ok" href="index.php?action=no_habilitar_usuario&id_user={$usuario['id_user']}"><button type="submit" class="btn btn-default">Deshabilitar</button></a>  <br>
+	        <a class="glyphicon glyphicon-ok" href="admin_usuarios.php?action=no_habilitar_usuario&id_user={$usuario['id_user']}"><button type="submit" class="btn btn-default">Deshabilitar</button></a>  <br>
 	    {/if}
 	{/foreach}
 </div>
@@ -19,8 +21,9 @@
 	      	<img src=".{$usuario.img_user}" class="icon_user">
 
             {$usuario.email_user}
-          	<a class="glyphicon glyphicon-ok" href="index.php?action=habilitar_usuario&id_user={$usuario['id_user']}"><button type="submit" class="btn btn-default">Habilitar</button></a><br>
+          	<a class="glyphicon glyphicon-ok" href="admin_usuarios.php?action=habilitar_usuario&id_user={$usuario['id_user']}"><button type="submit" class="btn btn-default">Habilitar</button></a><br>
         {/if}
 	{/foreach}
 </div>  
-	
+
+{include file="footer.tpl"}

@@ -1,107 +1,40 @@
-{include file="header.tpl"}
-    
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://getbootstrap.com/examples/signin/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>Login - Programacion Web II</title>
 
-	
-{if isset($admin)}
-    {foreach $admin as $info}
-        {include file="user.tpl"}
- 
-        <h1>INFORMACION</h1>
-        {include file="admin_informacion.tpl"}
-        
-        <h1>USUARIOS</h1>
-        {include file="admin_usuarios.tpl"}
-        
-        <h1>PORTFOLIOS</h1>
-        {include file="admin_portfolios.tpl"}
-        
-        <h1>COLECCIONES</h1>
-        {include file="admin_colecciones.tpl"}
-        
-        <h1>COMENTARIOS</h1>
-        {include file="admin_comentarios.tpl"}
-    {/foreach}  
-{else}
-<div class="col-md-12 form-login">
-  <form id="formlogin" class="form-signin" method="post" >
-        <h4 class="">Inciar Sesión</h4>
-        
-        <input id="email_user" name="email_user" type="text" class="form-control" placeholder="Correo Electrónico" autofocus="">
-        <input id="pass_user" name="pass_user" type="password" class="form-control" placeholder="Contraseña">
-        <div id="error" class="alert alert-danger" style="display: none;">
-            <p class="text-center">Olvide mi contraseña!!</p>
-        </div>
-        <div class="text-right">
-        <button id="signin" class="btn btn-success" type="submit">Entrar 
-            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 
-        </button>
-        </div>
-        
-    </form>
-    <a href="#registrarse">REGISTRARSE</a>
-</div>      
+    <!-- Bootstrap core CSS -->
+    <link href="css\bootstrap.css" rel="stylesheet">
 
-{/if}  
+    <!-- Custom styles for this template -->
+    <link href="css\signin.css" rel="stylesheet">
 
-        
+  <style type="text/css"></style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style></head>
+
+  <body>
+
+    <div class="container">
+{if isset($name_admin)}
+        <h1>Logged in as:<p class="text-success">{$name_admin}</p></h1>
+        <button id="logout" class="btn btn-lg btn-primary btn-block">Logout</button>
+{else}      
+    <h1>Please Login</h1>
+    <button id="login" class="btn btn-lg btn-primary btn-block" onClick="window.location = 'login.php';">Login</button>
+{/if}     
+
     </div> <!-- /container -->
 
-<!-- Footer -->
-<div class="bordes col-lg-12">
-    <div class="page-header"></div>
-    <p class="text-center"><img src="./images/fb.jpg" width="40px"> FB Diseño & Diagramación | 2015 Copyright &copy; | 
-    <a href="../index.php">Ir a Smartkin</a>
-    </p>
-</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.0.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 
 
-    <!-- jQuery -->
-    <script src="./js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="./js/bootstrap.min.js"></script>
-
-    <!-- Main -->
-    <script src="./js/admin.js"></script>
-   
-    <script src="./js/logout.js"></script>
-    <script>
-      $(".botonAgregarImagenes").on("click", function(event){
-        event.preventDefault();
-
-        var archivos = $("#imagesToUpload").prop('files');
-
-        if(typeof(archivos) == 'undefined'){
-          mostrarMensaje("No pusiste imagenes");
-          return;
-        }
-
-        var datos = new FormData();
-
-        $.each(archivos, function(key,value){
-          datos.append(key,value);
-        });
-
-        $.ajax({
-          type: "POST",
-          dataType: "json",
-          url: event.target.href,
-          data: datos,
-          success: function(data){
-            alert(data.result);
-          },
-          error: function(){
-            alert("No anduvo la llamada AJAX");
-          },
-          contentType : false,
-          processData : false
-        });
-
-      });
-    </script>
-
-    
-</body>
-
-</html>    
+</body></html>

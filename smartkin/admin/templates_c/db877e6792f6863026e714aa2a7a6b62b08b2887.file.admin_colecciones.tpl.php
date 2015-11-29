@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 01:19:15
+<?php /* Smarty version Smarty-3.1.14, created on 2015-11-25 22:27:58
          compiled from "./templates/admin_colecciones.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21431813875638beb87154b1-17067861%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'db877e6792f6863026e714aa2a7a6b62b08b2887' => 
     array (
       0 => './templates/admin_colecciones.tpl',
-      1 => 1448324352,
+      1 => 1448486825,
       2 => 'file',
     ),
   ),
@@ -25,9 +25,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5638beb87822e9_75948680')) {function content_5638beb87822e9_75948680($_smarty_tpl) {?><p>Por defecto las Nuevas colecciones no se publicarán. Para poder visualizarlas en la sección "Colecciones" en el sitio web, haga click en el botón "Publicar".</p>
+<?php if ($_valid && !is_callable('content_5638beb87822e9_75948680')) {function content_5638beb87822e9_75948680($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<form action="index.php?action=agregar_coleccion" method="POST" enctype="multipart/form-data">
+<p>Por defecto las Nuevas colecciones no se publicarán. Para poder visualizarlas en la sección "Colecciones" en el sitio web, haga click en el botón "Publicar".</p>
+
+<form action="admin_colecciones.php?action=agregar_coleccion" method="POST" enctype="multipart/form-data">
 <div class="bordes col-md-12">
 <h2>Nueva Colección</h2>
 <div class="bordes col-md-2"></div>
@@ -70,7 +72,7 @@ $_smarty_tpl->tpl_vars['coleccion']->_loop = true;
 				<?php if (!$_smarty_tpl->tpl_vars['coleccion']->value['publico']){?>
 					<td><s><?php echo $_smarty_tpl->tpl_vars['coleccion']->value['name_col'];?>
 </s>
-						<form action="index.php?action=modificar_name_col&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
+						<form action="admin_colecciones.php?action=modificar_name_col&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
 " method="POST" enctype="multipart/form-data">
 		            <input type="text" class="form-control" id="upd_name_col" name="upd_name_col" value="<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['name_col'];?>
 "> 
@@ -87,7 +89,7 @@ $_smarty_tpl->tpl_vars['coleccion']->_loop = true;
 
                     <td><?php echo $_smarty_tpl->tpl_vars['coleccion']->value['name_col'];?>
 
-                    <form action="index.php?action=modificar_name_col&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
+                    <form action="admin_colecciones.php?action=modificar_name_col&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
 " method="POST" enctype="multipart/form-data">
 		            <input type="text" class="form-control" id="upd_name_col" name="upd_name_col" value="<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['name_col'];?>
 "> 
@@ -95,18 +97,18 @@ $_smarty_tpl->tpl_vars['coleccion']->_loop = true;
 			        <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
 	    			</form>
 	    			</td>
-					<td><a class="glyphicon glyphicon-ok" href="index.php?action=publicar_coleccion&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
+					<td><a class="glyphicon glyphicon-ok" href="admin_colecciones.php?action=publicar_coleccion&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
 "><button type="submit" class="btn btn-default">No Publicar</button></a></td>
 
 				<?php }?>
 
-					<td><a class="glyphicon glyphicon-trash" href="index.php?action=borrar_coleccion&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
+					<td><a class="glyphicon glyphicon-trash" href="admin_colecciones.php?action=borrar_coleccion&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
 "></a></td>
 
 				
 					
 				<td class="text-left">
-				<form action="index.php?action=agregar_modelos&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
+				<form action="admin_colecciones.php?action=agregar_modelos&id_col=<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
 " method="POST" enctype="multipart/form-data">
         
           <div class="bordes col-md-3">
@@ -131,7 +133,7 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
 -<?php echo $_smarty_tpl->tpl_vars['coleccion']->value['id_col'];?>
 " class="img-thumbnail" width="100px" id="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_mod'];?>
 " />
-                  <a class="glyphicon glyphicon-trash" href="index.php?action=borrar_modelo&id_mod=<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_mod'];?>
+                  <a class="glyphicon glyphicon-trash" href="admin_colecciones.php?action=borrar_modelo&id_mod=<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_mod'];?>
 "></a>
 
                 <?php } ?>
@@ -143,6 +145,7 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
    </div>               
                   
                   
+<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
                   
 
 

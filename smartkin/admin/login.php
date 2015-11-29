@@ -12,11 +12,11 @@ if(isset($_POST["email_admin"]))
 {
     $formulario["email_admin"] = $_POST["email_admin"];
 	$formulario["pass_admin"] = $_POST["pass_admin"];
-	$controller->loginAdmin($formulario);
+	$controller->loginUsuario($formulario);
 }
 else
 {
-	$controller->mostrarHome();
+	$controller->imprimirPagina();
 }
 
 		

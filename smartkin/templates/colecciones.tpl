@@ -14,15 +14,15 @@
 <body class="body-sm">
 
  {foreach $colecciones as $coleccion}
+          <div class="col-md-6">
 
   {if $coleccion['publico']}
   <h4>{$coleccion['name_col']}</h4>
       
         {foreach $coleccion['imagenes'] as $imagen}
 
-          <div class="col-md-12">
 
-            
+          <div class="col-md-2">
             <div class="mod" style="background:url('./images/{$imagen.img_mod}'); background-size:cover">
 
               {foreach $usuario as $user}
@@ -44,10 +44,10 @@
                     
               </div>  
           </div>
-
             {/foreach}
           {/if}
         
-        
+        </div>
+
 {/foreach}
 </body></html>

@@ -53,7 +53,7 @@ class IndexController {
     }
 		else
 		{	
-      $this->view->mostrarHomeAdmin(null,null,null,$this->model->getColecciones(),$this->model->getInformacion());
+      $this->view->mostrarHomeAdmin(null,null,null,$this->model->getInformacion());
 		  
     }
 	}
