@@ -35,7 +35,7 @@ class ConfigApp {
   public static $ACTION_NO_PUBLICAR_COLECCION = 'no_publicar_coleccion';
   public static $ACTION_AGREGAR_MODELOS = 'agregar_modelos';
   public static $ACTION_BORRAR_MODELO = 'borrar_modelo';
-  
+  public static $ACTION_MODIFICAR_IMG_PORT = 'modificar_img_port';
 //COMENTARIOS
   public static $ACTION_BORRAR_COMENTARIO = 'borrar_comentario';
 

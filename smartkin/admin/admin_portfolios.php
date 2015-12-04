@@ -40,6 +40,10 @@ else {
       $controller = new IndexController();
       $controller->borrarImgPortfolio();
       break;
+    case ConfigApp::$ACTION_MODIFICAR_IMG_PORT:
+      $controller = new IndexController();
+      $controller->modificarImgPort();
+      break;
     default:
       echo 'Pagina no encontrada';
       break;

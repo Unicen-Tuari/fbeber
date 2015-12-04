@@ -3,7 +3,7 @@
 <div class="bordes col-lg-12">
     <div class="page-header"></div>
     <p class="text-center"><img src="./images/images_sys/fb.jpg" width="40px"> FB Programación Web II | 2015 Copyright &copy; | 
-    <a href="./admin/">Administrador</a></p>
+    <a href="../index.php">Smartkin</a></p>
 </div>
 
 

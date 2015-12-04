@@ -15,7 +15,7 @@ class IndexController {
 //usuarios
   public function mostrarHomeUsuarios()
   {
-    
+    session_start();
     if(isset($_SESSION["email_admin"]))
     {
         $this->view->mostrarHomeUsuarios($this->model->getUsuarios());
@@ -23,14 +23,14 @@ class IndexController {
     else
     {
         
-    $this->view->mostrarHomeUsuarios($this->model->getUsuarios());
+    $this->view->mostrarHomeUsuarios(null);
     }
   }
 
 //mostrar colecciones
   public function mostrarHomeColecciones()
   {
-    
+    session_start();
     if(isset($_SESSION["email_admin"]))
     {
         $this->view->mostrarHomeColecciones($this->model->getColecciones());
@@ -38,13 +38,13 @@ class IndexController {
     else
     {
         
-    $this->view->mostrarHomeColecciones($this->model->getColecciones());
+    $this->view->mostrarHomeColecciones(null);
     }
   }
 //mostrar comentarios
   public function mostrarHomeComentarios()
   {
-    
+    session_start();
     if(isset($_SESSION["email_admin"]))
     {
         $this->view->mostrarHomeComentarios($this->model->getComentarios());
@@ -52,14 +52,14 @@ class IndexController {
     else
     {
         
-    $this->view->mostrarHomeComentarios($this->model->getComentarios());
+    $this->view->mostrarHomeComentarios(null);
     }
   }
 
 //mostrar portfolios
   public function mostrarHomePortfolios()
   {
-    
+    session_start();
     if(isset($_SESSION["email_admin"]))
     {
         $this->view->mostrarHomePortfolios($this->model->getPortfolios());
@@ -67,14 +67,14 @@ class IndexController {
     else
     {
         
-    $this->view->mostrarHomePortfolios($this->model->getPortfolios());
+    $this->view->mostrarHomePortfolios(null);
     }
   }
 
 //mostrar info
   public function mostrarHomeInfo()
   {
-    
+    session_start();
     if(isset($_SESSION["email_admin"]))
     {
         $this->view->mostrarHomeInfo($this->model->getInformacion());
@@ -82,26 +82,23 @@ class IndexController {
     else
     {
         
-    $this->view->mostrarHomeInfo($this->model->getInformacion());
+    $this->view->mostrarHomeInfo(null);
     }
   }
 
-  
-
-	
-	public function mostrarHomeAdmin()
-	{
-		
-		if(isset($_SESSION["email_admin"]))
-		{
-      	$this->view->mostrarHomeAdmin($this->model->getAdmin($_SESSION["email_admin"]));
-    	}
-		else
-		{
-	   		
-		$this->view->mostrarHomeAdmin(null);
-		}
-	}
+public function imprimirPagina()
+  {
+    session_start();
+    if(isset($_SESSION["email_admin"]))
+    {
+      $this->view->imprimirPagina($_SESSION["email_admin"]);
+    }
+    else
+    {
+      
+      $this->view->imprimirPagina(null);
+    }
+  }
 
 //INFORMACION
 //agregar
@@ -286,6 +283,16 @@ class IndexController {
       }
     else{
       $this->view->mostrarError('La tarea que intenta crear esta vacia');
+    }
+    $this->mostrarHomePortfolios();
+  }
+  //modicar
+  function modificarImgPort(){
+    if(isset($_REQUEST['upd_descrip']) && isset($_REQUEST['id_img_port'])){
+      $this->model->modificarImgPort($_REQUEST['upd_descrip'],$_REQUEST['id_img_port']);
+    }   
+    else{
+      $this->view->mostrarError('La tarea que intenta realizar no existe');
     }
     $this->mostrarHomePortfolios();
   }

@@ -1,12 +1,17 @@
 <?php
 require('./libs/Smarty.class.php');
-
 class IndexView
 {
-    function __construct(){
+     function __construct(){
 	  $this->smarty = new Smarty();
 	  $this->errores = array();
 	}
+    public function imprimirPagina($name_admin){
+		$smarty = new Smarty;
+		$smarty->assign("name_admin",$name_admin);
+		$smarty->display('index.tpl');
+    }
+	
 //usuarios
 	function mostrarHomeUsuarios($usuarios){
 		$this->smarty->assign('usuarios', $usuarios);

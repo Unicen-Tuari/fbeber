@@ -20,10 +20,16 @@
 
     <div class="container">
 {if isset($name_admin)}
-        <h1>Logged in as:<p class="text-success">{$name_admin}</p></h1>
+		<h1>Logged in as:<p class="text-success">{$name_admin}</p></h1>
         <button id="logout" class="btn btn-lg btn-primary btn-block">Logout</button>
-{else}      
-    <h1>Please Login</h1>
+        <a href="./admin_usuarios.php">Usuarios</a>
+        <a href="./admin_info.php">Información</a>
+        <a href="./admin_colecciones.php">Colecciones</a>
+        <a href="./admin_portfolios.php">Portfolios</a>
+        <a href="./admin_comentarios.php">Comentarios</a>
+        
+{else}		
+	<h1>Please Login</h1>
     <button id="login" class="btn btn-lg btn-primary btn-block" onClick="window.location = 'login.php';">Login</button>
 {/if}     
 

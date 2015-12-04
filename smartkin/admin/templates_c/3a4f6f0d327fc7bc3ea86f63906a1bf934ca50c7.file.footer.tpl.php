@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-27 13:51:52
+<?php /* Smarty version Smarty-3.1.14, created on 2015-12-02 12:39:35
          compiled from "./templates/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18427446895638b91e4f4629-93978145%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3a4f6f0d327fc7bc3ea86f63906a1bf934ca50c7' => 
     array (
       0 => './templates/footer.tpl',
-      1 => 1448628541,
+      1 => 1449056374,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div class="bordes col-lg-12">
     <div class="page-header"></div>
     <p class="text-center"><img src="./images/images_sys/fb.jpg" width="40px"> FB Programación Web II | 2015 Copyright &copy; | 
-    <a href="./admin/">Administrador</a></p>
+    <a href="../index.php">Smartkin</a></p>
 </div>
 
 

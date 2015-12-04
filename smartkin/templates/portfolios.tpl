@@ -13,15 +13,16 @@
 
 <body class="body-sm">
 
-<div class="portfolios col-md-12 text-center">
+<div class="portfolios text-center">
 
       
-<ul class="list-group">
   {foreach $portfolios as $portfolio}
       {foreach $portfolio['imagenes'] as $imagen}
-        <img src="./images/{$imagen['img_port']}" class="lista" width="100px" id="{$imagen['id_img_port']}" />
+        <div class="text-center img-port" style="background:url('./images/{$imagen['img_port']}'); background-size:cover;"><br><br>
+          {$imagen.descripcion}
+        </div>
       {/foreach}
   {/foreach}
-</ul>
+</div>
 </body>
 </html>  

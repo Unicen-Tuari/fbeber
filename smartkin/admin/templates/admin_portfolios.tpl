@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 
 <p>Por defecto los Nuevo Portfolios no se publicarán. Para poder visualizarlas en la sección "Portfolios" en el sitio web, haga click en el botón "Publicar".</p>
-
+<div class="col-md-12">
 <form action="admin_portfolios.php?action=agregar_portfolio" method="POST" enctype="multipart/form-data">
 <div class="bordes col-md-12">
 <h2>Nuevo Portfolio</h2>
@@ -22,13 +22,13 @@
 </div>
         
 </form>
-<div class="bordes col-md-12">
+</div>
+
 <h2>Listado de Portfolios</h2>
 <table class="table table-bordered table-hover">
     <thead>
       <tr class="active">
         <th class="text-center">Nombre</th>
-        <th class="text-center">Descripcion</th>
         <th class="text-center">Borrar</th>
         <th class="text-center">Portfolios</th>
       </tr>
@@ -44,7 +44,6 @@
               
               <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
             </form></td>
-          <td>{$portfolio.descrip_port}</td>
           <td><a class="glyphicon glyphicon-trash" href="admin_portfolios.php?action=borrar_portfolio&id_port={$portfolio['id_port']}"></a></td>
           
         <td class="text-left">
@@ -66,6 +65,12 @@
                   
                   <img src="{$imagen.img_port}" alt="{$imagen['id_img_port']}-{$portfolio['id_port']}" class="img-thumbnail" width="100px" id="{$imagen.id_img_port}" />
                   <a class="glyphicon glyphicon-trash" href="admin_portfolios.php?action=borrar_img_portfolio&id_img_port={$imagen.id_img_port}"></a>
+                  <form action="admin_portfolios.php?action=modificar_img_port&id_img_port={$imagen['id_img_port']}" method="POST" enctype="multipart/form-data">
+      
+                   <input type="text" class="form-control" id="upd_descrip" name="upd_descrip" value="{$imagen.descripcion}">
+                   <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Modificar</button>
+                  </form>
+                  
 
                 {/foreach}
         </td>
@@ -73,7 +78,7 @@
   </tbody>
 </table>
                  
-   </div>               
+             
        
 {include file="footer.tpl"}           
                   

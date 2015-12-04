@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-28 15:22:26
+<?php /* Smarty version Smarty-3.1.14, created on 2015-12-02 12:37:04
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1179966125563612d9bdefc3-48537508%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c0360d049dff10f364dfc53ba2cc3958abf6ee6d' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1448720544,
+      1 => 1449056187,
       2 => 'file',
     ),
   ),
@@ -45,11 +45,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <div class="container">
 <?php if (isset($_smarty_tpl->tpl_vars['name_admin']->value)){?>
-        <h1>Logged in as:<p class="text-success"><?php echo $_smarty_tpl->tpl_vars['name_admin']->value;?>
+		<h1>Logged in as:<p class="text-success"><?php echo $_smarty_tpl->tpl_vars['name_admin']->value;?>
 </p></h1>
         <button id="logout" class="btn btn-lg btn-primary btn-block">Logout</button>
-<?php }else{ ?>      
-    <h1>Please Login</h1>
+        <a href="./admin_usuarios.php">Usuarios</a>
+        <a href="./admin_info.php">Información</a>
+        <a href="./admin_colecciones.php">Colecciones</a>
+        <a href="./admin_portfolios.php">Portfolios</a>
+        <a href="./admin_comentarios.php">Comentarios</a>
+        
+<?php }else{ ?>		
+	<h1>Please Login</h1>
     <button id="login" class="btn btn-lg btn-primary btn-block" onClick="window.location = 'login.php';">Login</button>
 <?php }?>     
 

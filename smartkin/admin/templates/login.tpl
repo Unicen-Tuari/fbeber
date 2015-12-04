@@ -27,12 +27,12 @@
         <div id="error" class="alert alert-danger" style="display: none;"></div>
         <button id="signin" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4"><a href="index.php"> Go to index...</a></div>
-        
-      </div>
+	  <div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4"></div>
+		<div class="col-md-4"><a href="index.php"> Go to index...</a></div>
+		
+	  </div>
     </div> <!-- /container -->
 
 

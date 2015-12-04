@@ -15,6 +15,12 @@ html {
 }
 
 /*--------------*/
+.img-port{
+  width: 180px;
+  height: 180px;
+  color: white;
+}
+/*--------------*/
 
 iframe{
   border:0px;

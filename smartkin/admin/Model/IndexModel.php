@@ -162,9 +162,15 @@ class IndexModel
     $this->db->rollBack();
     }
   }
+//borrar  
   function borrarImgPortfolio($id_img_port){
     $consulta = $this->db->prepare('DELETE FROM img_port WHERE id_img_port=?');
     $consulta->execute(array($id_img_port));
+  }
+//modificar
+  function modificarImgPort($upd_descrip,$id_img_port){
+      $consulta = $this->db->prepare('UPDATE img_port SET descripcion=? WHERE id_img_port=?');
+      $consulta->execute(array($upd_descrip,$id_img_port));
   }
   
 //PORTFOLIOS

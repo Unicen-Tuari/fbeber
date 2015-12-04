@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-25 22:17:32
+<?php /* Smarty version Smarty-3.1.14, created on 2015-12-02 13:08:53
          compiled from "./templates/admin_portfolios.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11515432915638b91e49a9b8-68356748%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6682864399908c3e310dfb4614f25f40372e8ba6' => 
     array (
       0 => './templates/admin_portfolios.tpl',
-      1 => 1448486173,
+      1 => 1449058128,
       2 => 'file',
     ),
   ),
@@ -29,7 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 
 <p>Por defecto los Nuevo Portfolios no se publicarán. Para poder visualizarlas en la sección "Portfolios" en el sitio web, haga click en el botón "Publicar".</p>
-
+<div class="col-md-12">
 <form action="admin_portfolios.php?action=agregar_portfolio" method="POST" enctype="multipart/form-data">
 <div class="bordes col-md-12">
 <h2>Nuevo Portfolio</h2>
@@ -50,13 +50,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div>
         
 </form>
-<div class="bordes col-md-12">
+</div>
+
 <h2>Listado de Portfolios</h2>
 <table class="table table-bordered table-hover">
     <thead>
       <tr class="active">
         <th class="text-center">Nombre</th>
-        <th class="text-center">Descripcion</th>
         <th class="text-center">Borrar</th>
         <th class="text-center">Portfolios</th>
       </tr>
@@ -79,8 +79,6 @@ $_smarty_tpl->tpl_vars['portfolio']->_loop = true;
               
               <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
             </form></td>
-          <td><?php echo $_smarty_tpl->tpl_vars['portfolio']->value['descrip_port'];?>
-</td>
           <td><a class="glyphicon glyphicon-trash" href="admin_portfolios.php?action=borrar_portfolio&id_port=<?php echo $_smarty_tpl->tpl_vars['portfolio']->value['id_port'];?>
 "></a></td>
           
@@ -113,6 +111,14 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
 " />
                   <a class="glyphicon glyphicon-trash" href="admin_portfolios.php?action=borrar_img_portfolio&id_img_port=<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_img_port'];?>
 "></a>
+                  <form action="admin_portfolios.php?action=modificar_img_port&id_img_port=<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_img_port'];?>
+" method="POST" enctype="multipart/form-data">
+      
+                   <input type="text" class="form-control" id="upd_descrip" name="upd_descrip" value="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['descripcion'];?>
+">
+                   <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Modificar</button>
+                  </form>
+                  
 
                 <?php } ?>
         </td>
@@ -120,7 +126,7 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
   </tbody>
 </table>
                  
-   </div>               
+             
        
 <?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
            
