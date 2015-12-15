@@ -1,29 +1,14 @@
 {include file="header.tpl"}
-<p>Por defecto las Nuevas colecciones no se publicarán. Para poder visualizarlas en la sección "Colecciones" en el sitio web, haga click en el botón "Publicar".</p>
+{if isset($colecciones)}
+<br>
 
-<form action="admin_colecciones.php?action=agregar_coleccion" method="POST" enctype="multipart/form-data">
 <div class="bordes col-md-12">
-<h2>Nueva Colección</h2>
-<div class="bordes col-md-2"></div>
-<div class="bordes col-md-3">
-    	<h3>Paso 1</h3>
-    	<input type="text" class="form-control" id="col" name="col" placeholder="Nombre de la nueva coleccion">	
-</div>
-<div class="bordes col-md-3">
-  		<h3>Paso 2</h3>
-   		<input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
-</div>
-<div class="bordes col-md-2">
-    <h3>Paso 3</h3>
-    <button type="submit" class="btn btn-default">Listo!</button>      	
-</div>
-<div class="bordes col-md-2"></div>
-</div>
-       	
-</form>
-<div class="bordes col-md-12">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalColeccion">
+  Agregar Colección
+</button>
 <h2>Listado de colecciones</h2>
-<table class="table table-bordered table-hover">
+<table class="table table-bordered">
 		<thead>
 			<tr class="active">
 				<th class="text-center">Nombre</th>
@@ -32,31 +17,32 @@
 				<th class="text-center">Modelos</th>
 			</tr>
 		</thead>
-    	
-    	<tbody>
-    		
-			{foreach $colecciones as $coleccion}	
+    	{foreach $colecciones as $coleccion}
+
+    	<tbody>	
 			<tr>
 				{if !$coleccion['publico']}
-					<td><s>{$coleccion.name_col}</s>
+					<td>
 						<form action="admin_colecciones.php?action=modificar_name_col&id_col={$coleccion['id_col']}" method="POST" enctype="multipart/form-data">
-		            <input type="text" class="form-control" id="upd_name_col" name="upd_name_col" value="{$coleccion.name_col}"> 
+		            		<input type="text" class="form-control" id="upd_name_col" name="upd_name_col" value="{$coleccion.name_col}">
 	            
-			        <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
-	    			</form>
+			        		<button type="submit" class="btn btn-success glyphicon glyphicon-ok">Modificar</button>    
+	    				</form>
 					</td>
-					<td><a class="glyphicon glyphicon-ok" href="index.php?action=no_publicar_coleccion&id_col={$coleccion['id_col']}"><button type="submit" class="btn btn-default">Publicar</button></a></td>
+
+					<td><a class="glyphicon glyphicon-ok" href="admin_colecciones.php?action=no_publicar_coleccion&id_col={$coleccion['id_col']}"><button type="submit" class="btn btn-default">Publicar</button></a></td>
 					
 
 				{else}
                     {$coleccion['name_col']}
-                    <td>{$coleccion.name_col}
+                    <td>
                     <form action="admin_colecciones.php?action=modificar_name_col&id_col={$coleccion['id_col']}" method="POST" enctype="multipart/form-data">
 		            <input type="text" class="form-control" id="upd_name_col" name="upd_name_col" value="{$coleccion.name_col}"> 
 	            
 			        <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
 	    			</form>
 	    			</td>
+
 					<td><a class="glyphicon glyphicon-ok" href="admin_colecciones.php?action=publicar_coleccion&id_col={$coleccion['id_col']}"><button type="submit" class="btn btn-default">No Publicar</button></a></td>
 
 				{/if}
@@ -65,10 +51,10 @@
 
 				
 					
-				<td class="text-left">
+				<td class="text-center	">
 				<form action="admin_colecciones.php?action=agregar_modelos&id_col={$coleccion['id_col']}" method="POST" enctype="multipart/form-data">
         
-          <div class="bordes col-md-3">
+          <div class="bordes col-md-12">
         
                 <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
         
@@ -77,8 +63,8 @@
         
         
           </div>
-                  
-          </form>
+    	              
+	          </form>
 				{foreach $coleccion['imagenes'] as $imagen}
                   
                   <img src="{$imagen['img_mod']}" alt="{$imagen['id_mod']}-{$coleccion['id_col']}" class="img-thumbnail" width="100px" id="{$imagen['id_mod']}" />
@@ -86,14 +72,38 @@
 
                 {/foreach}
 				</td>
-		</tr>{/foreach}
+		</tr>
 	</tbody>
+	{/foreach}             
+
 </table>
                  
-   </div>               
-                  
-                  
-{include file="footer.tpl"}                  
+</div>               
 
 
-	
+<!-- Modal -->
+<div class="modal fade" id="myModalColeccion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nueva Colección</h4>
+      </div>
+      <div class="modal-body">
+        <form action="admin_colecciones.php?action=agregar_coleccion" method="POST" enctype="multipart/form-data">
+			<div class="bordes col-md-12">
+	    	<input type="text" class="form-control" id="col" name="col" placeholder="Nombre de la nueva coleccion">	
+	   		<input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
+      		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+</div>
+{/if}               
+{include file="footer.tpl"}

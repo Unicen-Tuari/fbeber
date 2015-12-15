@@ -1,47 +1,166 @@
-body {
-  
-  
-}
 html {
   font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+
 }
 
-.col{
-  border-style: solid;
-  border-width: 1px;
-  margin: 10px;
-}
-
-/*--------------*/
-.img-port{
-  width: 180px;
-  height: 180px;
+body{
+  background-image: url('../images/images-sys/fondo.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   color: white;
+  margin:0px;
+  padding: 30px;
 }
-/*--------------*/
+.bordes{
+  padding: 25px;
+  border-style: ssolid;
+}
+
+.logo{
+background-image: url('../images/images-sys/fondologo.png');
+  -webkit-background-size: 100%;
+  -moz-background-size:100%;
+  -o-background-size: 100%;
+  background-size: 100%;  
+  padding: 10px; 
+  padding-top: 35px;
+  height: 150px;
+
+}
+.menu{
+  background-image: url('../images/images-sys/menu.png');
+  -webkit-background-size: 100%;
+  -moz-background-size:100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  width: 100%;
+}
+.fondoplaca{
+  background-image: url('../images/images-sys/fondoplaca.png');
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  
+  box-shadow: 5px 5px 15px 15px #000; 
+  -webkit-box-shadow: 5px 5px 15px 15px #000; 
+  -moz-box-shadow: 5px 5px 15px 15px #000; 
+  padding:20px;
+
+
+}
+.placa{
+  background-image: url('../images/images-sys/pldaca.png');
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  
+  box-shadow: 5px 5px 15px 15px #000; 
+  -webkit-box-shadow: 5px 5px 15px 15px #000; 
+  -moz-box-shadow: 5px 5px 15px 15px #000; 
+  margin:0px;
+  min-height: 355px;
+}
+.comentarios{
+  background-image: url('../images/images-sys/comentarios.png');
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+}
+.usuario{
+  background-image: url('../images/images-sys/usuariso.png');
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  height: 125px;
+}
+.pad{
+  margin-top: 73px;
+}
+.compras{
+  background-image: url('../images/images-sys/compras.png');
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  height: 190px;
+}
+
+.redes{
+  background-image: url('../images/images-sys/redes.png');
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  height: 190px;
+}
+
 
 iframe{
+  margin-top: 80px;
   border:0px;
-}
-
-.mod {
-    width: 130px;
-    height: 100px;
-    margin: 0px auto;
-    margin-bottom: 10px;
-    border-style: solid;
-    border-color: black;
-    transform-style: preserve-3d;
-    transform: perspective(500px) rotateX(-10deg) rotateY(-30deg);
+  height: 500px;
   
-        transition: width 1s, height 1s, transform 1s;
+}
+
+
+/*no hace falta*/
+.port{
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgrey;
+  margin: 5px;
+  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 160px;
+  text-align: center;
+  float: left;
+}
+.img-port{
+    transition: width 1s, height 1s, transform 1s;
+}
+.img-port:hover {
+    position: relative;
+    z-index: 1000;
+    
+     -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+     -ms-transform: scale(2,2); /* IE 9 */
+    -webkit-transform: scale(2,2); /* Chrome, Safari, Opera */
+    transform: scale(2,2); /* Standard syntax */
+}
+
+.cuerpo{
+  height: 500px;
+  margin-top: 20px;
+  border-style: solids;
+  border-width: 5px;
+  margin-bottom:20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+ border-color: red;
+}
+/*sombreados*/
+.black{
+  background-color: black;
+ 
+  color: white;
 
 }
 
-.mod:hover {
-    
+/*img modelos*/
+.img-mod{
+    transition: width 1s, height 1s, transform 1s;
+    height: 100px;
+    width: 100px;
+}
+.img-mod:hover {
     position: relative;
     z-index: 1000;
     
@@ -64,21 +183,6 @@ iframe{
   color: black;
   margin: 5px;
 }
-/*------------------------*/
-.body-sm {
-  background-color: lightgrey;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: black;
-
-}
-
-.form-login{
-  background-color: lightgrey;
-  border-radius: 0px 10px 0px 10px;
-}
 
 .coment{
  background-color: grey;
@@ -90,14 +194,14 @@ iframe{
 }
 
 .icon-coment{
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-style: solid;
   border-color: lightgrey;
   border-radius: 100px;
   border-width: 0.5px;
   padding: 5px;
-  margin-right: 10px;
+  margin: 5px;
 }
 
 .mod-user{
@@ -124,35 +228,20 @@ iframe{
   font-size: 25px;
 }
 
-.lista {
-  width: 100px;
-  height: 100px;
-  border-style: solid;
-  margin: 5px;
-    border-color: white;
-    opacity: 0.7;
-    transition: width 1s, height 1s, transform 1s;
 
-}
-
-.lista:hover {
-    opacity: 1.0;
-    position: relative;
-    z-index: 1000;
-     -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-     -ms-transform: scale(2,2); /* IE 9 */
-    -webkit-transform: scale(3,3); /* Chrome, Safari, Opera */
-    transform: scale(3,3); /* Standard syntax */
+.menu{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+  padding: 5px;
 }
 
 .bordes{
-  padding: 5px;
   text-align: center;
   width: 100%;
-  margin-top: 5px;
-  /*border-style: solid;
-  border-color: black;*/
+  
+  border-color: black;
+  padding:10px;
 }
 .inicio{
   float: right;

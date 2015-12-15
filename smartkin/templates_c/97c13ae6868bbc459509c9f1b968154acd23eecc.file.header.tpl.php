@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 13:49:16
+<?php /* Smarty version Smarty-3.1.14, created on 2015-12-11 23:29:59
          compiled from "./templates/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:197558216456544375b54606-96972209%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '97c13ae6868bbc459509c9f1b968154acd23eecc' => 
     array (
       0 => './templates/header.tpl',
-      1 => 1448369355,
+      1 => 1449872997,
       2 => 'file',
     ),
   ),
@@ -35,40 +35,33 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="icon" type="image/jpg" href="./images/fb.jpg"/>
+    <link rel="stylesheet prefetch" href="mzHjb_data/bootstrap.css">
+    <link rel="stylesheet prefetch" href="../css/galeria.css">
+
+
+
+    <script>
+  window.console = window.console || function(t) {};
+</script>
 </head>
 
-<body class="body-sm">
+<body>
+	<div class="col-md-12 bordes">	
 
-    <!-- Navigation -->
-    <div class="col-md-12 menu">
-        <div class="col-md-4">
-            <br>
-            <img src="images/images_sys/smartkinlogo.png" width="100%">
-        </div>
-       
-        
-        <div class="col-md-8 text-center menu">
-            <br><br>
-            <a href="./index.php" class="a-menu"><span class="glyphicon glyphicon-home"><br>Inicio</span></a>
-            
-            <a href="#colecciones" class="a-menu"><span class="glyphicon glyphicon-picture"><br>Colecciones</span> </a>
-            
-            <a href="#portfolios" class="a-menu"><span class="glyphicon glyphicon-bookmark"><br>Portfolios</span></a>
-            
-            <a href="#contacto" class="a-menu"><span class="glyphicon glyphicon-phone-alt"><br>Contacto</span></a>
-            
-            <a href="#comentarios" class="a-menu"><span class="glyphicon glyphicon-list-alt"><br>Comentarios</span></a>
-            
-            <a href="#nosotros" class="a-menu"><span class="glyphicon glyphicon-user"><br>Nosotros</span></a>
-   
-               
-          
-        </div>
+    <div class="col-md-12 logo"><!--logo-->
+        <img src="./images/images-sys/smartkinlogo.png" width="400px">
     </div>
 
-
-
+    <div class="col-md-2"></div>
     
-
-    
-<?php }} ?>
+    <div class="col-md-8 bordes"><!--menu-->  
+        <div class="col-md-12 menu">
+        	<a href="./index.php">HOME</a>
+        	<img src="./images/images-sys/barritas.png" height="30px;"> 
+            <a href="./colecciones.php">COLECCIONES</a>
+            <img src="./images/images-sys/barritas.png" height="30px;"> 
+            <a href="./portfolios.php">SMARTKIN ANDA VISTIENDO</a>
+       	</div>
+    </div>
+	
+	<div class="col-md-2"></div><?php }} ?>

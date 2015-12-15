@@ -13,6 +13,7 @@ $_REQUEST[ConfigApp::$ACTION] == ConfigApp::$ACTION_DEFAULT)
   $controller = new IndexController();
   $controller->mostrarHomeColecciones();
 }
+
 else {
   switch ($_REQUEST[ConfigApp::$ACTION]) {
   	case ConfigApp::$ACTION_AGREGAR_FAVORITO:

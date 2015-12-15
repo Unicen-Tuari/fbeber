@@ -10,9 +10,8 @@
     <link href="css/smartkin.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-
-<body class="body-sm">
-<div class="col-md-12">
+<body>
+<div class="col-md-12 ">
     {if isset($usuario)}
     {foreach $usuario as $user}
     {if !$user['bloqueado']}
@@ -22,26 +21,23 @@
             <input id="{$user.id_user}" name= "new_fk_user" value="{$user.id_user}" placeholder="{$user.name_user}" hidden/>
             <div class="form-group has-success">
             <input id="new_com" name="new_com"  class="form-control" type="text" maxlength="500" value=""/ placeholder="Comente aqui...">
-        </div>
+        
         <div class="col-md-4">
             <input class="btn btn-default btn-md te" type="submit" name="saveForm" value="Comentar" />
         </div>            
+        </div>
     </form>
     {/if}
     {/foreach}
-    <div class="col-md-12 text-center">   
-    {else}
-
-        <p class="text-center">Para comentar, por favor <a href="index.php" >ingrese</a> a su cuenta.
-            Si aún no se encuentra registrado, ingrese  <a href="#registrarse" rel="registrarse" data-content='' data-placement="">aquí</a></p>
+    
     {/if}
     </div>
         <!--LISTA DE COMENTARIOS-->
        {foreach $comentarios as $comentario}
             
-                <div class="col-md-12 text-left coment">    
+                <div class="col-md-12 text-left">    
                     
-                    <img src="{$comentario.img_user}" class="icon-coment" width="60px">
+                    <img src="{$comentario.img_user}" class="icon-coment">
                     |{$comentario.fecha_com}|
                     {$comentario.name_user}
                     {$comentario.comentario}
@@ -51,5 +47,22 @@
 
         </div>
     </div>
+   
+
+
+    </div>
+  </div>
+</div>
+<!-- jQuery -->
+    <script src="js/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="./js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./js/bootstrap.js"></script>
+
+    <!-- Main -->
+    <script src="./js/main.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>  

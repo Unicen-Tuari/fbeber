@@ -1,4 +1,3 @@
-
 		<div class="col-md-12">
 			<div class="col-md-6 text-center">
 			{foreach $admin as $user}
@@ -7,13 +6,12 @@
 	        	</div>
 	        {/foreach}
 	        </div>
-	         <div class="col-md-6 text-right">
+	        <div class="col-md-6 text-right">
 	        	<br>
 	        	<button id="logout" class="glyphicon glyphicon-off btn btn-danger"></button>
 	        </div>
-	    </div>
-	        	
-			
+	    </div>	
+
 
 <div class="panel-group text-left" id="accordion" role="tablist" aria-multiselectable="true">
  <div class="panel panel-default">
@@ -28,8 +26,7 @@
       <div class="panel-body">
         {foreach $admin as $user}
           
-        	Nombre de Usuario: {$user.name_admin}
-   			
+        	Nombre de Usuario: {$user.name_admin}	
    			<button name="mostrar" onclick="mostrar('name_admin')" type="button" class="btn btn-default" aria-label="Left Align">
   				<span class="glyphicon glyphicon-pencil" aria-hidden="true">
 				</span>
@@ -52,8 +49,6 @@
   				<span class="glyphicon glyphicon-pencil" aria-hidden="true">
 				</span>Contraseña
 			</button> 
-		
-			
 				<div id="pass_user" style="display:none;" class="col-md-12 text-center"><br>
 					<form action="index.php?action=modificar_pass_admin&id_admin={$user['id_admin']}" method="POST" enctype="multipart/form-data">
 					<div class="col-md-8">
@@ -63,11 +58,9 @@
 			        <button id="logout" type="submit" class="btn btn-success">Guardar</button>    
 			        </div>
 	    			</form>
-				</div>
-
-	        	
-		{/foreach}
-      </div>
+				</div>        	
+			{/foreach}
+      	</div>
     </div>
 
 

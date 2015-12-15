@@ -14,23 +14,63 @@ class IndexController {
 
 //MOSTRAR PAGINA
 	
+  public function loginUsuario($formulario)
+  {
+      $error = $this->verificarFormulario($formulario);
+    if(!$error)
+    {
+      $user = $this->model->getUsuario($formulario["email_user"]);
+      
+      if(empty($user))
+      {
+        $this->view->MensajeError("Error: Usuario Inexistente");
+      }   
+      if($user[0]["pass_user"] != md5($formulario["pass_user"]))
+      {
+        $this->view->MensajeError("Error: Password Inválida");
+      }
+      
+      session_start();
+      $_SESSION["email_user"]=$formulario["email_user"];
+
+      $this->view->mostrarHomeAdmin($this->model->getAdmin($_SESSION["email_user"]), $this->model->getComentariosUser($_SESSION["email_user"]), $this->model->getLikes($_SESSION["email_user"]),$this->model->getInformacion(),$this->model->getSlides());
+      
+    }
+    else
+    {
+     $this->view->mostrarHomeColecciones(null,null,null,$this->model->getColecciones(),$this->model->getFavoritos(),$this->model->getInformacion()); 
+    }
+    
+  }
+  
+  private function verificarFormulario($formulario)
+  {
+    if(!$this->verificaremail($formulario["email_user"]))
+      return "Error: Email Inválido";
+    if(strlen($formulario["pass_user"])<=0)
+      return "Error: La password es vacía";
+  }
+  
+  private function verificaremail($email){ 
+    if (!ereg("^([a-zA-Z0-9._]+)@([a-zA-Z0-9.-]+).([a-zA-Z]{2,4})$",$email)){ 
+      return false; 
+    } else { 
+       return true; 
+    } 
+  }
   public function mostrarHomeColecciones()
   {
     session_start();
     if(isset($_SESSION["email_user"]))
     {
-      $this->view->mostrarHomeColecciones($this->model->getAdmin($_SESSION["email_user"]),$this->model->getColecciones(),$this->model->getFavoritos());
+      $this->view->mostrarHomeColecciones($this->model->getAdmin($_SESSION["email_user"]), $this->model->getComentariosUser($_SESSION["email_user"]), $this->model->getLikes($_SESSION["email_user"]),$this->model->getColecciones(),$this->model->getFavoritos(),$this->model->getInformacion());
     }
     else
     {
-     $this->view->mostrarHomeColecciones(null,$this->model->getColecciones(),$this->model->getFavoritos()); 
+     $this->view->mostrarHomeColecciones(null,null,null,$this->model->getColecciones(),$this->model->getFavoritos(),$this->model->getInformacion()); 
     }    
   }
 
-  public function mostrarHomePortfolios()
-  {
-      $this->view->mostrarHomePortfolios($this->model->getPortfolios());    
-  }
   public function mostrarHomeComentarios()
   {
     session_start();
@@ -49,15 +89,28 @@ class IndexController {
 		session_start();
 		if(isset($_SESSION["email_user"]))
 		{
-      $this->view->mostrarHomeAdmin($this->model->getAdmin($_SESSION["email_user"]), $this->model->getComentariosUser($_SESSION["email_user"]), $this->model->getLikes($_SESSION["email_user"]),$this->model->getInformacion());
+      $this->view->mostrarHomeAdmin($this->model->getAdmin($_SESSION["email_user"]), $this->model->getComentariosUser($_SESSION["email_user"]), $this->model->getLikes($_SESSION["email_user"]),$this->model->getInformacion(),$this->model->getSlides());
     }
 		else
 		{	
-      $this->view->mostrarHomeAdmin(null,null,null,$this->model->getInformacion());
+      $this->view->mostrarHomeAdmin(null,null,null,$this->model->getInformacion(),$this->model->getSlides());
 		  
     }
 	}
+  //PORTFOLIOS
+   public function mostrarHomePortfolios()
+  {
+    session_start();
+    if(isset($_SESSION["email_user"]))
+    {
+      $this->view->mostrarHomePortfolios($this->model->getAdmin($_SESSION["email_user"]), $this->model->getComentariosUser($_SESSION["email_user"]), $this->model->getLikes($_SESSION["email_user"]),$this->model->getInformacion(),$this->model->getPortfolios());    
+    }
+    else{
+      $this->view->mostrarHomePortfolios(null,null,null,$this->model->getInformacion(),$this->model->getPortfolios());    
 
+    }
+  }
+  
 
 /*funciones*/
 //AGREGAR USUARIO
@@ -71,6 +124,7 @@ class IndexController {
     }
     $this->mostrarHomeAdmin();
   }
+
 //MODIFICAR DATOS USUARIO
 function agregarImgUser(){
     if(isset($_FILES['imagesToUpload']) && isset($_REQUEST['id_user']) ){
@@ -91,8 +145,6 @@ function agregarImgUser(){
     }
     $this->mostrarHomeAdmin();
   }
-
-
 function modificarPassUser(){
     if(isset($_REQUEST['upd_pass']) && isset($_REQUEST['id_user'])){
       $this->model->modificarPassUser(md5($_REQUEST['upd_pass']),$_REQUEST['id_user']);

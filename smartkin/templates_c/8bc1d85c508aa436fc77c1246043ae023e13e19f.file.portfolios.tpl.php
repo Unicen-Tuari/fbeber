@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-12-02 13:18:16
+<?php /* Smarty version Smarty-3.1.14, created on 2015-12-10 06:51:13
          compiled from "./templates/portfolios.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:213592898856544375c69a41-82832989%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8bc1d85c508aa436fc77c1246043ae023e13e19f' => 
     array (
       0 => './templates/portfolios.tpl',
-      1 => 1449058695,
+      1 => 1449726672,
       2 => 'file',
     ),
   ),
@@ -20,46 +20,36 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'portfolios' => 0,
-    'portfolio' => 0,
     'imagen' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_56544375c8e0d8_16585660')) {function content_56544375c8e0d8_16585660($_smarty_tpl) {?><!DOCTYPE html>
-<html lang="en">
+<?php if ($_valid && !is_callable('content_56544375c8e0d8_16585660')) {function content_56544375c8e0d8_16585660($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="css/smartkin.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-</head>
+        <div class="col-md-12 fondoplaca"> <!--galeria-->
 
-<body class="body-sm">
-
-<div class="portfolios text-center">
-
-      
-  <?php  $_smarty_tpl->tpl_vars['portfolio'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['portfolio']->_loop = false;
+      <div class="col-md-2"></div>
+      <div class="col-md-8 placa">
+<h3>Smartkin anda vistiendo</h3> 
+        <?php  $_smarty_tpl->tpl_vars['imagen'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['imagen']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['portfolios']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['portfolio']->key => $_smarty_tpl->tpl_vars['portfolio']->value){
-$_smarty_tpl->tpl_vars['portfolio']->_loop = true;
-?>
-      <?php  $_smarty_tpl->tpl_vars['imagen'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['imagen']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['portfolio']->value['imagenes']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['imagen']->key => $_smarty_tpl->tpl_vars['imagen']->value){
 $_smarty_tpl->tpl_vars['imagen']->_loop = true;
 ?>
-        <div class="text-center img-port" style="background:url('./images/<?php echo $_smarty_tpl->tpl_vars['imagen']->value['img_port'];?>
-'); background-size:cover;"><br><br>
-          <?php echo $_smarty_tpl->tpl_vars['imagen']->value['descripcion'];?>
+            <div class="text-center port" >
+              <img src="./images/<?php echo $_smarty_tpl->tpl_vars['imagen']->value['img_port'];?>
+" class="img-port" width="100%">
+              <p><br><?php echo $_smarty_tpl->tpl_vars['imagen']->value['descripcion'];?>
+</p>
+            </div>
+          <?php } ?>      </div>
+      <div class="col-md-2"></div>
+    </div>
+      	
 
-        </div>
-      <?php } ?>
-  <?php } ?>
-</div>
-</body>
-</html>  <?php }} ?>
+
+<?php echo $_smarty_tpl->getSubTemplate ("placa.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+
+<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php }} ?>

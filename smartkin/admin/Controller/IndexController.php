@@ -162,6 +162,90 @@ public function imprimirPagina()
     }
     $this->mostrarHomeUsuarios();
   }
+//slides
+  //mostrar slides
+  public function mostrarHomeSlides()
+  {
+    session_start();
+    if(isset($_SESSION["email_admin"]))
+    {
+        $this->view->mostrarHomeSlides($this->model->getSlides());
+      }
+    else
+    {
+        
+    $this->view->mostrarHomeSlides(null);
+    }
+  }
+//agregar slides
+  function agregarSlides(){
+    if(isset($_REQUEST['slide']) && isset($_FILES['imagesToUpload'])){
+        $this->model->agregarSlides($_REQUEST['slide'],$_FILES['imagesToUpload']);
+      }
+    else{
+      $this->view->mostrarError('La tarea que intenta crear esta vacia');
+    }
+    $this->mostrarHomeSlides();
+  }
+//borrar slides
+  function borrarSlides(){
+    if(isset($_REQUEST['id_slide'])){
+      $this->model->borrarSlides($_REQUEST['id_slide']);
+    }
+    else{
+      $this->view->mostrarError('La tarea que intenta borrar no existe');
+    }
+    $this->mostrarHomeSlides();
+  }
+//modificar slides
+  function modificarNameSlide(){
+    if(isset($_REQUEST['upd_name_slide']) && isset($_REQUEST['id_slide'])){
+      $this->model->modificarNameCol($_REQUEST['upd_name_slide'],$_REQUEST['id_slide']);
+    }   
+    else{
+      $this->view->mostrarError('La tarea que intenta realizar no existe');
+    }
+    $this->mostrarHomeSlides();
+  }
+//Img slides
+   function agregarSlide(){
+    if(isset($_REQUEST['id_slide']) && isset($_FILES['imagesToUpload'])){
+        $this->model->agregarSlide($_REQUEST['id_slide'],$_FILES['imagesToUpload']);
+      }
+    else{
+      $this->view->mostrarError('La tarea que intenta crear esta vacia');
+    }
+    $this->mostrarHomeSlides();
+  }
+  function borrarImgSlide(){
+    if(isset($_REQUEST['id_img_slide'])){
+      $this->model->borrarImgSlide($_REQUEST['id_img_slide']);
+    }
+    else{
+      $this->view->mostrarError('La tarea que intenta borrar no existe');
+    }
+    $this->mostrarHomeSlides();
+  }
+
+  function publicarSlides(){
+    if(isset($_REQUEST['id_slide'])){
+      $this->model->publicarSlides($_REQUEST['id_slide']);
+    }
+    else{
+      $this->view->mostrarError('La tarea que intenta realizar no existe');
+    }
+    $this->mostrarHomeSlides();
+  }
+
+  function noPublicarSlides(){
+    if(isset($_REQUEST['id_slide'])){
+      $this->model->noPublicarSlides($_REQUEST['id_slide']);
+    }
+    else{
+      $this->view->mostrarError('La tarea que intenta realizar no existe');
+    }
+    $this->mostrarHomeSlides();
+  }
 
 //COLECCIONES
 //agregar

@@ -7,6 +7,14 @@ include 'Controller/IndexController.php';
 $model = new IndexModel();
 $view = new IndexView();
 $controller = new IndexController($model, $view);
-$controller->imprimirPagina();
+
+if(isset($_GET["colecciones"]))
+{
+	$controller->imprimirColecciones($_GET["colecciones"]);
+}
+else
+{
+	$controller->imprimirPagina();
+}
 
 ?>

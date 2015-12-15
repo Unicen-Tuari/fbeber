@@ -23,6 +23,11 @@ $_REQUEST[ConfigApp::$ACTION] == ConfigApp::$ACTION_DEFAULT)
   $controller = new IndexController();
   $controller->mostrarHomeAdmin();
 }
+
+else if(isset($_GET["portfolios"]))
+{
+  $controller->imprimirPortfolios($_GET["portfolios"]);
+}
 else {
   switch ($_REQUEST[ConfigApp::$ACTION]) {
     case ConfigApp::$ACTION_BORRAR_COMENTARIO:

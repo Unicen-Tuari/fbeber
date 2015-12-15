@@ -37,6 +37,12 @@ class IndexView
 		$this->smarty->display('admin_colecciones.tpl');
 	}
 
+//slides
+	function mostrarHomeSlides($slides){
+		$this->smarty->assign('slides',$slides);
+		$this->smarty->display('admin_slides.tpl');
+	}
+
 //comentarios
 	function mostrarHomeComentarios($comentarios){
 			  $this->smarty->assign('comentarios', $comentarios);

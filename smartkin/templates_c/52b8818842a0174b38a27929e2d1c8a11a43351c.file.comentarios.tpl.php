@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 13:14:27
+<?php /* Smarty version Smarty-3.1.14, created on 2015-12-13 22:55:14
          compiled from "./templates/comentarios.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:130929762556544375cec362-06026722%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '52b8818842a0174b38a27929e2d1c8a11a43351c' => 
     array (
       0 => './templates/comentarios.tpl',
-      1 => 1448367248,
+      1 => 1450043712,
       2 => 'file',
     ),
   ),
@@ -38,9 +38,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link href="css/smartkin.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-
-<body class="body-sm">
-<div class="col-md-12">
+<body>
+<div class="col-md-12 ">
     <?php if (isset($_smarty_tpl->tpl_vars['usuario']->value)){?>
     <?php  $_smarty_tpl->tpl_vars['user'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['user']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['usuario']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -57,18 +56,15 @@ $_smarty_tpl->tpl_vars['user']->_loop = true;
 " hidden/>
             <div class="form-group has-success">
             <input id="new_com" name="new_com"  class="form-control" type="text" maxlength="500" value=""/ placeholder="Comente aqui...">
-        </div>
+        
         <div class="col-md-4">
             <input class="btn btn-default btn-md te" type="submit" name="saveForm" value="Comentar" />
         </div>            
+        </div>
     </form>
     <?php }?>
     <?php } ?>
-    <div class="col-md-12 text-center">   
-    <?php }else{ ?>
-
-        <p class="text-center">Para comentar, por favor <a href="index.php" >ingrese</a> a su cuenta.
-            Si aún no se encuentra registrado, ingrese  <a href="#registrarse" rel="registrarse" data-content='' data-placement="">aquí</a></p>
+    
     <?php }?>
     </div>
         <!--LISTA DE COMENTARIOS-->
@@ -78,10 +74,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['comentario']->key => $_smarty_tpl->tp
 $_smarty_tpl->tpl_vars['comentario']->_loop = true;
 ?>
             
-                <div class="col-md-12 text-left coment">    
+                <div class="col-md-12 text-left">    
                     
                     <img src="<?php echo $_smarty_tpl->tpl_vars['comentario']->value['img_user'];?>
-" class="icon-coment" width="60px">
+" class="icon-coment">
                     |<?php echo $_smarty_tpl->tpl_vars['comentario']->value['fecha_com'];?>
 |
                     <?php echo $_smarty_tpl->tpl_vars['comentario']->value['name_user'];?>
@@ -94,6 +90,23 @@ $_smarty_tpl->tpl_vars['comentario']->_loop = true;
 
         </div>
     </div>
+   
+
+
+    </div>
+  </div>
+</div>
+<!-- jQuery -->
+    <script src="js/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="./js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./js/bootstrap.js"></script>
+
+    <!-- Main -->
+    <script src="./js/main.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>  
 <?php }} ?>

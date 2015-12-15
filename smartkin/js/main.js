@@ -1,3 +1,39 @@
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+function getSlides()
+{
+	xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		document.getElementById("tableData").innerHTML = "";
+	       document.getElementById("tableData").innerHTML=xmlhttp.responseText;
+	    }
+	  }
+	 e = document.getElementById("slides");
+	 
+	xmlhttp.open("GET","index.php?slides=" ,true);
+	xmlhttp.send();
+}
+
+function getPortfolios()
+{
+	xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		document.getElementById("tableData").innerHTML = "";
+	       document.getElementById("tableData").innerHTML=xmlhttp.responseText;
+	    }
+	  }
+	 e = document.getElementById("potfolios");
+	 
+	xmlhttp.open("GET","index.php?portfolios=" ,true);
+	xmlhttp.send();
+}
 $("#saveForm").click(function() {
 
 	$.ajax({

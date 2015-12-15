@@ -11,21 +11,7 @@ function mostrar(cual)
         elElemento.style.display = 'block';
       }
   };
-  
-$("#logout").click(function() {
 
-	$.ajax({
-	  type: "POST",
-	  url: "logout.php",
-	  data:$("#formlogin").serialize(),
-	  success: function(data)
-			   {
-				   window.location = "index.php";
-				}
-	});
- 
-	return false;
-});
 
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').focus()

@@ -13,7 +13,14 @@ class ConfigApp {
   public static $ACTION_NO_HABILITAR_USUARIO = 'no_habilitar_usuario';
 
 //SLIDES
-  public static $ACTION_BORRAR_SLIDE= 'borrar_slide';
+  public static $ACTION_AGREGAR_SLIDES = 'agregar_slides';
+  public static $ACTION_MODIFICAR_NAME_SLIDE = 'modificar_name_slide';
+  public static $ACTION_BORRAR_SLIDES = 'borrar_slides';
+  public static $ACTION_PUBLICAR_SLIDES = 'publicar_slide';
+  public static $ACTION_NO_PUBLICAR_SLIDES = 'no_publicar_slide';
+  public static $ACTION_AGREGAR_SLIDE = 'agregar_img_slide';
+  public static $ACTION_BORRAR_SLIDE = 'borrar_img_slide';
+  public static $ACTION_MODIFICAR_IMG_SLIDE = 'modificar_img_slide';
 
 //INFO
   public static $ACTION_AGREGAR_INFO = 'agregar_info';

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-11-24 12:36:29
+<?php /* Smarty version Smarty-3.1.14, created on 2015-12-13 22:57:48
          compiled from "./templates/user.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:47549007656544790dc0eb2-69710649%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '20b6e8dc8f83b739dc720c8897bd298bcda1ab31' => 
     array (
       0 => './templates/user.tpl',
-      1 => 1448364980,
+      1 => 1450043867,
       2 => 'file',
     ),
   ),
@@ -48,7 +48,6 @@ $_smarty_tpl->tpl_vars['user']->_loop = true;
 	        	<br>
 	        	<button id="logout" class="glyphicon glyphicon-off btn btn-danger"></button>
 	        </div>
-	    </div>
 	        	
 			
 
@@ -86,7 +85,8 @@ $_smarty_tpl->tpl_vars['user']->_loop = true;
 			        <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
 	    			</form>
 				</div>
-			<div class="col-md-10">
+			<div class="col-md-12">
+        		Foto de perfil:
         		<form action="index.php?action=agregar_img_user&id_user=<?php echo $_smarty_tpl->tpl_vars['user']->value['id_user'];?>
 " method="POST" enctype="multipart/form-data">
             	    <input type="file" name="imagesToUpload[]" id="imagesToUpload"/>
@@ -184,8 +184,8 @@ $_smarty_tpl->tpl_vars['comentario']->_loop = true;
 	<?php } ?>
 
     </div>
-    
-</div></div></div></div>
-	
+  </div></div></div></div>
+
+
 		
 	<?php }} ?>

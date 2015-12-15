@@ -15,7 +15,12 @@ class IndexModel
       $this->db = new PDO('mysql:host=localhost;dbname=smartkin;charset=utf8', 'root', '');
       $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
-
+public function getUsuario($mail){
+    $sql = "Select * from usuario where email_user = '$mail'";
+    $query = $this->db->prepare($sql);
+    $query->execute();
+    return $query->fetchAll();
+  }
 //IMAGENES
   private function subirImagenes($imagenes){
     $carpeta = "./images/";
@@ -132,7 +137,11 @@ function modificarPassUser($upd_pass,$id_usuario){
     return $informacion;
   }
 
+
+
+
 //colecciones
+  
   function getColecciones(){
     $colecciones = array();
     $consulta = $this->db->prepare("SELECT * FROM coleccion");
@@ -157,25 +166,24 @@ function modificarPassUser($upd_pass,$id_usuario){
     return $likes;
   }
 
-//portfolios
-  function getPortfolios(){
-    $portfolios = array();
-    $consulta = $this->db->prepare("SELECT * FROM portfolio");
-    $consulta->execute();
-
-    while($portfolio = $consulta->fetch(PDO::FETCH_ASSOC)) {
-      $consultaImgPort = $this->db->prepare("SELECT * FROM img_port where fk_id_port=?");
-      $consultaImgPort->execute(array($portfolio['id_port']));
-      $imagenes_portfolio = $consultaImgPort->fetchAll();
-      $portfolio['imagenes'] = $imagenes_portfolio;
-      $portfolios[]=$portfolio;
+public function getPortfolios(){
+    $sql = "SELECT* FROM portfolio JOIN img_port WHERE id_port=fk_id_port";
+    $resultado = $this->db->prepare($sql);
+    $resultado->execute();
+    if(!$resultado){
+      die(print($this->conn->errorInfo()[2]));
     }
-
-    return $portfolios;
+     return $resultado->fetchAll(PDO::FETCH_ASSOC);
   }
 
-//slides
-
-  
+  public function getSlides(){
+    $sql = "SELECT* FROM slide JOIN img_slide WHERE id_slide=fk_id_slide";
+    $resultado = $this->db->prepare($sql);
+    $resultado->execute();
+    if(!$resultado){
+      die(print($this->conn->errorInfo()[2]));
+    }
+     return $resultado->fetchAll(PDO::FETCH_ASSOC);
+  }  
 }
 ?>

@@ -252,6 +252,82 @@ class IndexModel
       $consulta->execute(array($id_tarea,$ruta));
     }
   }
+/*SLIDES*/
+
+  function getSlides(){
+    $slides = array();
+    $consulta = $this->db->prepare("SELECT * FROM slide");
+    $consulta->execute();
+    while($slide = $consulta->fetch(PDO::FETCH_ASSOC)) {
+      $consultaImagenes = $this->db->prepare("SELECT * FROM img_slide where fk_id_slide=?");
+      $consultaImagenes->execute(array($slide['id_slide']));
+      $imagenes_slide = $consultaImagenes->fetchAll();
+      $slide['imagenes'] = $imagenes_slide;
+      $slides[]=$slide;
+    }
+    return $slides;
+  }
+//agregar
+  function agregarSlides($slide, $imagenes){
+    try{
+        $destinos_finales=$this->subirImagenes($imagenes);
+      $this->db->beginTransaction();
+      $consulta = $this->db->prepare('INSERT INTO slide(name_slide) VALUES(?)');
+      $consulta->execute(array($slide));
+      $id_slide = $this->db->lastInsertId();
+
+      foreach ($destinos_finales as $key => $value) {
+        $consulta = $this->db->prepare('INSERT INTO img_slide(fk_id_slide,img_slide) VALUES(?,?)');
+        $consulta->execute(array($id_slide, $value));
+      }
+      $this->db->commit();
+    }
+    catch(Exception $e){
+    $this->db->rollBack();
+    }
+  }
+//borrar
+  function borrarSlides($id_slide){
+    $consulta = $this->db->prepare('DELETE FROM slide WHERE id_slide=?');
+    $consulta->execute(array($id_slide));
+  }
+//modificar
+  function modificarNameSlides($upd_name_slide,$id_slide){
+      $consulta = $this->db->prepare('UPDATE slide SET name_slide=? WHERE id_slide=?');
+      $consulta->execute(array($upd_name_slide,$id_slide));
+  }
+//publicar
+  function publicarSlides($id_slide){
+    $consulta = $this->db->prepare('UPDATE slide SET publico=0 WHERE id_slide=?');
+    $consulta->execute(array($id_slide));
+  }
+//no publicar
+  function noPublicarSlides($id_slide){
+    $consulta = $this->db->prepare('UPDATE slide SET publico=1 WHERE id_slide=?');
+    $consulta->execute(array($id_slide));
+  }
+
+//MODELOS
+  function borrarImgSlide($id_img_slide){
+    $consulta = $this->db->prepare('DELETE FROM img_slide WHERE id_img_slide=?');
+    $consulta->execute(array($id_img_slide));
+  }
+//agregar
+    function agregarSlide($id_slide, $imagenes){
+    try{
+      $destinos_finales=$this->subirImagenes($imagenes);
+      $this->db->beginTransaction();
+      foreach ($destinos_finales as $key => $value) {
+        $consulta = $this->db->prepare('INSERT INTO img_slide(fk_id_slide,img_slide) VALUES(?,?)');
+        $consulta->execute(array($id_slide, $value));
+      }
+      $this->db->commit();
+    }
+    catch(Exception $e){
+    $this->db->rollBack();
+    }
+  }
+//borrar  
 
 }
 ?>

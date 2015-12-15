@@ -11,7 +11,6 @@
 	        	<br>
 	        	<button id="logout" class="glyphicon glyphicon-off btn btn-danger"></button>
 	        </div>
-	    </div>
 	        	
 			
 
@@ -42,7 +41,8 @@
 			        <button type="submit" class="btn btn-success glyphicon glyphicon-ok">Guardar</button>    
 	    			</form>
 				</div>
-			<div class="col-md-10">
+			<div class="col-md-12">
+        		Foto de perfil:
         		<form action="index.php?action=agregar_img_user&id_user={$user['id_user']}" method="POST" enctype="multipart/form-data">
             	    <input type="file" name="imagesToUpload[]" id="imagesToUpload"/>
               		<button type="submit" class="btn btn-default">Listo!</button>         
@@ -122,8 +122,8 @@
 	{/foreach}
 
     </div>
-    
-</div></div></div></div>
-	
+  </div></div></div></div>
+
+
 		
 	

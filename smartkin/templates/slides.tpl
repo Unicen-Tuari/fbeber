@@ -1,14 +1,12 @@
-
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<br><br><div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0"></li>
-    
-    <li data-target="#carousel-example-generic" data-slide-to="0"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="0"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="0"></li>
-
-
+        {foreach $slides as $imagen}
+          
+            <li data-target="#carousel-example-generic" data-slide-to="0"></li>
+          
+        {/foreach}
     
   </ol>
 
@@ -16,32 +14,21 @@
   <div class="carousel-inner" role="listbox">
     
     <div class="item active">
-      <img width="100%" src="./images/images_sys/slides/1.jpg" alt="..." class="img-thumbnail "/>
+      <img src="./images/images-sys/slide-default.jpg" alt="..." class="img-thumbnail" />
       <div class="carousel-caption">
       </div>
     </div>
   
     
-
+  {foreach $slides as $imagen}
+          
     <div class="item">
-      <img width="100%" src="./images/images_sys/slides/2.jpg" class="img-thumbnail" id="{$slide['id_mod']}"/>
+      <img width="100%" src="./images/{$imagen['img_slide']}" class="img-thumbnail" id="{$slide['id_slide']}"/>
       <div class="carousel-caption">
       </div>
     </div>    
+        {/foreach}
   
-  <div class="item">
-      <img width="100%" src="./images/images_sys/slides/3.jpg" class="img-thumbnail" id="{$slide['id_mod']}"/>
-      <div class="carousel-caption">
-      </div>
-    </div>    
-  
-  <div class="item">
-      <img width="100%" src="./images/images_sys/slides/4.jpg" class="img-thumbnail" id="{$slide['id_mod']}"/>
-      <div class="carousel-caption">
-      </div>
-    </div>    
-  
-
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
