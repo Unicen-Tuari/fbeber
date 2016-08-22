@@ -1,8 +1,0 @@
-admin: admin@admin.com
-pass: admin
-
-user:bart@gmail.com
-pass:bart
-
-user:march@gmail.com
-pass:admin
