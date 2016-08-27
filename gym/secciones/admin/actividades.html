@@ -1,0 +1,50 @@
+<div class="col-md-12"> 
+    <h1>Actividades</h1>
+    <button data-toggle="modal" data-target="#nueva-actividad" class="btn btn-success">Agregar Actividad</button>
+    <br>
+    <br>
+    <table class="table">
+    	<tr>
+    		<td><b>ID</b></td>
+    		<td><b>ACTIVIDAD</b></td>
+    		<td><b>DESCRIPCIÓN</b></td>
+    		<td><b>DÍAS Y HORARIOS</b></td>
+    		<td><b>INSCRIPTOS</b></td>
+    		<td><b>PRECIO MENSUAL</b></td>
+    		<td><b>ELIMINAR</b></td>
+    	</tr>
+    	<tr>
+        	<td>1</td>
+        	<td>Pilates</td>
+        	<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+        	<td>Lunes y Jueves 8:00 a 10:00</td>
+        	<td>10/25</td>
+        	<td>$325</td>
+        	<td><a class="glyphicon glyphicon-remove"></a></td>
+      	</tr>	
+    </table>
+</div>
+
+<!--modal nueva actividad-->
+<div class="modal fade" id="nueva-actividad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nueva Actividad</h4>
+      </div>
+      <div class="modal-body">
+        <input id="nombre-act" class="form-control" type="text" maxlength="20" placeholder="Nombre de la actividad"><br>
+        <input id="horario-act" class="form-control" type="text" maxlength="200" placeholder="Detalle días y horarios"><br>
+        <input id="precio-act" class="form-control" type="text" maxlength="200" placeholder="Precio"><br>
+        <textarea id="descripcion-act" class="form-control" type="text" placeholder="Realice una breve descripcion de la actividad"></textarea>
+    </div>
+      <div class="modal-footer">
+        <button type="reset" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button id="agregar-actividad" type="button" class="btn btn-success">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+                    
