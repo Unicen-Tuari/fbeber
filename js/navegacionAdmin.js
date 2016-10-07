@@ -20,7 +20,7 @@ $("#usuarios").on("click",function() {loadRenderAdmin("./secciones/admin/usuario
 $("#profesores").on("click", function() {loadRenderAdmin("./secciones/admin/profesores.html",profesores)});
 
 //AGREGA LAS FUNCIONES A LAS SECCIONES SI ES QUE TIENE
-function loadRenderAdmin(link,seccion) {
+/*function loadRenderAdmin(link,seccion) {
   $.ajax({
       type:"GET",
       url: link,
@@ -36,4 +36,5 @@ function loadRenderAdmin(link,seccion) {
       }
     });
 }
+*/
 
