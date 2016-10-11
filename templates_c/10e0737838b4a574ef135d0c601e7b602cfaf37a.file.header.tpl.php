@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-06 20:48:47
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-08 02:03:47
          compiled from ".\templates\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2770157f67f2cefe188-36807665%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '10e0737838b4a574ef135d0c601e7b602cfaf37a' => 
     array (
       0 => '.\\templates\\header.tpl',
-      1 => 1475779726,
+      1 => 1475885015,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="images/icono2.png"/> 
-    <title>Mf gym</title>
+    <title>Gimnasio | Sitio Oficial</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

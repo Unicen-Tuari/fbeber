@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-07 00:47:33
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-11 01:29:49
          compiled from ".\templates\actividades.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:787057f6759a91d962-33289416%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f80e79dd0d96401a728898e6fbda97a73c9b74f1' => 
     array (
       0 => '.\\templates\\actividades.tpl',
-      1 => 1475794052,
+      1 => 1476142188,
       2 => 'file',
     ),
   ),
@@ -33,65 +33,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <h1>Actividades</h1>
     <br>
     <!--todas las actividades-->
-    <p>***Traidas de la base de datos***</p>
     <?php  $_smarty_tpl->tpl_vars['actividad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['actividad']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['actividades']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['actividad']->key => $_smarty_tpl->tpl_vars['actividad']->value){
 $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 ?>
     <div class="col-md-3">
-        <div class="promocion4">
-          <img src="images/actividades/fitness.jpg" alt="..." class="img-circle" width="140px" height="140px">
+        <div class="promocion3">
+          <img src="images/actividades/<?php echo $_smarty_tpl->tpl_vars['actividad']->value['foto'];?>
+" alt="..." class="img-circle" width="100px" height="100px">
           <h3><?php echo $_smarty_tpl->tpl_vars['actividad']->value['nombre'];?>
 </h3>
-          <h4><?php echo $_smarty_tpl->tpl_vars['actividad']->value['diasHorarios'];?>
-</h4>
           <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion">Inscribirse</button>
           <p><?php echo $_smarty_tpl->tpl_vars['actividad']->value['descripcion'];?>
 </p>
+          <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id_profesor'];?>
+">Ver Profesores</button>
         </div>
       </div>
     <?php } ?>
-    <div class="col-md-12"><p>***fin de base de datos***</p></div>
-      <div class="col-md-3">
-        <div class="promocion3">
-          <h3>Indoor</h3>
-          <h4>Días y horarios</h4>
-          <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion">Inscribirse</button>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="promocion3">
-          <h3>Musculación</h3>
-          <h4>Días y horarios</h4>
-          <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion">Inscribirse</button>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="promocion3">
-          <h3>Zumba</h3>
-          <h4>Días y horarios</h4>
-          <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion">Inscribirse</button>          
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <div id="infoActZumba">
-          <a id="infoZumba">Ver más</a>
-        </div> 
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="promocion3">
-          <h3>Rutinas</h3>
-          <h4>Días y horarios</h4>
-          <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion">Inscribirse</button>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <div id="infoActRutina">
-          <a id="infoRutina">Ver más</a>
-        </div> 
-        </div>
-        
-      </div>     
+    </div> 
 </div>
 
 <!--Formulario de inscripcion-->
@@ -100,9 +61,10 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Inscripción a Rutinas</h4>
+        <h4 class="modal-title" id="myModalLabel">Inscripción A FUTURO</h4>
       </div>
       <div class="modal-body">
+      <h1>NO FUNCIONA AÚN! :)</h1>
         <h5>Complete el siguiente formulario</h5>
         <input id="nombre-user" class="form-control" type="text" maxlength="20" placeholder="Nombre y Apellido"><br>
         <input id="edad-user" class="form-control" type="text" maxlength="200" placeholder="Edad"><br>

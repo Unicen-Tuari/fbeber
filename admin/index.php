@@ -14,22 +14,36 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
       $controller->actividades();
   break;
 
-  case configApp::$ACTION_NOSOTROS:
-      $controller->nosotros();
-  break;
-
-  case configApp::$ACTION_CONTACTO:
-      $controller->contacto();
+  case configApp::$ACTION_PROFESORES:
+      $controller->profesores();
   break;
 
   //ABM ACTIVIDADES
-  case configApp::$ACTION_AGREGAR_ACTIVIDAD:
-      $controller->agregaractividad();
-  break;
+  case ConfigApp::$ACTION_AGREGAR_ACTIVIDAD:
+      $controller->agregarActividad();
+      break;
+  case ConfigApp::$ACTION_BORRAR_ACTIVIDAD:
+      $controller->borrarActividad();
+      break;
+  case ConfigApp::$ACTION_MODIFICAR_ACTIVIDAD:
+      $controller->modificarActividad();
+      break; 
 
+  //ABM PROFESORES
+  case ConfigApp::$ACTION_AGREGAR_PROFESOR:
+      $controller->agregarProfesor();
+      break;
+  case ConfigApp::$ACTION_BORRAR_PROFESOR:
+      $controller->borrarProfesor();
+      break;
+  case ConfigApp::$ACTION_MODIFICAR_PROFESOR:
+      $controller->modificarProfesor();
+      break; 
 
+  //DEFAULT    
   default:
     echo "PÁGINA NO ENCONTRADA";
   break;
+
 }
  ?>

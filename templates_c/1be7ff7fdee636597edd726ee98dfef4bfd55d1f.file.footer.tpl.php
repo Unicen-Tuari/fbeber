@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-07 00:55:06
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-09 13:49:18
          compiled from ".\templates\footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2682657f67f2cf34c94-70404683%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1be7ff7fdee636597edd726ee98dfef4bfd55d1f' => 
     array (
       0 => '.\\templates\\footer.tpl',
-      1 => 1475794501,
+      1 => 1476013754,
       2 => 'file',
     ),
   ),
@@ -29,7 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
-    <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/popover.js" charset="utf-8"></script>
     
 
   </body>

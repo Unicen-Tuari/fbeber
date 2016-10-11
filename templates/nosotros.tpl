@@ -16,35 +16,16 @@
         <br>
         <h2>Profesores</h2>
         <br>
-        <p>***Traidas de la base de datos***</p>
         {foreach $profesores as $profesor}
         <div class="col-md-4">
-          <img src="images/perfiles/perfil1.png" alt="..." class="img-circle" width="140px" height="140px">
-          <h3>{$profesor.nombre}</h3>
+          <img src="images/perfiles/{$profesor.foto}" alt="..." class="img-circle" width="140px" height="140px">
+          <h3>{$profesor.nombre} {$profesor.apellido}</h3>
+          <h4>Profesor/a de {$profesor.nombreAct}</h4>
           <p>{$profesor.descripcion}</p>
           <p>Encontrame en:<img src="images/redes/link-color.png" width="25px;" class="zoom"></p>
         </div>
         {/foreach}
-            <div class="col-md-12"><p>***fin de base de datos***</p></div>
-
-        <div class="col-md-4">
-          <img src="images/perfiles/perfil1.png" alt="..." class="img-circle" width="140px" height="140px">
-          <h3>Pepe</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Encontrame en:<img src="images/redes/link-color.png" width="25px;" class="zoom"></p>
-        </div>
-        <div class="col-md-4">
-          <img src="images/perfiles/perfil2.png" alt="..." class="img-circle"width="140px" height="140px">
-          <h3>Maria</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Encontrame en:<img src="images/redes/link-color.png" width="25px;" class="zoom"></p>
-        </div>
-        <div class="col-md-4">
-          <img src="images/perfiles/perfil3.png" alt="..." class="img-circle" width="140px" height="140px">
-          <h3>Coca</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Encontrame en:<img src="images/redes/link-color.png" width="25px;" class="zoom"></p>
-        </div>
+           
       </div>
     </div>
   </div>

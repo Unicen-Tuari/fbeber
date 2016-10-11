@@ -21,7 +21,7 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case configApp::$ACTION_CONTACTO:
       $controller->contacto();
   break;
-
+  
   default:
     echo "PÁGINA NO ENCONTRADA";
   break;

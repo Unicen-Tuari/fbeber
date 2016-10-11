@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-06 21:19:59
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-11 00:25:54
          compiled from ".\templates\nosotros.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:546457f69c46b30da8-47429701%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '89ca919062979c96a27b99e4cfad316f11a2249a' => 
     array (
       0 => '.\\templates\\nosotros.tpl',
-      1 => 1475781599,
+      1 => 1476138353,
       2 => 'file',
     ),
   ),
@@ -43,41 +43,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <br>
         <h2>Profesores</h2>
         <br>
-        <p>***Traidas de la base de datos***</p>
         <?php  $_smarty_tpl->tpl_vars['profesor'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['profesor']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['profesores']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['profesor']->key => $_smarty_tpl->tpl_vars['profesor']->value){
 $_smarty_tpl->tpl_vars['profesor']->_loop = true;
 ?>
         <div class="col-md-4">
-          <img src="images/perfiles/perfil1.png" alt="..." class="img-circle" width="140px" height="140px">
+          <img src="images/perfiles/<?php echo $_smarty_tpl->tpl_vars['profesor']->value['foto'];?>
+" alt="..." class="img-circle" width="140px" height="140px">
           <h3><?php echo $_smarty_tpl->tpl_vars['profesor']->value['nombre'];?>
+ <?php echo $_smarty_tpl->tpl_vars['profesor']->value['apellido'];?>
 </h3>
+          <h4>Profesor/a de <?php echo $_smarty_tpl->tpl_vars['profesor']->value['nombreAct'];?>
+</h4>
           <p><?php echo $_smarty_tpl->tpl_vars['profesor']->value['descripcion'];?>
 </p>
           <p>Encontrame en:<img src="images/redes/link-color.png" width="25px;" class="zoom"></p>
         </div>
         <?php } ?>
-            <div class="col-md-12"><p>***fin de base de datos***</p></div>
-
-        <div class="col-md-4">
-          <img src="images/perfiles/perfil1.png" alt="..." class="img-circle" width="140px" height="140px">
-          <h3>Pepe</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Encontrame en:<img src="images/redes/link-color.png" width="25px;" class="zoom"></p>
-        </div>
-        <div class="col-md-4">
-          <img src="images/perfiles/perfil2.png" alt="..." class="img-circle"width="140px" height="140px">
-          <h3>Maria</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Encontrame en:<img src="images/redes/link-color.png" width="25px;" class="zoom"></p>
-        </div>
-        <div class="col-md-4">
-          <img src="images/perfiles/perfil3.png" alt="..." class="img-circle" width="140px" height="140px">
-          <h3>Coca</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Encontrame en:<img src="images/redes/link-color.png" width="25px;" class="zoom"></p>
-        </div>
+           
       </div>
     </div>
   </div>

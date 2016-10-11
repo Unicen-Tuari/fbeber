@@ -8,7 +8,7 @@
     <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
-    <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/popover.js" charset="utf-8"></script>
     
 
   </body>
