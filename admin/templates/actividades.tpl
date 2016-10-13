@@ -1,4 +1,3 @@
-{include file = "header.tpl"}
 <div class="col-md-12">
     
     <h1>Actividades</h1>
@@ -100,4 +99,3 @@
 </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-{include file = "footer.tpl"}

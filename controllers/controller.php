@@ -12,6 +12,10 @@ class controller
     $this->model = new model();
   }
 
+  public function includes(){
+    $this->view->mostrarIncludes();
+  }
+
   public function inicio(){
     $this->view->mostrarInicio();
   }
@@ -19,7 +23,9 @@ class controller
   public function actividades(){
     $actividades = $this->model->getActividades();
     $this->view->mostrarActividades($actividades);
+
   }
+  
 
   public function nosotros(){
     $profesores = $this->model->getProfesores();

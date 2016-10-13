@@ -9,6 +9,10 @@ class view
     $this->smarty=new Smarty;
   }
 
+   public function mostrarIncludes(){
+    $this->smarty->display('include.tpl');
+  } 
+
   public function mostrarInicio(){
     $this->smarty->display('index.tpl');
   }

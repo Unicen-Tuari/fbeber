@@ -12,16 +12,20 @@ class controller
     $this->model = new model();
   }
 
+   public function includes(){
+    $this->view->mostrarIncludes();
+  }
+
   public function inicio(){
     $this->view->mostrarInicio();
   }
 
-  public function actividades(){
+  public function actividades_admin(){
     $actividades = $this->model->getActividades();
     $this->view->mostrarActividades($actividades);
   }
 
-  public function profesores(){
+  public function profesores_admin(){
     $profesores = $this->model->getProfesores();
         $actividades = $this->model->getActividades();
 

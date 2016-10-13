@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-07 00:52:13
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-13 01:25:12
          compiled from ".\templates\contacto.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1832657f6a06d7f4172-12004041%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '466dcc33a567cd1e7c81f5bde835247db88df2dd' => 
     array (
       0 => '.\\templates\\contacto.tpl',
-      1 => 1475794332,
+      1 => 1476312284,
       2 => 'file',
     ),
   ),
@@ -19,9 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_57f6a06d911432_72845641',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57f6a06d911432_72845641')) {function content_57f6a06d911432_72845641($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
-<div class="col-md-12">
+<?php if ($_valid && !is_callable('content_57f6a06d911432_72845641')) {function content_57f6a06d911432_72845641($_smarty_tpl) {?><div class="col-md-12">
   <h1>Formas de Contactarnos</h1>
 
     <div class="col-md-3">
@@ -66,7 +64,4 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <a href="https://gmail.com" target="_blank"><img src="images/redes/google+.jpg" height="50px;"></a>
       <a href="https://instagram.com" target="_blank"><img src="images/redes/instragram.jpg" height="50px;"></a>
     </div>
-
-<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
 <?php }} ?>

@@ -3,48 +3,37 @@
 
 //INICIALIZACION DE CONSTANTES-SECCIONES
 const home = "home";
+const include = "includes";
 const actividades = "actividades";
-const consejos = "consejos";
 const nosotros = "nosotros";
 const contacto = "contacto";
 
-//CARGA EL CONTENIDO DEL HOME
-$(document).ready(function(){
-  loadRender("./secciones/home-cont.html");
-})
-
 // CARGA EL CONTENIDO DE CADA SECCION, SEGUN EL BOTON
-$("#home").on("click",function() {loadRender("./secciones/home-cont.html",home)});
-$("#actividades").on("click",function() {loadRender("./secciones/actividades.html",actividades)});
-$("#consejos").on("click", function() {loadRender("./secciones/consejos.html",consejos)});
-$("#nosotros").on("click",function() {loadRender("./secciones/nosotros.html",nosotros)});
-$("#contacto").on("click",function() {loadRender("./secciones/contacto.html",contacto)});
+$("#home").on("click",function() {
+  loadRender("index.php?action=inicio")});
+$("#actividades").on("click",function() {loadRender("index.php?action=actividades")});
+$("#nosotros").on("click",function() {loadRender("index.php?action=nosotros")});
+$("#contacto").on("click",function() {loadRender("index.php?action=contacto")});
 
 
 //AGREGA LAS FUNCIONES A LAS SECCIONES QUE LAS CONTIENEN
-function loadRender(link,seccion) {
-  $.ajax({
-      type:"GET",
-      url: link,
-      dataType: "html",
-      success: function(data) {
-        $("#contenido").html(data);
-        switch(seccion) { 
-          case actividades: {
-            funcionInformacionActividades();
-            break;
+function loadRender(etiqueta) {
+ $.ajax({
+            method: "GET",
+            url:etiqueta,
+            error: function () {
+                    alert("La página no cargó");
+                    },
+            dataType: "HTML",
+            success: function (receivedData) {
+              $("#contenido").html(receivedData);
+            },
           }
-        }
-      },
-      error:function(jqxml, status, errorThrown){
-        $("#contenido").text("No se pudo cargar la página");
-        console.log(errorThrown);
-      }
-    });
-}
+        );
+  }
 
 //SE PIDE LA INFORMACION
-function funcionInformacionActividades() {
+/*function funcionInformacionActividades() {
   $("#infoFitness").on("click", function() {cargaInfoActividades("./secciones/infoActividades/fitness.html");
   });
   $("#infoTaebox").on("click", function() {cargaInfoActividades("./secciones/infoActividades/taebox.html");
@@ -80,5 +69,5 @@ function cargaInfoActividades(link) {
         console.log(errorThrown);
       }
     });
-}
+*/
 

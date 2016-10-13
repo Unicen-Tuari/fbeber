@@ -1,8 +1,7 @@
-{include file = "header.tpl"}
     <div class="col-md-12">
       <div class="col-md-8">
       <br><br>
-        <img class="img-thumbnail"src="images/gym.jpg" width="100%">
+        <img class="img-thumbnail" src="images/gym.jpg" width="100%">
       </div>
 
       <div class="col-md-3">
@@ -30,4 +29,4 @@
     </div>
   </div>
 
-{include file = "footer.tpl" }
+

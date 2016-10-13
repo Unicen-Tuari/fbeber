@@ -1,5 +1,3 @@
-{include file = 'header.tpl'}
-
 <br><h1>Bienvenidos</h1>
   <br>
 
@@ -73,4 +71,4 @@
   </div>
   </div>
 </div>
-{include file = 'footer.tpl'}
+

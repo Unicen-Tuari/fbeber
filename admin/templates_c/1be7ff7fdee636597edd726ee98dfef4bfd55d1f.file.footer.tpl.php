@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-07 20:11:24
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-13 02:00:36
          compiled from ".\templates\footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2720757f6d64f2cf7f1-17906759%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1be7ff7fdee636597edd726ee98dfef4bfd55d1f' => 
     array (
       0 => '.\\templates\\footer.tpl',
-      1 => 1475863855,
+      1 => 1476316835,
       2 => 'file',
     ),
   ),
@@ -19,17 +19,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_57f6d64f2d74f7_35232112',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57f6d64f2d74f7_35232112')) {function content_57f6d64f2d74f7_35232112($_smarty_tpl) {?><div id="contenido" class="cont col-md-12"></div>
-
+<?php if ($_valid && !is_callable('content_57f6d64f2d74f7_35232112')) {function content_57f6d64f2d74f7_35232112($_smarty_tpl) {?>
   <div class="col-md-12 footer">
-    <p>Sitio creado por Florencia Beber | <a href="admin.php">Administrador</a></p>
+    <p>Sitio creado por Florencia Beber | <a href="./index.php">Administrador</a></p>
   </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.js"></script>
-    <script src="../js/main.js" charset="utf-8"></script>
+    <script src="./js/main.js" charset="utf-8"></script>
     
 
   </body>

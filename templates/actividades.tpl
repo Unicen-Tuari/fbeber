@@ -1,4 +1,3 @@
-{include file = "header.tpl"}
 <div class="col-md-12">
     
     
@@ -13,7 +12,7 @@
           <h3>{$actividad.nombre}</h3>
           <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion">Inscribirse</button>
           <p>{$actividad.descripcion}</p>
-          <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="{$actividad.id_profesor}">Ver Profesores</button>
+          <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Ver Profesores</button>
         </div>
       </div>
     {/foreach}
@@ -45,4 +44,3 @@
   </div>
 </div>
 
-{include file = "footer.tpl"}

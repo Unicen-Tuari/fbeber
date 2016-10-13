@@ -1,4 +1,3 @@
-{include file = "header.tpl"}
 <div class="col-md-12">
   <h1>Formas de Contactarnos</h1>
 
@@ -44,5 +43,3 @@
       <a href="https://gmail.com" target="_blank"><img src="images/redes/google+.jpg" height="50px;"></a>
       <a href="https://instagram.com" target="_blank"><img src="images/redes/instragram.jpg" height="50px;"></a>
     </div>
-
-{include file = "footer.tpl"}

@@ -1,6 +1,4 @@
-{include file = "header.tpl"}
-    
-    
+
     <div class="col-md-12">
     <h1>Profesores</h1>
     <br>
@@ -132,6 +130,3 @@
     </div>
   </div>
 </div>
-
-
-{include file = "footer.tpl"}

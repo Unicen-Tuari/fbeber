@@ -1,5 +1,25 @@
-<h1>Bienvenidos</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-13 01:27:41
+         compiled from "templates\index.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1208457fec6dea80be9-92498407%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'f90be83b235fb03cc225b11607032e9ddd415899' => 
+    array (
+      0 => 'templates\\index.tpl',
+      1 => 1476314860,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1208457fec6dea80be9-92498407',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_57fec6deaaf9e3_99383052',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_57fec6deaaf9e3_99383052')) {function content_57fec6deaaf9e3_99383052($_smarty_tpl) {?><br><h1>Bienvenidos</h1>
   <br>
 
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -71,3 +91,6 @@
     </div>
   </div>
   </div>
+</div>
+
+<?php }} ?>

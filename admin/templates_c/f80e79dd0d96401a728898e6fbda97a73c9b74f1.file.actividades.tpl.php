@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-11 01:20:17
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-13 01:46:32
          compiled from ".\templates\actividades.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2498057f6d8c83aef81-87553217%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f80e79dd0d96401a728898e6fbda97a73c9b74f1' => 
     array (
       0 => '.\\templates\\actividades.tpl',
-      1 => 1476141614,
+      1 => 1476315972,
       2 => 'file',
     ),
   ),
@@ -24,9 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57f6d8c8750b51_81908823')) {function content_57f6d8c8750b51_81908823($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
-<div class="col-md-12">
+<?php if ($_valid && !is_callable('content_57f6d8c8750b51_81908823')) {function content_57f6d8c8750b51_81908823($_smarty_tpl) {?><div class="col-md-12">
     
     <h1>Actividades</h1>
     <br>
@@ -143,5 +141,4 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>
