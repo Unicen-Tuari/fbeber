@@ -1,3 +1,4 @@
+{include file = "header.tpl"}
 <div class="col-md-12">
     
     <h1>Actividades</h1>
@@ -21,7 +22,7 @@
 
       {foreach $actividades as $actividad} 
         <tr>
-          <td><img src="../images/actividades/{$actividad.foto}" alt="..." class="img-circle" width="50px" height="50px"></td>
+          <td><img src="../images/{$actividad.foto}" alt="..." class="img-circle" width="50px" height="50px"></td>
           <td>{$actividad.id}</td>
           <td>{$actividad.nombre}</td>
           <td>{$actividad.descripcion}</td>
@@ -43,8 +44,8 @@
 </div>
 <div class="modal-body">
 <form action="index.php?action=agregar_actividad" method="POST" enctype="multipart/form-data">
-    <p>Imagen a modo de ilustración</p>
-      <input type="text" name="new_foto_act" id="new_foto_act"><br>
+    <div class="col-md-12 text-center"><p>Seleccione imagen a modo de ilustración<br>
+          <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/actividadDefault.png" alt="Tu imagen"><input type="file" name="imagesToUpload[]" id="imagesToUpload"/></div>
     <p>Nombre de la actividad</p>
       <input type="text" class="form-control" id="new_nombre_act" name="new_nombre_act"><br>
     <p>Realice una breve descripción de la actividad</p>
@@ -99,3 +100,4 @@
 </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+{include file = "footer.tpl"}

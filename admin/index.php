@@ -4,25 +4,20 @@ require('controllers/controller.php');
 
 $controller = new controller();
 
-switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp::$ACTION_INCLUDE){
+switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp::$ACTION_INICIO){
 
-
-  case configApp::$ACTION_INCLUDE:
-      $controller->includes();
-  break;
-  
   case configApp::$ACTION_INICIO:
       $controller->inicio();
   break; 
 
-  case configApp::$ACTION_ACTIVIDADES_ADMIN:
-      $controller->actividades_admin();
+  case configApp::$ACTION_ACTIVIDADES:
+      $controller->actividades();
   break;
 
-  case configApp::$ACTION_PROFESORES_ADMIN:
-      $controller->profesores_admin();
+  case configApp::$ACTION_PROFESORES:
+      $controller->profesores();
   break;
-
+  
   //ABM ACTIVIDADES
   case ConfigApp::$ACTION_AGREGAR_ACTIVIDAD:
       $controller->agregarActividad();

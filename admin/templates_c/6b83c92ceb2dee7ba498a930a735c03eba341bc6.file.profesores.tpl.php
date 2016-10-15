@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-13 02:01:51
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-15 13:26:07
          compiled from ".\templates\profesores.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:287357f8429a92a6d4-97294037%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6b83c92ceb2dee7ba498a930a735c03eba341bc6' => 
     array (
       0 => '.\\templates\\profesores.tpl',
-      1 => 1476315986,
+      1 => 1476530766,
       2 => 'file',
     ),
   ),
@@ -19,33 +19,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_57f8429ab93a62_13096802',
   'variables' => 
   array (
-    'actividades' => 0,
-    'actividad' => 0,
     'profesores' => 0,
     'profesor' => 0,
+    'actividades' => 0,
+    'actividad' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57f8429ab93a62_13096802')) {function content_57f8429ab93a62_13096802($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_57f8429ab93a62_13096802')) {function content_57f8429ab93a62_13096802($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+    
+    
     <div class="col-md-12">
     <h1>Profesores</h1>
     <br>
       <div class="col-md-2 text-left"><button class="btn btn-success" data-toggle="modal" data-target="#agregarProfesor">Agregar Profesor</button>
       </div>
-      <div class="col-md-4 text-right"><h4>Ver profesores por actividad:</h4></div>
-      <div class="col-md-2">
-        <select class="form-control">
-          <option>Todas</option>
-          <?php  $_smarty_tpl->tpl_vars['actividad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['actividad']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['actividades']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['actividad']->key => $_smarty_tpl->tpl_vars['actividad']->value){
-$_smarty_tpl->tpl_vars['actividad']->_loop = true;
-?>
-            <option value="<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['actividad']->value['nombre'];?>
-</option>
-          <?php } ?>
-        </select>
+         
     </div>
 
     <div class="col-md-12">
@@ -69,7 +59,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['profesor']->key => $_smarty_tpl->tpl_
 $_smarty_tpl->tpl_vars['profesor']->_loop = true;
 ?>
         <tr id="datosActividad">
-          <td><img src="../images/perfiles/<?php echo $_smarty_tpl->tpl_vars['profesor']->value['foto'];?>
+          <td><img src="../images/<?php echo $_smarty_tpl->tpl_vars['profesor']->value['foto'];?>
 " alt="..." class="img-circle zoom" width="50px" height="50px"></td>
           <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
 </td>
@@ -84,7 +74,7 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
           <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['nombreAct'];?>
 </td>
           <td><a class="glyphicon glyphicon-refresh zoom" data-toggle="modal" data-target="#modificarProfesor"></a></td>
-          <td><a a type="button" class="glyphicon glyphicon-trash zoom" href="index.php?action=borrar_profesor&id_profe=<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
+          <td><a type="button" class="glyphicon glyphicon-trash zoom" href="index.php?action=borrar_profesor&id_profe=<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
 "></a></td>
         </tr>  
           <?php } ?>
@@ -102,6 +92,8 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
       </div>
       <div class="modal-body text-left">
         <form action="index.php?action=agregar_profesor" method="POST" enctype="multipart/form-data">
+        <div class="col-md-12 text-center"><p>Foto de Perfil<br>
+          <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/perfilDefault.png" alt="Tu imagen"><input type="file" name="imagesToUpload[]" id="imagesToUpload"/></div>
       <p>Seleccione la actividad que dictará el nuevo profesor: 
       <select id="new_id_act" name="new_id_act" class="form-control">
           <?php  $_smarty_tpl->tpl_vars['actividad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['actividad']->_loop = false;
@@ -115,8 +107,6 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
           <?php } ?>
         </select>
       </p><br>
-        <p>Foto de Perfil
-          <input type="text" class="form-control" id="new_foto_p" name="new_foto_p"></p><br>
           <p>Nombre: 
           <input type="text" class="form-control" id="new_nombre_p" name="new_nombre_p"></p><br>
           <p>Apellido:
@@ -199,4 +189,7 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
     </div>
   </div>
 </div>
+
+
+<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

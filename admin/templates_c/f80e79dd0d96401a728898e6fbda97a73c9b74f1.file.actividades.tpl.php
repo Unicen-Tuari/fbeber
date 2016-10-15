@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-13 01:46:32
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-14 00:58:32
          compiled from ".\templates\actividades.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2498057f6d8c83aef81-87553217%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f80e79dd0d96401a728898e6fbda97a73c9b74f1' => 
     array (
       0 => '.\\templates\\actividades.tpl',
-      1 => 1476315972,
+      1 => 1476399496,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57f6d8c8750b51_81908823')) {function content_57f6d8c8750b51_81908823($_smarty_tpl) {?><div class="col-md-12">
+<?php if ($_valid && !is_callable('content_57f6d8c8750b51_81908823')) {function content_57f6d8c8750b51_81908823($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+<div class="col-md-12">
     
     <h1>Actividades</h1>
     <br>
@@ -51,7 +53,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['actividad']->key => $_smarty_tpl->tpl
 $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 ?> 
         <tr>
-          <td><img src="../images/actividades/<?php echo $_smarty_tpl->tpl_vars['actividad']->value['foto'];?>
+          <td><img src="../images/<?php echo $_smarty_tpl->tpl_vars['actividad']->value['foto'];?>
 " alt="..." class="img-circle" width="50px" height="50px"></td>
           <td><?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
 </td>
@@ -78,8 +80,8 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 </div>
 <div class="modal-body">
 <form action="index.php?action=agregar_actividad" method="POST" enctype="multipart/form-data">
-    <p>Imagen a modo de ilustración</p>
-      <input type="text" name="new_foto_act" id="new_foto_act"><br>
+    <div class="col-md-12 text-center"><p>Seleccione imagen a modo de ilustración<br>
+          <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/actividadDefault.png" alt="Tu imagen"><input type="file" name="imagesToUpload[]" id="imagesToUpload"/></div>
     <p>Nombre de la actividad</p>
       <input type="text" class="form-control" id="new_nombre_act" name="new_nombre_act"><br>
     <p>Realice una breve descripción de la actividad</p>
@@ -141,4 +143,5 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

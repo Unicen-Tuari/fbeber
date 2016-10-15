@@ -2,10 +2,10 @@
 class ConfigApp{
 //navegacion
   public static $ACTION = 'action';
-  public static $ACTION_INCLUDE = 'includes';
   public static $ACTION_INICIO = 'inicio_admin';
-  public static $ACTION_ACTIVIDADES_ADMIN = "actividades_admin";
-  public static $ACTION_PROFESORES_ADMIN= "profesores_admin";
+  public static $ACTION_ACTIVIDADES = "actividades_admin";
+  public static $ACTION_PROFESORES= "profesores_admin";
+  public static $ACTION_ACT_PROFE= "act_profe";
 
 //ABM actividad
   public static $ACTION_AGREGAR_ACTIVIDAD = "agregar_actividad";

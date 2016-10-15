@@ -9,10 +9,6 @@ class view
     $this->smarty=new Smarty;
   }
 
-   public function mostrarIncludes(){
-    $this->smarty->display('include.tpl');
-  } 
-
   public function mostrarInicio(){
     $this->smarty->display('index.tpl');
   }
@@ -22,8 +18,7 @@ class view
     $this->smarty->display('actividades.tpl');
   }
 
-  public function mostrarProfesores($profesores,$actividades){
-    $this->smarty->assign('actividades',$actividades);
+  public function mostrarProfesores($profesores){
     $this->smarty->assign('profesores',$profesores);
     $this->smarty->display('profesores.tpl');
   }

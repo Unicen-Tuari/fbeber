@@ -19,18 +19,17 @@ $("#contacto").on("click",function() {loadRender("index.php?action=contacto")});
 //AGREGA LAS FUNCIONES A LAS SECCIONES QUE LAS CONTIENEN
 function loadRender(etiqueta) {
  $.ajax({
-            method: "GET",
-            url:etiqueta,
-            error: function () {
-                    alert("La página no cargó");
-                    },
-            dataType: "HTML",
-            success: function (receivedData) {
-              $("#contenido").html(receivedData);
-            },
-          }
-        );
-  }
+  method: "GET",
+  url:etiqueta,
+  error: function () {
+    alert("La página no cargó");
+  },
+  dataType: "HTML",
+  success: function (receivedData) {
+    $("#contenido").html(receivedData);
+    },
+});
+}
 
 //SE PIDE LA INFORMACION
 /*function funcionInformacionActividades() {

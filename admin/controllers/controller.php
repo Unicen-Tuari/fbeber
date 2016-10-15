@@ -12,34 +12,29 @@ class controller
     $this->model = new model();
   }
 
-   public function includes(){
-    $this->view->mostrarIncludes();
-  }
-
   public function inicio(){
     $this->view->mostrarInicio();
   }
 
-  public function actividades_admin(){
+  public function actividades(){
     $actividades = $this->model->getActividades();
     $this->view->mostrarActividades($actividades);
   }
 
-  public function profesores_admin(){
+  public function profesores(){
     $profesores = $this->model->getProfesores();
-        $actividades = $this->model->getActividades();
-
-    $this->view->mostrarProfesores($profesores,$actividades);
+    $this->view->mostrarProfesores($profesores);
   }
 
   public function contacto(){
     $this->view->mostrarContacto();
   }
 
+
 //ABM ACTIVIDADES
   public function agregarActividad(){
-    if(isset($_REQUEST['new_nombre_act']) && isset($_REQUEST['new_descripcion_act']) && isset($_REQUEST['new_foto_act'])){
-        $this->model->agregarActividad($_REQUEST['new_nombre_act'], $_REQUEST['new_descripcion_act'],$_REQUEST['new_foto_act']);      
+    if(isset($_REQUEST['new_nombre_act']) && isset($_REQUEST['new_descripcion_act']) && isset($_FILES['imagesToUpload'])){
+        $this->model->agregarActividad($_REQUEST['new_nombre_act'], $_REQUEST['new_descripcion_act'],$_FILES['imagesToUpload']);      
       }
     else{
       $this->view->mostrarError('cuack');
@@ -67,8 +62,8 @@ class controller
 
 //ABM PROFESORES
   public function agregarProfesor(){
-    if(isset($_REQUEST['new_nombre_p']) && isset($_REQUEST['new_apellido_p']) && isset($_REQUEST['new_dni_p']) && isset($_REQUEST['new_foto_p']) && isset($_REQUEST['new_descripcion_p']) && isset($_REQUEST['new_id_act'])){
-        $this->model->agregarProfesor($_REQUEST['new_nombre_p'], $_REQUEST['new_apellido_p'], $_REQUEST['new_dni_p'], $_REQUEST['new_foto_p'], $_REQUEST['new_descripcion_p'], $_REQUEST['new_id_act']);      
+    if(isset($_REQUEST['new_nombre_p']) && isset($_REQUEST['new_apellido_p']) && isset($_REQUEST['new_dni_p']) && isset($_FILES['imagesToUpload']) && isset($_REQUEST['new_descripcion_p']) && isset($_REQUEST['new_id_act'])){
+        $this->model->agregarProfesor($_REQUEST['new_nombre_p'], $_REQUEST['new_apellido_p'], $_REQUEST['new_dni_p'], $_FILES['imagesToUpload'], $_REQUEST['new_descripcion_p'], $_REQUEST['new_id_act']);      
       }
     else{
       $this->view->mostrarError('cuack');
