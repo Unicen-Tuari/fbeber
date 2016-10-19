@@ -1,4 +1,3 @@
-{include file = 'header.tpl'}
 
 
   <br>
@@ -8,4 +7,3 @@
   <br>
   <img src="../images/happy.jpg" width="500px" class="img-circle">
   <h3>A continuación encontrarás las herramientas para poder hacer su trabajo..</h3>
-{include file = 'footer.tpl'}

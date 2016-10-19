@@ -34,7 +34,6 @@ class controller
     }
   } 
 
-
   public function nosotros(){
     $profesores = $this->model->getProfesores();
     $this->view->mostrarProfesores($profesores);
@@ -43,8 +42,7 @@ class controller
   public function contacto(){
     $this->view->mostrarContacto();
   }
-
-  
+s 
 }
 
 ?>

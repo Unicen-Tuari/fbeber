@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 01:16:54
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 17:25:43
          compiled from ".\templates\profe_act.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3126458040e678ff054-58491448%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1210ea93ade2d6d1884d782271c23cb5816e9898' => 
     array (
       0 => '.\\templates\\profe_act.tpl',
-      1 => 1476832578,
+      1 => 1476890737,
       2 => 'file',
     ),
   ),
@@ -32,33 +32,37 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['act']->key => $_smarty_tpl->tpl_vars['act']->value){
 $_smarty_tpl->tpl_vars['act']->_loop = true;
 ?>
-	<h4>Próximamente habrá info sobre <?php echo $_smarty_tpl->tpl_vars['act']->value['nombre'];?>
-</h4>
+	<h3>Próximamente habrá info sobre <?php echo $_smarty_tpl->tpl_vars['act']->value['nombre'];?>
+</h3>
 <?php } ?>
+
 <?php }else{ ?>
 	<?php  $_smarty_tpl->tpl_vars['act'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['act']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['actividad']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['act']->key => $_smarty_tpl->tpl_vars['act']->value){
 $_smarty_tpl->tpl_vars['act']->_loop = true;
 ?>
-	<h4> <?php echo $_smarty_tpl->tpl_vars['act']->value['nombre'];?>
+	<h4>Profesores de <?php echo $_smarty_tpl->tpl_vars['act']->value['nombre'];?>
 </h4>
-<?php } ?>
-	<?php  $_smarty_tpl->tpl_vars['profes'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['profes']->_loop = false;
+	<?php } ?>
+			<?php  $_smarty_tpl->tpl_vars['profes'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['profes']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['profeact']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['profes']->key => $_smarty_tpl->tpl_vars['profes']->value){
 $_smarty_tpl->tpl_vars['profes']->_loop = true;
 ?>
-		<div>
-		<img src="images/perfiles/<?php echo $_smarty_tpl->tpl_vars['profes']->value['foto'];?>
-" alt="..." class="img-circle" width="70px" height="70px"><br><?php echo $_smarty_tpl->tpl_vars['profes']->value['nombre'];?>
- <?php echo $_smarty_tpl->tpl_vars['profes']->value['apellido'];?>
- - Profesor de <?php echo $_smarty_tpl->tpl_vars['profes']->value['nombreAct'];?>
-<br><?php echo $_smarty_tpl->tpl_vars['profes']->value['horarios'];?>
 
-		</div>
-		<br>
+	<table class="table text-left">
+		<tr>
+		<td><img src="images/<?php echo $_smarty_tpl->tpl_vars['profes']->value['foto'];?>
+" alt="..." class="img-circle" width="70px" height="70px"> <?php echo $_smarty_tpl->tpl_vars['profes']->value['nombre'];?>
+ <?php echo $_smarty_tpl->tpl_vars['profes']->value['apellido'];?>
+</td>
+		<td><?php echo $_smarty_tpl->tpl_vars['profes']->value['horarios'];?>
+</td>
+		</tr>
+		</table>
 	<?php } ?>
+	
 <?php }?>
       
 <?php }} ?>

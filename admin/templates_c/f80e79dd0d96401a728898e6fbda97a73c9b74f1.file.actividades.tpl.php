@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-14 00:58:32
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 17:32:38
          compiled from ".\templates\actividades.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2498057f6d8c83aef81-87553217%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f80e79dd0d96401a728898e6fbda97a73c9b74f1' => 
     array (
       0 => '.\\templates\\actividades.tpl',
-      1 => 1476399496,
+      1 => 1476891129,
       2 => 'file',
     ),
   ),
@@ -21,12 +21,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'actividades' => 0,
     'actividad' => 0,
+    'act' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57f6d8c8750b51_81908823')) {function content_57f6d8c8750b51_81908823($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
-<div class="col-md-12">
+<?php if ($_valid && !is_callable('content_57f6d8c8750b51_81908823')) {function content_57f6d8c8750b51_81908823($_smarty_tpl) {?><div class="col-md-12">
     
     <h1>Actividades</h1>
     <br>
@@ -61,9 +60,11 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['actividad']->value['descripcion'];?>
 </td>
-          <td><a class="glyphicon glyphicon-refresh zoom" data-toggle="modal" data-target="#modificarActividad"></a></td>
-          <td><a class="glyphicon glyphicon-trash zoom" href="index.php?action=borrar_actividad&id_act=<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
-"></a></td>
+          <td><button class="btn btn-info" onClick = "infoActividad(<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#modificarActividad"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
+          <td>
+          <button class="btn btn-danger" onClick = "cargaInfoAct(<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#borrarActividad"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
         </tr>  
       <?php } ?>
     </table>       
@@ -92,56 +93,50 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
   <button type="submit" class="btn btn-success">Agregar</button>
 </form>
 </div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
- 
+</div>
+</div>
+</div>
 
 <!--borrar actividad-->
-<div id="eliminarActividad" class="modal fade" tabindex="-1" role="dialog">
+<div id="borrarActividad" class="modal fade" tabindex="-1" role="dialog">
 <div class="modal-dialog" role="document">
-<div class="modal-content">
-<div class="modal-body">
-  <h3>¿Seguro que desea eliminar esta actividad?</h3>
-  <h4><?php echo $_smarty_tpl->tpl_vars['actividad']->value['nombre'];?>
-</h4>
+<div id="borraActividad" class="modal-content">
 </div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-  <a type="button" class="btn btn-danger" href="index.php?action=borrar_actividad&id_act=<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
-">Eliminar</a>
 </div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+</div>
 
 <!--Modificar Actividad-->
 <div id="modificarActividad" class="modal fade" id="inscripcion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog" role="document">
-<div class="modal-content">
+<div id="modificaActividad" class="modal-content">
 <div class="modal-header">
+<?php  $_smarty_tpl->tpl_vars['act'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['act']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['actividad']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['act']->key => $_smarty_tpl->tpl_vars['act']->value){
+$_smarty_tpl->tpl_vars['act']->_loop = true;
+?>
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <h4 class="modal-title" id="myModalLabel">Modificar los datos de <?php echo $_smarty_tpl->tpl_vars['actividad']->value['nombre'];?>
+  <h4 class="modal-title" id="myModalLabel">Modificar los datos de <?php echo $_smarty_tpl->tpl_vars['act']->value['nombre'];?>
 </h4>
 </div>
 <div class="modal-body">
-<form action="index.php?action=modificar_actividad&id_act=<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
+<form action="index.php?action=modificar_actividad&id_act=<?php echo $_smarty_tpl->tpl_vars['act']->value['id'];?>
 " method="POST" enctype="multipart/form-data">
-   <input type="text" class="form-control" id="upd_foto_a" name="upd_foto_a" value="<?php echo $_smarty_tpl->tpl_vars['actividad']->value['foto'];?>
-">
-  <input type="text" class="form-control" id="upd_nombre_a" name="upd_nombre_a" value="<?php echo $_smarty_tpl->tpl_vars['actividad']->value['nombre'];?>
-">
-  <input type="text" class="form-control" id="upd_descripcion_a" name="upd_descripcion_a" value="<?php echo $_smarty_tpl->tpl_vars['actividad']->value['descripcion'];?>
-">
+   <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/<?php echo $_smarty_tpl->tpl_vars['act']->value['foto'];?>
+"><input type="file" name="imagesToUpload[]" id="imagesToUpload"/><br>
+  <input type="text" class="form-control" id="upd_nombre_a" name="upd_nombre_a" value="<?php echo $_smarty_tpl->tpl_vars['act']->value['nombre'];?>
+"><br>
+  <input type="text" class="form-control" id="upd_descripcion_a" name="upd_descripcion_a" value="<?php echo $_smarty_tpl->tpl_vars['act']->value['descripcion'];?>
+"><br>
  
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
   <button type="submit" class="btn btn-primary">Modificar</button>
 </form>
+<?php } ?>
 </div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+</div>
+</div>
+</div>
 <?php }} ?>

@@ -27,7 +27,7 @@ function loadRender(etiqueta) {
 });
 }
 
-//carga la todos los profesores por una actividad específica
+//carga todos los profesores de una actividad específica
 function cargaProfesores(id_actividad){
   $.ajax({
     method: "POST",

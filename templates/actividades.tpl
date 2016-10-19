@@ -9,7 +9,7 @@
         <div class="promocion3">
           <img src="images/{$actividad.foto}" alt="..." class="img-circle" width="100px" height="100px">
           <h3>{$actividad.nombre}</h3>
-          <p>{$actividad.descripcion}</p>        
+          <div style="height: 100px"><p>{$actividad.descripcion}</p></div>
           <button class="btn btn-default" id="id_actividad" onClick = "cargaProfesores({$actividad['id']});" type="button" data-toggle="modal" data-target="#horarios"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Ver Días Horarios</button> <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inscribirse</button>
         </div>
       </div>
@@ -22,7 +22,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4>Días y Horarios</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h3>Días y Horarios</h3>
         <div id="tableProfesores" class="modal-body"></div>
         
       </div>

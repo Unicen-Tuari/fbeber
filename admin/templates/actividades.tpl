@@ -1,4 +1,3 @@
-{include file = "header.tpl"}
 <div class="col-md-12">
     
     <h1>Actividades</h1>
@@ -26,8 +25,9 @@
           <td>{$actividad.id}</td>
           <td>{$actividad.nombre}</td>
           <td>{$actividad.descripcion}</td>
-          <td><a class="glyphicon glyphicon-refresh zoom" data-toggle="modal" data-target="#modificarActividad"></a></td>
-          <td><a class="glyphicon glyphicon-trash zoom" href="index.php?action=borrar_actividad&id_act={$actividad['id']}"></a></td>
+          <td><button class="btn btn-info" onClick = "infoActividad({$actividad['id']});" type="button" data-toggle="modal" data-target="#modificarActividad"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
+          <td>
+          <button class="btn btn-danger" onClick = "cargaInfoAct({$actividad['id']});" type="button" data-toggle="modal" data-target="#borrarActividad"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
         </tr>  
       {/foreach}
     </table>       
@@ -56,48 +56,40 @@
   <button type="submit" class="btn btn-success">Agregar</button>
 </form>
 </div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
- 
+</div>
+</div>
+</div>
 
 <!--borrar actividad-->
-<div id="eliminarActividad" class="modal fade" tabindex="-1" role="dialog">
+<div id="borrarActividad" class="modal fade" tabindex="-1" role="dialog">
 <div class="modal-dialog" role="document">
-<div class="modal-content">
-<div class="modal-body">
-  <h3>¿Seguro que desea eliminar esta actividad?</h3>
-  <h4>{$actividad.nombre}</h4>
+<div id="borraActividad" class="modal-content">
 </div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-  <a type="button" class="btn btn-danger" href="index.php?action=borrar_actividad&id_act={$actividad['id']}">Eliminar</a>
 </div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+</div>
 
 <!--Modificar Actividad-->
 <div id="modificarActividad" class="modal fade" id="inscripcion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog" role="document">
-<div class="modal-content">
+<div id="modificaActividad" class="modal-content">
 <div class="modal-header">
+{foreach $actividad as $act}
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <h4 class="modal-title" id="myModalLabel">Modificar los datos de {$actividad.nombre}</h4>
+  <h4 class="modal-title" id="myModalLabel">Modificar los datos de {$act.nombre}</h4>
 </div>
 <div class="modal-body">
-<form action="index.php?action=modificar_actividad&id_act={$actividad['id']}" method="POST" enctype="multipart/form-data">
-   <input type="text" class="form-control" id="upd_foto_a" name="upd_foto_a" value="{$actividad.foto}">
-  <input type="text" class="form-control" id="upd_nombre_a" name="upd_nombre_a" value="{$actividad.nombre}">
-  <input type="text" class="form-control" id="upd_descripcion_a" name="upd_descripcion_a" value="{$actividad.descripcion}">
+<form action="index.php?action=modificar_actividad&id_act={$act['id']}" method="POST" enctype="multipart/form-data">
+   <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/{$act.foto}"><input type="file" name="imagesToUpload[]" id="imagesToUpload"/><br>
+  <input type="text" class="form-control" id="upd_nombre_a" name="upd_nombre_a" value="{$act.nombre}"><br>
+  <input type="text" class="form-control" id="upd_descripcion_a" name="upd_descripcion_a" value="{$act.descripcion}"><br>
  
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
   <button type="submit" class="btn btn-primary">Modificar</button>
 </form>
+{/foreach}
 </div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-{include file = "footer.tpl"}
+</div>
+</div>
+</div>

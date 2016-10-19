@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 01:45:31
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 18:13:06
          compiled from ".\templates\actividades.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:787057f6759a91d962-33289416%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f80e79dd0d96401a728898e6fbda97a73c9b74f1' => 
     array (
       0 => '.\\templates\\actividades.tpl',
-      1 => 1476834315,
+      1 => 1476893583,
       2 => 'file',
     ),
   ),
@@ -41,8 +41,8 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 " alt="..." class="img-circle" width="100px" height="100px">
           <h3><?php echo $_smarty_tpl->tpl_vars['actividad']->value['nombre'];?>
 </h3>
-          <p><?php echo $_smarty_tpl->tpl_vars['actividad']->value['descripcion'];?>
-</p>        
+          <div style="height: 100px"><p><?php echo $_smarty_tpl->tpl_vars['actividad']->value['descripcion'];?>
+</p></div>
           <button class="btn btn-default" id="id_actividad" onClick = "cargaProfesores(<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
 );" type="button" data-toggle="modal" data-target="#horarios"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Ver Días Horarios</button> <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inscribirse</button>
         </div>
@@ -56,7 +56,7 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4>Días y Horarios</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h3>Días y Horarios</h3>
         <div id="tableProfesores" class="modal-body"></div>
         
       </div>
