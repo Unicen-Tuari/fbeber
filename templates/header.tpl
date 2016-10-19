@@ -40,10 +40,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a id="home" href="#inicio">Inicio</a></li>
-            <li><a id="actividades" href="#actividades">Actividades</a></li>
-            <li><a id="nosotros" href="#nosotros">Nosotros</a></li>
-            <li><a id="contacto" href="#contacto">Contacto</a></li>
+            <li><a id="home" href="#">Inicio</a></li>
+            <li><a id="actividades" href="#">Actividades</a></li>
+            <li><a id="nosotros" href="#">Nosotros</a></li>
+            <li><a id="contacto" href="#">Contacto</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

@@ -23,11 +23,17 @@ class view
     $this->smarty->display('actividades.tpl');
   }
 
+  public function mostrarProfeact($profeact,$actividad){
+    $this->smarty->assign('actividad',$actividad);
+    $this->smarty->assign('profeact',$profeact);
+    $this->smarty->display('profe_act.tpl');
+  }
+
   public function mostrarProfesores($profesores){
     $this->smarty->assign('profesores',$profesores);
     $this->smarty->display('nosotros.tpl');
   }
-
+  
   public function mostrarContacto(){
     $this->smarty->display('contacto.tpl');
   }

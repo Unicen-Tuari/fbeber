@@ -17,7 +17,7 @@
         <br>
         {foreach $profesores as $profesor}
         <div class="col-md-4">
-          <img src="images/perfiles/{$profesor.foto}" alt="..." class="img-circle" width="140px" height="140px">
+          <img src="images/{$profesor.foto}" alt="..." class="img-circle" width="140px" height="140px">
           <h3>{$profesor.nombre} {$profesor.apellido}</h3>
           <h4>Profesor/a de {$profesor.nombreAct}</h4>
           <p>{$profesor.descripcion}</p>

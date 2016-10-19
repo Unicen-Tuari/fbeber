@@ -23,9 +23,17 @@ class controller
   public function actividades(){
     $actividades = $this->model->getActividades();
     $this->view->mostrarActividades($actividades);
-
   }
   
+  public function profeact(){
+    if(isset($_REQUEST['id_actividad'])){
+      $id=$_REQUEST['id_actividad'];
+      $actividad = $this->model->getActividad($id);
+      $profeact = $this->model->getProfeact($id);
+      $this->view->mostrarProfeact($profeact,$actividad);
+    }
+  } 
+
 
   public function nosotros(){
     $profesores = $this->model->getProfesores();

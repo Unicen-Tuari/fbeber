@@ -9,7 +9,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/popover.js" charset="utf-8"></script>
+    <script src="js/popover.js"></script>
     
 
   </body>

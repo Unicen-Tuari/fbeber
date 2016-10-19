@@ -5,7 +5,10 @@ class ConfigApp{
   public static $ACTION_INCLUDE = 'include';
   public static $ACTION_INICIO = 'inicio';
   public static $ACTION_ACTIVIDADES = "actividades";
+  public static $ACTION_ACTIVIDAD = "actividad";
+  public static $ACTION_PROFE_ACT = 'profeact';
   public static $ACTION_NOSOTROS = "nosotros";
   public static $ACTION_CONTACTO = "contacto";
+
 }
 ?>

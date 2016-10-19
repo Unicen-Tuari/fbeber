@@ -18,6 +18,14 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
       $controller->actividades();
   break;
 
+  case configApp::$ACTION_ACTIVIDAD:
+      $controller->actividad();
+  break;
+    
+  case configApp::$ACTION_PROFE_ACT:
+    $controller->profeact();
+  break;
+
   case configApp::$ACTION_NOSOTROS:
       $controller->nosotros();
   break;

@@ -1,6 +1,5 @@
 <div class="col-md-12">
     
-    
     <div class="col-md-12">
     <h1>Actividades</h1>
     <br>
@@ -8,15 +7,27 @@
     {foreach $actividades as $actividad}
     <div class="col-md-3">
         <div class="promocion3">
-          <img src="images/actividades/{$actividad.foto}" alt="..." class="img-circle" width="100px" height="100px">
+          <img src="images/{$actividad.foto}" alt="..." class="img-circle" width="100px" height="100px">
           <h3>{$actividad.nombre}</h3>
-          <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion">Inscribirse</button>
-          <p>{$actividad.descripcion}</p>
-          <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Ver Profesores</button>
+          <p>{$actividad.descripcion}</p>        
+          <button class="btn btn-default" id="id_actividad" onClick = "cargaProfesores({$actividad['id']});" type="button" data-toggle="modal" data-target="#horarios"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Ver Días Horarios</button> <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inscribirse</button>
         </div>
       </div>
-    {/foreach}
+    {/foreach}  
     </div> 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="horarios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4>Días y Horarios</h4>
+        <div id="tableProfesores" class="modal-body"></div>
+        
+      </div>
+    </div>
+  </div>
 </div>
 
 <!--Formulario de inscripcion-->
