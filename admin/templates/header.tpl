@@ -37,9 +37,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a id="inicio_admin" href="#">Inicio</a></li>
-            <li><a id="actividades_admin" href="#">Actividades</a></li>
-            <li><a id="profesores_admin" href="#">Profesores</a></li>
+            <li><a href="index.php?action=inicio_admin">Inicio</a></li>
+            <li><a href="index.php?action=actividades_admin">Actividades</a></li>
+            <li><a href="index.php?action=profesores_admin" href="#">Profesores</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

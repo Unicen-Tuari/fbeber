@@ -85,14 +85,14 @@ public function profesor(){
     else{
       $this->view->mostrarError('La actividad que intenta borrar no existe');
     }
-    $this->includes();
+    $this->actividades();
   }
   public function modificarActividad(){
     if(isset($_REQUEST['upd_nombre_a']) && isset($_REQUEST['upd_descripcion_a']) && isset($_FILES['imagesToUpload']) && isset($_REQUEST['id_act'])){
       $this->model->modificarActividad($_REQUEST['upd_nombre_a'], $_REQUEST['upd_descripcion_a'], $_FILES['imagesToUpload'],$_REQUEST['id_act']);
     }   
     else{
-      $this->view->mostrarError('La actividad que intenta realizar no existe');
+      $this->view->mostrarError('La actividad que intenta modificar no existe');
     }
     $this->actividades();
   }

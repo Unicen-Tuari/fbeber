@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 17:32:50
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 17:59:56
          compiled from ".\templates\modif_act.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:116375806db53aebbf4-18170688%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c75a4f8ba1937df619ca095bc4a08ecd4bb9b09e' => 
     array (
       0 => '.\\templates\\modif_act.tpl',
-      1 => 1476890112,
+      1 => 1476892752,
       2 => 'file',
     ),
   ),
@@ -30,11 +30,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['act']->key => $_smarty_tpl->tpl_vars['act']->value){
 $_smarty_tpl->tpl_vars['act']->_loop = true;
 ?>
-  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <h4 class="modal-title" id="myModalLabel">Modificar los datos de <?php echo $_smarty_tpl->tpl_vars['act']->value['nombre'];?>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="myModalLabel">Modificar los datos de <?php echo $_smarty_tpl->tpl_vars['act']->value['nombre'];?>
 </h4>
 </div>
 <div class="modal-body">
+
 <form action="index.php?action=modificar_actividad&id_act=<?php echo $_smarty_tpl->tpl_vars['act']->value['id'];?>
 " method="POST" enctype="multipart/form-data">
    <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/<?php echo $_smarty_tpl->tpl_vars['act']->value['foto'];?>
@@ -45,6 +46,7 @@ $_smarty_tpl->tpl_vars['act']->_loop = true;
 "><br>
  
 </div>
+
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
   <button type="submit" class="btn btn-primary">Modificar</button>

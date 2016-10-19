@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 17:32:42
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 18:02:54
          compiled from ".\templates\profesores.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:287357f8429a92a6d4-97294037%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6b83c92ceb2dee7ba498a930a735c03eba341bc6' => 
     array (
       0 => '.\\templates\\profesores.tpl',
-      1 => 1476891153,
+      1 => 1476892966,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57f8429ab93a62_13096802')) {function content_57f8429ab93a62_13096802($_smarty_tpl) {?>    
+<?php if ($_valid && !is_callable('content_57f8429ab93a62_13096802')) {function content_57f8429ab93a62_13096802($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+    
     
     <div class="col-md-12">
     <h1>Profesores</h1>
@@ -150,7 +151,8 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
         <form action="index.php?action=modificar_profesor&id_profe=<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
 " method="POST" enctype="multipart/form-data">
         <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/<?php echo $_smarty_tpl->tpl_vars['profesor']->value['foto'];?>
-"><input type="file" name="imagesToUpload[]" id="imagesToUpload" value="<?php echo $_smarty_tpl->tpl_vars['profesor']->value['foto'];?>
+">
+        <input type="file" name="imagesToUpload[]" id="imagesToUpload" value="<?php echo $_smarty_tpl->tpl_vars['profesor']->value['foto'];?>
 " /><br>
             <select id="upd_id_act" name="upd_id_act">
               <?php  $_smarty_tpl->tpl_vars['actividad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['actividad']->_loop = false;
@@ -184,4 +186,7 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 </div>
 </div>
 </div>
+
+<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+    
 <?php }} ?>

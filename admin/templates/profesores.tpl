@@ -1,4 +1,4 @@
-    
+{include file ="header.tpl"}    
     
     <div class="col-md-12">
     <h1>Profesores</h1>
@@ -100,7 +100,8 @@
       </div>
       <div class="modal-body">
         <form action="index.php?action=modificar_profesor&id_profe={$profesor['id']}" method="POST" enctype="multipart/form-data">
-        <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/{$profesor.foto}"><input type="file" name="imagesToUpload[]" id="imagesToUpload" value="{$profesor.foto}" /><br>
+        <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/{$profesor.foto}">
+        <input type="file" name="imagesToUpload[]" id="imagesToUpload" value="{$profesor.foto}" /><br>
             <select id="upd_id_act" name="upd_id_act">
               {foreach $actividades as $actividad}
               <option value="{$actividad.id}">{$actividad.nombre}</option>
@@ -122,3 +123,5 @@
 </div>
 </div>
 </div>
+
+{include file ="footer.tpl"}    
