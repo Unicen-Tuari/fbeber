@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-26 01:21:20
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-27 01:38:35
          compiled from ".\templates\profesores.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:287357f8429a92a6d4-97294037%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6b83c92ceb2dee7ba498a930a735c03eba341bc6' => 
     array (
       0 => '.\\templates\\profesores.tpl',
-      1 => 1477437678,
+      1 => 1477525111,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'profesores' => 0,
     'profesor' => 0,
+    'actividades' => 0,
+    'actividad' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -70,8 +72,8 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['horarios'];?>
 </td>
-          <td><button class="btn btn-info" onClick = "modifProfesor(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
-);" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+          <td><button class="btn btn-info" onClick = "profeActividades(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-danger" onClick = "infoProfesor(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
 );" type="button" data-toggle="modal" data-target="#borrarProfesor"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
           </tr>  
@@ -84,9 +86,42 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
 <div id="agregarProfesor" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3>Agregar Profesor</h3>
+      
+          <div  class="col-md-12 modal-body">
+            <form id="agregar_profesor">
+              <h4>Datos personales</h4>
+              <div class="col-md-4"><p>Nombre:</p><input type="text" id="new_nombre_p" name="new_nombre_p" class="form-control"></div>
+              <div class="col-md-4"><p>Apellido:</p><input type="text" id="new_apellido_p" name="new_apellido_p" class="form-control"></div>
+              <div class="col-md-4"><p>DNI:</p><input type="text" id="new_dni_p" name="new_dni_p" class="form-control"></div>
+              <div class="col-md-12"><br><p>Descripción breve del profesor:</p><textarea id="new_descripcion_p" name="new_descripcion_p" class="form-control"></textarea><br><br></div>
+              <h4>Datos de la actividad</h4>
+              <div class="col-md-6"><p>Seleccione la actividad:</p></div>
+              <div class="col-md-6"><select id="new_id_act_p" name="new_id_act_p">
+            <option>Ver todas</option>
+              <?php  $_smarty_tpl->tpl_vars['actividad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['actividad']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['actividades']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['actividad']->key => $_smarty_tpl->tpl_vars['actividad']->value){
+$_smarty_tpl->tpl_vars['actividad']->_loop = true;
+?>
+              <option value="<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['actividad']->value['nombre'];?>
+</option>
+              <?php } ?>
+            </select></div>
+              <div class="col-md-12"><p>Detalle los días y horarios que dictará la actividad previamente seleccionada:</p><input type="text" id="new_horarios_p" name="new_horarios_p" class="form-control"></div>
+
+            </form>
+      </div>
+       <div class="modal-footer text-center">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+    <a class="btn btn-success" href="#" onclick="agregaProfe()" aria-hidden="true" data-dismiss="modal">Agregar</a>
+  </div>
     </div>
   </div>
-</div>
+</div></div>
  
 
 <!--borrar profesor-->
@@ -100,7 +135,7 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
 <!--Modificar profesor-->
 <div id="modificarProfesor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog" role="document">
-<div id="modifProfesor" class="modal-content">
+<div id="infoProfeActividades" class="modal-content">
 <h3>okey</h3>
 </div>
 </div>

@@ -32,7 +32,7 @@
           <td>{$profesor.descripcion}</td>
           <td>{$profesor.nombreAct}</td>
           <td>{$profesor.horarios}</td>
-          <td><button class="btn btn-info" onClick = "modifProfesor({$profesor['id']});" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+          <td><button class="btn btn-info" onClick = "profeActividades({$profesor['id']});" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-danger" onClick = "infoProfesor({$profesor['id']});" type="button" data-toggle="modal" data-target="#borrarProfesor"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
           </tr>  
           {/foreach}
@@ -44,9 +44,36 @@
 <div id="agregarProfesor" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3>Agregar Profesor</h3>
+      
+          <div  class="col-md-12 modal-body">
+            <form id="agregar_profesor">
+              <h4>Datos personales</h4>
+              <div class="col-md-4"><p>Nombre:</p><input type="text" id="new_nombre_p" name="new_nombre_p" class="form-control"></div>
+              <div class="col-md-4"><p>Apellido:</p><input type="text" id="new_apellido_p" name="new_apellido_p" class="form-control"></div>
+              <div class="col-md-4"><p>DNI:</p><input type="text" id="new_dni_p" name="new_dni_p" class="form-control"></div>
+              <div class="col-md-12"><br><p>Descripción breve del profesor:</p><textarea id="new_descripcion_p" name="new_descripcion_p" class="form-control"></textarea><br><br></div>
+              <h4>Datos de la actividad</h4>
+              <div class="col-md-6"><p>Seleccione la actividad:</p></div>
+              <div class="col-md-6"><select id="new_id_act_p" name="new_id_act_p">
+            <option>Ver todas</option>
+              {foreach $actividades as $actividad}
+              <option value="{$actividad.id}">{$actividad.nombre}</option>
+              {/foreach}
+            </select></div>
+              <div class="col-md-12"><p>Detalle los días y horarios que dictará la actividad previamente seleccionada:</p><input type="text" id="new_horarios_p" name="new_horarios_p" class="form-control"></div>
+
+            </form>
+      </div>
+       <div class="modal-footer text-center">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+    <a class="btn btn-success" href="#" onclick="agregaProfe()" aria-hidden="true" data-dismiss="modal">Agregar</a>
+  </div>
     </div>
   </div>
-</div>
+</div></div>
  
 
 <!--borrar profesor-->
@@ -60,7 +87,7 @@
 <!--Modificar profesor-->
 <div id="modificarProfesor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog" role="document">
-<div id="modifProfesor" class="modal-content">
+<div id="infoProfeActividades" class="modal-content">
 <h3>okey</h3>
 </div>
 </div>

@@ -11,61 +11,61 @@ $controller_profesores = new controller_profesores();
 
 switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp::$ACTION_INCLUDE){
 
-  case configApp::$ACTION_INCLUDE:
+  case configApp::$ACTION_INCLUDE://ok
       $controller->includes();
   break; 
-
-  case configApp::$ACTION_INICIO:
+//SECCIONES
+  case configApp::$ACTION_INICIO://ok
       $controller->inicio();
   break; 
-
-  case configApp::$ACTION_ACTIVIDADES:
+  case configApp::$ACTION_ACTIVIDADES://ok
       $controller_actividades->actividades();
   break;
-
-  case configApp::$ACTION_PROFESORES:
+  case configApp::$ACTION_PROFESORES://ok
       $controller_profesores->profesores();
   break;
 
+//CONSULTAS ESPECÍFICAS
 //consulta una actividad en especial
-  case configApp::$ACTION_ACTIVIDAD:
+  case configApp::$ACTION_ACTIVIDAD://ok
     $controller_actividades->actividad();
   break;
-
-  case configApp::$ACTION_PROFESOR:
+//consulta por un profesor en específico para ser eliminado
+  case configApp::$ACTION_PROFESOR://ok
     $controller_profesores->profesor();
-  break;
-  
+  break; 
 //consulta los profesores por una actividad específica
-  case configApp::$ACTION_PROFE_ACT:
+  case configApp::$ACTION_PROFE_ACTIVIDADES://ok
+    $controller_profesores->profeactividades();
+  break;
+    case configApp::$ACTION_PROFE_ACT://ok
     $controller_actividades->profeact();
   break;
 
-  
+//ALTAS, BAJAS Y MODIFICACIONES 
   //ABM ACTIVIDADES
-  case ConfigApp::$ACTION_AGREGAR_ACTIVIDAD:
+  case ConfigApp::$ACTION_AGREGAR_ACTIVIDAD://ok ->faltan imagenes
       $controller_actividades->agregarActividad();
       break;
-  case ConfigApp::$ACTION_BORRAR_ACTIVIDAD:
+  case ConfigApp::$ACTION_BORRAR_ACTIVIDAD://ok
       $controller_actividades->borrarActividad();
       break;
-  case ConfigApp::$ACTION_MODIFICAR_ACTIVIDAD:
+  case ConfigApp::$ACTION_MODIFICAR_ACTIVIDAD://ok ->faltan imagenes
       $controller_actividades->modificarActividad();
       break; 
-
   //ABM PROFESORES
-  case ConfigApp::$ACTION_AGREGAR_PROFESOR:
+  case ConfigApp::$ACTION_AGREGAR_PROFESOR://falta
       $controller_profesores->agregarProfesor();
       break;
-  case ConfigApp::$ACTION_BORRAR_PROFESOR:
+  case ConfigApp::$ACTION_BORRAR_PROFESOR://ok
       $controller_profesores->borrarProfesor();
       break;
-  case ConfigApp::$ACTION_MODIFICAR_PROFESOR:
+  case ConfigApp::$ACTION_MODIFICAR_PROFESOR://falta
       $controller_profesores->modificarProfesor();
       break; 
 
-  //DEFAULT    
-  default:
+//DEFAULT    
+  default://ok
     echo "PÁGINA NO ENCONTRADA";
   break;
 

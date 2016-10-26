@@ -14,7 +14,8 @@
 
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-<a class="btn btn-info" href="#" onclick="modAct();" aria-hidden="true" data-dismiss="modal">modificar</a>{/foreach}
+<a class="btn btn-info" href="#" onclick="modAct();" aria-hidden="true" data-dismiss="modal">
+Modificar</a>{/foreach}
 </div>
 
 </form>

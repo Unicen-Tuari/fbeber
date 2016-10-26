@@ -29,19 +29,19 @@ public function getProfesor($id){
   
 
 //ABM profesores
-public function agregarProfesor($new_nombre_p,$new_apellido_p,$new_dni_p,$imagenes,$new_descripcion_p,$new_horarios,$new_id_act){
-    try{
+public function agregarProfesor($new_nombre_p,$new_apellido_p,$new_dni_p,$new_descripcion_p,$new_horarios_p,$new_id_act_p){
+    /*try{
       $destinos_finales=$this->subirImagenes($imagenes);
       $this->db->beginTransaction();
-      foreach ($destinos_finales as $key => $value) {
-        $consulta = $this->db->prepare('INSERT INTO profesor(nombre, apellido,dni,foto,descripcion,horarios,id_act) VALUES(?,?,?,?,?,?,?)');
-        $consulta->execute(array($new_nombre_p,$new_apellido_p,$new_dni_p,$value,$new_descripcion_p,$new_horarios,$new_id_act));
-      }
+      foreach ($destinos_finales as $key => $value) {*/
+        $consulta = $this->db->prepare('INSERT INTO profesor(nombre,apellido,dni,descripcion,horarios,id_act) VALUES(?,?,?,?,?,?)');
+        $consulta->execute(array($new_nombre_p,$new_apellido_p,$new_dni_p,$new_descripcion_p,$new_horarios_p,$new_id_act_p));
+      /*}
       $this->db->commit();
     }
     catch(Exception $e){
     $this->db->rollBack();
-    }
+    }*/
   }
 
 public function borrarProfesor($id_profe){
@@ -50,19 +50,19 @@ public function borrarProfesor($id_profe){
   }
   
 
-public function modificarProfesor($upd_nombre_p,$upd_apellido_p,$upd_dni_p,$upd_foto_p,$upd_descripcion_p,$upd_horarios_p,$upd_id_act_p, $id_profe){
-    try{
+public function modificarProfesor($upd_nombre_p,$upd_apellido_p,$upd_dni_p,$upd_descripcion_p,$upd_horarios_p,$upd_id_act_p, $id_profe){
+    /*try{
       $destinos_finales=$this->subirImagenes($upd_foto_p);
       $this->db->beginTransaction();
-      foreach ($destinos_finales as $key => $value) {
-      $consulta = $this->db->prepare('UPDATE profesor SET nombre=?, apellido=?, dni=?, foto=?, descripcion=?, horarios=?, id_act=? WHERE id=?');
-      $consulta->execute(array($upd_nombre_p,$upd_apellido_p,$upd_dni_p,$value,$upd_descripcion_p,$upd_horarios_p,$upd_id_act_p,$id_profe));
-  }
+      foreach ($destinos_finales as $key => $value) {*/
+      $consulta = $this->db->prepare('UPDATE profesor SET nombre=?, apellido=?, dni=?, descripcion=?, horarios=?, id_act=? WHERE id=?');
+      $consulta->execute(array($upd_nombre_p,$upd_apellido_p,$upd_dni_p,$upd_descripcion_p,$upd_horarios_p,$upd_id_act_p,$id_profe));
+  /*}
       $this->db->commit();
     }
     catch(Exception $e){
     $this->db->rollBack();
-    }
+    }*/
 }
 }
 ?>

@@ -21,7 +21,7 @@
 
       {foreach $actividades as $actividad} 
         <tr>
-          <td><img src="../images/{$actividad.foto}" alt="..." class="img-circle" width="50px" height="50px"></td>
+          <td>Ver Fotos</td>
           <td>{$actividad.id}</td>
           <td>{$actividad.nombre}</td>
           <td>{$actividad.descripcion}</td>
