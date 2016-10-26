@@ -5,11 +5,19 @@ require_once('model.php');
 class model_actividades extends model{
 
 public function getActividades(){
-    $select = $this->db->prepare('SELECT * FROM actividad');
-    $select->execute();
-    $actividades=$select->fetchAll(PDO::FETCH_ASSOC);
+    $actividades = array();
+    $consulta = $this->db->prepare("SELECT * FROM actividad");
+    $consulta->execute();
+    while($actividad = $consulta->fetch(PDO::FETCH_ASSOC)) {
+      $consultaImagenes = $this->db->prepare("SELECT * FROM img_actividad where id_act=?");
+      $consultaImagenes->execute(array($actividad['id']));
+      $imagenes_actividad = $consultaImagenes->fetchAll();
+      $actividad['imagenes'] = $imagenes_actividad;
+      $actividades[]=$actividad;
+    }
     return $actividades;
-}
+  }
+
 
 public function getActividad($id){
     $select = $this->db->prepare('SELECT * FROM actividad WHERE id=?');
@@ -26,13 +34,17 @@ public function getProfeact($id){
   }
   
 //ABM actividades
-public function agregarActividad($new_nombre_act,$new_descripcion_act,$imagenes){
-    try{
+public function agregarActividad($new_nombre_a,$new_descripcion_a,$imagenes){
+  try{
       $destinos_finales=$this->subirImagenes($imagenes);
       $this->db->beginTransaction();
+      $consulta = $this->db->prepare('INSERT INTO actividad(nombre,descripcion) VALUES(?,?)');
+      $consulta->execute(array($new_nombre_a,$new_descripcion_a));
+      $id_act = $this->db->lastInsertId();
+
       foreach ($destinos_finales as $key => $value) {
-        $consulta = $this->db->prepare('INSERT INTO actividad(nombre, descripcion, foto) VALUES(?,?,?)');
-        $consulta->execute(array($new_nombre_act,$new_descripcion_act, $value));
+        $consulta = $this->db->prepare('INSERT INTO img_actividad(foto,id_act) VALUES(?,?)');
+        $consulta->execute(array( $value,$id_act));
       }
       $this->db->commit();
     }
@@ -46,15 +58,9 @@ public function borrarActividad($id_act){
     $consulta->execute(array($id_act));
   }
 
-public function modificarActividad($upd_nombre,$upd_descripcion,$upd_foto,$id_act){
-    $destinos_finales=$this->subirImagenes($upd_foto);
-    $this->db->beginTransaction();
-    foreach ($destinos_finales as $key => $value) {
-    $consulta = $this->db->prepare('UPDATE actividad SET nombre=?,descripcion=?, foto=? WHERE id=?');
-    $consulta->execute(array($upd_nombre,$upd_descripcion,$value,$id_act));
-    }
-    $this->db->commit();
-}
-}
+public function modificarActividad($upd_nombre,$upd_descripcion,$id_act){
+    $consulta = $this->db->prepare('UPDATE actividad SET nombre=?,descripcion=? WHERE id=?');
+    $consulta->execute(array($upd_nombre,$upd_descripcion,$id_act));
+}}
 
 ?>

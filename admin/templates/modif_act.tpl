@@ -5,16 +5,16 @@
 </div>
 <div class="modal-body">
 
-<form action="index.php?action=modificar_actividad&id_act={$act['id']}" method="POST" enctype="multipart/form-data">
-   <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/{$act.foto}"><input type="file" name="imagesToUpload[]" id="imagesToUpload"/><br>
-  <input type="text" class="form-control" id="upd_nombre_a" name="upd_nombre_a" value="{$act.nombre}"><br>
-  <input type="text" class="form-control" id="upd_descripcion_a" name="upd_descripcion_a" value="{$act.descripcion}"><br>
- 
+	<form id="modifica_actividad" method="post">
+   	<input type="hidden" class="form-control" id="id_act" name="id_act" value="{$act.id}"><br>
+  	<p>Nombre:</p><input type="text" class="form-control" id="upd_nombre_a" name="upd_nombre_a" value="{$act.nombre}"><br>
+
+  	<p>Descripción:</p><input type="text" class="form-control" id="upd_descripcion_a" name="upd_descripcion_a" value="{$act.descripcion}"><br>
 </div>
 
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-  <button type="submit" class="btn btn-primary">Modificar</button>
-</form>
-{/foreach}
+<a class="btn btn-info" href="#" onclick="modAct();" aria-hidden="true" data-dismiss="modal">modificar</a>{/foreach}
 </div>
+
+</form>

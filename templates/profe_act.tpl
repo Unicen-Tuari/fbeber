@@ -1,12 +1,10 @@
 {if $profeact == NULL}
-{foreach $actividad as $act}
-	<h3>Próximamente habrá info sobre {$act.nombre}</h3>
-{/foreach}
+	<h3>Próximamente habrá info sobre {$actividad[0].nombre}</h3>
 
 {else}
-	{foreach $actividad as $act}
-	<h4>Profesores de {$act.nombre}</h4>
-	{/foreach}
+	
+	<h4>Profesores de {$actividad[0].nombre}</h4>
+
 			{foreach $profeact as $profes}
 
 	<table class="table text-left">

@@ -15,7 +15,7 @@
 
   <div class="modal-footer text-center">
     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-    <a class="btn btn-danger" href="index.php?action=borrar_actividad&id_act={$act['id']}" type="submit">Eliminar</a>
+    <a class="btn btn-danger" href="#" onclick="borraAct('{$act.id}')" aria-hidden="true" data-dismiss="modal">Eliminar</a>
   </div>
 {/foreach}
 

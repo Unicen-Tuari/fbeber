@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-20 01:02:12
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-26 00:33:01
          compiled from ".\templates\modif_act.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:116375806db53aebbf4-18170688%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c75a4f8ba1937df619ca095bc4a08ecd4bb9b09e' => 
     array (
       0 => '.\\templates\\modif_act.tpl',
-      1 => 1476903776,
+      1 => 1477434778,
       2 => 'file',
     ),
   ),
@@ -36,20 +36,19 @@ $_smarty_tpl->tpl_vars['act']->_loop = true;
 </div>
 <div class="modal-body">
 
-<form action="index.php?action=modificar_actividad&id_act=<?php echo $_smarty_tpl->tpl_vars['act']->value['id'];?>
-" method="POST" enctype="multipart/form-data">
-   <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/<?php echo $_smarty_tpl->tpl_vars['act']->value['foto'];?>
-"><input type="file" name="imagesToUpload[]" id="imagesToUpload"/><br>
-  <input type="text" class="form-control" id="upd_nombre_a" name="upd_nombre_a" value="<?php echo $_smarty_tpl->tpl_vars['act']->value['nombre'];?>
+	<form id="modifica_actividad" method="post">
+   	<input type="hidden" class="form-control" id="id_act" name="id_act" value="<?php echo $_smarty_tpl->tpl_vars['act']->value['id'];?>
 "><br>
-  <input type="text" class="form-control" id="upd_descripcion_a" name="upd_descripcion_a" value="<?php echo $_smarty_tpl->tpl_vars['act']->value['descripcion'];?>
+  	<p>Nombre:</p><input type="text" class="form-control" id="upd_nombre_a" name="upd_nombre_a" value="<?php echo $_smarty_tpl->tpl_vars['act']->value['nombre'];?>
 "><br>
- 
+
+  	<p>Descripción:</p><input type="text" class="form-control" id="upd_descripcion_a" name="upd_descripcion_a" value="<?php echo $_smarty_tpl->tpl_vars['act']->value['descripcion'];?>
+"><br>
 </div>
 
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-  <button type="submit" class="btn btn-primary">Modificar</button>
-</form>
-<?php } ?>
-</div><?php }} ?>
+<a class="btn btn-info" href="#" onclick="modAct();" aria-hidden="true" data-dismiss="modal">modificar</a><?php } ?>
+</div>
+
+</form><?php }} ?>

@@ -9,7 +9,11 @@ $controller_actividades = new controller_actividades();
 $controller_profesores = new controller_profesores();
 
 
-switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp::$ACTION_INICIO){
+switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp::$ACTION_INCLUDE){
+
+  case configApp::$ACTION_INCLUDE:
+      $controller->includes();
+  break; 
 
   case configApp::$ACTION_INICIO:
       $controller->inicio();

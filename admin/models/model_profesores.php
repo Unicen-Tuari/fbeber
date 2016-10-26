@@ -4,13 +4,7 @@ require_once('model.php');
 
 class model_profesores extends model{
 
-public function getProfesor($id){
-    $select = $this->db->prepare('SELECT * FROM profesor WHERE id=?');
-    $select->execute();
-    $profesor=$select->fetchAll(PDO::FETCH_ASSOC);
-    return $profesor;
-  }
-  
+
 public function getActividades(){
     $select = $this->db->prepare('SELECT * FROM actividad');
     $select->execute();
@@ -24,6 +18,15 @@ public function getProfesores(){
     $profesores=$select->fetchAll(PDO::FETCH_ASSOC);
     return $profesores;
   }
+
+//consulta por un profesor en especial (caso de borrado)
+public function getProfesor($id){
+    $select = $this->db->prepare('SELECT * FROM profesor WHERE id=?');
+    $select->execute(array($id));
+    $profesor=$select->fetchAll(PDO::FETCH_ASSOC);
+    return $profesor;
+  }
+  
 
 //ABM profesores
 public function agregarProfesor($new_nombre_p,$new_apellido_p,$new_dni_p,$imagenes,$new_descripcion_p,$new_horarios,$new_id_act){
@@ -47,13 +50,13 @@ public function borrarProfesor($id_profe){
   }
   
 
-public function modificarProfesor($upd_nombre_p,$upd_apellido_p,$upd_dni_p,$upd_foto_p,$upd_descripcion_p,$upd_horarios,$upd_id_act, $id_profe){
+public function modificarProfesor($upd_nombre_p,$upd_apellido_p,$upd_dni_p,$upd_foto_p,$upd_descripcion_p,$upd_horarios_p,$upd_id_act_p, $id_profe){
     try{
       $destinos_finales=$this->subirImagenes($upd_foto_p);
       $this->db->beginTransaction();
       foreach ($destinos_finales as $key => $value) {
       $consulta = $this->db->prepare('UPDATE profesor SET nombre=?, apellido=?, dni=?, foto=?, descripcion=?, horarios=?, id_act=? WHERE id=?');
-      $consulta->execute(array($upd_nombre_p,$upd_apellido_p,$upd_dni_p,$value,$upd_descripcion_p,$upd_horarios,$upd_id_act,$id_profe));
+      $consulta->execute(array($upd_nombre_p,$upd_apellido_p,$upd_dni_p,$value,$upd_descripcion_p,$upd_horarios_p,$upd_id_act_p,$id_profe));
   }
       $this->db->commit();
     }

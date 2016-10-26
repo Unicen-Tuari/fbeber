@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 17:58:54
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-26 01:56:05
          compiled from ".\templates\actividades.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2498057f6d8c83aef81-87553217%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f80e79dd0d96401a728898e6fbda97a73c9b74f1' => 
     array (
       0 => '.\\templates\\actividades.tpl',
-      1 => 1476892733,
+      1 => 1477439763,
       2 => 'file',
     ),
   ),
@@ -24,14 +24,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57f6d8c8750b51_81908823')) {function content_57f6d8c8750b51_81908823($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
-<div class="col-md-12">
+<?php if ($_valid && !is_callable('content_57f6d8c8750b51_81908823')) {function content_57f6d8c8750b51_81908823($_smarty_tpl) {?><div class="col-md-12">
     
     <h1>Actividades</h1>
     <br>
     <div class="col-md-12 text-center">
-      <button class="btn btn-success" data-toggle="modal" data-target="#agregarActividad">Agregar Actividad</button><br><br>
+      <button id="agregar_actividad" class="btn btn-success" data-toggle="modal" data-target="#agregarActividad">Agregar Actividad</button><br><br>
     </div>
 
 
@@ -62,9 +60,8 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
           <td><?php echo $_smarty_tpl->tpl_vars['actividad']->value['descripcion'];?>
 </td>
           <td><button class="btn btn-info" onClick = "infoActividad(<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
-);" type="button" data-toggle="modal" data-target="#modificarActividad"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
-          <td>
-          <button class="btn btn-danger" onClick = "cargaInfoAct(<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#modificarActividad"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+          <td><button class="btn btn-danger" onClick = "infoProfeAct(<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
 );" type="button" data-toggle="modal" data-target="#borrarActividad"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
         </tr>  
       <?php } ?>
@@ -77,21 +74,25 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 <div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-header">
-  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <h4 class="modal-title" id="myModalLabel">Agregar Nueva Actividad</h4>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="myModalLabel">Agregar Nueva Actividad</h4>
 </div>
+
 <div class="modal-body">
-<form action="index.php?action=agregar_actividad" method="POST" enctype="multipart/form-data">
+  <form id="agregar_actividad" method="POST" enctype="multipart/form-data">
     <div class="col-md-12 text-center"><p>Seleccione imagen a modo de ilustración<br>
-          <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/actividadDefault.png" alt="Tu imagen"><input type="file" name="imagesToUpload[]" id="imagesToUpload"/></div>
+      <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/actividadDefault.png" alt="Tu imagen">
+      <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
+    </div>
     <p>Nombre de la actividad</p>
-      <input type="text" class="form-control" id="new_nombre_act" name="new_nombre_act"><br>
+      <input type="text" class="form-control" id="new_nombre_a" name="new_nombre_a"><br>
     <p>Realice una breve descripción de la actividad</p>
-      <textarea type="text" class="form-control" id="new_descripcion_act" name="new_descripcion_act" value="Descripcion"></textarea><br>         
+      <textarea type="text" class="form-control" id="new_descripcion_a" name="new_descripcion_a" value="Descripcion"></textarea><br>         
 </div>
+
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-  <button type="submit" class="btn btn-success">Agregar</button>
+  <a class="btn btn-success" href="#" onclick="agregaAct()" aria-hidden="true" data-dismiss="modal">Agregar</a>
 </form>
 </div>
 </div>
@@ -101,7 +102,7 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 <!--borrar actividad-->
 <div id="borrarActividad" class="modal fade" tabindex="-1" role="dialog">
 <div class="modal-dialog" role="document">
-<div id="borraActividad" class="modal-content">
+<div id="infoProfeAct" class="modal-content">
 </div>
 </div>
 </div>
@@ -109,10 +110,9 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 <!--Modificar Actividad-->
 <div id="modificarActividad" class="modal fade" id="inscripcion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog" role="document">
-<div id="modificaActividad" class="modal-content">
+<div id="infoActividad" class="modal-content">
 </div>
 </div>
 </div>
 
-<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

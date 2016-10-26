@@ -12,14 +12,15 @@ class controller_actividades
     $this->view_actividades = new view_actividades();
     $this->model_actividades = new model_actividades();
   }
-  //consulta todas las actividades
+
+  //consulta todas las actividades->OK
   public function actividades(){
     $actividades = $this->model_actividades->getActividades();
     $this->view_actividades->mostrarActividades($actividades);
   }
 
 
-//consulta una actividad en especial
+//consulta una actividad en especial->OK
   public function actividad(){
     if(isset($_REQUEST['id_actividad'])){
       $id=$_REQUEST['id_actividad'];
@@ -28,7 +29,7 @@ class controller_actividades
     }
   } 
 
-//consulta profesores por actividad
+//consulta profesores por actividad //cuando borra->OK
   public function profeact(){
     if(isset($_REQUEST['id_actividad'])){
       $id=$_REQUEST['id_actividad'];
@@ -42,8 +43,8 @@ class controller_actividades
 
 //agrega
   public function agregarActividad(){
-    if(isset($_REQUEST['new_nombre_act']) && isset($_REQUEST['new_descripcion_act']) && isset($_FILES['imagesToUpload'])){
-        $this->model_actividades->agregarActividad($_REQUEST['new_nombre_act'], $_REQUEST['new_descripcion_act'],$_FILES['imagesToUpload']);      
+    if(isset($_REQUEST['new_nombre_a']) && isset($_REQUEST['new_descripcion_a'])){
+        $this->model_actividades->agregarActividad($_REQUEST['new_nombre_a'], $_REQUEST['new_descripcion_a'],$_FILES['imagesToUpload']);      
       }
     else{
       $this->view_actividades->mostrarError('cuack');
@@ -51,24 +52,24 @@ class controller_actividades
     $this->actividades();
   }
 
-//borra
+//borra->OK
   public function borrarActividad(){
     if(isset($_REQUEST['id_act'])){
       $this->model_actividades->borrarActividad($_REQUEST['id_act']);
     }
     else{
       $this->view_actividades->mostrarError('La actividad que intenta borrar no existe');
-    }
+          }
     $this->actividades();
   }
 
-//modifica
+//modifica->OK
   public function modificarActividad(){
-    if(isset($_REQUEST['upd_nombre_a']) && isset($_REQUEST['upd_descripcion_a']) && isset($_FILES['imagesToUpload']) && isset($_REQUEST['id_act'])){
-      $this->model_actividades->modificarActividad($_REQUEST['upd_nombre_a'], $_REQUEST['upd_descripcion_a'], $_FILES['imagesToUpload'],$_REQUEST['id_act']);
+    if(isset($_REQUEST['upd_nombre_a']) && isset($_REQUEST['upd_descripcion_a']) && isset($_REQUEST['id_act'])){
+      $this->model_actividades->modificarActividad($_REQUEST['upd_nombre_a'], $_REQUEST['upd_descripcion_a'],$_REQUEST['id_act']);
     }   
     else{
-      $this->view_actividades->mostrarError('La actividad que intenta modificar no existe');
+      echo 'La actividad que intenta modificar no existe';
     }
     $this->actividades();
   }

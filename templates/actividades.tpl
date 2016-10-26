@@ -7,9 +7,15 @@
     {foreach $actividades as $actividad}
     <div class="col-md-3">
         <div class="promocion3">
-          <img src="images/{$actividad.foto}" alt="..." class="img-circle" width="100px" height="100px">
+          <div class="slider">
+          <ul>
+          {foreach $actividad['imagenes'] as $imagen}
+          <li><img src="images/{$imagen.foto}" class="zoom"></li>
+          {/foreach}  
+          </ul>
+          </div>
           <h3>{$actividad.nombre}</h3>
-          <div style="height: 100px"><p>{$actividad.descripcion}</p></div>
+          <div style="height: 130px"><p>{$actividad.descripcion}</p></div>
           <button class="btn btn-default" id="id_actividad" onClick = "cargaProfesores({$actividad['id']});" type="button" data-toggle="modal" data-target="#horarios"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Ver Días Horarios</button> <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inscribirse</button>
         </div>
       </div>

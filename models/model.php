@@ -10,14 +10,22 @@ class model
   }
 
   public function getActividades(){
-    $select = $this->db->prepare("select * from actividad");
-    $select->execute();
-    $actividades=$select->fetchAll(PDO::FETCH_ASSOC);
+    $actividades = array();
+    $consulta = $this->db->prepare("SELECT * FROM actividad");
+    $consulta->execute();
+    while($actividad = $consulta->fetch(PDO::FETCH_ASSOC)) {
+      $consultaImagenes = $this->db->prepare("SELECT * FROM img_actividad where id_act=?");
+      $consultaImagenes->execute(array($actividad['id']));
+      $imagenes_actividad = $consultaImagenes->fetchAll();
+      $actividad['imagenes'] = $imagenes_actividad;
+      $actividades[]=$actividad;
+    }
     return $actividades;
   }
+  
   public function getActividad($id){
-    $select = $this->db->prepare('SELECT * FROM actividad WHERE id='.$id.'');
-    $select->execute();
+    $select = $this->db->prepare("SELECT * FROM actividad WHERE id=?");
+    $select->execute(array($id));
     $actividad=$select->fetchAll(PDO::FETCH_ASSOC);
     return $actividad;
   }
@@ -28,6 +36,7 @@ class model
     $profeact=$select->fetchAll(PDO::FETCH_ASSOC);
     return $profeact;
   }
+
   public function getProfesores(){
     $select = $this->db->prepare("SELECT a.nombre as nombreAct, p.nombre, p.apellido, p.foto, p.descripcion from profesor p, actividad a where p.id_act=a.id");
     $select->execute();

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 04:26:45
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-25 01:57:01
          compiled from ".\templates\borrar_act.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:293195806d95f04bf94-40123949%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '51fc823e5e0be83e9a04945910076b3b294e7dfa' => 
     array (
       0 => '.\\templates\\borrar_act.tpl',
-      1 => 1476843997,
+      1 => 1477353415,
       2 => 'file',
     ),
   ),
@@ -55,8 +55,8 @@ $_smarty_tpl->tpl_vars['profes']->_loop = true;
 
   <div class="modal-footer text-center">
     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-    <a class="btn btn-danger" href="index.php?action=borrar_actividad&id_act=<?php echo $_smarty_tpl->tpl_vars['act']->value['id'];?>
-" type="submit">Eliminar</a>
+    <a class="btn btn-danger" href="#" onclick="borraAct('<?php echo $_smarty_tpl->tpl_vars['act']->value['id'];?>
+')" aria-hidden="true" data-dismiss="modal">Eliminar</a>
   </div>
 <?php } ?>
 
