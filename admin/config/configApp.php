@@ -6,10 +6,14 @@ class ConfigApp{
   public static $ACTION_INICIO = 'inicio_admin';
   public static $ACTION_ACTIVIDADES = "actividades_admin";
   public static $ACTION_PROFESORES= "profesores_admin";
+
+//CONSULTAS
   public static $ACTION_PROFE_ACTIVIDADES= "profeactividades";
-   public static $ACTION_PROFE_ACT= "profeact";
+  public static $ACTION_PROFE_ACT= "profeact";
+  public static $ACTION_IMAGES_ACT= "imagesact";
   public static $ACTION_ACTIVIDAD= "actividad";
   public static $ACTION_PROFESOR= "profesor";
+
 //ABM actividad
   public static $ACTION_AGREGAR_ACTIVIDAD = "agregar_actividad";
   public static $ACTION_BORRAR_ACTIVIDAD = "borrar_actividad";

@@ -21,6 +21,12 @@ public function mostrarProfeact($profeact,$actividad){
     $this->smarty->display('borrar_act.tpl');
   }
 
+public function mostrarImagesAct($imagesact){
+    $this->smarty->assign('imagesact',$imagesact);
+    $this->smarty->display('images_act.tpl');
+  }
+
+
 //muestra datos para modificar->OK
 public function mostrarActividad($actividad){
     $this->smarty->assign('actividad',$actividad);

@@ -21,7 +21,6 @@
           <h3>{$profesor.nombre} {$profesor.apellido}</h3>
           <h4>Profesor/a de {$profesor.nombreAct}</h4>
           <p>{$profesor.descripcion}</p>
-          <p>Encontrame en:<img src="images/redes/link-color.png" width="25px;" class="zoom"></p>
         </div>
         {/foreach}
            

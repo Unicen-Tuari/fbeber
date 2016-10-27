@@ -32,6 +32,13 @@ public function getProfeact($id){
     $profeact=$select->fetchAll(PDO::FETCH_ASSOC);
     return $profeact;
   }
+
+public function getImagesAct($id){
+    $select = $this->db->prepare("SELECT i.foto, i.id FROM img_actividad i, actividad a WHERE i.id_act=a.id AND i.id_act=?");
+    $select->execute(array($id));
+    $imagesact=$select->fetchAll(PDO::FETCH_ASSOC);
+    return $imagesact;
+  }
   
 //ABM actividades
 public function agregarActividad($new_nombre_a,$new_descripcion_a,$imagenes){

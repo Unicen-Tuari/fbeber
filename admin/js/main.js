@@ -24,19 +24,17 @@ function loadRender(etiqueta) {
 }
 //hasta aca todo bien
 
-//previsualizar imagen al subir----
-function mostrarImagen(input) {
- if (input.files && input.files[0]) {
-  var reader = new FileReader();
-  reader.onload = function (e) {
-   $('#img_destino').attr('src', e.target.result);
-  }
-  reader.readAsDataURL(input.files[0]);
- }
+function imagesAct(id_actividad){
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=imagesact&id_act="+id_actividad,
+    contentType:'html',
+    cache: false,
+    success: function(data){
+      $('#imagesActividad').html(data);
+    }
+  });
 }
-$("#imagesToUpload").change(function(){
- mostrarImagen(this);
-});
 
 //BAJA ACTIVIDAD FUNCIONANDO :)
 //carga informacion por una actividad especifica + el/los profesores

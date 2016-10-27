@@ -38,10 +38,12 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case configApp::$ACTION_PROFE_ACTIVIDADES://ok
     $controller_profesores->profeactividades();
   break;
-    case configApp::$ACTION_PROFE_ACT://ok
+  case configApp::$ACTION_PROFE_ACT://ok
     $controller_actividades->profeact();
   break;
-
+  case configApp::$ACTION_IMAGES_ACT://ok
+    $controller_actividades->imagesact();
+  break;
 //ALTAS, BAJAS Y MODIFICACIONES 
   //ABM ACTIVIDADES
   case ConfigApp::$ACTION_AGREGAR_ACTIVIDAD://ok ->faltan imagenes

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-27 01:40:52
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-27 02:27:58
          compiled from ".\templates\actividades.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2498057f6d8c83aef81-87553217%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f80e79dd0d96401a728898e6fbda97a73c9b74f1' => 
     array (
       0 => '.\\templates\\actividades.tpl',
-      1 => 1477525250,
+      1 => 1477528074,
       2 => 'file',
     ),
   ),
@@ -51,7 +51,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['actividad']->key => $_smarty_tpl->tpl
 $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 ?> 
         <tr>
-          <td>Ver Fotos</td>
+          <td><button class="btn btn-default" onClick = "imagesAct(<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#mostrarImages"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
           <td><?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['actividad']->value['nombre'];?>
@@ -102,6 +103,14 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 <div id="borrarActividad" class="modal fade" tabindex="-1" role="dialog">
 <div class="modal-dialog" role="document">
 <div id="infoProfeAct" class="modal-content">
+</div>
+</div>
+</div>
+
+<!--borrar actividad-->
+<div id="mostrarImages" class="modal fade" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div id="imagesActividad" class="modal-content">
 </div>
 </div>
 </div>

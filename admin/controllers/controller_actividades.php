@@ -39,9 +39,18 @@ class controller_actividades
     }
   } 
 
+//consulta imagenes por actividad 
+  public function imagesAct(){
+    if(isset($_REQUEST['id_act'])){
+      $id=$_REQUEST['id_act'];
+      $imagesact = $this->model_actividades->getImagesAct($id);
+      $this->view_actividades->mostrarImagesAct($imagesact);
+    }
+  } 
+
 //ABM ACTIVIDADES
 
-//agrega
+//agrega -> OK (falta imagenes)
   public function agregarActividad(){
     if(isset($_REQUEST['new_nombre_a']) && isset($_REQUEST['new_descripcion_a'])){
         $this->model_actividades->agregarActividad($_REQUEST['new_nombre_a'], $_REQUEST['new_descripcion_a'],$_FILES['imagesToUpload']);      

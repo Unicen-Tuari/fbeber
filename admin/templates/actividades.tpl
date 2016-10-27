@@ -21,12 +21,12 @@
 
       {foreach $actividades as $actividad} 
         <tr>
-          <td>Ver Fotos</td>
+          <td><button class="btn btn-default" onClick = "imagesAct({$actividad.id});" type="button" data-toggle="modal" data-target="#mostrarImages"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
           <td>{$actividad.id}</td>
           <td>{$actividad.nombre}</td>
           <td>{$actividad.descripcion}</td>
-          <td><button class="btn btn-info" onClick = "infoActividad({$actividad['id']});" type="button" data-toggle="modal" data-target="#modificarActividad"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
-          <td><button class="btn btn-danger" onClick = "infoProfeAct({$actividad['id']});" type="button" data-toggle="modal" data-target="#borrarActividad"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+          <td><button class="btn btn-info" onClick = "infoActividad({$actividad.id});" type="button" data-toggle="modal" data-target="#modificarActividad"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+          <td><button class="btn btn-danger" onClick = "infoProfeAct({$actividad.id});" type="button" data-toggle="modal" data-target="#borrarActividad"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
         </tr>  
       {/foreach}
     </table>       
@@ -67,6 +67,14 @@
 <div id="borrarActividad" class="modal fade" tabindex="-1" role="dialog">
 <div class="modal-dialog" role="document">
 <div id="infoProfeAct" class="modal-content">
+</div>
+</div>
+</div>
+
+<!--borrar actividad-->
+<div id="mostrarImages" class="modal fade" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div id="imagesActividad" class="modal-content">
 </div>
 </div>
 </div>
