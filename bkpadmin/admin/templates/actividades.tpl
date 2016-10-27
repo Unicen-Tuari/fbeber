@@ -1,4 +1,3 @@
-{include file="header.tpl"}
 <div class="col-md-12">
     
     <h1>Actividades</h1>
@@ -46,7 +45,7 @@
 <div class="modal-body">
 <form action="index.php?action=agregar_actividad" method="POST" enctype="multipart/form-data">
     <div class="col-md-12 text-center"><p>Seleccione imagen a modo de ilustración<br>
-          <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/actividadDefault.png" alt="Tu imagen"><input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/></div>
+          <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/actividadDefault.png" alt="Tu imagen"><input type="file" name="imagesToUpload[]" id="imagesToUpload"/></div>
     <p>Nombre de la actividad</p>
       <input type="text" class="form-control" id="new_nombre_act" name="new_nombre_act"><br>
     <p>Realice una breve descripción de la actividad</p>
@@ -73,8 +72,24 @@
 <div id="modificarActividad" class="modal fade" id="inscripcion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog" role="document">
 <div id="modificaActividad" class="modal-content">
+<div class="modal-header">
+{foreach $actividad as $act}
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title" id="myModalLabel">Modificar los datos de {$act.nombre}</h4>
+</div>
+<div class="modal-body">
+<form action="index.php?action=modificar_actividad&id_act={$act['id']}" method="POST" enctype="multipart/form-data">
+   <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/{$act.foto}"><input type="file" name="imagesToUpload[]" id="imagesToUpload"/><br>
+  <input type="text" class="form-control" id="upd_nombre_a" name="upd_nombre_a" value="{$act.nombre}"><br>
+  <input type="text" class="form-control" id="upd_descripcion_a" name="upd_descripcion_a" value="{$act.descripcion}"><br>
+ 
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+  <button type="submit" class="btn btn-primary">Modificar</button>
+</form>
+{/foreach}
 </div>
 </div>
 </div>
-
-{include file="footer.tpl"}
+</div>

@@ -6,7 +6,6 @@
       <button id="agregar_actividad" class="btn btn-success" data-toggle="modal" data-target="#agregarActividad">Agregar Actividad</button><br><br>
     </div>
 
-
     <!--todas las actividades-->
 
     <table class="table table-striped">
@@ -44,13 +43,12 @@
 
 <div class="modal-body">
   <form id="agregar_actividad" method="POST" enctype="multipart/form-data">
-    <div class="col-md-12 text-center"><p>Seleccione imagen a modo de ilustración<br>
-      <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/actividadDefault.png" alt="Tu imagen">
-      <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
+    <div class="col-md-12 text-center"><p>Seleccione imagen a modo de ilustración</p>
+      <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control" multiple/>
     </div>
-    <p>Nombre de la actividad</p>
+    <p><br>Nombre de la actividad</p>
       <input type="text" class="form-control" id="new_nombre_a" name="new_nombre_a"><br>
-    <p>Realice una breve descripción de la actividad</p>
+    <p><br>Realice una breve descripción de la actividad</p>
       <textarea type="text" class="form-control" id="new_descripcion_a" name="new_descripcion_a" value="Descripcion"></textarea><br>         
 </div>
 

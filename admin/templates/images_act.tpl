@@ -8,7 +8,7 @@
 <h1>no Existen imagenes en esta actividad</h1>
 {else}
     {foreach $imagesact as $img}
-    <img src="images/{$img.foto}" width="200px" class="zoom">
+    <img src="../images/{$img.foto}" width="200px" class="zoom">
     {/foreach}
 {/if}
   </div>

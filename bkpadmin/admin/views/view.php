@@ -3,12 +3,11 @@ require('libs/Smarty.class.php');
 
 class view
 {
-  public $smarty;
+  private $smarty;
 
   public function __construct(){
     $this->smarty=new Smarty;
   }
-
 
   public function mostrarIncludes(){
     $this->smarty->display('include.tpl');
@@ -18,12 +17,40 @@ class view
     $this->smarty->display('index.tpl');
   }
 
+  public function mostrarActividades($actividades){
+    $this->smarty->assign('actividades',$actividades);
+    $this->smarty->display('actividades.tpl');
+  }
+  
+/*funciones nuevas*/  
+  public function mostrarActividad($actividad){
+    $this->smarty->assign('actividad',$actividad);
+    $this->smarty->display('modif_act.tpl');
+  }
+  public function mostrarProfeact($profeact,$actividad){
+    $this->smarty->assign('profeact',$profeact);
+    $this->smarty->assign('actividad',$actividad);
+    $this->smarty->display('borrar_act.tpl');
+  }
+  public function mostrarProfesor($profesor){
+    $this->smarty->assign('profesor',$profesor);
+    $this->smarty->display('borrar_profe.tpl');
+  }
+/*fin de funciones nuevas*/
+
+  public function mostrarProfesores($profesores,$actividades,$profesor){
+    $this->smarty->assign('profesor',$profesor);
+    $this->smarty->assign('actividades',$actividades);
+    $this->smarty->assign('profesores',$profesores);
+    $this->smarty->display('profesores.tpl');
+  }
 
   public function mostrarContacto(){
     $this->smarty->display('contacto.tpl');
   }
-}
+  
 
+}
 
 
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-27 02:25:47
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-27 14:03:48
          compiled from ".\templates\images_act.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21897581148a53b1ac5-02232722%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8dfa4c57de61c2e5f0e09084d8ab488f1f8eeec9' => 
     array (
       0 => '.\\templates\\images_act.tpl',
-      1 => 1477527938,
+      1 => 1477569820,
       2 => 'file',
     ),
   ),
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['img']->key => $_smarty_tpl->tpl_vars['img']->value){
 $_smarty_tpl->tpl_vars['img']->_loop = true;
 ?>
-    <img src="images/<?php echo $_smarty_tpl->tpl_vars['img']->value['foto'];?>
+    <img src="../images/<?php echo $_smarty_tpl->tpl_vars['img']->value['foto'];?>
 " width="200px" class="zoom">
     <?php } ?>
 <?php }?>

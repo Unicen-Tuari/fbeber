@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-27 02:27:58
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-27 13:17:51
          compiled from ".\templates\actividades.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2498057f6d8c83aef81-87553217%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f80e79dd0d96401a728898e6fbda97a73c9b74f1' => 
     array (
       0 => '.\\templates\\actividades.tpl',
-      1 => 1477528074,
+      1 => 1477566555,
       2 => 'file',
     ),
   ),
@@ -31,7 +31,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="col-md-12 text-center">
       <button id="agregar_actividad" class="btn btn-success" data-toggle="modal" data-target="#agregarActividad">Agregar Actividad</button><br><br>
     </div>
-
 
     <!--todas las actividades-->
 
@@ -80,13 +79,12 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 
 <div class="modal-body">
   <form id="agregar_actividad" method="POST" enctype="multipart/form-data">
-    <div class="col-md-12 text-center"><p>Seleccione imagen a modo de ilustración<br>
-      <img id="img_destino" class="img-circle zoom" width="80px" height="80px" src="../images/actividadDefault.png" alt="Tu imagen">
-      <input type="file" name="imagesToUpload[]" id="imagesToUpload" multiple/>
+    <div class="col-md-12 text-center"><p>Seleccione imagen a modo de ilustración</p>
+      <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control" multiple/>
     </div>
-    <p>Nombre de la actividad</p>
+    <p><br>Nombre de la actividad</p>
       <input type="text" class="form-control" id="new_nombre_a" name="new_nombre_a"><br>
-    <p>Realice una breve descripción de la actividad</p>
+    <p><br>Realice una breve descripción de la actividad</p>
       <textarea type="text" class="form-control" id="new_descripcion_a" name="new_descripcion_a" value="Descripcion"></textarea><br>         
 </div>
 

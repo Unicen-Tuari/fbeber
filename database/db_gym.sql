@@ -40,7 +40,17 @@ insert into profesor (nombre, apellido, dni, foto, horarios, descripcion, id_act
 
 insert into img_actividad(foto,id_act) values
 	('zumba.jpg',1),
+	('zumba2.jpg',1),
+	('zumba3.jpg',1),
 	('taebox.jpg',2),
+	('taebox2.jpg',2),
+	('taebox3.jpg',2),
 	('pilates.jpg',3),
+	('pilates2.jpg',3),
+	('pilates3.jpg',3),
 	('yoga.jpg',4),
- 	('crossfit.jpg',5)
+	('yoga2.jpg',4),
+	('yoga3.jpg',4),
+ 	('crossfit.jpg',5),
+ 	('crossfit3.jpg',5),
+ 	('crossfit4.jpg',5)

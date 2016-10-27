@@ -20,6 +20,7 @@ public function getActividades(){
 
 
 public function getActividad($id){
+    $actividad = array();
     $select = $this->db->prepare('SELECT * FROM actividad WHERE id=?');
     $select->execute(array($id));
     $actividad=$select->fetchAll(PDO::FETCH_ASSOC);

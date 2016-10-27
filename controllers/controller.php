@@ -42,7 +42,7 @@ class controller
   public function contacto(){
     $this->view->mostrarContacto();
   }
-s 
+
 }
 
 ?>

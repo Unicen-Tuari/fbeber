@@ -29,19 +29,19 @@ public function getProfesor($id){
   
 
 //ABM profesores
-public function agregarProfesor($new_nombre_p,$new_apellido_p,$new_dni_p,$new_descripcion_p,$new_horarios_p,$new_id_act_p){
-    /*try{
+public function agregarProfesor($new_nombre_p,$new_apellido_p,$new_dni_p,$new_foto_p,$new_descripcion_p,$new_horarios_p,$new_id_act_p){
+    try{
       $destinos_finales=$this->subirImagenes($imagenes);
       $this->db->beginTransaction();
-      foreach ($destinos_finales as $key => $value) {*/
-        $consulta = $this->db->prepare('INSERT INTO profesor(nombre,apellido,dni,descripcion,horarios,id_act) VALUES(?,?,?,?,?,?)');
-        $consulta->execute(array($new_nombre_p,$new_apellido_p,$new_dni_p,$new_descripcion_p,$new_horarios_p,$new_id_act_p));
-      /*}
+      foreach ($destinos_finales as $key => $value) {
+        $consulta = $this->db->prepare('INSERT INTO profesor(nombre,apellido,dni,foto,descripcion,horarios,id_act) VALUES(?,?,?,?,?,?,?)');
+        $consulta->execute(array($new_nombre_p,$new_apellido_p,$new_dni_p,$new_foto_p,$new_descripcion_p,$new_horarios_p,$new_id_act_p));
+      }
       $this->db->commit();
     }
     catch(Exception $e){
     $this->db->rollBack();
-    }*/
+    }
   }
 
 public function borrarProfesor($id_profe){

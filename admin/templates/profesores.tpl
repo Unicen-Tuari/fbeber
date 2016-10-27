@@ -51,6 +51,9 @@
           <div  class="col-md-12 modal-body">
             <form id="agregar_profesor">
               <h4>Datos personales</h4>
+                  <div class="col-md-12 text-center"><p>Seleccione foto de perfil:</p>
+                    <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control"/>
+                  </div>
               <div class="col-md-4"><p>Nombre:</p><input type="text" id="new_nombre_p" name="new_nombre_p" class="form-control"></div>
               <div class="col-md-4"><p>Apellido:</p><input type="text" id="new_apellido_p" name="new_apellido_p" class="form-control"></div>
               <div class="col-md-4"><p>DNI:</p><input type="text" id="new_dni_p" name="new_dni_p" class="form-control"></div>

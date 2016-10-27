@@ -1,63 +1,62 @@
 <?php
 require('config/configApp.php');
 require('controllers/controller.php');
-require('controllers/controller_actividades.php');
-require('controllers/controller_profesores.php');
 
 $controller = new controller();
-$controller_actividades = new controller_actividades();
-$controller_profesores = new controller_profesores();
 
+switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp::$ACTION_INCLUDE){
 
-switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp::$ACTION_INICIO){
+   case configApp::$ACTION_INCLUDE:
+      $controller->includes();
+  break;
 
   case configApp::$ACTION_INICIO:
       $controller->inicio();
   break; 
 
   case configApp::$ACTION_ACTIVIDADES:
-      $controller_actividades->actividades();
+      $controller->actividades();
   break;
 
   case configApp::$ACTION_PROFESORES:
-      $controller_profesores->profesores();
+      $controller->profesores();
   break;
 
 //consulta una actividad en especial
   case configApp::$ACTION_ACTIVIDAD:
-    $controller_actividades->actividad();
+    $controller->actividad();
   break;
 
   case configApp::$ACTION_PROFESOR:
-    $controller_profesores->profesor();
+    $controller->profesor();
   break;
   
 //consulta los profesores por una actividad específica
   case configApp::$ACTION_PROFE_ACT:
-    $controller_actividades->profeact();
+    $controller->profeact();
   break;
 
   
   //ABM ACTIVIDADES
   case ConfigApp::$ACTION_AGREGAR_ACTIVIDAD:
-      $controller_actividades->agregarActividad();
+      $controller->agregarActividad();
       break;
   case ConfigApp::$ACTION_BORRAR_ACTIVIDAD:
-      $controller_actividades->borrarActividad();
+      $controller->borrarActividad();
       break;
   case ConfigApp::$ACTION_MODIFICAR_ACTIVIDAD:
-      $controller_actividades->modificarActividad();
+      $controller->modificarActividad();
       break; 
 
   //ABM PROFESORES
   case ConfigApp::$ACTION_AGREGAR_PROFESOR:
-      $controller_profesores->agregarProfesor();
+      $controller->agregarProfesor();
       break;
   case ConfigApp::$ACTION_BORRAR_PROFESOR:
-      $controller_profesores->borrarProfesor();
+      $controller->borrarProfesor();
       break;
   case ConfigApp::$ACTION_MODIFICAR_PROFESOR:
-      $controller_profesores->modificarProfesor();
+      $controller->modificarProfesor();
       break; 
 
   //DEFAULT    

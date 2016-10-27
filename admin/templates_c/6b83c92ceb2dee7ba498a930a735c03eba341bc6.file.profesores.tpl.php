@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-27 01:38:35
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-27 13:50:58
          compiled from ".\templates\profesores.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:287357f8429a92a6d4-97294037%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6b83c92ceb2dee7ba498a930a735c03eba341bc6' => 
     array (
       0 => '.\\templates\\profesores.tpl',
-      1 => 1477525111,
+      1 => 1477568957,
       2 => 'file',
     ),
   ),
@@ -93,6 +93,9 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
           <div  class="col-md-12 modal-body">
             <form id="agregar_profesor">
               <h4>Datos personales</h4>
+                  <div class="col-md-12 text-center"><p>Seleccione foto de perfil:</p>
+                    <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control"/>
+                  </div>
               <div class="col-md-4"><p>Nombre:</p><input type="text" id="new_nombre_p" name="new_nombre_p" class="form-control"></div>
               <div class="col-md-4"><p>Apellido:</p><input type="text" id="new_apellido_p" name="new_apellido_p" class="form-control"></div>
               <div class="col-md-4"><p>DNI:</p><input type="text" id="new_dni_p" name="new_dni_p" class="form-control"></div>

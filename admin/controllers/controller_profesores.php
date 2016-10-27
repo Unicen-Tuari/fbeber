@@ -52,8 +52,8 @@ class controller_profesores
 
 //agrega
   public function agregarProfesor(){
-    if(isset($_REQUEST['new_nombre_p']) && isset($_REQUEST['new_apellido_p']) && isset($_REQUEST['new_dni_p']) && isset($_REQUEST['new_descripcion_p']) && isset($_REQUEST['new_horarios_p']) && isset($_REQUEST['new_id_act_p'])){
-        $this->model_profesores->agregarProfesor($_REQUEST['new_nombre_p'], $_REQUEST['new_apellido_p'], $_REQUEST['new_dni_p'], $_REQUEST['new_descripcion_p'], $_REQUEST['new_horarios_p'], $_REQUEST['new_id_act_p']);      
+    if(isset($_REQUEST['new_nombre_p']) && isset($_REQUEST['new_apellido_p']) && isset($_REQUEST['new_dni_p']) && isset($_FILES['imagesUpload']) && isset($_REQUEST['new_descripcion_p']) && isset($_REQUEST['new_horarios_p']) && isset($_REQUEST['new_id_act_p'])){
+        $this->model_profesores->agregarProfesor($_REQUEST['new_nombre_p'], $_REQUEST['new_apellido_p'], $_REQUEST['new_dni_p'],$_FILES['imagesUpload'], $_REQUEST['new_descripcion_p'], $_REQUEST['new_horarios_p'], $_REQUEST['new_id_act_p']);      
       }
     else{
       $this->view_profesores->mostrarError('cuack');

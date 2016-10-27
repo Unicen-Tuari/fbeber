@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 18:13:06
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-27 14:02:43
          compiled from ".\templates\actividades.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:787057f6759a91d962-33289416%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f80e79dd0d96401a728898e6fbda97a73c9b74f1' => 
     array (
       0 => '.\\templates\\actividades.tpl',
-      1 => 1476893583,
+      1 => 1477569760,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'actividades' => 0,
     'actividad' => 0,
+    'imagen' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -37,14 +38,24 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 ?>
     <div class="col-md-3">
         <div class="promocion3">
-          <img src="images/<?php echo $_smarty_tpl->tpl_vars['actividad']->value['foto'];?>
-" alt="..." class="img-circle" width="100px" height="100px">
+        <div class="col-md-12 text-center" style="height: 180px">
           <h3><?php echo $_smarty_tpl->tpl_vars['actividad']->value['nombre'];?>
 </h3>
-          <div style="height: 100px"><p><?php echo $_smarty_tpl->tpl_vars['actividad']->value['descripcion'];?>
+          <?php  $_smarty_tpl->tpl_vars['imagen'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['imagen']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['actividad']->value['imagenes']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['imagen']->key => $_smarty_tpl->tpl_vars['imagen']->value){
+$_smarty_tpl->tpl_vars['imagen']->_loop = true;
+?>
+          <div class="col-md-4">
+            <img src="images/<?php echo $_smarty_tpl->tpl_vars['imagen']->value['foto'];?>
+" class="zoom" width="100%">
+          </div>
+          <?php } ?>  
+          </div>
+          <div class="col-md-12" style="height: 100px margin-top:10px;"><p><?php echo $_smarty_tpl->tpl_vars['actividad']->value['descripcion'];?>
 </p></div>
-          <button class="btn btn-default" id="id_actividad" onClick = "cargaProfesores(<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
-);" type="button" data-toggle="modal" data-target="#horarios"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Ver Días Horarios</button> <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inscribirse</button>
+          <div class="col-md-12"><button class="btn btn-default" id="id_actividad" onClick = "cargaProfesores(<?php echo $_smarty_tpl->tpl_vars['actividad']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#horarios"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Ver Días Horarios</button> <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inscribirse</button></div>
         </div>
       </div>
     <?php } ?>  

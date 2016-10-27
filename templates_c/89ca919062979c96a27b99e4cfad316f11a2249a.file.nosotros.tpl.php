@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-19 01:45:29
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-27 01:28:44
          compiled from ".\templates\nosotros.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:546457f69c46b30da8-47429701%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '89ca919062979c96a27b99e4cfad316f11a2249a' => 
     array (
       0 => '.\\templates\\nosotros.tpl',
-      1 => 1476834322,
+      1 => 1477524518,
       2 => 'file',
     ),
   ),
@@ -56,7 +56,6 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
 </h4>
           <p><?php echo $_smarty_tpl->tpl_vars['profesor']->value['descripcion'];?>
 </p>
-          <p>Encontrame en:<img src="images/redes/link-color.png" width="25px;" class="zoom"></p>
         </div>
         <?php } ?>
            

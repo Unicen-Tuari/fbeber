@@ -7,11 +7,15 @@
     {foreach $actividades as $actividad}
     <div class="col-md-3">
         <div class="promocion3">
+        <div class="col-md-12 text-center" style="height: 180px">
           <h3>{$actividad.nombre}</h3>
-          <div class="col-md-12 text-center" style="height: 180px"><div class="col-md-4">
-            {foreach $actividad['imagenes'] as $imagen}<img src="images/{$imagen.foto}" class="zoom" width="100%">{/foreach}  
-          </div></div>
-          <div class="col-md-12" style="height: 100px"><p>{$actividad.descripcion}</p></div>
+          {foreach $actividad['imagenes'] as $imagen}
+          <div class="col-md-4">
+            <img src="images/{$imagen.foto}" class="zoom" width="100%">
+          </div>
+          {/foreach}  
+          </div>
+          <div class="col-md-12" style="height: 100px margin-top:10px;"><p>{$actividad.descripcion}</p></div>
           <div class="col-md-12"><button class="btn btn-default" id="id_actividad" onClick = "cargaProfesores({$actividad['id']});" type="button" data-toggle="modal" data-target="#horarios"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Ver Días Horarios</button> <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inscribirse</button></div>
         </div>
       </div>
