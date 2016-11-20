@@ -19,7 +19,7 @@ class controller_profesores
     $this->view_profesores->mostrarProfesores($profesores,$actividades);
   }
 
-//consulta profesores + todas las actividades
+//consulta profesores + todas las actividades para poder mostrar en los formularios
   public function profeactividades(){
     $actividades = $this->model_profesores->getActividades();
     if(isset($_REQUEST['id_profe'])){
@@ -28,6 +28,7 @@ class controller_profesores
       $this->view_profesores->mostrarProfeActividades($actividades,$profesor);
     }
   }
+
 
 //BORRAR consulta de profesores
   public function profesor(){
@@ -47,7 +48,15 @@ class controller_profesores
     $this->profesores();
   }
 
-
+//consulta usuarios por profesor // NEW
+  public function usuariosprofesor(){
+    if(isset($_REQUEST['id_profesor'])){
+      $id=$_REQUEST['id_profesor'];
+      $profesor = $this->model_profesores->getProfesor($id);
+      $inscriptos = $this->model_profesores->getUsuariosprofesor($id);
+      $this->view_profesores->mostrarUsuariosprofesor($inscriptos,$profesor);
+    }
+  } 
 //ABM PROFESORES
 
 //agrega

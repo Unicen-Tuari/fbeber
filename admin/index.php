@@ -64,6 +64,10 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case configApp::$ACTION_COMENTARIOS_USUARIO://new->OK
     $controller_usuarios->comentariosusuario();
   break;
+//inscriptos por profesor
+  case configApp::$ACTION_USUARIOS_PROFESOR://new->OK
+    $controller_profesores->usuariosprofesor();
+  break;
 
 //ALTAS, BAJAS Y MODIFICACIONES 
   //ABM ACTIVIDADES

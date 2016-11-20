@@ -32,7 +32,7 @@
           <td>{$profesor.email}</td>
           <td>{$profesor.nombreAct}</td>
           <td>{$profesor.horarios}</td>
-          <td><button class="btn btn-warning" onClick = "inscriptos({$profesor['id']});" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
+          <td><button class="btn btn-warning" onClick = "cargaInscriptos({$profesor['id']});" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-info" onClick = "profeActividades({$profesor['id']});" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-danger" onClick = "infoProfesor({$profesor['id']});" type="button" data-toggle="modal" data-target="#borrarProfesor"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
           </tr> 
@@ -65,10 +65,8 @@
           <td>{$profesor.email}</td>
           <td>{$profesor.nombreAct}</td>
           <td>{$profesor.horarios}</td>
-          <td><button class="btn btn-warning" onClick = "inscriptos({$profesor['id']});" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
+          <td><button class="btn btn-warning" onClick = "cargaInscriptos({$profesor['id']});" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-info" onClick = "profeActividades({$profesor['id']});" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
-                    <td>{$profesor.is_admin}</td>
-
         </tr> 
         {/if} 
         {/foreach}

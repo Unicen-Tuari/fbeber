@@ -26,6 +26,14 @@ public function getProfesor($id){
     $profesor=$select->fetchAll(PDO::FETCH_ASSOC);
     return $profesor;
   }
+
+//consulta por un profesor en especial (caso de borrado)
+public function getUsuariosprofesor($id){
+    $select = $this->db->prepare("SELECT * FROM usuario u, inscripcion i WHERE u.id=i.id_usuario AND i.id_profe=?");
+    $select->execute(array($id));
+    $inscriptos=$select->fetchAll(PDO::FETCH_ASSOC);
+    return $inscriptos;
+  }
   
 
 //ABM profesores

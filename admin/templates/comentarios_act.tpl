@@ -6,7 +6,7 @@
 
 {foreach $comact as $dato}
 
-<table class="table">
+<table class="table table-striped">
 <tr>
     <td class="text-center"><p><b>{$dato.apyno} </b>dijo: </b>{$dato.comentario}</p></td>
     <td class="text-right">{for $i = $dato.puntaje; $i >= 1; $i--}<span class="glyphicon glyphicon-star" aria-hidden="true" style="color: orange"></span> {/for}</td>

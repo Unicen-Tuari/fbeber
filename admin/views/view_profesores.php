@@ -21,6 +21,13 @@ public function mostrarProfesores($profesores,$actividades){
     $this->smarty->assign('profesores',$profesores);
     $this->smarty->display('profesores.tpl');
   }
+
+//muestra usuarios por profesor
+public function mostrarUsuariosprofesor($inscriptos,$profesor){
+    $this->smarty->assign('inscriptos',$inscriptos);
+    $this->smarty->assign('profesor',$profesor);
+    $this->smarty->display('inscriptos.tpl');
+  }
 }
 
 ?>

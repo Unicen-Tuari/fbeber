@@ -9,7 +9,7 @@ function agregaProfe(){//NOver ver ver  ver ver
     }
   });
 }
-
+//modifica profesor
 function modProfe(){//OK
   $.ajax({
     method: "POST",
@@ -22,7 +22,6 @@ function modProfe(){//OK
     }
   });
 }
-
 //BAJA PROFESOR 
 //consulta sobre un profesor especifico para borrarlo
 function infoProfesor(id_profesor){//OK
@@ -47,7 +46,18 @@ function borraProfe(id_profe){//OK
     }
     });
 }
-
+//consulta inscriptos por profesor
+function cargaInscriptos(id_profesor){
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=usuariosprofesor&id_profesor="+id_profesor,
+    contentType:'html',
+    cache: false,
+    success: function(data){
+      $('#inscriptos').html(data);
+    }
+  });
+}
 //consulta por una actividad especifica, se muestra en la tabla del profesor
 function infoActividad(id_actividad){
   $.ajax({
