@@ -23,6 +23,13 @@ class model
     return $actividades;
   }
   
+  public function getUsuarios(){ //actividad
+    $select = $this->db->prepare("SELECT * FROM usuario");
+    $select->execute();
+    $usuarios=$select->fetchAll(PDO::FETCH_ASSOC);
+    return $usuarios;
+  }
+
   public function getActividad($id){ //actividad
     $select = $this->db->prepare("SELECT * FROM actividad WHERE id=?");
     $select->execute(array($id));
@@ -31,7 +38,7 @@ class model
   }
 
   public function getProfeact($id){ //profesores por actividad (seccion act)
-    $select = $this->db->prepare("SELECT p.apyno, p.foto, p.horarios, a.nombre as nombreAct FROM profesor p, actividad a WHERE p.id_act=a.id AND p.id_act=?");
+    $select = $this->db->prepare("SELECT p.id,p.apyno, p.foto, p.horarios, a.nombre as nombreAct FROM profesor p, actividad a WHERE p.id_act=a.id AND p.id_act=?");
     $select->execute(array($id));
     $profeact=$select->fetchAll(PDO::FETCH_ASSOC);
     return $profeact;
@@ -42,6 +49,13 @@ class model
     $select->execute();
     $profesores=$select->fetchAll(PDO::FETCH_ASSOC);
     return $profesores;
+  }
+
+    
+//inscribir usuario a una actividad
+  public function agregaInscripcion($new_idProfe_i,$new_idUser_i){
+  $consulta = $this->db->prepare('INSERT INTO inscripcion(id_profe,id_usuario) VALUES(?,?)');
+  $consulta->execute(array($new_idProfe_i,$new_idUser_i));
   }
 }
 ?>

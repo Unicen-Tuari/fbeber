@@ -20,6 +20,17 @@ function agregaComentario(){
   });
 }
 
+//inscribir
+function agregaInscripcion(){
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=inscribir&new_idProfe_i=" + $("#new_idProfe_i").val() + "&new_idUser_i=" + $("#new_idUser_i").val(),
+    data: $("#inscripcion").serialize(), // DATOS DEL FORM
+    success: function(data){
+       loadRender("index.php?action=actividades");
+    }
+  });
+}
 //carga todos los profesores de una actividad específica
 function cargaComentarios(id_act_c){
   $.ajax({

@@ -18,6 +18,7 @@
         <td><b>EMAIL</b></td>
         <td><b>ACTIVIDAD</b></td>
         <td><b>DIAS Y HORARIOS</b></td>
+        <td><b>INSCRIPTOS</b></td>
         <td><b>MODIFICAR</b></td>
         <td><b>ELIMINAR</b></td>
       </tr>
@@ -25,16 +26,15 @@
         {if $profesor.is_admin == 1}
         <tr id="datosActividad">
           <td><img src="../images/{$profesor.foto}" alt="..." class="img-circle zoom" width="50px" height="50px"></td>
-          <td>{$profesor.apyno}</td>
+          <td><b>{$profesor.apyno}</b></td>
           <td>{$profesor.dni}</td>
           <td>{$profesor.descripcion}</td>
           <td>{$profesor.email}</td>
           <td>{$profesor.nombreAct}</td>
           <td>{$profesor.horarios}</td>
+          <td><button class="btn btn-warning" onClick = "inscriptos({$profesor['id']});" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-info" onClick = "profeActividades({$profesor['id']});" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-danger" onClick = "infoProfesor({$profesor['id']});" type="button" data-toggle="modal" data-target="#borrarProfesor"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
-          <td>{$profesor.is_admin}</td>
-          <td>{$profesor.pass}</td>
           </tr> 
         {/if} 
           {/foreach}
@@ -52,6 +52,7 @@
         <td><b>EMAIL</b></td>
         <td><b>ACTIVIDAD</b></td>
         <td><b>DIAS Y HORARIOS</b></td>
+        <td><b>INSCRIPTOS</b></td>
         <td><b>MODIFICAR</b></td>
       </tr>
       {foreach $profesores as $profesor}
@@ -64,6 +65,7 @@
           <td>{$profesor.email}</td>
           <td>{$profesor.nombreAct}</td>
           <td>{$profesor.horarios}</td>
+          <td><button class="btn btn-warning" onClick = "inscriptos({$profesor['id']});" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-info" onClick = "profeActividades({$profesor['id']});" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
                     <td>{$profesor.is_admin}</td>
 
@@ -128,6 +130,15 @@
 <div id="modificarProfesor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog" role="document">
 <div id="infoProfeActividades" class="modal-content">
+<h3>okey</h3>
+</div>
+</div>
+</div>
+
+<!--inscriptos-->
+<div id="inscriptosAll" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+<div id="inscriptos" class="modal-content">
 <h3>okey</h3>
 </div>
 </div>

@@ -50,10 +50,10 @@ create table comentario(
 create table inscripcion(
 	id int(10) not null AUTO_INCREMENT,
 	id_usuario int(10) not null,
-	id_act int(10) not null,
+	id_profe int(10) not null,
 	constraint pk_inscripcion primary key (id),
 	constraint fk_inscripcion foreign key (id_usuario) references usuario (id) on delete cascade on update cascade,
-	constraint fk_inscripcion1 foreign key (id_act) references actividad (id) on delete cascade on update cascade
+	constraint fk_inscripcion1 foreign key (id_profe) references profesor (id) on delete cascade on update cascade
 );
 
 

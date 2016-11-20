@@ -4,6 +4,7 @@
 </div>
 
 <div  class="modal-body">
+<a class="btn btn-success" href="#" onclick="borraImgAct('{$img.id}')" aria-hidden="true" data-dismiss="modal">Agregar más imágenes</a><br>
 {if $imagesact == null}
 <h1>No existen imagenes en esta actividad</h1>
 {else}

@@ -48,6 +48,8 @@ public function comentarios(){
     }
     $this->actividades();
   }
+
+  
 }
 
 ?>

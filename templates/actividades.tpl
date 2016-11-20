@@ -1,7 +1,6 @@
 <div class="col-md-12">
 <h1>Actividades</h1><br>
     <!--todas las actividades-->
-
 {foreach $actividades as $actividad}
 {if $actividad.id != 1}
   <div class="col-md-4">
@@ -17,7 +16,11 @@
     <h5>Déjenos su puntaje y un comentario</h5>
   <form id="agregar_com" method="POST" enctype="multipart/form-data">
     <input type="hidden" class="form-control" id="new_idAct_c" name="new_idAct_c" value="{$actividad.id}">
-    <input type="text" class="form-control" id="new_idUser_c" name="new_idUser_c"><!--luego sacar-->
+    <select id="new_idUser_c" name="new_idUser_c">
+      {foreach $usuarios as $user}
+        <option value="{$user.id}">{$user.apyno}</option>
+      {/foreach}
+    </select>
     <div class="col-md-12">
       <div class="col-md-10"><input type="text" class="col-md-8 form-control" id="new_comentario" name="new_comentario" placeholder="Agregue su comentario">
       Su puntaje: 
@@ -46,7 +49,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h3>Días y Horarios</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h3>Horarios e Inscripciones</h3>
         <div id="tableProfesores" class="modal-body"></div>
       </div>
     </div>

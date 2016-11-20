@@ -18,12 +18,14 @@ class view
     $this->smarty->display('index.tpl');
   }
 
-  public function mostrarActividades($actividades){
+  public function mostrarActividades($actividades,$usuarios){
+    $this->smarty->assign('usuarios',$usuarios);
     $this->smarty->assign('actividades',$actividades);
     $this->smarty->display('actividades.tpl');
   }
 
-  public function mostrarProfeact($profeact,$actividad){
+  public function mostrarProfeact($profeact,$actividad,$usuarios){
+    $this->smarty->assign('usuarios',$usuarios);
     $this->smarty->assign('actividad',$actividad);
     $this->smarty->assign('profeact',$profeact);
     $this->smarty->display('profe_act.tpl');

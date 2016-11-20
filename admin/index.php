@@ -61,7 +61,7 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
     $controller_actividades->comentariosact();
   break;
 //consulta los comentarios de un usuario
-  case configApp::$ACTION_COMENTARIOS_USUARIO://new
+  case configApp::$ACTION_COMENTARIOS_USUARIO://new->OK
     $controller_usuarios->comentariosusuario();
   break;
 
@@ -94,7 +94,7 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
     $controller_usuarios->borrarUsuario();
     break;
   
-
+  
 //DEFAULT    
   default://ok
     echo "PÁGINA NO ENCONTRADA";

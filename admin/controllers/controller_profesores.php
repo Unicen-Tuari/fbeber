@@ -51,9 +51,10 @@ class controller_profesores
 //ABM PROFESORES
 
 //agrega
+  //la pass se guarda con una encriptacion md5
   public function agregarProfesor(){
     if(isset($_REQUEST['new_apyno_p']) && isset($_REQUEST['new_email_p']) && isset($_REQUEST['new_pass_p']) && isset($_REQUEST['new_dni_p']) && isset($_REQUEST['new_descripcion_p']) && isset($_REQUEST['new_horarios_p']) && isset($_REQUEST['new_id_act_p'])){
-        $this->model_profesores->agregarProfesor($_REQUEST['new_apyno_p'], $_REQUEST['new_email_p'], $_REQUEST['new_pass_p'],$_REQUEST['new_dni_p'],$_REQUEST['new_descripcion_p'], $_REQUEST['new_horarios_p'], $_REQUEST['new_id_act_p']);      
+        $this->model_profesores->agregarProfesor($_REQUEST['new_apyno_p'], $_REQUEST['new_email_p'], md5($_REQUEST['new_pass_p']),$_REQUEST['new_dni_p'],$_REQUEST['new_descripcion_p'], $_REQUEST['new_horarios_p'], $_REQUEST['new_id_act_p']);      
       }
     else{
       $this->view_profesores->mostrarError('cuack');

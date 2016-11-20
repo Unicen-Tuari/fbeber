@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-20 01:47:25
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-20 21:55:25
          compiled from ".\templates\profesores.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:287605830eb1396dc96-08355820%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6b83c92ceb2dee7ba498a930a735c03eba341bc6' => 
     array (
       0 => '.\\templates\\profesores.tpl',
-      1 => 1479602839,
+      1 => 1479675322,
       2 => 'file',
     ),
   ),
@@ -46,6 +46,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <td><b>EMAIL</b></td>
         <td><b>ACTIVIDAD</b></td>
         <td><b>DIAS Y HORARIOS</b></td>
+        <td><b>INSCRIPTOS</b></td>
         <td><b>MODIFICAR</b></td>
         <td><b>ELIMINAR</b></td>
       </tr>
@@ -58,8 +59,8 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
         <tr id="datosActividad">
           <td><img src="../images/<?php echo $_smarty_tpl->tpl_vars['profesor']->value['foto'];?>
 " alt="..." class="img-circle zoom" width="50px" height="50px"></td>
-          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['apyno'];?>
-</td>
+          <td><b><?php echo $_smarty_tpl->tpl_vars['profesor']->value['apyno'];?>
+</b></td>
           <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['dni'];?>
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['descripcion'];?>
@@ -70,14 +71,12 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['horarios'];?>
 </td>
+          <td><button class="btn btn-warning" onClick = "inscriptos(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-info" onClick = "profeActividades(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
 );" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-danger" onClick = "infoProfesor(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
 );" type="button" data-toggle="modal" data-target="#borrarProfesor"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
-          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['is_admin'];?>
-</td>
-          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['pass'];?>
-</td>
           </tr> 
         <?php }?> 
           <?php } ?>
@@ -95,6 +94,7 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
         <td><b>EMAIL</b></td>
         <td><b>ACTIVIDAD</b></td>
         <td><b>DIAS Y HORARIOS</b></td>
+        <td><b>INSCRIPTOS</b></td>
         <td><b>MODIFICAR</b></td>
       </tr>
       <?php  $_smarty_tpl->tpl_vars['profesor'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['profesor']->_loop = false;
@@ -118,6 +118,8 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['horarios'];?>
 </td>
+          <td><button class="btn btn-warning" onClick = "inscriptos(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-info" onClick = "profeActividades(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
 );" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
                     <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['is_admin'];?>
@@ -190,6 +192,15 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 <div id="modificarProfesor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog" role="document">
 <div id="infoProfeActividades" class="modal-content">
+<h3>okey</h3>
+</div>
+</div>
+</div>
+
+<!--inscriptos-->
+<div id="inscriptosAll" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+<div id="inscriptos" class="modal-content">
 <h3>okey</h3>
 </div>
 </div>

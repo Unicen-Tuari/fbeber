@@ -21,16 +21,18 @@ class controller
   }
 
   public function actividades(){
+    $usuarios = $this->model->getUsuarios();
     $actividades = $this->model->getActividades();
-    $this->view->mostrarActividades($actividades);
+    $this->view->mostrarActividades($actividades,$usuarios);
   }
   
   public function profeact(){
     if(isset($_REQUEST['id_actividad'])){
       $id=$_REQUEST['id_actividad'];
+      $usuarios = $this->model->getUsuarios();
       $actividad = $this->model->getActividad($id);
       $profeact = $this->model->getProfeact($id);
-      $this->view->mostrarProfeact($profeact,$actividad);
+      $this->view->mostrarProfeact($profeact,$actividad,$usuarios);
     }
   } 
 
@@ -41,6 +43,27 @@ class controller
 
   public function contacto(){
     $this->view->mostrarContacto();
+  }
+
+  //inscribir
+  public function inscribir(){
+    if(isset($_REQUEST['new_idProfe_i']) && isset($_REQUEST['new_idUser_i'])){
+        $this->model->agregaInscripcion($_REQUEST['new_idProfe_i'],$_REQUEST['new_idUser_i']); 
+      }
+    else{
+      $this->view->mostrarError('cuack');
+    }
+    $this->actividades();
+  }
+  //desinscribir
+  public function desinscribir(){
+    if(isset($_REQUEST['id_i'])){
+        $this->model->borraInscripcion($_REQUEST['id_i']); 
+      }
+    else{
+      $this->view->mostrarError('cuack');
+    }
+    $this->actividades();
   }
 
 }

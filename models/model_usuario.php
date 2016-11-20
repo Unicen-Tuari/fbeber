@@ -23,6 +23,8 @@ public function agregarComentario($new_comentario,$new_puntaje,$new_idAct_c,$new
   $consulta = $this->db->prepare('INSERT INTO comentario(comentario,puntaje,id_act,id_usuario) VALUES(?,?,?,?)');
   $consulta->execute(array($new_comentario,$new_puntaje,$new_idAct_c,$new_idUser_c));
   }
+
+
 }
 
 ?>

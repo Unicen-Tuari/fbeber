@@ -13,6 +13,8 @@ class ConfigApp{
 //new
   public static $ACTION_USUARIO = "usuario";
   public static $ACTION_AGREGAR_USUARIO = "agregar_usuario";
+  public static $ACTION_INSCRIBIR = "inscribir";
+  public static $ACTION_DESINSCRIBIR = "desinscribir";
   public static $ACTION_AGREGAR_COMENTARIO = "agregar_comentario";
   public static $ACTION_COMENTARIOS = "comentarios";
 }
