@@ -2,7 +2,7 @@
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   
 {foreach $profesor as $profe}
-<h3>¿Está seguro que desea eliminar al profesor {$profe.nombre}?</h3>
+<h3>¿Está seguro que desea eliminar al profesor {$profe.apyno}?</h3>
     
 <div  class="modal-body">
   <h4><img src="../images/{$profe.foto}"></h4><br>

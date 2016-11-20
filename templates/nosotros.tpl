@@ -16,12 +16,14 @@
         <h2>Profesores</h2>
         <br>
         {foreach $profesores as $profesor}
-        <div class="col-md-4">
+        {if $profesor.id != 1}
+        <div class="col-md-2">
           <img src="images/{$profesor.foto}" alt="..." class="img-circle" width="140px" height="140px">
-          <h3>{$profesor.nombre} {$profesor.apellido}</h3>
+          <h3>{$profesor.apyno}</h3>
           <h4>Profesor/a de {$profesor.nombreAct}</h4>
           <p>{$profesor.descripcion}</p>
         </div>
+        {/if}
         {/foreach}
            
       </div>

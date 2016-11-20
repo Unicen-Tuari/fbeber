@@ -8,7 +8,7 @@
   <div  class="modal-body">
     <h4>RECUERDE que junto a esta actividad también se eliminaran el/los siguientes profesores:</h4><br>
     {foreach $profeact as $profes}
-    			{$profes.nombre} {$profes.apellido}<br>{$profes.horarios}
+    			{$profes.apyno}<br>{$profes.horarios}
     			<br>
     {/foreach}
   </div>

@@ -12,11 +12,12 @@ class controller
     $this->model = new model();
   }
 
+ 
   public function includes(){
     $this->view->mostrarIncludes();
   }
 
-  public function inicio(){
+  public function inicio(){ 
     $this->view->mostrarInicio();
   }
 

@@ -1,23 +1,39 @@
 <div class="modal-header">
 {foreach $profesor as $dato}
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-<h4 class="modal-title" id="myModalLabel">Modificar los datos de {$dato.nombre}</h4>
+<h4 class="modal-title" id="myModalLabel">Modificar los datos de {$dato.apyno}</h4>
 </div>
 
       <div class="col-md-12 modal-body">
         <form id="modifica_profesor" method="POST">
           <div class="col-md-12"><p>Cambie la foto de perfil</p>         
-          <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control" value="{$dato.foto}"></div>
+          <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control" value="{$dato.foto}"><br></div>
+          
           <input type="hidden" class="form-control" id="id_profe" name="id_profe" value="{$dato.id}">
-          <div class="col-md-4"><p><br>Nombre:</p><input type="text" class="form-control" id="upd_nombre_p" name="upd_nombre_p" value="{$dato.nombre}"></div>
-          <div class="col-md-4"><p><br>Apellido:</p><input type="text" class="form-control" id="upd_apellido_p" name="upd_apellido_p" value="{$dato.apellido}"></div>
-          <div class="col-md-4"><p><br>DNI:</p><input type="text" class="form-control" id="upd_dni_p" name="upd_dni_p" value="{$dato.dni}"></div>
-          <div class="col-md-12"><p><br>Descripción:</p><textarea type="text" class="form-control" id="upd_descripcion_p" name="upd_descripcion_p" value="{$dato.descripcion}"></textarea></div>
+          <div class="col-md-5"><p><br>Nombre y Apellido:</p><input type="text" class="form-control" id="upd_apyno_p" name="upd_apyno_p" value="{$dato.apyno}"></div>
+          <div class="col-md-7"><p><br>Correo Electrónico:</p><input type="text" class="form-control" id="upd_email_p" name="upd_email_p" value="{$dato.email}"></div>
+          <div class="col-md-5"><p><br>DNI:</p><input type="text" class="form-control" id="upd_dni_p" name="upd_dni_p" value="{$dato.dni}"></div>
+          <div class="col-md-7">
+          <p><br>Permisos:</p>
+          <select id="upd_permisos_p" name="upd_permisos_p" class="form-control">
+            {if $dato.is_admin == 0}
+            <option value="{$dato.is_admin}">Conceder Permisos de Administrador</option>
+            <option value="1">Negar Permisos de Administrador</option>
+            {else}
+            <option value="{$dato.is_admin}">Negar Permisos de Administrador</option>
+            <option value="0">Conceder Permisos de Administrador</option>
+            
+            {/if}
+          </select>
+          </div>
+          <div class="col-md-12"><p><br>Descripción:</p><textarea type="text" class="form-control" id="upd_descripcion_p" name="upd_descripcion_p" value="{$dato.descripcion}">{$dato.descripcion}</textarea></div>
           <div class="col-md-6"><p><br>Actividad:</p>
-          <select id="upd_id_act_p" name="upd_id_act_p">
-            <option  value="{$dato.id_act}">Ver todas</option>
+          <select id="upd_id_act_p" name="upd_id_act_p" class="form-control">
+            <option value="{$dato.id_act}">Elegir Actividad</option>
               {foreach $actividades as $actividad}
+              {if $actividad.id != 1}
               <option value="{$actividad.id}">{$actividad.nombre}</option>
+              {/if}
               {/foreach}
             </select>
           </div>

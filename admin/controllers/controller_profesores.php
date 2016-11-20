@@ -52,8 +52,8 @@ class controller_profesores
 
 //agrega
   public function agregarProfesor(){
-    if(isset($_REQUEST['new_nombre_p']) && isset($_REQUEST['new_apellido_p']) && isset($_REQUEST['new_dni_p']) && isset($_FILES['imagesUpload']) && isset($_REQUEST['new_descripcion_p']) && isset($_REQUEST['new_horarios_p']) && isset($_REQUEST['new_id_act_p'])){
-        $this->model_profesores->agregarProfesor($_REQUEST['new_nombre_p'], $_REQUEST['new_apellido_p'], $_REQUEST['new_dni_p'],$_FILES['imagesUpload'], $_REQUEST['new_descripcion_p'], $_REQUEST['new_horarios_p'], $_REQUEST['new_id_act_p']);      
+    if(isset($_REQUEST['new_apyno_p']) && isset($_REQUEST['new_email_p']) && isset($_REQUEST['new_pass_p']) && isset($_REQUEST['new_dni_p']) && isset($_REQUEST['new_descripcion_p']) && isset($_REQUEST['new_horarios_p']) && isset($_REQUEST['new_id_act_p'])){
+        $this->model_profesores->agregarProfesor($_REQUEST['new_apyno_p'], $_REQUEST['new_email_p'], $_REQUEST['new_pass_p'],$_REQUEST['new_dni_p'],$_REQUEST['new_descripcion_p'], $_REQUEST['new_horarios_p'], $_REQUEST['new_id_act_p']);      
       }
     else{
       $this->view_profesores->mostrarError('cuack');
@@ -63,8 +63,8 @@ class controller_profesores
 
 //modifica
   public function modificarProfesor(){
-    if(isset($_REQUEST['upd_nombre_p']) && isset($_REQUEST['upd_apellido_p']) && isset($_REQUEST['upd_dni_p']) && isset($_REQUEST['upd_descripcion_p']) && isset($_REQUEST['upd_horarios_p'])  && isset($_REQUEST['upd_id_act_p']) && isset($_REQUEST['id_profe'])){
-        $this->model_profesores->modificarProfesor($_REQUEST['upd_nombre_p'], $_REQUEST['upd_apellido_p'], $_REQUEST['upd_dni_p'], $_REQUEST['upd_descripcion_p'],$_REQUEST['upd_horarios_p'], $_REQUEST['upd_id_act_p'], $_REQUEST['id_profe']);
+    if(isset($_REQUEST['upd_apyno_p']) && isset($_REQUEST['upd_email_p']) && isset($_REQUEST['upd_dni_p']) && isset($_REQUEST['upd_descripcion_p']) && isset($_REQUEST['upd_horarios_p'])  && isset($_REQUEST['upd_id_act_p']) && isset($_REQUEST['upd_permisos_p']) && isset($_REQUEST['id_profe'])){
+        $this->model_profesores->modificarProfesor($_REQUEST['upd_apyno_p'], $_REQUEST['upd_email_p'], $_REQUEST['upd_dni_p'], $_REQUEST['upd_descripcion_p'],$_REQUEST['upd_horarios_p'], $_REQUEST['upd_id_act_p'], $_REQUEST['upd_permisos_p'] ,$_REQUEST['id_profe']);
     }   
     else{
       $this->view_profesores->mostrarError('El profesor que intenta modificar no existe');

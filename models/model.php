@@ -2,14 +2,14 @@
 
 class model
 {
-  private $db;
+  public $db;
 
   public function __construct()
   {
     $this->db = new PDO('mysql:host=localhost;dbname=gimnasio;charset=utf8','root','');
   }
 
-  public function getActividades(){
+  public function getActividades(){ //todas las actividades
     $actividades = array();
     $consulta = $this->db->prepare("SELECT * FROM actividad");
     $consulta->execute();
@@ -23,27 +23,25 @@ class model
     return $actividades;
   }
   
-  public function getActividad($id){
+  public function getActividad($id){ //actividad
     $select = $this->db->prepare("SELECT * FROM actividad WHERE id=?");
     $select->execute(array($id));
     $actividad=$select->fetchAll(PDO::FETCH_ASSOC);
     return $actividad;
   }
 
-  public function getProfeact($id){
-    $select = $this->db->prepare("SELECT p.nombre, p.foto, p.apellido, p.horarios, a.nombre as nombreAct FROM profesor p, actividad a WHERE p.id_act=a.id AND p.id_act=?");
+  public function getProfeact($id){ //profesores por actividad (seccion act)
+    $select = $this->db->prepare("SELECT p.apyno, p.foto, p.horarios, a.nombre as nombreAct FROM profesor p, actividad a WHERE p.id_act=a.id AND p.id_act=?");
     $select->execute(array($id));
     $profeact=$select->fetchAll(PDO::FETCH_ASSOC);
     return $profeact;
   }
 
-  public function getProfesores(){
-    $select = $this->db->prepare("SELECT a.nombre as nombreAct, p.nombre, p.apellido, p.foto, p.descripcion from profesor p, actividad a where p.id_act=a.id");
+  public function getProfesores(){ //profesores (seccion nosotros)
+    $select = $this->db->prepare("SELECT p.id, a.nombre as nombreAct, p.apyno, p.foto, p.descripcion from profesor p, actividad a where p.id_act=a.id");
     $select->execute();
     $profesores=$select->fetchAll(PDO::FETCH_ASSOC);
     return $profesores;
   }
 }
-
-
 ?>

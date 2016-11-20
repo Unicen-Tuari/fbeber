@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-25 01:57:01
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-20 02:22:11
          compiled from ".\templates\borrar_act.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:293195806d95f04bf94-40123949%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:132615830fac333a988-30359535%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '51fc823e5e0be83e9a04945910076b3b294e7dfa' => 
     array (
       0 => '.\\templates\\borrar_act.tpl',
-      1 => 1477353415,
+      1 => 1479586965,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '293195806d95f04bf94-40123949',
+  'nocache_hash' => '132615830fac333a988-30359535',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5806d95f2ad623_71723499',
   'variables' => 
   array (
     'actividad' => 0,
@@ -25,8 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'profes' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5830fac3657837_62101754',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5806d95f2ad623_71723499')) {function content_5806d95f2ad623_71723499($_smarty_tpl) {?><div class="modal-header">
+<?php if ($_valid && !is_callable('content_5830fac3657837_62101754')) {function content_5830fac3657837_62101754($_smarty_tpl) {?><div class="modal-header">
 
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <?php  $_smarty_tpl->tpl_vars['act'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['act']->_loop = false;
@@ -45,8 +45,7 @@ $_smarty_tpl->tpl_vars['act']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['profes']->key => $_smarty_tpl->tpl_vars['profes']->value){
 $_smarty_tpl->tpl_vars['profes']->_loop = true;
 ?>
-    			<?php echo $_smarty_tpl->tpl_vars['profes']->value['nombre'];?>
- <?php echo $_smarty_tpl->tpl_vars['profes']->value['apellido'];?>
+    			<?php echo $_smarty_tpl->tpl_vars['profes']->value['apyno'];?>
 <br><?php echo $_smarty_tpl->tpl_vars['profes']->value['horarios'];?>
 
     			<br>

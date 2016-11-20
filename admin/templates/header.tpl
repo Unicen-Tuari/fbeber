@@ -8,20 +8,20 @@
     <title>Gimnasio | Panel de Control</title>
 
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
 
-  </head>
+  <style type="text/css"></style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style></head>
+
   <body class="text-center">
-   <div class="redes text-right">
-      <a class="glyphicon glyphicon-off zoom" href=""></a> Cerrar Sesión  
-    </div>
+   
     <div class="col-md-1 icono">
-      <img src="../images/icono2.png" width="150px;">
+      <img src="../images/icono2.png" width="130px;">
     </div>
     <h1>PANEL DE CONTROL</h1>
 
-  
+ 
     <nav class="navbar navbar-default navegador">
       <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -40,6 +40,7 @@
             <li><a id="inicio_admin" href="#">Inicio</a></li>
             <li><a id="actividades_admin" href="#">Actividades</a></li>
             <li><a id="profesores_admin" href="#">Profesores</a></li>
+            <li><a id="usuarios_admin" href="#">Usuarios</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

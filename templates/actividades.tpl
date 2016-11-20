@@ -1,63 +1,67 @@
 <div class="col-md-12">
-    
-    <div class="col-md-12">
-    <h1>Actividades</h1>
-    <br>
+<h1>Actividades</h1><br>
     <!--todas las actividades-->
-    {foreach $actividades as $actividad}
-    <div class="col-md-3">
-        <div class="promocion3">
-        <div class="col-md-12 text-center" style="height: 180px">
-          <h3>{$actividad.nombre}</h3>
-          {foreach $actividad['imagenes'] as $imagen}
-          <div class="col-md-4">
-            <img src="images/{$imagen.foto}" class="zoom" width="100%">
-          </div>
-          {/foreach}  
-          </div>
-          <div class="col-md-12" style="height: 100px margin-top:10px;"><p>{$actividad.descripcion}</p></div>
-          <div class="col-md-12"><button class="btn btn-default" id="id_actividad" onClick = "cargaProfesores({$actividad['id']});" type="button" data-toggle="modal" data-target="#horarios"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Ver Días Horarios</button> <button class="btn btn-success" type="button" data-toggle="modal" data-target="#inscripcion"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inscribirse</button></div>
-        </div>
-      </div>
-    {/foreach}  
-    </div> 
-</div>
 
-<!-- Modal -->
+{foreach $actividades as $actividad}
+{if $actividad.id != 1}
+  <div class="col-md-4">
+  <div class="promocion3">
+    <h3>{$actividad.nombre}</h3>
+    <div class="col-md-12 text-center">
+    {foreach $actividad['imagenes'] as $imagen}
+    <img src="images/{$imagen.foto}" class="zoom" width="80px" height="80px">
+    {/foreach}  
+    </div>
+    <div class="col-md-12" style="height: 100px"><p><br>{$actividad.descripcion}</p></div>
+    <h4>..............</h4>
+    <h5>Déjenos su puntaje y un comentario</h5>
+  <form id="agregar_com" method="POST" enctype="multipart/form-data">
+    <input type="hidden" class="form-control" id="new_idAct_c" name="new_idAct_c" value="{$actividad.id}">
+    <input type="text" class="form-control" id="new_idUser_c" name="new_idUser_c"><!--luego sacar-->
+    <div class="col-md-12">
+      <div class="col-md-10"><input type="text" class="col-md-8 form-control" id="new_comentario" name="new_comentario" placeholder="Agregue su comentario">
+      Su puntaje: 
+    <input type="radio" name="new_puntaje" value='1' id="new_puntaje">1
+    <input type="radio" name="new_puntaje" value='2' id="new_puntaje">2
+    <input type="radio" name="new_puntaje" value='3' id="new_puntaje">3
+    <input type="radio" name="new_puntaje" value='4' id="new_puntaje">4
+    <input type="radio" name="new_puntaje" value='5' id="new_puntaje">5</div>
+    <div class="col-md-2 text-left"><a class="btn btn-success" href="#" onclick="agregaComentario()">Listo</a>
+  </form>
+    </div>
+    </div>
+    <h4>..............</h4>
+    <button id="id_act_c" onClick = "cargaComentarios({$actividad['id']});" class="btn btn-warning" type="button" data-toggle="modal" data-target="#comentarios">Comentarios</button>
+    <button id="id_actividad" onClick = "cargaProfesores({$actividad['id']});" class="btn btn-info" type="button" data-toggle="modal" data-target="#horarios">Horarios e Inscripción</button>
+    
+  </div>
+  </div>
+  {/if}
+  {/foreach}
+  </div> 
+  </div>
+
+<!-- Modal dias y horarios-->
 <div class="modal fade" id="horarios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h3>Días y Horarios</h3>
         <div id="tableProfesores" class="modal-body"></div>
-        
       </div>
     </div>
   </div>
 </div>
-
-<!--Formulario de inscripcion-->
-<div class="modal fade" id="inscripcion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- Modal comentarios-->
+<div class="modal fade" id="comentarios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Inscripción A FUTURO</h4>
-      </div>
-      <div class="modal-body">
-      <h1>NO FUNCIONA AÚN! :)</h1>
-        <h5>Complete el siguiente formulario</h5>
-        <input id="nombre-user" class="form-control" type="text" maxlength="20" placeholder="Nombre y Apellido"><br>
-        <input id="edad-user" class="form-control" type="text" maxlength="200" placeholder="Edad"><br>
-        <input id="telefono-user" class="form-control" type="text" maxlength="200" placeholder="Teléfono"><br>
-        <input id="email-user" class="form-control" type="text" maxlength="200" placeholder="Correo Electrónico"><br>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button id="inscribirse" type="button" class="btn btn-success">Inscribirse</button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h3>Comentarios</h3>
+        <div id="tableComentarios" class="modal-body"></div>     
       </div>
     </div>
   </div>
 </div>
+
 

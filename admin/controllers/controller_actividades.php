@@ -37,6 +37,16 @@ class controller_actividades
       $profeact = $this->model_actividades->getProfeact($id);
       $this->view_actividades->mostrarProfeact($profeact,$actividad);
     }
+  }
+
+//consulta comentarios por actividad // NEW
+  public function comentariosact(){
+    if(isset($_REQUEST['id_actividad'])){
+      $id=$_REQUEST['id_actividad'];
+      $actividad = $this->model_actividades->getActividad($id);
+      $comact = $this->model_actividades->getComact($id);
+      $this->view_actividades->mostrarComact($comact,$actividad);
+    }
   } 
 
 //consulta imagenes por actividad 
@@ -48,6 +58,15 @@ class controller_actividades
     }
   } 
 
+  public function borrarImagen(){
+    if(isset($_REQUEST['id_img'])){
+      $this->model_actividades->borrarImg($_REQUEST['id_img']);
+    }
+    else{
+      $this->view_actividades->mostrarError('La actividad que intenta borrar no existe');
+          }
+    $this->actividades();
+  }
 //ABM ACTIVIDADES
 
 //agrega -> OK (falta imagenes)

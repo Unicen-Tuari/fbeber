@@ -4,12 +4,14 @@ const include = "includes";
 const actividades = "actividades";
 const nosotros = "nosotros";
 const contacto = "contacto";
+const usuario  = "usuario";
 
 // CARGA EL CONTENIDO DE CADA SECCION, SEGUN EL BOTON
 $("#home").on("click",function() {loadRender("index.php?action=inicio")});
 $("#actividades").on("click",function() {loadRender("index.php?action=actividades")});
 $("#nosotros").on("click",function() {loadRender("index.php?action=nosotros")});
 $("#contacto").on("click",function() {loadRender("index.php?action=contacto")});
+$("#usuario").on("click",function() {loadRender("index.php?action=usuario")});
 
 
 //AGREGA LAS FUNCIONES A LAS SECCIONES QUE LAS CONTIENEN
@@ -39,3 +41,4 @@ function cargaProfesores(id_actividad){
     }
   });
 }
+

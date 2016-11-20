@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-24 23:11:56
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-20 01:44:12
          compiled from ".\templates\header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1677457f6d64f1d9639-07655669%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:141015830f1dce07016-16910130%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '10e0737838b4a574ef135d0c601e7b602cfaf37a' => 
     array (
       0 => '.\\templates\\header.tpl',
-      1 => 1477343513,
+      1 => 1479509153,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1677457f6d64f1d9639-07655669',
+  'nocache_hash' => '141015830f1dce07016-16910130',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_57f6d64f1f0d49_61957611',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5830f1dce64c20_00547258',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57f6d64f1f0d49_61957611')) {function content_57f6d64f1f0d49_61957611($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5830f1dce64c20_00547258')) {function content_5830f1dce64c20_00547258($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -29,20 +29,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <title>Gimnasio | Panel de Control</title>
 
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
 
-  </head>
+  <style type="text/css"></style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style></head>
+
   <body class="text-center">
-   <div class="redes text-right">
-      <a class="glyphicon glyphicon-off zoom" href=""></a> Cerrar Sesión  
-    </div>
+   
     <div class="col-md-1 icono">
-      <img src="../images/icono2.png" width="150px;">
+      <img src="../images/icono2.png" width="130px;">
     </div>
     <h1>PANEL DE CONTROL</h1>
 
-  
+ 
     <nav class="navbar navbar-default navegador">
       <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -61,6 +61,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <li><a id="inicio_admin" href="#">Inicio</a></li>
             <li><a id="actividades_admin" href="#">Actividades</a></li>
             <li><a id="profesores_admin" href="#">Profesores</a></li>
+            <li><a id="usuarios_admin" href="#">Usuarios</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

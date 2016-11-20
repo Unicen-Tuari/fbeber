@@ -20,6 +20,12 @@ public function mostrarProfeact($profeact,$actividad){
     $this->smarty->assign('actividad',$actividad);
     $this->smarty->display('borrar_act.tpl');
   }
+//muestra comentarios por actividad
+public function mostrarComact($comact,$actividad){
+    $this->smarty->assign('comact',$comact);
+    $this->smarty->assign('actividad',$actividad);
+    $this->smarty->display('comentarios_act.tpl');
+  }
 
 public function mostrarImagesAct($imagesact){
     $this->smarty->assign('imagesact',$imagesact);

@@ -1,5 +1,4 @@
-<br><h1>Bienvenidos</h1>
-  <br>
+<br><h1>Bienvenidos</h1><br>
 
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -33,5 +32,13 @@
     <span class="sr-only">Next</span>
   </a>
 </div><!--fin de carrousel-->
+<br>
+
+
+<div class="publicidad ">
+<h3>Publicidad</h3>
+<img src="images/marcas.gif" width="20%">
+</div><!--fin de publicidad-->
+
 
 

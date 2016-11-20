@@ -4,7 +4,7 @@ require('libs/Smarty.class.php');
 
 class view
 {
-  private $smarty;
+  public $smarty;
 
   public function __construct(){
     $this->smarty=new Smarty;

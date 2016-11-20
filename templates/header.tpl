@@ -17,15 +17,7 @@
       <img src="images/icono2.png" width="120px;">
     </div>
 
-    <div class="redes text-right">
-      Seguinos:
-      <a href=""><img  class="zoom" src="images/redes/fb-color.png" width="25px;"></a>
-      <a href=""><img class="zoom" src="images/redes/tw-color.png" width="25px;"></a>
-      <a href=""><img class="zoom" src="images/redes/google-color.png" width="25px;"></a>
-      <a href=""><img class="zoom" src="images/redes/inst-color.png" width="25px;"></a>
-    </div>
-
-    <nav class="navbar navbar-default navegador">
+     <nav class="navbar navbar-default navegador">
       <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -48,4 +40,13 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+
+    <div class="redes text-center">
+      <a href=""><img  class="zoom" src="images/redes/fb-color.png" width="25px;"></a>
+      <a href=""><img class="zoom" src="images/redes/tw-color.png" width="25px;"></a>
+      <a href=""><img class="zoom" src="images/redes/google-color.png" width="25px;"></a>
+      <a href=""><img class="zoom" src="images/redes/inst-color.png" width="25px;"></a>
+      <a id="usuario" href="#"><span class="label label-warning">Iniciar Sesión / Registrarse</span></a><br>
+      
+    </div>
 

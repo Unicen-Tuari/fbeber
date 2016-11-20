@@ -6,7 +6,7 @@ class model_actividades extends model{
 
 public function getActividades(){
     $actividades = array();
-    $consulta = $this->db->prepare("SELECT * FROM actividad");
+    $consulta = $this->db->prepare("SELECT * from actividad");
     $consulta->execute();
     while($actividad = $consulta->fetch(PDO::FETCH_ASSOC)) {
       $consultaImagenes = $this->db->prepare("SELECT * FROM img_actividad where id_act=?");
@@ -18,7 +18,6 @@ public function getActividades(){
     return $actividades;
   }
 
-
 public function getActividad($id){
     $actividad = array();
     $select = $this->db->prepare('SELECT * FROM actividad WHERE id=?');
@@ -28,10 +27,17 @@ public function getActividad($id){
   }
 
 public function getProfeact($id){
-    $select = $this->db->prepare("SELECT p.nombre, p.foto, p.apellido, p.horarios, a.nombre as nombreAct FROM profesor p, actividad a WHERE p.id_act=a.id AND p.id_act=?");
+    $select = $this->db->prepare("SELECT p.apyno, p.foto, p.horarios, a.nombre as nombreAct FROM profesor p, actividad a WHERE p.id_act=a.id AND p.id_act=?");
     $select->execute(array($id));
     $profeact=$select->fetchAll(PDO::FETCH_ASSOC);
     return $profeact;
+  }
+
+public function getComact($id){
+    $select = $this->db->prepare("SELECT c.comentario, c.puntaje, c.id_usuario, a.nombre,u.apyno FROM comentario c, actividad a, usuario u WHERE c.id_act=a.id AND c.id_act=? AND c.id_usuario=u.id");
+    $select->execute(array($id));
+    $comact=$select->fetchAll(PDO::FETCH_ASSOC);
+    return $comact;
   }
 
 public function getImagesAct($id){
@@ -40,7 +46,9 @@ public function getImagesAct($id){
     $imagesact=$select->fetchAll(PDO::FETCH_ASSOC);
     return $imagesact;
   }
-  
+
+//select a.nombre, COUNT(*) as cantidad from actividad a, usuario u, profesor p where p.id=u.id_profe AND a.id=p.id_act group by a.nombre
+
 //ABM actividades
 public function agregarActividad($new_nombre_a,$new_descripcion_a,$imagenes){
   try{
@@ -59,6 +67,10 @@ public function agregarActividad($new_nombre_a,$new_descripcion_a,$imagenes){
     catch(Exception $e){
     $this->db->rollBack();
     }
+  }
+public function borrarImg($id_img){
+    $consulta = $this->db->prepare('DELETE FROM img_actividad WHERE id=?');
+    $consulta->execute(array($id_img));
   }
     
 public function borrarActividad($id_act){

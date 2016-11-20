@@ -10,5 +10,10 @@ class ConfigApp{
   public static $ACTION_NOSOTROS = "nosotros";
   public static $ACTION_CONTACTO = "contacto";
 
+//new
+  public static $ACTION_USUARIO = "usuario";
+  public static $ACTION_AGREGAR_USUARIO = "agregar_usuario";
+  public static $ACTION_AGREGAR_COMENTARIO = "agregar_comentario";
+  public static $ACTION_COMENTARIOS = "comentarios";
 }
 ?>
