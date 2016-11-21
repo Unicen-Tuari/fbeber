@@ -12,14 +12,17 @@ class controller
     $this->model = new model();
   }
 
- 
   public function includes(){
-    $this->view->mostrarIncludes();
+    session_start();
+    if(isset($_SESSION["email"]))
+    {$this->view->mostrarIncludes($_SESSION["email"]);}
+    else{$this->view->mostrarIncludes(null);}
   }
 
-  public function inicio(){ 
+//consulta info del usuario logueado
+  public function inicio(){
     $this->view->mostrarInicio();
-  }
+  } 
 
 
 }

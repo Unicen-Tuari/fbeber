@@ -32,6 +32,7 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   
 
 //CONSULTAS ESPECÍFICAS
+
 //consulta una actividad en especial 
   case configApp::$ACTION_ACTIVIDAD://ok
     $controller_actividades->actividad();

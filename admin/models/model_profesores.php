@@ -4,6 +4,15 @@ require_once('model.php');
 
 class model_profesores extends model{
 
+  public function subirImagenes($imagenes){
+    $carpeta = "../images/";
+    $destinos_finales = array();
+    foreach ($imagenes["tmp_name"] as $key => $value) {
+      $destinos_finales[] = $carpeta.uniqid().$imagenes["name"][$key];
+      move_uploaded_file($value, end($destinos_finales));
+    }
+    return $destinos_finales;
+  }
 
 public function getActividades(){
     $select = $this->db->prepare('SELECT * FROM actividad');

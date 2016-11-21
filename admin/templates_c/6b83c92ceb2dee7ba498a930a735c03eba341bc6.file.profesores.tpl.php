@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-20 21:55:25
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-21 02:11:23
          compiled from ".\templates\profesores.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:287605830eb1396dc96-08355820%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3233958321b409c59e4-02961556%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6b83c92ceb2dee7ba498a930a735c03eba341bc6' => 
     array (
       0 => '.\\templates\\profesores.tpl',
-      1 => 1479675322,
+      1 => 1479690421,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '287605830eb1396dc96-08355820',
+  'nocache_hash' => '3233958321b409c59e4-02961556',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5830eb13c9e3d9_35606125',
+  'unifunc' => 'content_58321b40c90810_34777511',
   'variables' => 
   array (
     'profesores' => 0,
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5830eb13c9e3d9_35606125')) {function content_5830eb13c9e3d9_35606125($_smarty_tpl) {?>    
+<?php if ($_valid && !is_callable('content_58321b40c90810_34777511')) {function content_58321b40c90810_34777511($_smarty_tpl) {?>    
     <div class="col-md-12">
     <h1>Profesores</h1>
     <br>
@@ -71,7 +71,7 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['horarios'];?>
 </td>
-          <td><button class="btn btn-warning" onClick = "inscriptos(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
+          <td><button class="btn btn-warning" onClick = "cargaInscriptos(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
 );" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-info" onClick = "profeActividades(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
 );" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
@@ -118,13 +118,10 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['horarios'];?>
 </td>
-          <td><button class="btn btn-warning" onClick = "inscriptos(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
+          <td><button class="btn btn-warning" onClick = "cargaInscriptos(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
 );" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
           <td><button class="btn btn-info" onClick = "profeActividades(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
 );" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
-                    <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['is_admin'];?>
-</td>
-
         </tr> 
         <?php }?> 
         <?php } ?>

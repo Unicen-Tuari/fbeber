@@ -11,6 +11,7 @@
     <script src="./js/actividades.js" charset="utf-8"></script>
     <script src="./js/profesores.js" charset="utf-8"></script>
     <script src="./js/usuarios.js" charset="utf-8"></script>
+    <script src="./js/login.js" charset="utf-8"></script>
 
   </body>
 </html>
