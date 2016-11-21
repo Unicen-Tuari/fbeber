@@ -1,14 +1,10 @@
-//INICIALIZACION SECCIONES
-const home = "home";
-const actividades_admin = "actividades";
-const profesores_admin = "profesores";
-const usuarios_admin = "usuarios";
-
 // CARGA EL CONTENIDO DE CADA SECCION, SEGUN EL BOTON
-$("#inicio_admin").on("click",function() {loadRender("index.php?action=inicio_admin")});
+$("#inicio_admin").on("click",function() {loadRender("index.php?action=inicio_admin");});
 $("#actividades_admin").on("click",function() {loadRender("index.php?action=actividades_admin")});
 $("#profesores_admin").on("click",function() {loadRender("index.php?action=profesores_admin")});
 $("#usuarios_admin").on("click",function() {loadRender("index.php?action=usuarios_admin")});
+
+
 
 //AGREGA LAS FUNCIONES A LAS SECCIONES QUE LAS CONTIENEN
 function loadRender(etiqueta) {//OK

@@ -9,9 +9,9 @@ class view
     $this->smarty=new Smarty;
   }
 
-  public function mostrarIncludes($email){
+  public function mostrarIncludes($usuario){
     $smarty = new Smarty;
-    $smarty->assign("email",$email);
+    $smarty->assign("usuario",$usuario);
     $this->smarty->display('include.tpl');
   }
 

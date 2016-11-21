@@ -1,16 +1,12 @@
 {include file='header.tpl'}
 
-{if isset($email)}
-	<div id="contenido">
-		<h1>{$email}<button id="logout" class="btn btn-primary">Salir</button><br><p class="text-success">
-		{include file='index.tpl'}<!--NO ENTRA ACA-->
-  </div>
-    {else}      
-        <div class="col-md.6">
-            <button id="logout" class="btn btn-primary">Salir</button>
-        </div>
-    {/if}
-  
+{if isset($usuario)}
+		<h1>Logged in as:<p class="text-success">{$usuario[0].apyno}</p></h1>
+        <button id="logout" class="btn btn-lg btn-primary btn-block">Logout</button>
+{else}		
+	<h1>Please Login</h1>
+    <button id="login" class="btn btn-lg btn-primary btn-block" onClick="window.location = 'login.php';">Login</button>
+{/if}  
 
   
 {include file='footer.tpl'}

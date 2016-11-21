@@ -13,13 +13,8 @@ class LoginController
 	{
 		session_start();
 		if(!isset($_SESSION["email"]))
-		{
-			$this->view->imprimirPagina();
-		}
-		else
-		{
-			header('Location: index.php');
-		}
+		{$this->view->imprimirPagina();}
+		else{header('Location: index.php');}
 	}
 	
 	public function loginUsuario($formulario)
@@ -37,9 +32,7 @@ class LoginController
 			}
 			
 			session_start();
-			$_SESSION["email"]=$formulario["email"];
-			echo "index.php";
-			
+			$_SESSION["email"]=$formulario["email"];	
 		}
 		else
 		{

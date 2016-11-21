@@ -15,7 +15,10 @@ class controller
   public function includes(){
     session_start();
     if(isset($_SESSION["email"]))
-    {$this->view->mostrarIncludes($_SESSION["email"]);}
+    {
+      $email=$_SESSION['email'];
+      $usuario=$this->model->getUser($email);
+      $this->view->mostrarIncludes($usuario);}
     else{$this->view->mostrarIncludes(null);}
   }
 
