@@ -53,7 +53,7 @@ class model
   }
 
   public function getComentarios(){ //opiniones
-    $select = $this->db->prepare("SELECT c.comentario, c.puntaje, u.apyno, a.nombre FROM comentario c, usuario u, actividad a WHERE c.id_usuario=u.id and c.id_act=a.id GROUP BY a.nombre");
+    $select = $this->db->prepare("SELECT c.comentario, c.puntaje, u.apyno, a.nombre FROM comentario c, usuario u, actividad a WHERE c.id_usuario=u.id and c.id_act=a.id");
     $select->execute();
     $comentarios=$select->fetchAll(PDO::FETCH_ASSOC);
     return $comentarios;

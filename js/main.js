@@ -58,7 +58,3 @@ function cargaProfesores(id_actividad){
 }
 
 //*********************************************************************
-function actualiza(){
-    $("#tableComentarios").load(function() {loadRender("index.php?action=opiniones")});
-  }
-setInterval( "actualiza()", 2000 );

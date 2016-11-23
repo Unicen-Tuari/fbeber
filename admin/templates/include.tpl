@@ -1,5 +1,5 @@
 {include file='header.tpl'}
-{if !isset($admin)}
+{if isset($admin)}
 	<div id='contenido'>{include file='index.tpl'}</div>
 		<h1>Logged in as:<p class="text-success">{$admin[0].email}</p></h1>
         {$admin[0].apyno}

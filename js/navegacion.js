@@ -33,3 +33,10 @@ function loadRender(etiqueta) {
 });
 }
 
+function actualiza(){
+	$("#opiniones").ready(function(){loadRender("index.php?action=contacto")});
+	setInterval( "actualiza()", 2000 );
+}
+//setInterval( "actualiza()", 2000 );
+
+$.get("index.php?action=opiniones","#opiniones",actualiza());
