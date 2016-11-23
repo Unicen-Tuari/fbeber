@@ -13,7 +13,7 @@ function agregaProfe(){//NOver ver ver  ver ver
 function modProfe(){//OK
   $.ajax({
     method: "POST",
-    url: "index.php?action=modificar_profesor&id_profe=" + $("#id_profe").val()  + "&upd_apyno_p=" + $("#upd_apyno_p").val() + "&upd_email_p=" + $("#upd_email_p").val() + "&upd_dni_p=" + $("#upd_dni_p").val() + "&upd_horarios_p=" + $("#upd_horarios_p").val() + "&upd_id_act_p=" + $("#upd_id_act_p").val() + "&upd_descripcion_p=" + $("#upd_descripcion_p").val() + "&upd_permisos_p=" + $("#upd_permisos_p").val(),
+    url: "index.php?action=modificar_profesor&id_profe=" + $("#id_profe").val() + "&upd_apyno_p=" + $("#upd_apyno_p").val() + "&upd_email_p=" + $("#upd_email_p").val() + "&upd_pass_p=" + $("#upd_pass_p").val() + "&upd_dni_p=" + $("#upd_dni_p").val() + "&upd_horarios_p=" + $("#upd_horarios_p").val() + "&upd_id_act_p=" + $("#upd_id_act_p").val() + "&upd_descripcion_p=" + $("#upd_descripcion_p").val() + "&upd_permisos_p=" + $("#upd_permisos_p").val(),
     contentType:'html',
     cache: false,
     data: $("#modifica_profesor").serialize(), // Adjuntar los campos del formulario enviado.

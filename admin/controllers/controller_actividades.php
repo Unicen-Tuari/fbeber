@@ -57,22 +57,22 @@ class controller_actividades
       $this->view_actividades->mostrarImagesAct($imagesact);
     }
   } 
-
+//************************************************************************************
   public function borrarImagen(){
     if(isset($_REQUEST['id_img'])){
-      $this->model_actividades->borrarImg($_REQUEST['id_img']);
+      $this->model_actividades->borraImagen($_REQUEST['id_img']);
     }
     else{
-      $this->view_actividades->mostrarError('La actividad que intenta borrar no existe');
-          }
-    $this->actividades();
+      $this->view_actividades->mostrarError('La imagen que intenta borrar no existe');
+    }
   }
+//************************************************************************************
 //ABM ACTIVIDADES
 
 //agrega -> OK (falta imagenes)
   public function agregarActividad(){
     if(isset($_REQUEST['new_nombre_a']) && isset($_REQUEST['new_descripcion_a'])){
-        $this->model_actividades->agregarActividad($_REQUEST['new_nombre_a'], $_REQUEST['new_descripcion_a'],$_FILES['imagesToUpload']);      
+        $this->model_actividades->agregarActividad($_REQUEST['new_nombre_a'], $_REQUEST['new_descripcion_a']);      
       }
     else{
       $this->view_actividades->mostrarError('cuack');

@@ -67,13 +67,13 @@ public function borrarProfesor($id_profe){
   }
   
 
-public function modificarProfesor($upd_apyno_p,$upd_email_p,$upd_dni_p,$upd_descripcion_p,$upd_horarios_p,$upd_id_act_p,$upd_permisos_p, $id_profe){
+public function modificarProfesor($upd_apyno_p,$upd_email_p,$upd_pass_p,$upd_dni_p,$upd_descripcion_p,$upd_horarios_p,$upd_id_act_p,$upd_permisos_p, $id_profe){
     /*try{
       $destinos_finales=$this->subirImagenes($upd_foto_p);
       $this->db->beginTransaction();
       foreach ($destinos_finales as $key => $value) {*/
-      $consulta = $this->db->prepare('UPDATE profesor SET apyno=?, email=?, dni=?, descripcion=?, horarios=?, id_act=?,is_admin=? WHERE id=?');
-      $consulta->execute(array($upd_apyno_p,$upd_email_p,$upd_dni_p,$upd_descripcion_p,$upd_horarios_p,$upd_id_act_p,$upd_permisos_p, $id_profe));
+      $consulta = $this->db->prepare('UPDATE profesor SET apyno=?, email=?, pass=?, dni=?, descripcion=?, horarios=?, id_act=?,is_admin=? WHERE id=?');
+      $consulta->execute(array($upd_apyno_p,$upd_email_p,$upd_pass_p,$upd_dni_p,$upd_descripcion_p,$upd_horarios_p,$upd_id_act_p,$upd_permisos_p, $id_profe));
   /*}
       $this->db->commit();
     }

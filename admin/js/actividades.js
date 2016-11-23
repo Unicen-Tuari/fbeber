@@ -37,7 +37,19 @@ function imagesAct(id_actividad){//OK
     }
   });
 }
-
+//********************************************************
+function borraImagen(id_img){//casi
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=borrar_imagen&id_img="+id_img,
+    contentType:'html',
+    cache: false,
+    success: function(data){
+       $('#imagesActividad').html(data);
+    }
+  });
+}
+//********************************************************
 //BAJA ACTIVIDAD 
 //carga informacion por una actividad especifica + el/los profesores
 function infoProfeAct(id_actividad){//OK

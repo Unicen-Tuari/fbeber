@@ -9,9 +9,9 @@ class view
     $this->smarty=new Smarty;
   }
 
-  public function mostrarIncludes($usuario){
+  public function mostrarIncludes($admin){
     $smarty = new Smarty;
-    $smarty->assign("usuario",$usuario);
+    $smarty->assign("admin",$admin);
     $this->smarty->display('include.tpl');
   }
 

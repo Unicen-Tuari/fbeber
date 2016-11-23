@@ -75,10 +75,11 @@
 </div>
 </div>
 
-<!--borrar actividad-->
+<!--mostrar imagenes por actividad-->
 <div id="mostrarImages" class="modal fade" tabindex="-1" role="dialog">
 <div class="modal-dialog" role="document">
 <div id="imagesActividad" class="modal-content">
+<h3>esto sii lo muestra</h3>
 </div>
 </div>
 </div>

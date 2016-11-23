@@ -40,6 +40,7 @@ public function getComact($id){
     return $comact;
   }
 
+//obtiene todas las imagenes por actividad
 public function getImagesAct($id){
     $select = $this->db->prepare("SELECT i.foto, i.id FROM img_actividad i, actividad a WHERE i.id_act=a.id AND i.id_act=?");
     $select->execute(array($id));
@@ -47,17 +48,14 @@ public function getImagesAct($id){
     return $imagesact;
   }
 
-//select a.nombre, COUNT(*) as cantidad from actividad a, usuario u, profesor p where p.id=u.id_profe AND a.id=p.id_act group by a.nombre
-
 //ABM actividades
-public function agregarActividad($new_nombre_a,$new_descripcion_a,$imagenes){
-  try{
+public function agregarActividad($new_nombre_a,$new_descripcion_a){
+  /*try{
       $destinos_finales=$this->subirImagenes($imagenes);
-      $this->db->beginTransaction();
+      $this->db->beginTransaction();*/
       $consulta = $this->db->prepare('INSERT INTO actividad(nombre,descripcion) VALUES(?,?)');
       $consulta->execute(array($new_nombre_a,$new_descripcion_a));
-      $id_act = $this->db->lastInsertId();
-
+      /*$id_act = $this->db->lastInsertId();
       foreach ($destinos_finales as $key => $value) {
         $consulta = $this->db->prepare('INSERT INTO img_actividad(foto,id_act) VALUES(?,?)');
         $consulta->execute(array( $value,$id_act));
@@ -66,9 +64,9 @@ public function agregarActividad($new_nombre_a,$new_descripcion_a,$imagenes){
     }
     catch(Exception $e){
     $this->db->rollBack();
-    }
+    }*/
   }
-public function borrarImg($id_img){
+public function borraImagen($id_img){
     $consulta = $this->db->prepare('DELETE FROM img_actividad WHERE id=?');
     $consulta->execute(array($id_img));
   }

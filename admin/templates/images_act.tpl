@@ -4,17 +4,18 @@
 </div>
 
 <div  class="modal-body">
-<a class="btn btn-success" href="#" onclick="borraImgAct('{$img.id}')" aria-hidden="true" data-dismiss="modal">Agregar más imágenes</a><br>
+<input type="file" name="imagesToUpload[]" class="form-control" >
 {if $imagesact == null}
 <h1>No existen imagenes en esta actividad</h1>
 {else}
 {foreach $imagesact as $img}
 <img src="../images/{$img.foto}" width="100px" height="100px;" class="zoom" style="margin: 2px">
-<a class="btn btn-danger" href="#" onclick="borraImgAct('{$img.id}')" aria-hidden="true" data-dismiss="modal">Eliminar</a>{/foreach}
+<button class="btn btn-danger" onClick = "borraImagen({$img.id});" type="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+{/foreach}
 {/if}
 </div>
 
-  <div class="modal-footer text-center">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-  </div>
+<div class="modal-footer text-center">
+<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+</div>
 

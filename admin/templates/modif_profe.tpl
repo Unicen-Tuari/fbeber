@@ -10,21 +10,23 @@
           <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control" value="{$dato.foto}"><br></div>
           
           <input type="hidden" class="form-control" id="id_profe" name="id_profe" value="{$dato.id}">
-          <div class="col-md-5"><p><br>Nombre y Apellido:</p><input type="text" class="form-control" id="upd_apyno_p" name="upd_apyno_p" value="{$dato.apyno}"></div>
-          <div class="col-md-7"><p><br>Correo Electrónico:</p><input type="text" class="form-control" id="upd_email_p" name="upd_email_p" value="{$dato.email}"></div>
+          <div class="col-md-7"><p><br>Nombre y Apellido:</p><input type="text" class="form-control" id="upd_apyno_p" name="upd_apyno_p" value="{$dato.apyno}"></div>
           <div class="col-md-5"><p><br>DNI:</p><input type="text" class="form-control" id="upd_dni_p" name="upd_dni_p" value="{$dato.dni}"></div>
-          <div class="col-md-7">
-          <p><br>Permisos:</p>
-          <select id="upd_permisos_p" name="upd_permisos_p" class="form-control">
+          <div class="col-md-6"><p><br>Correo Electrónico:</p><input type="text" class="form-control" id="upd_email_p" name="upd_email_p" value="{$dato.email}"></div>
+          <div class="col-md-6"><p><br>Contraseña:</p><input type="text" class="form-control" id="upd_pass_p" name="upd_pass_p" value="{$dato.pass}"></div>
+          <div class="col-md-12">
+          <p><br>Permisos:</p>{if $dato.id == 1}No se pueden modificar los permisos de este admin
+          {else}
+          <select id="upd_permisos_p" name="upd_permisos_p" class="form-control text-center">
             {if $dato.is_admin == 0}
             <option value="{$dato.is_admin}">Conceder Permisos de Administrador</option>
             <option value="1">Negar Permisos de Administrador</option>
             {else}
             <option value="{$dato.is_admin}">Negar Permisos de Administrador</option>
             <option value="0">Conceder Permisos de Administrador</option>
-            
             {/if}
           </select>
+          {/if}
           </div>
           <div class="col-md-12"><p><br>Descripción:</p><textarea type="text" class="form-control" id="upd_descripcion_p" name="upd_descripcion_p" value="{$dato.descripcion}">{$dato.descripcion}</textarea></div>
           <div class="col-md-6"><p><br>Actividad:</p>

@@ -65,8 +65,10 @@
           <td>{$profesor.email}</td>
           <td>{$profesor.nombreAct}</td>
           <td>{$profesor.horarios}</td>
-          <td><button class="btn btn-warning" onClick = "cargaInscriptos({$profesor['id']});" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
-          <td><button class="btn btn-info" onClick = "profeActividades({$profesor['id']});" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
+          <td>{if $profesor.is_admin == 0}-{else}<button class="btn btn-warning" onClick = "cargaInscriptos({$profesor['id']});" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>{/if}</td>
+          <td>
+          <button class="btn btn-info" onClick = "profeActividades({$profesor['id']});" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+          </td>
         </tr> 
         {/if} 
         {/foreach}
@@ -96,7 +98,7 @@
               <h4>Datos de la actividad</h4>
               <div class="col-md-6"><p>Seleccione la actividad:</p></div>
               <div class="col-md-6"><select id="new_id_act_p" name="new_id_act_p" class="form-control">
-            <option>Ver todas</option>
+            <option value='1'>Ver todas</option>
               {foreach $actividades as $actividad}
               {if $actividad.id != 1}
               <option value="{$actividad.id}">{$actividad.nombre}</option>

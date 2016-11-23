@@ -16,10 +16,15 @@ class controller
     session_start();
     if(isset($_SESSION["email"]))
     {
-      $email=$_SESSION['email'];
-      $usuario=$this->model->getUser($email);
-      $this->view->mostrarIncludes($usuario);}
-    else{$this->view->mostrarIncludes(null);}
+        $email=$_SESSION['email'];
+        $admin = $this->model->getAdmin($email);
+        $this->view->mostrarIncludes($admin);
+    }
+    else
+    {
+      
+      $this->view->mostrarIncludes(null);
+    }
   }
 
 //consulta info del usuario logueado
