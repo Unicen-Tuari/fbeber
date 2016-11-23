@@ -10,15 +10,13 @@ class view
     $this->smarty=new Smarty;
   }
 
-  public function mostrarIncludes($email){
-    $smarty = new Smarty;
-    $smarty->assign("email",$email);
+  public function mostrarIncludes($usuario){
+    $this->smarty->assign("usuario",$usuario);
     $this->smarty->display('include.tpl');
   }
 
-  public function mostrarCuenta($email){
-    $smarty = new Smarty;
-    $smarty->assign("email",$email);
+  public function mostrarCuenta($usuario){
+    $this->smarty->assign("usuario",$usuario);
     $this->smarty->display('cuenta.tpl');
   } 
 
@@ -26,13 +24,15 @@ class view
     $this->smarty->display('index.tpl');
   }
 
-  public function mostrarActividades($actividades,$usuarios){
+  public function mostrarActividades($actividades,$usuarios,$usuario){
+    $this->smarty->assign('usuario',$usuario);
     $this->smarty->assign('usuarios',$usuarios);
     $this->smarty->assign('actividades',$actividades);
     $this->smarty->display('actividades.tpl');
   }
 
-  public function mostrarProfeact($profeact,$actividad,$usuarios){
+  public function mostrarProfeact($profeact,$actividad,$usuarios,$usuario){
+    $this->smarty->assign('usuario',$usuario);
     $this->smarty->assign('usuarios',$usuarios);
     $this->smarty->assign('actividad',$actividad);
     $this->smarty->assign('profeact',$profeact);

@@ -12,6 +12,9 @@ class ConfigApp{
   public static $ACTION_OPINIONES = "opiniones";
   public static $ACTION_CUENTA = "cuenta";//OK
 
+//probando
+    public static $ACTION_LOGIN = 'login';
+  public static $ACTION_LOGOUT = 'logout';
 //new
   public static $ACTION_USUARIO = "usuario";
   public static $ACTION_AGREGAR_USUARIO = "agregar_usuario";//registrarse

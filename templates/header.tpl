@@ -32,28 +32,15 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a id="home" href="#">Inicio</a></li>
-            <li><a id="actividades" href="#">Actividades</a></li>
-            <li><a id="nosotros" href="#">Nosotros</a></li>
-            <li><a id="contacto" href="#">Contacto</a></li>
-            <li><a id="opiniones" href="#">Opiniones</a></li>
-            {if isset($usuario)}<li><a id="cuenta" href="#">Mi Sesión</a></li>{/if}
+            <li><a id="home" href="#"><b>Inicio</b></a></li>
+            <li><a id="actividades" href="#"><b>Actividades</b></a></li>
+            <li><a id="nosotros" href="#"><b>Nosotros</b></a></li>
+            <li><a id="contacto" href="#"><b>Contacto</b></a></li>
+            <li><a id="opiniones" href="#"><b>Opiniones</b></a></li>
+            {if isset($usuario)}<li><a id="cuenta" href="#"><b>Mi Sesión</b></a></li>{/if}
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="redes text-center">
-      <a href=""><img  class="zoom" src="images/redes/fb-color.png" width="25px;"></a>
-      <a href=""><img class="zoom" src="images/redes/tw-color.png" width="25px;"></a>
-      <a href=""><img class="zoom" src="images/redes/google-color.png" width="25px;"></a>
-      <a href=""><img class="zoom" src="images/redes/inst-color.png" width="25px;"></a>
-      {if isset($usuario)}
-        <b>Hola {$usuario[0].apyno}! </b><a id="logout" href="#"><span class="label label-info">Salir</span></a>
-      {else}    
-        <a href="login.php"><span class="label label-warning">Iniciar Sesión / Registrarse</span></a><br>
-      {/if} 
-      
-      
-    </div>
-
+    

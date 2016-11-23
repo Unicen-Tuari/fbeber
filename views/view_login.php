@@ -4,7 +4,6 @@ class LoginView
 {
      
     public function imprimirPagina(){
-       
 		$smarty = new Smarty;
 		$smarty->display('login.tpl');
     }

@@ -41,13 +41,15 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h3>Registrarse</h3>
         <div class="modal-body">
           <h4>Complete el siguiente formulario:</h4>
-          <form id="agregar_user" method="POST" enctype="multipart/form-data">
-          <br><input type="text" class="form-control" id="new_apyno_u" name="new_apyno_u" placeholder="Nombre y Apellido"><br>
-          <br><input type="mail" class="form-control" id="new_email_u" name="new_email_u" placeholder="Correo Electrónico"><br>
-          <br><input type="password" class="form-control" id="new_pass_u" name="new_pass_u" placeholder="Contraseña"><br>
-          <a class="btn btn-lg btn-success btn-block" href="#" onclick="agregaUsuario()" data-dismiss="modal" aria-label="Close">Agregar</a>
-          </form>
-        </div>     
+          <form class="form-signin" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" name="txtUser" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="txtPass" class="form-control" placeholder="Password" required>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>        </div>     
       </div>
     </div>
   </div>

@@ -2,6 +2,8 @@
 require('config/configApp.php');
 require('controllers/controller.php');
 require('controllers/controller_usuario.php');
+require('controllers/controller_login.php');
+
 
 $controller = new controller();
 $controller_usuario = new controller_usuario();
@@ -28,7 +30,7 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
       $controller->opiniones();
   break;
   case configApp::$ACTION_CUENTA:
-      $controller->cuenta();
+      $controller_usuario->cuenta();
   break;
 
 //ABM comentario
@@ -40,7 +42,7 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
       $controller_usuario->usuario();
   break;
   case configApp::$ACTION_COMENTARIOS://new -> ok
-    $controller_usuario->comentarios();
+    $controller->comentarios();
   break; 
  
 //AM USUARIO

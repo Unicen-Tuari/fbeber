@@ -5,8 +5,8 @@
       <h3>Contacto</h3>
       <br>
       <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"></span><br>0303456</h4><br>
-      <h4><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><br>Avenida Siepre Viva 123</h4><br>
-      <h4><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><br>mfgym@gmail.com</h4><br>
+      <h4><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><br>Avenida Siempre Viva 123</h4><br>
+      <h4><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><br>gimnasio@gmail.com</h4><br>
 
     </div>
     

@@ -8,7 +8,7 @@
 <table class="table text-left">
 <tr>
 	<td><img src="images/{$profes.foto}" alt="..." class="img-circle" width="70px" height="70px"> {$profes.apyno}</td>
-	<td>{$profes.horarios}</td>
+	<br>{$profes.horarios}
 	<td class="text-center">
   {if isset($usuario)}
 	<form id="inscripcion" method="POST" enctype="multipart/form-data">
@@ -16,7 +16,7 @@
     <input type="hidden" class="form-control" id="new_idUser_i" name="new_idUser_i" value="{$usuario.id}">
     <a class="btn btn-success" href="#" onclick="agregaInscripcion()" aria-hidden="true" data-dismiss="modal">Inscribirme</a>
   </form>
-  {else}<a href="login.php"><span class="label label-warning">Iniciar Sesión / Registrarse</span></a>
+  {else}<br><a href="login.php"><span class="label label-warning">Iniciar Sesión / Registrarse</span></a>
   {/if}
     </td>
 </tr>

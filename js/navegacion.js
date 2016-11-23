@@ -28,15 +28,14 @@ function loadRender(etiqueta) {
   },
   dataType: "HTML",
   success: function (receivedData) {
-    $("#contenido").html(receivedData);
+      $("#contenido").html(receivedData);
+    
     },
 });
 }
 
 function actualiza(){
-	$("#opiniones").ready(function(){loadRender("index.php?action=contacto")});
-	setInterval( "actualiza()", 2000 );
+  $("#tableComentarios").load("index.php?action=opiniones");
 }
 //setInterval( "actualiza()", 2000 );
 
-$.get("index.php?action=opiniones","#opiniones",actualiza());

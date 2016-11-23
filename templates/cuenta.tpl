@@ -4,9 +4,9 @@
 <div class="col-md-12">
 <div class="col-md-12">
   <h4>Datos Personales</h4>
-  <p class=""><b>Nombre y Apellido:</b>Florencia Beber | 
-   <b>Correo Electrónico:</b>florencia@gmail.com | 
-  <a class="text-center" href="#" onclick="agregaUsuario()"><span class="label label-info">Modificar Datos y contraseña</span></a></p>
+  <p class=""><b>Nombre y Apellido:</b> {$usuario[0].apyno} | 
+   <b>Correo Electrónico:</b> {$usuario[0].email} | 
+  <a class="text-center" href="#" onclick="modificarUsuario()"><span class="label label-info">Modificar Datos y contraseña</span></a></p>
 
 </div>
 

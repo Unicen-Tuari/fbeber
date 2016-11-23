@@ -22,7 +22,13 @@ class model
     }
     return $actividades;
   }
-  
+  public function getUser($email){
+    $user = array();
+    $select = $this->db->prepare('SELECT * FROM usuario WHERE email=?');
+    $select->execute(array($email));
+    $usuario=$select->fetchAll(PDO::FETCH_ASSOC);
+    return $usuario;
+  }
   //no deberia ir de igual forma
   public function getUsuarios(){ //actividad
     $select = $this->db->prepare("SELECT * FROM usuario");
@@ -30,7 +36,14 @@ class model
     $usuarios=$select->fetchAll(PDO::FETCH_ASSOC);
     return $usuarios;
   }
-
+  //comentarios
+public function getComact($id){ //profesores por actividad (seccion act)
+    $select = $this->db->prepare("SELECT c.comentario, c.puntaje, c.id_usuario, a.nombre,u.apyno FROM comentario c, actividad a, usuario u WHERE c.id_act=a.id AND c.id_act=? AND c.id_usuario=u.id");
+    $select->execute(array($id));
+    $comact=$select->fetchAll(PDO::FETCH_ASSOC);
+    return $comact;
+  }
+  
   public function getActividad($id){ //actividad
     $select = $this->db->prepare("SELECT * FROM actividad WHERE id=?");
     $select->execute(array($id));
