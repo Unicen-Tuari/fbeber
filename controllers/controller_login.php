@@ -26,12 +26,10 @@ class LoginController
 	{
 	    $error = $this->verificarFormulario($formulario);
 		if(!$error)
-		{
-			$user = $this->model->getUsuario($formulario["email"]);
+		{$user = $this->model->getUsuario($formulario["email"]);
 			
 			if(empty($user))
-			{
-				$this->view->MensajeError("Error: Usuario Inexistente");
+			{$this->view->MensajeError("Error: Usuario Inexistente");
 			} 	
 			if($user[0]["pass"] != $formulario["pass"])
 			{

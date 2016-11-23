@@ -76,12 +76,16 @@ insert into img_actividad(foto,id_act) values
 
 insert into profesor (id,email,pass,is_admin,apyno,dni,foto,horarios,descripcion,id_act) values
 	(1,'admin@admin.com','admin','0','Administrador','12345678','default.jpg','none','none',1),
-	(2,'pepe@gmail.com','pepe','1','Pepe Flores','546472466','perfil1.jpg','lunes y martes de 14 a 15','profesor de bla bla bla',2);
+	(2,'pepe@gmail.com','pepe','1','Pepe Flores','546472466','perfil1.jpg','lunes y martes de 14 a 15','profesor de bla bla bla',2),
+	(3,'ramona@gmail.com', 'ramona','1', 'Ramona Fernandez', '4565436564','perfil2.jpg', 'de lunes a viernes de 16hs a 19hs', 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.',3),
+	(4,'coca@gmail.com', 'coca', '1', 'Coca Sanchez', '47545847','perfil3.jpg', 'de lunes a viernes de 16hs a 19hs', 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.',3);
 
 insert into usuario(email, pass,apyno) values
-	('flor@gmail.com','flor', 'Florencia Beber');
+	('flor@gmail.com','flor', 'Florencia Beber'),
+	('carlos@yahoo.com.ar','carlos','Carlos Peralta'),
+	('barney@hotmail.com','barney','Barney el Dinosaurio');
 
 insert into inscripcion(id_usuario,id_act) values
-	(1,2);
+	(1,2),(2,2),(3,3);
 
 

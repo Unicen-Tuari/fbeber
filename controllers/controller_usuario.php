@@ -49,7 +49,26 @@ public function comentarios(){
     $this->actividades();
   }
 
-  
+  //inscribir
+  public function inscribir(){
+    if(isset($_REQUEST['new_idProfe_i']) && isset($_REQUEST['new_idUser_i'])){
+        $this->model->agregaInscripcion($_REQUEST['new_idProfe_i'],$_REQUEST['new_idUser_i']); 
+      }
+    else{
+      $this->view->mostrarError('cuack');
+    }
+    $this->actividades();
+  }
+  //desinscribir
+  public function desinscribir(){
+    if(isset($_REQUEST['id_i'])){
+        $this->model->borraInscripcion($_REQUEST['id_i']); 
+      }
+    else{
+      $this->view->mostrarError('cuack');
+    }
+    $this->actividades();
+  }
 }
 
 ?>
