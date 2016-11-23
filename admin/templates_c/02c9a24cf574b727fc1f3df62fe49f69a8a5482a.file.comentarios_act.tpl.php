@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-22 00:27:00
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 20:06:11
          compiled from ".\templates\comentarios_act.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4146583382c4be0302-75704927%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '02c9a24cf574b727fc1f3df62fe49f69a8a5482a' => 
     array (
       0 => '.\\templates\\comentarios_act.tpl',
-      1 => 1479677309,
+      1 => 1479898655,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_583382c4eb2e21_45160625',
   'variables' => 
   array (
     'actividad' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'i' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_583382c4eb2e21_45160625',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_583382c4eb2e21_45160625')) {function content_583382c4eb2e21_45160625($_smarty_tpl) {?><div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h3>Comentarios sobre <?php echo $_smarty_tpl->tpl_vars['actividad']->value[0]['nombre'];?>
@@ -47,7 +47,8 @@ $_smarty_tpl->tpl_vars['dato']->_loop = true;
     <td class="text-right"><?php  $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['dato']->value['puntaje'];
   if ($_smarty_tpl->tpl_vars['i']->value>=1){ for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value>=1; $_smarty_tpl->tpl_vars['i']->value--){
 ?><span class="glyphicon glyphicon-star" aria-hidden="true" style="color: orange"></span> <?php }} ?></td>
-    <td class="text-right"><button type="button" class="label label-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
+    <td class="text-right"><button type="button" class="label label-danger" onclick="borraComentario('<?php echo $_smarty_tpl->tpl_vars['dato']->value['id'];?>
+')"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
 </tr>
 </table>
 <?php } ?>

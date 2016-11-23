@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-21 23:44:32
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-24 00:00:16
          compiled from ".\templates\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1442158321b3bdeb102-45265297%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '10e0737838b4a574ef135d0c601e7b602cfaf37a' => 
     array (
       0 => '.\\templates\\header.tpl',
-      1 => 1479768242,
+      1 => 1479942015,
       2 => 'file',
     ),
   ),
@@ -58,10 +58,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a id="inicio_admin" href="#">Inicio</a></li>
-            <li><a id="actividades_admin" href="#">Actividades</a></li>
-            <li><a id="profesores_admin" href="#">Profesores</a></li>
-            <li><a id="usuarios_admin" href="#">Usuarios</a></li>
+            <li><a id="inicio_admin" href="#"><b>Inicio</b></a></li>
+            <li><a id="actividades_admin" href="#"><b>Actividades</b></a></li>
+            <li><a id="profesores_admin" href="#"><b>Profesores</b></a></li>
+            <li><a id="usuarios_admin" href="#"><b>Usuarios</b></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

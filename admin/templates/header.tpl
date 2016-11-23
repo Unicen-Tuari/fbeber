@@ -37,10 +37,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a id="inicio_admin" href="#">Inicio</a></li>
-            <li><a id="actividades_admin" href="#">Actividades</a></li>
-            <li><a id="profesores_admin" href="#">Profesores</a></li>
-            <li><a id="usuarios_admin" href="#">Usuarios</a></li>
+            <li><a id="inicio_admin" href="#"><b>Inicio</b></a></li>
+            <li><a id="actividades_admin" href="#"><b>Actividades</b></a></li>
+            <li><a id="profesores_admin" href="#"><b>Profesores</b></a></li>
+            <li><a id="usuarios_admin" href="#"><b>Usuarios</b></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

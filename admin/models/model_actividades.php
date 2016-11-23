@@ -49,7 +49,7 @@ public function getImagesAct($id){
   }
 
 //ABM actividades
-     private function subirImagenes($imagenes){
+    /*private function subirImagenes($imagenes){
     $carpeta = "./images/";
     $destinos_finales = array();
     foreach ($imagenes["tmp_name"] as $key => $value) {
@@ -57,24 +57,26 @@ public function getImagesAct($id){
       move_uploaded_file($value, end($destinos_finales));
     }
     return $destinos_finales;
-  } 
-public function agregarActividad($new_nombre_a,$new_descripcion_a,$imagenes){
-  try{
-      $destinos_finales=$this->subirImagenes($imagenes);
-      $this->db->beginTransaction();
-      $consulta = $this->db->prepare('INSERT INTO actividad(nombre,descripcion) VALUES(?,?)');
-      $consulta->execute(array($new_nombre_a,$new_descripcion_a));
-      $id_act = $this->db->lastInsertId();
-      foreach ($destinos_finales as $key => $value) {
-        $consulta = $this->db->prepare('INSERT INTO img_actividad(foto,id_act) VALUES(?,?)');
-        $consulta->execute(array( $value,$id_act));
-      }
-      $this->db->commit();
-    }
-    catch(Exception $e){
-    $this->db->rollBack();
-    }
+  } */
+
+  function copiarImagen($image){
+    $path = 'images/'.uniqid().$image["name"];
+    move_uploaded_file($image["tmp_name"], $path);
+    return $path;
   }
+
+  function agregarActividad($act, $description,$images){
+    $insert = $this->db->prepare("INSERT INTO actividad(nombre,descripcion) VALUES(?,?)");
+    $insert->execute(array($act,$description));
+    $fk_tarea = $this->db->lastInsertId();
+
+    foreach ($images as $image) {
+      $path_image =  $this->copiarImagen($image);
+      $insert = $this->db->prepare("INSERT INTO img_actividad(foto,id_act) VALUES(?,?)");
+      $insert->execute(array($path_image,$fk_tarea));
+  }
+  }
+
 public function borraImagen($id_img){
     $consulta = $this->db->prepare('DELETE FROM img_actividad WHERE id=?');
     $consulta->execute(array($id_img));

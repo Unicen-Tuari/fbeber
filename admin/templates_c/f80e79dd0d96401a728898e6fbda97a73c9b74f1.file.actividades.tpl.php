@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-22 23:43:14
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 23:09:37
          compiled from ".\templates\actividades.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:34125832d5594b91d8-27846612%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f80e79dd0d96401a728898e6fbda97a73c9b74f1' => 
     array (
       0 => '.\\templates\\actividades.tpl',
-      1 => 1479854586,
+      1 => 1479938453,
       2 => 'file',
     ),
   ),
@@ -86,7 +86,7 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 <h4 class="modal-title" id="myModalLabel">Agregar Nueva Actividad</h4>
 </div>
 <div class="modal-body">
-  <form id="agregar_actividad" method="POST" enctype="multipart/form-data">
+  <form id="add_actividad" action="" method="POST" enctype="multipart/form-data">
     <div class="col-md-12 text-center"><p>Seleccione imagen a modo de ilustración</p>
       <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control" multiple/>
     </div>
@@ -97,7 +97,7 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-  <a class="btn btn-success" href="#" onclick="agregaAct()" aria-hidden="true" data-dismiss="modal">Agregar</a>
+  <button type="submit"  id="addBtn" class="btn btn-success" aria-hidden="true" data-dismiss="modal">Agregar</button>
 </form>
 </div>
 </div>

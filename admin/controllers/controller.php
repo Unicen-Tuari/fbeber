@@ -16,9 +16,9 @@ class controller
     session_start();
     if(isset($_SESSION["email"]))
     {
-        $email=$_SESSION['email'];
-        $admin = $this->model->getAdmin($email);
-        $this->view->mostrarIncludes($admin);
+      $email=$_SESSION['email'];
+      $admin = $this->model->getAdmin($email);
+      $this->view->mostrarIncludes($admin);
     }
     else
     {

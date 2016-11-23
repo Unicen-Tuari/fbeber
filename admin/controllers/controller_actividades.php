@@ -71,7 +71,7 @@ class controller_actividades
 //ABM ACTIVIDADES
 
 //agrega -> OK (falta imagenes)
-  public function agregarActividad(){
+  /*public function agregarActividad(){
     if(isset($_REQUEST['new_nombre_a']) && isset($_REQUEST['new_descripcion_a'])){
         $this->model_actividades->agregarActividad($_REQUEST['new_nombre_a'], $_REQUEST['new_descripcion_a'],$_FILES['imagesToUpload']);      
       }
@@ -79,8 +79,34 @@ class controller_actividades
       $this->view_actividades->mostrarError('cuack');
     }
     $this->actividades();
-  }
+  }*/
+public function agregarActividad(){
+    $added = false;
+    //print_r($_FILES['image']);
+    if (isset($_POST['new_nombre_a']) && $_POST['new_descripcion_a']){
+      $imagenes = [];
+      if(isset($_FILES['imagesToUpload'])){
+      for($i=0; $i<count($_FILES['imagesToUpload']['name']);$i++)
+      {
+        if(($_FILES['imagesToUpload']['size'][$i]>0))
+        {
+            $image_name = $_FILES['imagesToUpload']['name'][$i];
+            $image_tmp = $_FILES['imagesToUpload']['tmp_name'][$i];
+            $image['name']=$image_name;
+            $image['tmp_name']=$image_tmp;
+            $imagenes[] = $image;
+        }
+      }
 
+      }
+      $act = $_POST['new_nombre_a'];
+      $description = $_POST['new_descripcion_a'];
+      $this->model_actividades->agregarActividad($act,$description,$imagenes);
+      $added=true;
+    }
+        $this->actividades();
+
+  }
 //borra->OK
   public function borrarActividad(){
     if(isset($_REQUEST['id_act'])){

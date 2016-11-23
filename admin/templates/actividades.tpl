@@ -49,7 +49,7 @@
 <h4 class="modal-title" id="myModalLabel">Agregar Nueva Actividad</h4>
 </div>
 <div class="modal-body">
-  <form id="agregar_actividad" method="POST" enctype="multipart/form-data">
+  <form id="add_actividad" action="" method="POST" enctype="multipart/form-data">
     <div class="col-md-12 text-center"><p>Seleccione imagen a modo de ilustración</p>
       <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control" multiple/>
     </div>
@@ -60,7 +60,7 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-  <a class="btn btn-success" href="#" onclick="agregaAct()" aria-hidden="true" data-dismiss="modal">Agregar</a>
+  <button type="submit"  id="addBtn" class="btn btn-success" aria-hidden="true" data-dismiss="modal">Agregar</button>
 </form>
 </div>
 </div>

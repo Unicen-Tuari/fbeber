@@ -1,5 +1,22 @@
 //FUNCIONES DE ACTIVIDAD
 
+$('#add_actividad').submit(function(){
+    event.preventDefault();
+    var formData = new FormData(this);
+    $.ajax({
+     method: "POST",
+     url: "index.php?action=agregar_actividad",
+     data: formData,
+     contentType: false,
+     cache: false,
+     processData:false,
+      success: function(data){
+      loadRender("index.php?action=actividades_admin")
+    } 
+   });
+
+ });
+
 //CONSULTAS ESPECIFICAS POR CADA ACTIVIDAD
 //carga todos los comentarios de una actividad específica
 function cargaComentarios(id_actividad){//OK
@@ -45,7 +62,7 @@ function borraImagen(id_img){//casi
     contentType:'html',
     cache: false,
     success: function(data){
-       $('#imagesActividad').html(data);
+       //$('#imagesActividad').html(data);
     }
   });
 }
@@ -91,7 +108,7 @@ function modAct(){//OK
 
 //AGREGA ACTIVIDAD
 //faltan las imagenes pero en general andando
-function agregaAct(){
+/*function agregaAct(){
   $.ajax({
     method: "POST",
     url: "index.php?action=agregar_actividad&new_nombre_a=" + $("#new_nombre_a").val() + "&new_descripcion_a=" + $("#new_descripcion_a").val() + "&imagenes" + $("#imagesToUpload").val(),
@@ -100,7 +117,7 @@ function agregaAct(){
        loadRender("index.php?action=actividades_admin");
     }
   });
-}
+}*/
 
 
 
