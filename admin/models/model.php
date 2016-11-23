@@ -16,6 +16,8 @@ class model
     $admin=$select->fetchAll(PDO::FETCH_ASSOC);
     return $admin;
   }
+
+
 }
 
 

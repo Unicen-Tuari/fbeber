@@ -78,9 +78,11 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case ConfigApp::$ACTION_BORRAR_ACTIVIDAD://ok
       $controller_actividades->borrarActividad();
       break;
-  case ConfigApp::$ACTION_BORRAR_IMG://ok
+  //****************************************************
+  case ConfigApp::$ACTION_BORRAR_IMAGEN://NEW
       $controller_actividades->borrarImagen();
       break;
+  //****************************************************
   case ConfigApp::$ACTION_MODIFICAR_ACTIVIDAD://ok ->faltan imagenes
       $controller_actividades->modificarActividad();
       break; 
@@ -98,6 +100,8 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case ConfigApp::$ACTION_BORRAR_USUARIO://ok
     $controller_usuarios->borrarUsuario();
     break;
+
+  
   
   
 //DEFAULT    

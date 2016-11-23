@@ -24,6 +24,12 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case configApp::$ACTION_CONTACTO:
       $controller->contacto();
   break;
+  case configApp::$ACTION_OPINIONES:
+      $controller->opiniones();
+  break;
+  case configApp::$ACTION_CUENTA:
+      $controller->cuenta();
+  break;
 
 //ABM comentario
   case configApp::$ACTION_AGREGAR_COMENTARIO://new -> solo agrega a la primer actividad :/

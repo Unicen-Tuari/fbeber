@@ -36,7 +36,8 @@
             <li><a id="actividades" href="#">Actividades</a></li>
             <li><a id="nosotros" href="#">Nosotros</a></li>
             <li><a id="contacto" href="#">Contacto</a></li>
-            {if isset($usuario)}<li><a id="contacto" href="#">Mis Datos</a></li>{/if}
+            <li><a id="opiniones" href="#">Opiniones</a></li>
+            {if isset($usuario)}<li><a id="cuenta" href="#">Mi Sesión</a></li>{/if}
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

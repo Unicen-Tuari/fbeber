@@ -61,6 +61,7 @@ class controller_actividades
   public function borrarImagen(){
     if(isset($_REQUEST['id_img'])){
       $this->model_actividades->borraImagen($_REQUEST['id_img']);
+      $this->imagesAct();
     }
     else{
       $this->view_actividades->mostrarError('La imagen que intenta borrar no existe');
@@ -72,7 +73,7 @@ class controller_actividades
 //agrega -> OK (falta imagenes)
   public function agregarActividad(){
     if(isset($_REQUEST['new_nombre_a']) && isset($_REQUEST['new_descripcion_a'])){
-        $this->model_actividades->agregarActividad($_REQUEST['new_nombre_a'], $_REQUEST['new_descripcion_a']);      
+        $this->model_actividades->agregarActividad($_REQUEST['new_nombre_a'], $_REQUEST['new_descripcion_a'],$_FILES['imagesToUpload']);      
       }
     else{
       $this->view_actividades->mostrarError('cuack');
@@ -93,8 +94,8 @@ class controller_actividades
 
 //modifica->OK
   public function modificarActividad(){
-    if(isset($_REQUEST['upd_nombre_a']) && isset($_REQUEST['upd_descripcion_a']) && isset($_REQUEST['id_act'])){
-      $this->model_actividades->modificarActividad($_REQUEST['upd_nombre_a'], $_REQUEST['upd_descripcion_a'],$_REQUEST['id_act']);
+    if(isset($_REQUEST['upd_nombre_a']) && isset($_REQUEST['upd_descripcion_a']) && isset($_REQUEST['id_act']) && isset($_FILES['imagesToUpload'])){
+      $this->model_actividades->modificarActividad($_REQUEST['upd_nombre_a'], $_REQUEST['upd_descripcion_a'],$_REQUEST['id_act'],$_FILES['imagesToUpload']);
     }   
     else{
       echo 'La actividad que intenta modificar no existe';

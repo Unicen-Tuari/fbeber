@@ -2,7 +2,7 @@
 
 //CONSULTAS ESPECIFICAS POR CADA ACTIVIDAD
 //carga todos los comentarios de una actividad específica
-function cargaComentarios(id_actividad){
+function cargaComentarios(id_actividad){//OK
   $.ajax({
     method: "POST",
     url: "index.php?action=comentariosact&id_actividad="+id_actividad,
@@ -14,7 +14,7 @@ function cargaComentarios(id_actividad){
   });
 }
 //muestra los profesores por una actividad especifica
-function profeActividades(id_profe){
+function profeActividades(id_profe){//OK
   $.ajax({
     method: "POST",
     url: "index.php?action=profeactividades&id_profe="+id_profe,
@@ -94,7 +94,7 @@ function modAct(){//OK
 function agregaAct(){
   $.ajax({
     method: "POST",
-    url: "index.php?action=agregar_actividad&new_nombre_a=" + $("#new_nombre_a").val() + "&new_descripcion_a=" + $("#new_descripcion_a").val() + "&imagesToUpload[]=" + $("#imagesToUpload").val(),
+    url: "index.php?action=agregar_actividad&new_nombre_a=" + $("#new_nombre_a").val() + "&new_descripcion_a=" + $("#new_descripcion_a").val() + "&imagesToUpload[]=" + document.getElementById ("imagesToUpload"),
     data: $("#agregar_actividad").serialize(), // DATOS DEL FORM
     success: function(data){
        loadRender("index.php?action=actividades_admin");

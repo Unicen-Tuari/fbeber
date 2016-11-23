@@ -4,7 +4,7 @@ require_once('model.php');
 
 class model_actividades extends model{
 
-public function getActividades(){
+public function getActividades(){//OK
     $actividades = array();
     $consulta = $this->db->prepare("SELECT * from actividad");
     $consulta->execute();
@@ -18,7 +18,7 @@ public function getActividades(){
     return $actividades;
   }
 
-public function getActividad($id){
+public function getActividad($id){//OK
     $actividad = array();
     $select = $this->db->prepare('SELECT * FROM actividad WHERE id=?');
     $select->execute(array($id));
@@ -26,7 +26,7 @@ public function getActividad($id){
     return $actividad;
   }
 
-public function getProfeact($id){
+public function getProfeact($id){//OK
     $select = $this->db->prepare("SELECT p.apyno, p.foto, p.horarios, a.nombre as nombreAct FROM profesor p, actividad a WHERE p.id_act=a.id AND p.id_act=?");
     $select->execute(array($id));
     $profeact=$select->fetchAll(PDO::FETCH_ASSOC);
@@ -42,20 +42,29 @@ public function getComact($id){
 
 //obtiene todas las imagenes por actividad
 public function getImagesAct($id){
-    $select = $this->db->prepare("SELECT i.foto, i.id FROM img_actividad i, actividad a WHERE i.id_act=a.id AND i.id_act=?");
+    $select = $this->db->prepare("SELECT i.foto, i.id,i.id_act FROM img_actividad i, actividad a WHERE i.id_act=a.id AND i.id_act=?");
     $select->execute(array($id));
     $imagesact=$select->fetchAll(PDO::FETCH_ASSOC);
     return $imagesact;
   }
 
 //ABM actividades
-public function agregarActividad($new_nombre_a,$new_descripcion_a){
-  /*try{
+     private function subirImagenes($imagenes){
+    $carpeta = "./images/";
+    $destinos_finales = array();
+    foreach ($imagenes["tmp_name"] as $key => $value) {
+      $destinos_finales[] = $carpeta.uniqid().$imagenes["name"][$key];
+      move_uploaded_file($value, end($destinos_finales));
+    }
+    return $destinos_finales;
+  } 
+public function agregarActividad($new_nombre_a,$new_descripcion_a,$imagenes){
+  try{
       $destinos_finales=$this->subirImagenes($imagenes);
-      $this->db->beginTransaction();*/
+      $this->db->beginTransaction();
       $consulta = $this->db->prepare('INSERT INTO actividad(nombre,descripcion) VALUES(?,?)');
       $consulta->execute(array($new_nombre_a,$new_descripcion_a));
-      /*$id_act = $this->db->lastInsertId();
+      $id_act = $this->db->lastInsertId();
       foreach ($destinos_finales as $key => $value) {
         $consulta = $this->db->prepare('INSERT INTO img_actividad(foto,id_act) VALUES(?,?)');
         $consulta->execute(array( $value,$id_act));
@@ -64,7 +73,7 @@ public function agregarActividad($new_nombre_a,$new_descripcion_a){
     }
     catch(Exception $e){
     $this->db->rollBack();
-    }*/
+    }
   }
 public function borraImagen($id_img){
     $consulta = $this->db->prepare('DELETE FROM img_actividad WHERE id=?');

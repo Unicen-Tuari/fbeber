@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-21 12:07:05
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-22 23:43:14
          compiled from ".\templates\actividades.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:34125832d5594b91d8-27846612%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f80e79dd0d96401a728898e6fbda97a73c9b74f1' => 
     array (
       0 => '.\\templates\\actividades.tpl',
-      1 => 1479592333,
+      1 => 1479854586,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5832d55967a5b9_73007891',
   'variables' => 
   array (
     'actividades' => 0,
     'actividad' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5832d55967a5b9_73007891',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5832d55967a5b9_73007891')) {function content_5832d55967a5b9_73007891($_smarty_tpl) {?><div class="col-md-12">
     
@@ -112,10 +112,11 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
 </div>
 </div>
 
-<!--borrar actividad-->
+<!--mostrar imagenes por actividad-->
 <div id="mostrarImages" class="modal fade" tabindex="-1" role="dialog">
 <div class="modal-dialog" role="document">
 <div id="imagesActividad" class="modal-content">
+<h3>esto sii lo muestra</h3>
 </div>
 </div>
 </div>

@@ -32,7 +32,7 @@
       Para comentar es necesario estar registrado: <a href="login.php"><span class="label label-warning">Iniciar Sesión / Registrarse</span></a>
     {/if}
     <h4>..............</h4>
-    <button id="id_act_c" onClick = "cargaComentarios({$actividad['id']});" class="btn btn-warning" type="button" data-toggle="modal" data-target="#comentarios">Comentarios</button>
+    <button id="id_act_c" onClick = "cargaComentarios({$actividad['id']});" class="btn btn-success" type="button" data-toggle="modal" data-target="#comentarios">Comentarios</button>
     <button id="id_actividad" onClick = "cargaProfesores({$actividad['id']});" class="btn btn-info" type="button" data-toggle="modal" data-target="#horarios">Horarios e Inscripción</button> 
   </div>
   </div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-21 22:30:45
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-22 00:25:18
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:471458321b3be50a13-84885074%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '749422d4cfc3eb5677cf499730392b6accd4d1c7' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1479763833,
+      1 => 1479770715,
       2 => 'file',
     ),
   ),
@@ -20,4 +20,5 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58321b3be58714_45295355')) {function content_58321b3be58714_45295355($_smarty_tpl) {?>  <br>
-  <h1>BIENVENIDO SEÑOR ADMINISTRADOR DEL GIMNASIO!!</h1><?php }} ?>
+  <h1>BIENVENIDO SEÑOR ADMINISTRADOR DEL GIMNASIO!!</h1>
+ <?php }} ?>

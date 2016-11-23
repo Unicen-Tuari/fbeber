@@ -23,6 +23,7 @@ class model
     return $actividades;
   }
   
+  //no deberia ir de igual forma
   public function getUsuarios(){ //actividad
     $select = $this->db->prepare("SELECT * FROM usuario");
     $select->execute();
@@ -51,7 +52,13 @@ class model
     return $profesores;
   }
 
-    
+  public function getComentarios(){ //opiniones
+    $select = $this->db->prepare("SELECT c.comentario, c.puntaje, u.apyno, a.nombre FROM comentario c, usuario u, actividad a WHERE c.id_usuario=u.id and c.id_act=a.id GROUP BY a.nombre");
+    $select->execute();
+    $comentarios=$select->fetchAll(PDO::FETCH_ASSOC);
+    return $comentarios;
+  }
+
 //inscribir usuario a una actividad
   public function agregaInscripcion($new_idProfe_i,$new_idUser_i){
   $consulta = $this->db->prepare('INSERT INTO inscripcion(id_profe,id_usuario) VALUES(?,?)');

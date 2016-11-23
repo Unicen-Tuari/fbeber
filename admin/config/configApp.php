@@ -22,7 +22,9 @@ class ConfigApp{
 //ABM actividad
   public static $ACTION_AGREGAR_ACTIVIDAD = "agregar_actividad";
   public static $ACTION_BORRAR_ACTIVIDAD = "borrar_actividad";
-  public static $ACTION_BORRAR_IMG = "borrar_imagen";
+  //**********************************************************
+  public static $ACTION_BORRAR_IMAGEN = "borrar_imagen";//NEW
+  //**********************************************************
   public static $ACTION_MODIFICAR_ACTIVIDAD = "modificar_actividad";
 
 //ABM profesor

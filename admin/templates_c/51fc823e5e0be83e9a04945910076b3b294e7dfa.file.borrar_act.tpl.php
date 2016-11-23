@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-20 02:22:11
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-22 00:27:24
          compiled from ".\templates\borrar_act.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:132615830fac333a988-30359535%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:20224583382dc5db981-43529364%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '132615830fac333a988-30359535',
+  'nocache_hash' => '20224583382dc5db981-43529364',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5830fac3657837_62101754',
+  'unifunc' => 'content_583382dc8c5bb0_59222128',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5830fac3657837_62101754')) {function content_5830fac3657837_62101754($_smarty_tpl) {?><div class="modal-header">
+<?php if ($_valid && !is_callable('content_583382dc8c5bb0_59222128')) {function content_583382dc8c5bb0_59222128($_smarty_tpl) {?><div class="modal-header">
 
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <?php  $_smarty_tpl->tpl_vars['act'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['act']->_loop = false;

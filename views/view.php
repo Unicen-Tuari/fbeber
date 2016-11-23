@@ -14,6 +14,12 @@ class view
     $smarty = new Smarty;
     $smarty->assign("email",$email);
     $this->smarty->display('include.tpl');
+  }
+
+  public function mostrarCuenta($email){
+    $smarty = new Smarty;
+    $smarty->assign("email",$email);
+    $this->smarty->display('cuenta.tpl');
   } 
 
   public function mostrarInicio(){
@@ -36,6 +42,11 @@ class view
   public function mostrarProfesores($profesores){
     $this->smarty->assign('profesores',$profesores);
     $this->smarty->display('nosotros.tpl');
+  }
+
+  public function mostrarComentarios($comentarios){
+    $this->smarty->assign('comentarios',$comentarios);
+    $this->smarty->display('comentarios.tpl');
   }
   
   public function mostrarContacto(){

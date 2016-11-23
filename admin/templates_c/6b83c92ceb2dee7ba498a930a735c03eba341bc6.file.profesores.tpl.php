@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-21 02:11:23
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-22 23:54:13
          compiled from ".\templates\profesores.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3233958321b409c59e4-02961556%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6b83c92ceb2dee7ba498a930a735c03eba341bc6' => 
     array (
       0 => '.\\templates\\profesores.tpl',
-      1 => 1479690421,
+      1 => 1479855251,
       2 => 'file',
     ),
   ),
@@ -118,10 +118,12 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['horarios'];?>
 </td>
-          <td><button class="btn btn-warning" onClick = "cargaInscriptos(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
-);" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button></td>
-          <td><button class="btn btn-info" onClick = "profeActividades(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
-);" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>
+          <td><?php if ($_smarty_tpl->tpl_vars['profesor']->value['is_admin']==0){?>-<?php }else{ ?><button class="btn btn-warning" onClick = "cargaInscriptos(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button><?php }?></td>
+          <td>
+          <button class="btn btn-info" onClick = "profeActividades(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+          </td>
         </tr> 
         <?php }?> 
         <?php } ?>
@@ -151,7 +153,7 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
               <h4>Datos de la actividad</h4>
               <div class="col-md-6"><p>Seleccione la actividad:</p></div>
               <div class="col-md-6"><select id="new_id_act_p" name="new_id_act_p" class="form-control">
-            <option>Ver todas</option>
+            <option value='1'>Ver todas</option>
               <?php  $_smarty_tpl->tpl_vars['actividad'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['actividad']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['actividades']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['actividad']->key => $_smarty_tpl->tpl_vars['actividad']->value){

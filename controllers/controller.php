@@ -19,6 +19,13 @@ class controller
     else{ $this->view->mostrarIncludes(null);}
   }
 
+  public function cuenta(){
+    session_start();
+    if(isset($_SESSION["email"]))
+      {$this->view->mostrarCuenta($_SESSION["email"]);}
+    else{ $this->view->mostrarCuenta(null);}
+  }
+
   public function inicio(){
     $this->view->mostrarInicio();
   }
@@ -42,6 +49,11 @@ class controller
   public function nosotros(){
     $profesores = $this->model->getProfesores();
     $this->view->mostrarProfesores($profesores);
+  }
+
+  public function opiniones(){
+    $comentarios = $this->model->getComentarios();
+    $this->view->mostrarComentarios($comentarios);
   }
 
   public function contacto(){
