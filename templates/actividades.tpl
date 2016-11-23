@@ -7,9 +7,11 @@
   <div class="promocion3">
     <h3>{$actividad.nombre}</h3>
     <div class="col-md-12 text-center">
+
     {foreach $actividad['imagenes'] as $imagen}
     <img src="images/{$imagen.foto}" class="zoom" width="80px" height="80px">
     {/foreach}  
+
     </div>
     <div class="col-md-12" style="height: 100px"><p><br>{$actividad.descripcion}</p></div>
     <h4>..............</h4>

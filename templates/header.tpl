@@ -46,7 +46,7 @@
       <a href=""><img class="zoom" src="images/redes/tw-color.png" width="25px;"></a>
       <a href=""><img class="zoom" src="images/redes/google-color.png" width="25px;"></a>
       <a href=""><img class="zoom" src="images/redes/inst-color.png" width="25px;"></a>
-      <a id="usuario" href="#"><span class="label label-warning">Iniciar Sesión / Registrarse</span></a><br>
+      <a href="login.php"><span class="label label-warning">Iniciar Sesión / Registrarse</span></a><br>
       
     </div>
 

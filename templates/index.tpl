@@ -37,7 +37,7 @@
 
 <div class="publicidad ">
 <h3>Publicidad</h3>
-<img src="images/marcas.gif" width="20%">
+<img src="images/marcas.gif" width="70%">
 </div><!--fin de publicidad-->
 
 
