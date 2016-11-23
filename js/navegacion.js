@@ -29,16 +29,3 @@ function loadRender(etiqueta) {
 });
 }
 
-//carga todos los profesores de una actividad específica
-function cargaProfesores(id_actividad){
-  $.ajax({
-    method: "POST",
-    url: "index.php?action=profeact&id_actividad="+id_actividad,
-    contentType:'html',
-    cache: false,
-    success: function(data){
-      $('#tableProfesores').html(data);
-    }
-  });
-}
-

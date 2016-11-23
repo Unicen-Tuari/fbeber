@@ -4,7 +4,7 @@ function agregaUsuario(){
     url: "index.php?action=agregar_usuario&new_apyno_u=" + $("#new_apyno_u").val() + "&new_email_u=" + $("#new_email_u").val() + "&new_pass_u=" + $("#new_pass_u").val(),
     data: $("#agregar_user").serialize(), // DATOS DEL FORM
     success: function(data){
-       loadRender("index.php?action=usuario");
+        alert("Gracias por haberse registrado a nuestro Gimnasio");
     }
   });
 }
@@ -43,3 +43,23 @@ function cargaComentarios(id_act_c){
     }
   });
 }
+
+//carga todos los profesores de una actividad específica
+function cargaProfesores(id_actividad){
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=profeact&id_actividad="+id_actividad,
+    contentType:'html',
+    cache: false,
+    success: function(data){
+      $('#tableProfesores').html(data);
+    }
+  });
+}
+
+//*********************************************************************
+function actualiza(){
+    $("#tableComentarios").load();
+  }
+
+setInterval( "actualiza()", 1000 );
