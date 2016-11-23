@@ -11,11 +11,11 @@ class ConfigApp{
   public static $ACTION_CONTACTO = "contacto";
 
 //new
-  public static $ACTION_USUARIO = "usuario";
-  public static $ACTION_AGREGAR_USUARIO = "agregar_usuario";
-  public static $ACTION_INSCRIBIR = "inscribir";
-  public static $ACTION_DESINSCRIBIR = "desinscribir";
-  public static $ACTION_AGREGAR_COMENTARIO = "agregar_comentario";
-  public static $ACTION_COMENTARIOS = "comentarios";
+  public static $ACTION_USUARIO = "usuario";//mostraria datos del usuario logueado
+  public static $ACTION_AGREGAR_USUARIO = "agregar_usuario";//registrarse
+  public static $ACTION_INSCRIBIR = "inscribir";//funca solo la primer act
+  public static $ACTION_DESINSCRIBIR = "desinscribir";//chan
+  public static $ACTION_AGREGAR_COMENTARIO = "agregar_comentario";//funca en la primer act
+  public static $ACTION_COMENTARIOS = "comentarios";//OK
 }
 ?>
