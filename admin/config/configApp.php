@@ -1,45 +1,34 @@
 <?php
 class ConfigApp{
-//navegacion
+//navegacion 
   public static $ACTION = 'action';
   public static $ACTION_INCLUDE = 'include';
-  public static $ACTION_INICIO = 'inicio_admin';
-  public static $ACTION_ACTIVIDADES = "actividades_admin";
-  public static $ACTION_PROFESORES= "profesores_admin";
-  public static $ACTION_USUARIOS= "usuarios_admin";
-  public static $ACTION_COMENTARIOS= "comentarios_admin";
+  public static $ACTION_INICIO = 'inicio';
+  public static $ACTION_ACTIVIDADES = "actividades";
+  public static $ACTION_ACTIVIDAD = "actividad";
+  public static $ACTION_PROFE_ACT = 'profeact';
+  public static $ACTION_NOSOTROS = "nosotros";
+  public static $ACTION_CONTACTO = "contacto";
+  public static $ACTION_OPINIONES = "opiniones";
+  public static $ACTION_CUENTA = "cuenta";//OK
+  public static $ACTION_COMENTARIOS = "comentarios";//OK
 
-//CONSULTAS
-  public static $ACTION_PROFE_ACTIVIDADES= "profeactividades";
-  public static $ACTION_PROFE_ACT= "profeact";
-  public static $ACTION_IMAGES_ACT= "imagesact";
-  public static $ACTION_COMENTARIOS_ACT= "comentariosact";
-  public static $ACTION_COMENTARIOS_USUARIO= "comentariosusuario";
-  public static $ACTION_USUARIOS_PROFESOR= "usuariosprofesor";
-  public static $ACTION_ACTIVIDAD= "actividad";
-  public static $ACTION_PROFESOR= "profesor";
-  public static $ACTION_USUARIO= "usuario";
+  public static $ACTION_AGREGAR_USUARIO = "agregar_usuario";//registrarse OK
+
+  public static $ACTION_INSCRIBIR = "inscribir";//NO
+
+
+//USUARIO LOGUEADO
+  public static $ACTION_USUARIO = "usuario";
+  public static $ACTION_MOD_USUARIO = "modificar_usuario";
+  public static $ACTION_MIS_COMENTARIOS = "miscomentarios";//OK
+  public static $ACTION_MIS_ACTIVIDADES = "misactividades";//OK
+
+  public static $ACTION_AGREGAR_COMENTARIO = "agregar_comentario";//funca en la primer act
   public static $ACTION_INFO_COMENTARIO= "infocomentario";
 
   //B comentario
   public static $ACTION_BORRAR_COMENTARIO= "borrar_comentario";
-
-
-//ABM actividad
-  public static $ACTION_AGREGAR_ACTIVIDAD = "agregar_actividad";
-  public static $ACTION_BORRAR_ACTIVIDAD = "borrar_actividad";
-  //**********************************************************
-  public static $ACTION_BORRAR_IMAGEN = "borrar_imagen";//NEW
-  //**********************************************************
-  public static $ACTION_MODIFICAR_ACTIVIDAD = "modificar_actividad";
-
-//ABM profesor
-  public static $ACTION_AGREGAR_PROFESOR = "agregar_profesor";
-  public static $ACTION_BORRAR_PROFESOR = "borrar_profesor";
-  public static $ACTION_MODIFICAR_PROFESOR = "modificar_profesor";
-
-//B usuario
-  public static $ACTION_BORRAR_USUARIO = "borrar_usuario";
 
 }
 ?>

@@ -29,7 +29,7 @@ $("#logout").click(function() {
 	  data:$("#formlogin").serialize(),
 	  success: function(data)
 			   {
-				   window.location = "login.php";
+				   window.location = "index.php";
 				}
 	});
  

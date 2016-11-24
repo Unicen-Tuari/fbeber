@@ -1,11 +1,19 @@
 {include file='header.tpl'}
-{if isset($admin)}
-	<b>Hola {$admin[0].apyno}! </b><a id="logout" href="#"><span class="label label-info">Salir</span></a>
-    <div id='contenido'>{include file='index.tpl'}</div>
+<div class="redes text-center">
+      <a href=""><img  class="zoom" src="images/redes/fb-color.png" width="25px;"></a>
+      <a href=""><img class="zoom" src="images/redes/tw-color.png" width="25px;"></a>
+      <a href=""><img class="zoom" src="images/redes/google-color.png" width="25px;"></a>
+      <a href=""><img class="zoom" src="images/redes/inst-color.png" width="25px;"></a>
+      {if isset($usuario)}
+        <b>Hola {$usuario[0].apyno}! </b><a id="logout" href="#"><span class="label label-info">Salir</span></a>
+      {else}    
+        <a href="login.php"><span class="label label-warning">Iniciar Sesión / Registrarse</span></a><br>
+      {/if} 
+      
+      
+    </div>
 
-{else}		
-	<h1>Please Login</h1>
-    <button id="login" class="btn btn-lg btn-primary btn-block" onClick="window.location = 'login.php';">Login</button>
-{/if}  
-
+  <div id="contenido">
+  {include file='index.tpl'}
+  </div>
 {include file='footer.tpl'}
