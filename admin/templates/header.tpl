@@ -4,20 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="images/icono2.png"/> 
-    <title>Gimnasio | Sitio Oficial</title>
+    <link rel="icon" type="image/x-icon" href="../images/icono2.png"/> 
+    <title>Gimnasio | Panel de Control</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
 
-  </head>
-  <body  class="text-center">
+  <style type="text/css"></style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style></head>
+
+  <body class="text-center">
+   
     <div class="col-md-1 icono">
-      <img src="images/icono2.png" width="120px;">
+      <img src="../images/icono2.png" width="130px;">
     </div>
+    <h1>PANEL DE CONTROL</h1>
 
-     <nav class="navbar navbar-default navegador">
+ 
+    <nav class="navbar navbar-default navegador">
       <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -30,17 +35,15 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a id="home" href="#"><b>Inicio</b></a></li>
-            <li><a id="actividades" href="#"><b>Actividades</b></a></li>
-            <li><a id="nosotros" href="#"><b>Nosotros</b></a></li>
-            <li><a id="contacto" href="#"><b>Contacto</b></a></li>
-            <li><a id="opiniones" href="#"><b>Opiniones</b></a></li>
-            {if isset($usuario)}<li><a id="cuenta" href="#"><b>Mi Sesión</b></a></li>{/if}
+            <li><a id="inicio_admin" href="#"><b>Inicio</b></a></li>
+            <li><a id="actividades_admin" href="#"><b>Actividades</b></a></li>
+            <li><a id="profesores_admin" href="#"><b>Profesores</b></a></li>
+            <li><a id="usuarios_admin" href="#"><b>Usuarios</b></a></li>
+            <li><a id="comentarios_admin" href="#"><b>Comentarios</b></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
     

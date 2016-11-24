@@ -1,89 +1,133 @@
 <?php
 require('config/configApp.php');
 require('controllers/controller.php');
-require('controllers/controller_usuario.php');
-require('controllers/controller_login.php');
+require('controllers/controller_actividades.php');
+require('controllers/controller_profesores.php');
+require('controllers/controller_usuarios.php');
 
- 
 $controller = new controller();
-$controller_usuario = new controller_usuario();
+$controller_actividades = new controller_actividades();
+$controller_profesores = new controller_profesores();
+$controller_usuarios = new controller_usuarios();
+
 
 switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp::$ACTION_INCLUDE){
 
-//NAVEGACION
-  case configApp::$ACTION_INCLUDE:
+  case configApp::$ACTION_INCLUDE://ok
       $controller->includes();
   break;
-  case configApp::$ACTION_INICIO:
+  
+//**************************************************** 
+//SECCIONES
+  case configApp::$ACTION_INICIO://ok
       $controller->inicio();
-  break;
-  case configApp::$ACTION_ACTIVIDADES:
-      $controller->actividades();
-  break;
-  case configApp::$ACTION_NOSOTROS:
-      $controller->nosotros();
-  break;
-  case configApp::$ACTION_CONTACTO:
-      $controller->contacto();
-  break;
-  case configApp::$ACTION_OPINIONES:
-      $controller->opiniones();
-  break;
-  case configApp::$ACTION_CUENTA://pagina del usuario ok
-      $controller_usuario->cuenta();
-  break;
-
-//ABM comentario
-  case configApp::$ACTION_AGREGAR_COMENTARIO://new -> solo agrega a la primer actividad :/
-      $controller_usuario->agregarComentario();
-  break;
-  case configApp::$ACTION_MIS_COMENTARIOS://new OK
-    $controller_usuario->miscomentarios();
-  break;
-  //BORRA MI COMENTARIO
-  case configApp::$ACTION_INFO_COMENTARIO://new 
-    $controller_usuario->infocomentario();
-  break;
-  case ConfigApp::$ACTION_BORRAR_COMENTARIO://NEW 
-      $controller_usuario->borrarComentario();
-  break;
-      
-  case configApp::$ACTION_MIS_ACTIVIDADES://new 
-    $controller_usuario->misactividades();
-  break;
- 
-
- //muestra el usuario del comentario
-  case configApp::$ACTION_USUARIO://new -> ok
-      $controller_usuario->usuario();
-  break;
-  case configApp::$ACTION_COMENTARIOS://new -> ok
-    $controller->comentarios();
   break; 
- 
-//AM USUARIO
-  case configApp::$ACTION_INSCRIBIR://inscribir un usuario a una actividad 
-    $controller->inscribir();
+  case configApp::$ACTION_ACTIVIDADES://ok
+      $controller_actividades->actividades();
   break;
-  case configApp::$ACTION_AGREGAR_USUARIO://new -> aun no funciona bien
-      $controller_usuario->agregarUsuario();
+  case configApp::$ACTION_PROFESORES://ok
+      $controller_profesores->profesores();
   break;
-  case configApp::$ACTION_MOD_USUARIO://new -> ok
-      $controller_usuario->modificarUsuario();
+  case configApp::$ACTION_USUARIOS://new OK
+    $controller_usuarios->usuarios();
   break;
-  
-//CONSULTAS ESPECIFICAS
-  //muestra info de una actividad en especial
-  case configApp::$ACTION_ACTIVIDAD:
-      $controller->actividad();
-  break;
-  //muestra los profesores de una actividad en especifica
-  case configApp::$ACTION_PROFE_ACT:
-    $controller->profeact();
+  case configApp::$ACTION_COMENTARIOS://new OK
+    $controller_usuarios->comentarios();
   break;
   
-  default:
+//****************************************************
+//CONSULTAS ESPECÍFICAS
+
+//consulta una actividad en especial 
+  case configApp::$ACTION_ACTIVIDAD://ok
+    $controller_actividades->actividad();
+  break;
+//consulta por un profesor en específico para ser eliminado
+  case configApp::$ACTION_PROFESOR://ok
+    $controller_profesores->profesor();
+  break; 
+//consulta por un usuario en específico para ser eliminado
+  case configApp::$ACTION_USUARIO://ok
+    $controller_usuarios->usuario();
+  break; 
+//consulta los profesores por una actividad específica
+  case configApp::$ACTION_PROFE_ACTIVIDADES://ok
+    $controller_profesores->profeactividades();
+  break;
+//consulta los profesores que van a ser eliminados junto con la actividad
+  case configApp::$ACTION_PROFE_ACT://ok
+    $controller_actividades->profeact();
+  break;
+//consulta las imagenes de una actividad
+  case configApp::$ACTION_IMAGES_ACT://ok
+    $controller_actividades->imagesact();
+  break;
+//consulta los comentarios de una actividad
+  case configApp::$ACTION_COMENTARIOS_ACT://new
+    $controller_actividades->comentariosact();
+  break;
+//consulta los comentarios de un usuario
+  case configApp::$ACTION_COMENTARIOS_USUARIO://new->OK
+    $controller_usuarios->comentariosusuario();
+  break;
+//consulta inscriptos por profesor
+  case configApp::$ACTION_USUARIOS_PROFESOR://new->OK
+    $controller_profesores->usuariosprofesor();
+  break;
+//consulta un comentario en especifico para ser eliminado
+  case configApp::$ACTION_INFO_COMENTARIO://new OK
+    $controller_usuarios->infocomentario();
+  break;
+
+//****************************************************
+//ALTAS, BAJAS Y MODIFICACIONES 
+  //ABM ACTIVIDADES
+  case ConfigApp::$ACTION_AGREGAR_ACTIVIDAD://ok ->faltan imagenes
+      $controller_actividades->agregarActividad();
+      break;
+  case ConfigApp::$ACTION_BORRAR_ACTIVIDAD://ok
+      $controller_actividades->borrarActividad();
+      break;
+  case ConfigApp::$ACTION_MODIFICAR_ACTIVIDAD://ok ->faltan imagenes
+      $controller_actividades->modificarActividad();
+      break; 
+  
+//**************************************************** 
+  //ABM PROFESORES
+  case ConfigApp::$ACTION_AGREGAR_PROFESOR://falta
+      $controller_profesores->agregarProfesor();
+      break;
+  case ConfigApp::$ACTION_BORRAR_PROFESOR://ok
+      $controller_profesores->borrarProfesor();
+      break;
+  case ConfigApp::$ACTION_MODIFICAR_PROFESOR://falta
+      $controller_profesores->modificarProfesor();
+      break;
+
+//****************************************************
+  //BORRA UNA SOLA IMAGEN DE ACTIVIDAD
+  case ConfigApp::$ACTION_BORRAR_IMAGEN://OK borra sola imagen
+      $controller_actividades->borrarImagen();
+      break;
+
+//****************************************************
+  //BORRA UN COMENTARIO
+   case ConfigApp::$ACTION_BORRAR_COMENTARIO://NEW ok
+      $controller_usuarios->borrarComentario();
+      break;
+//****************************************************
+  //BAJA USUARIO
+  case ConfigApp::$ACTION_BORRAR_USUARIO://ok
+    $controller_usuarios->borrarUsuario();
+    break;
+
+  
+  
+  
+//DEFAULT    
+  default://ok
     echo "PÁGINA NO ENCONTRADA";
   break;
+
 }
  ?>

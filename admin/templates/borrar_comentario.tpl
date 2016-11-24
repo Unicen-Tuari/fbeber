@@ -1,6 +1,6 @@
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-   
+  
 {foreach $comentario as $dato}
 <h3>¿Está seguro que desea eliminar este comentario?</h3>
     

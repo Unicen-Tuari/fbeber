@@ -1,22 +1,21 @@
 //FUNCIONES DE ACTIVIDAD
-
-$('#add_actividad').submit(function(){
-    event.preventDefault();
-    var formData = new FormData(this);
-    $.ajax({
-     method: "POST",
-     url: "index.php?action=agregar_actividad",
-     data: formData,
-     contentType: false,
-     cache: false,
-     processData:false,
-      success: function(data){
-        loadRender("index.php?action=actividades_admin");
-        $('#addForm').trigger("reset");     alert("llega?");
-
-    } 
+function setHandlersActividades(){
+  $('#add_actividad').submit(function(){
+      event.preventDefault();
+      var formData = new FormData(this);
+      $.ajax({
+       method: "POST",
+       url: "index.php?action=agregar_actividad",
+       data: formData,
+       contentType: false,
+       cache: false,
+       processData:false,
+        success: function(data){
+          loadRender("index.php?action=actividades_admin");
+          $('#add_actividad').trigger("reset"); 
+     });
    });
- });
+ }
 
 //CONSULTAS ESPECIFICAS POR CADA ACTIVIDAD
 //carga todos los comentarios de una actividad específica
@@ -68,7 +67,7 @@ function borraImagen(id_img){//casi
   });
 }
 //********************************************************
-//BAJA ACTIVIDAD 
+//BAJA ACTIVIDAD
 //carga informacion por una actividad especifica + el/los profesores
 function infoProfeAct(id_actividad){//OK
   $.ajax({
@@ -119,7 +118,3 @@ function modAct(){//OK
     }
   });
 }*/
-
-
-
-
