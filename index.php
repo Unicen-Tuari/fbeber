@@ -52,6 +52,9 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case configApp::$ACTION_AGREGAR_USUARIO://new -> ok
       $controller_usuario->agregarUsuario();
   break;
+  case configApp::$ACTION_MOD_USUARIO://new -> ok
+      $controller_usuario->modificarUsuario();
+  break;
   
 //CONSULTAS ESPECIFICAS
   //muestra info de una actividad en especial

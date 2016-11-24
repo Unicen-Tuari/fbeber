@@ -13,11 +13,12 @@ class ConfigApp{
   public static $ACTION_CUENTA = "cuenta";//OK
 
 //probando
-    public static $ACTION_LOGIN = 'login';
+  public static $ACTION_LOGIN = 'login';
   public static $ACTION_LOGOUT = 'logout';
 //new
   public static $ACTION_USUARIO = "usuario";
   public static $ACTION_AGREGAR_USUARIO = "agregar_usuario";//registrarse
+  public static $ACTION_MOD_USUARIO = "modificar_usuario";//registrarse
   public static $ACTION_INSCRIBIR = "inscribir";//funca solo la primer act
 //  public static $ACTION_DESINSCRIBIR = "desinscribir";//chan
   public static $ACTION_AGREGAR_COMENTARIO = "agregar_comentario";//funca en la primer act

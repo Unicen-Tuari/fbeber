@@ -15,26 +15,45 @@ class controller
   public function includes(){
     session_start();
     if(isset($_SESSION["email"]))
-      {$this->view->mostrarIncludes($_SESSION["email"]);}
-    else{ $this->view->mostrarIncludes(null);}
-  }
-
-  public function cuenta(){
-    session_start();
-    if(isset($_SESSION["email"]))
-      {$this->view->mostrarCuenta($_SESSION["email"]);}
-    else{ $this->view->mostrarCuenta(null);}
+    {
+        $email=$_SESSION['email'];
+        $usuario = $this->model->getUser($email);
+        $this->view->mostrarIncludes($usuario);
+    }
+    else
+    {
+      
+      $this->view->mostrarIncludes(null);
+    }
   }
 
   public function inicio(){
     $this->view->mostrarInicio();
   }
+  
+  //mostrar todos comentarios por actividad
+  public function comentarios(){
+    if(isset($_REQUEST['id_act_c'])){
+      $id=$_REQUEST['id_act_c'];
+      $comact = $this->model->getComact($id);
+      $this->view->mostrarComentarios($comact);
+    }
+  }
 
   public function actividades(){
     $usuarios = $this->model->getUsuarios();
     $actividades = $this->model->getActividades();
-    $this->view->mostrarActividades($actividades,$usuarios);
+    session_start();
+    if(isset($_SESSION["email"]))
+    {
+    $email=$_SESSION['email'];
+    $usuario = $this->model->getUser($email);
+    $this->view->mostrarActividades($actividades,$usuarios,$usuario);
   }
+    else{
+    $this->view->mostrarActividades($actividades,$usuarios,null);}
+    }
+  
   
   public function profeact(){
     if(isset($_REQUEST['id_actividad'])){
@@ -42,8 +61,17 @@ class controller
       $usuarios = $this->model->getUsuarios();
       $actividad = $this->model->getActividad($id);
       $profeact = $this->model->getProfeact($id);
-      $this->view->mostrarProfeact($profeact,$actividad,$usuarios);
+      session_start();
+      if(isset($_SESSION["email"]))
+      {
+        $email=$_SESSION['email'];
+        $usuario = $this->model->getUser($email);
+        $this->view->mostrarProfeact($profeact,$actividad,$usuarios,$usuario);
+      }
+    else{
+      $this->view->mostrarProfeact($profeact,$actividad,$usuarios,null);
     }
+  }
   } 
 
   public function nosotros(){
@@ -53,7 +81,7 @@ class controller
 
   public function opiniones(){
     $comentarios = $this->model->getComentarios();
-    $this->view->mostrarComentarios($comentarios);
+    $this->view->mostrarOpiniones($comentarios);
   }
 
   public function contacto(){

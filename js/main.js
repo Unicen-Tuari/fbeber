@@ -8,7 +8,19 @@ function agregaUsuario(){
     }
   });
 }
-
+//MODIFICA ACTIVIDAD
+function modUsuario(){//OK
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=modificar_usuario&upd_id_u=" + $("#upd_id_u").val() + "&upd_apyno_u=" + $("#upd_apyno_u").val() + "&upd_email_u=" + $("#upd_email_u").val() + "&upd_pass_u=" + $("#upd_pass_u").val(),
+    contentType:'html',
+    cache: false,
+    data: $("#modifica_usuario").serialize(), // DATOS DEL FORM
+    success: function(data){
+       loadRender("index.php?action=cuenta");
+    }
+  });
+}
 function agregaComentario(){
   $.ajax({
     method: "POST",

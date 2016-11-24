@@ -14,21 +14,22 @@ class controller_usuario
     $this->model_usuario = new model_usuario();
   }
 
-public function usuario(){
-    $this->view_usuario->mostrarUsuario();
+public function cuenta(){//supuestamente se va a mostrar en mi sesion vemos como sale
+    session_start();
+    if(isset($_SESSION["email"]))
+      {
+        $email=$_SESSION['email'];
+        $usuario = $this->model_usuario->getUser($email);
+        $this->view_usuario->mostrarCuenta($usuario);
+      }
+      else{ 
+        $this->view_usuario->mostrarCuenta(null);
+      }
   }
 
-//mostrar comentarios
-public function comentarios(){
-    if(isset($_REQUEST['id_act_c'])){
-      $id=$_REQUEST['id_act_c'];
-      $comact = $this->model_usuario->getComact($id);
-      $this->view_usuario->mostrarComentarios($comact);
-    }
-  }
-
+/************************************************************************
 /*usuarios*/
-//agrega -> OK 
+//agrega -> no funciona ver porque
   public function agregarUsuario(){
     if(isset($_REQUEST['new_apyno_u']) && isset($_REQUEST['new_email_u']) && isset($_REQUEST['new_pass_u'])){
         $this->model_usuario->agregarUsuario($_REQUEST['new_apyno_u'], $_REQUEST['new_email_u'], $_REQUEST['new_pass_u']);      
@@ -38,7 +39,19 @@ public function comentarios(){
     }
     $this->usuario();
   }
+  
+//modifica usuario
+  public function modificarUsuario(){
+    if(isset($_REQUEST['upd_apyno_u']) && isset($_REQUEST['upd_email_u']) && isset($_REQUEST['upd_pass_u']) && isset($_REQUEST['upd_id_u'])){
+        $this->model_usuario->modificarUsuario($_REQUEST['upd_apyno_u'], $_REQUEST['upd_email_u'],md5($_REQUEST['upd_pass_u']),$_REQUEST['upd_id_u']);
+    }   
+    else{
+      $this->view_usuario->mostrarError('El profesor que intenta modificar no existe');
+    }
+    $this->usuario();
+  }
 
+/*********************************/
   public function agregarComentario(){
     if(isset($_REQUEST['new_comentario']) && isset($_REQUEST['new_puntaje']) && isset($_REQUEST['new_idAct_c']) && isset($_REQUEST['new_idUser_c'])){
         $this->model_usuario->agregarComentario($_REQUEST['new_comentario'],$_REQUEST['new_puntaje'], $_REQUEST['new_idAct_c'], $_REQUEST['new_idUser_c']);      
