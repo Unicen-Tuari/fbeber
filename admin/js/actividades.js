@@ -11,10 +11,11 @@ $('#add_actividad').submit(function(){
      cache: false,
      processData:false,
       success: function(data){
-      loadRender("index.php?action=actividades_admin")
+        loadRender("index.php?action=actividades_admin");
+        $('#addForm').trigger("reset");     alert("llega?");
+
     } 
    });
-
  });
 
 //CONSULTAS ESPECIFICAS POR CADA ACTIVIDAD

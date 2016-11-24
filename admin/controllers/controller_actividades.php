@@ -81,17 +81,16 @@ class controller_actividades
     $this->actividades();
   }*/
 public function agregarActividad(){
-    $added = false;
     //print_r($_FILES['image']);
     if (isset($_POST['new_nombre_a']) && $_POST['new_descripcion_a']){
       $imagenes = [];
-      if(isset($_FILES['imagesToUpload'])){
-      for($i=0; $i<count($_FILES['imagesToUpload']['name']);$i++)
+      if(isset($_FILES['image'])){
+      for($i=0; $i<count($_FILES['image']['name']);$i++)
       {
-        if(($_FILES['imagesToUpload']['size'][$i]>0))
+        if(($_FILES['image']['size'][$i]>0) && ($this->esImagen($_FILES['image']['type'][$i])))
         {
-            $image_name = $_FILES['imagesToUpload']['name'][$i];
-            $image_tmp = $_FILES['imagesToUpload']['tmp_name'][$i];
+            $image_name = $_FILES['image']['name'][$i];
+            $image_tmp = $_FILES['image']['tmp_name'][$i];
             $image['name']=$image_name;
             $image['tmp_name']=$image_tmp;
             $imagenes[] = $image;
@@ -102,10 +101,13 @@ public function agregarActividad(){
       $act = $_POST['new_nombre_a'];
       $description = $_POST['new_descripcion_a'];
       $this->model_actividades->agregarActividad($act,$description,$imagenes);
-      $added=true;
     }
-        $this->actividades();
+        $actividades = $this->model_actividades->getActividades();
+    $this->view_actividades->mostrarActividades($actividades);
 
+  }
+     private function esImagen($file_type){
+      return ($file_type =='image/jpeg' || $file_type =='image/png' );
   }
 //borra->OK
   public function borrarActividad(){

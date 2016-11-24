@@ -60,12 +60,12 @@ public function getImagesAct($id){
   } */
 
   function copiarImagen($image){
-    $path = 'images/'.uniqid().$image["name"];
+    $path = './images/'.uniqid().$image["name"];
     move_uploaded_file($image["tmp_name"], $path);
     return $path;
   }
 
-  function agregarActividad($act, $description,$images){
+  function agregarActividad($act,$description,$images){
     $insert = $this->db->prepare("INSERT INTO actividad(nombre,descripcion) VALUES(?,?)");
     $insert->execute(array($act,$description));
     $fk_tarea = $this->db->lastInsertId();

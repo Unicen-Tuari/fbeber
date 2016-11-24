@@ -11,7 +11,7 @@ public function mostrarActividades($actividades){
 
 //muestra form para agregar actividad->PROBANDO
 public function agregarActividad(){
-    $this->smarty->display('agregar_act.tpl');
+    $this->smarty->display('actividades.tpl');
   }
 
 //muestra datos para borrar->OK

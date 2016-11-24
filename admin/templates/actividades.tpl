@@ -51,7 +51,8 @@
 <div class="modal-body">
   <form id="add_actividad" action="" method="POST" enctype="multipart/form-data">
     <div class="col-md-12 text-center"><p>Seleccione imagen a modo de ilustración</p>
-      <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control" multiple/>
+      <label for="image">Image</label>
+        <input type="file" name="image[]" id="image" multiple>
     </div>
     <p><br>Nombre de la actividad</p>
       <input type="text" class="form-control" id="new_nombre_a" name="new_nombre_a"><br>
@@ -60,7 +61,7 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-  <button type="submit"  id="addBtn" class="btn btn-success" aria-hidden="true" data-dismiss="modal">Agregar</button>
+  <button type="submit" class="btn btn-success" aria-hidden="true" data-dismiss="modal">Agregar</button>
 </form>
 </div>
 </div>
