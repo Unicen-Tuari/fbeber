@@ -19,7 +19,7 @@ $("#opiniones").on("click",function() {loadRender("index.php?action=opiniones")}
 
 
 //AGREGA LAS FUNCIONES A LAS SECCIONES QUE LAS CONTIENEN
-function loadRender(etiqueta) {
+function loadRender(etiqueta,callback) {
  $.ajax({
   method: "GET",
   url:etiqueta,
@@ -29,13 +29,18 @@ function loadRender(etiqueta) {
   dataType: "HTML",
   success: function (receivedData) {
       $("#contenido").html(receivedData);
-    
+      if(callback != undefined){
+      callback();
+    }
+
     },
 });
 }
 
 function actualiza(){
-  $("#tableComentarios").load("index.php?action=opiniones");
+$("#actualiza_com").on("load",function() {loadRender("index.php?action=opiniones")});
+$alert("actualizando...");
 }
+
 //setInterval( "actualiza()", 2000 );
 

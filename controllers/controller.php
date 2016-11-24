@@ -22,7 +22,6 @@ class controller
     }
     else
     {
-      
       $this->view->mostrarIncludes(null);
     }
   }

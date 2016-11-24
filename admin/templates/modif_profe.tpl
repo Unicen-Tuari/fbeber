@@ -5,10 +5,7 @@
 </div>
 
       <div class="col-md-12 modal-body">
-        <form id="modifica_profesor" method="POST">
-          <div class="col-md-12"><p>Cambie la foto de perfil</p>         
-          <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control" value="{$dato.foto}"><br></div>
-          
+        <form id="modifica_profesor" method="POST">         
           <input type="hidden" class="form-control" id="id_profe" name="id_profe" value="{$dato.id}">
           <div class="col-md-7"><p><br>Nombre y Apellido:</p><input type="text" class="form-control" id="upd_apyno_p" name="upd_apyno_p" value="{$dato.apyno}"></div>
           <div class="col-md-5"><p><br>DNI:</p><input type="text" class="form-control" id="upd_dni_p" name="upd_dni_p" value="{$dato.dni}"></div>

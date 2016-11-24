@@ -12,7 +12,9 @@ function setHandlersActividades(){
        processData:false,
         success: function(data){
           loadRender("index.php?action=actividades_admin");
-          $('#add_actividad').trigger("reset"); 
+          $('#addForm').trigger("reset");     alert("llega?");
+
+      }
      });
    });
  }
@@ -105,16 +107,3 @@ function modAct(){//OK
     }
   });
 }
-
-//AGREGA ACTIVIDAD
-//faltan las imagenes pero en general andando
-/*function agregaAct(){
-  $.ajax({
-    method: "POST",
-    url: "index.php?action=agregar_actividad&new_nombre_a=" + $("#new_nombre_a").val() + "&new_descripcion_a=" + $("#new_descripcion_a").val() + "&imagenes" + $("#imagesToUpload").val(),
-    data: $("#agregar_actividad").serialize(), // DATOS DEL FORM
-    success: function(data){
-       loadRender("index.php?action=actividades_admin");
-    }
-  });
-}*/

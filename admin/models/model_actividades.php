@@ -49,15 +49,6 @@ public function getImagesAct($id){
   }
 
 //ABM actividades
-    /*private function subirImagenes($imagenes){
-    $carpeta = "./images/";
-    $destinos_finales = array();
-    foreach ($imagenes["tmp_name"] as $key => $value) {
-      $destinos_finales[] = $carpeta.uniqid().$imagenes["name"][$key];
-      move_uploaded_file($value, end($destinos_finales));
-    }
-    return $destinos_finales;
-  } */
 
   function copiarImagen($image){
     $path = '../images/'.uniqid().$image["name"];

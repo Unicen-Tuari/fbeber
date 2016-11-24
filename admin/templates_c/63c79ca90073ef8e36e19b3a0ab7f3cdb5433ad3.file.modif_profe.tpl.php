@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-22 23:40:30
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-24 20:44:04
          compiled from ".\templates\modif_profe.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:32126583384f8b18932-36886420%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '63c79ca90073ef8e36e19b3a0ab7f3cdb5433ad3' => 
     array (
       0 => '.\\templates\\modif_profe.tpl',
-      1 => 1479773294,
+      1 => 1480016420,
       2 => 'file',
     ),
   ),
@@ -38,11 +38,7 @@ $_smarty_tpl->tpl_vars['dato']->_loop = true;
 </div>
 
       <div class="col-md-12 modal-body">
-        <form id="modifica_profesor" method="POST">
-          <div class="col-md-12"><p>Cambie la foto de perfil</p>         
-          <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['dato']->value['foto'];?>
-"><br></div>
-          
+        <form id="modifica_profesor" method="POST">         
           <input type="hidden" class="form-control" id="id_profe" name="id_profe" value="<?php echo $_smarty_tpl->tpl_vars['dato']->value['id'];?>
 ">
           <div class="col-md-7"><p><br>Nombre y Apellido:</p><input type="text" class="form-control" id="upd_apyno_p" name="upd_apyno_p" value="<?php echo $_smarty_tpl->tpl_vars['dato']->value['apyno'];?>

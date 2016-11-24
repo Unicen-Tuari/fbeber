@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-22 23:54:13
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-24 20:29:38
          compiled from ".\templates\profesores.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3233958321b409c59e4-02961556%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6b83c92ceb2dee7ba498a930a735c03eba341bc6' => 
     array (
       0 => '.\\templates\\profesores.tpl',
-      1 => 1479855251,
+      1 => 1480015776,
       2 => 'file',
     ),
   ),
@@ -28,6 +28,52 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58321b40c90810_34777511')) {function content_58321b40c90810_34777511($_smarty_tpl) {?>    
     <div class="col-md-12">
+    <h1>Administradores</h1>
+    <p>*para eliminar un administrador es necesario quitarle los permisos (modificar)</p>
+    <table class="table table-striped">
+      <tr>
+        <td><b>FOTO</b></td>
+        <td><b>NOMBRE Y APELLIDO</b></td>
+        <td><b>DNI</b></td>
+        <td><b>DESCRIPCIÓN</b></td>
+        <td><b>EMAIL</b></td>
+        <td><b>ACTIVIDAD</b></td>
+        <td><b>DIAS Y HORARIOS</b></td>
+        <td><b>INSCRIPTOS</b></td>
+        <td><b>MODIFICAR</b></td>
+      </tr>
+      <?php  $_smarty_tpl->tpl_vars['profesor'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['profesor']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['profesores']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['profesor']->key => $_smarty_tpl->tpl_vars['profesor']->value){
+$_smarty_tpl->tpl_vars['profesor']->_loop = true;
+?>
+      <?php if ($_smarty_tpl->tpl_vars['profesor']->value['is_admin']==0){?>
+        <tr id="datosActividad">
+          <td><img src="../images/<?php echo $_smarty_tpl->tpl_vars['profesor']->value['foto'];?>
+" alt="..." class="img-circle zoom" width="50px" height="50px"></td>
+          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['apyno'];?>
+</td>
+          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['dni'];?>
+</td>
+          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['descripcion'];?>
+</td>
+          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['email'];?>
+</td>
+          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['nombreAct'];?>
+</td>
+          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['horarios'];?>
+</td>
+          <td><?php if ($_smarty_tpl->tpl_vars['profesor']->value['is_admin']==0){?>-<?php }else{ ?><button class="btn btn-warning" onClick = "cargaInscriptos(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button><?php }?></td>
+          <td>
+          <button class="btn btn-info" onClick = "profeActividades(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
+);" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+          </td>
+        </tr> 
+        <?php }?> 
+        <?php } ?>
+      </table>  
+      
     <h1>Profesores</h1>
     <br>
       <div class="col-md-12 text-center"><button class="btn btn-success" data-toggle="modal" data-target="#agregarProfesor">Agregar Profesor</button>
@@ -83,52 +129,7 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
     </table>  
     <br>
 
-    <h1>Administradores</h1>
-    <p>*para eliminar un administrador es necesario quitarle los permisos (modificar)</p>
-    <table class="table table-striped">
-      <tr>
-        <td><b>FOTO</b></td>
-        <td><b>NOMBRE Y APELLIDO</b></td>
-        <td><b>DNI</b></td>
-        <td><b>DESCRIPCIÓN</b></td>
-        <td><b>EMAIL</b></td>
-        <td><b>ACTIVIDAD</b></td>
-        <td><b>DIAS Y HORARIOS</b></td>
-        <td><b>INSCRIPTOS</b></td>
-        <td><b>MODIFICAR</b></td>
-      </tr>
-      <?php  $_smarty_tpl->tpl_vars['profesor'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['profesor']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['profesores']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['profesor']->key => $_smarty_tpl->tpl_vars['profesor']->value){
-$_smarty_tpl->tpl_vars['profesor']->_loop = true;
-?>
-      <?php if ($_smarty_tpl->tpl_vars['profesor']->value['is_admin']==0){?>
-        <tr id="datosActividad">
-          <td><img src="../images/<?php echo $_smarty_tpl->tpl_vars['profesor']->value['foto'];?>
-" alt="..." class="img-circle zoom" width="50px" height="50px"></td>
-          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['apyno'];?>
-</td>
-          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['dni'];?>
-</td>
-          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['descripcion'];?>
-</td>
-          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['email'];?>
-</td>
-          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['nombreAct'];?>
-</td>
-          <td><?php echo $_smarty_tpl->tpl_vars['profesor']->value['horarios'];?>
-</td>
-          <td><?php if ($_smarty_tpl->tpl_vars['profesor']->value['is_admin']==0){?>-<?php }else{ ?><button class="btn btn-warning" onClick = "cargaInscriptos(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
-);" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button><?php }?></td>
-          <td>
-          <button class="btn btn-info" onClick = "profeActividades(<?php echo $_smarty_tpl->tpl_vars['profesor']->value['id'];?>
-);" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
-          </td>
-        </tr> 
-        <?php }?> 
-        <?php } ?>
-      </table>  
-</div>
+    </div>
 
 <!--MODALs ABM-->
 <!--Agregar profesor-->
@@ -142,9 +143,6 @@ $_smarty_tpl->tpl_vars['profesor']->_loop = true;
           <div  class="col-md-12 modal-body">
             <form id="agregar_profesor">
               <h4>Datos personales</h4>
-              <div class="col-md-12 text-center"><p>Seleccione foto de perfil:</p>
-              <input type="file" name="imagesToUpload[]" id="imagesToUpload" class="form-control"/><br>
-              </div>
               <div class="col-md-6"><p>Nombre y Apellido:</p><input type="text" id="new_apyno_p" name="new_apyno_p" class="form-control"></div>              
               <div class="col-md-6"><p>DNI:</p><input type="text" id="new_dni_p" name="new_dni_p" class="form-control"></div>
               <div class="col-md-6"><p><br>Correo Electrónico:</p><input type="text" id="new_email_p" name="new_email_p" class="form-control"></div>
@@ -177,6 +175,7 @@ $_smarty_tpl->tpl_vars['actividad']->_loop = true;
     </div>
   </div>
 </div></div>
+  
  
 
 <!--borrar profesor-->

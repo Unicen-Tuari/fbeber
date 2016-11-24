@@ -14,7 +14,6 @@
         <td><b>ID</b></td>
         <td><b>NOMBRE</b></td>
         <td><b>DESCRIPCIÓN</b></td>
-        <td><b>INSCRIPTOS</b></td>
         <td><b>COMENTARIOS</b></td>
         <td><b>MODIFICAR</b></td>
         <td><b>ELIMINAR</b></td>
@@ -28,7 +27,6 @@
           <td class="text-uppercase">{$actividad.nombre}</td>
           <td class="text-capitalize">{$actividad.descripcion}</td>
 
-          <td></td><!--consulta de usuarios inscriptos-->
 
           <td><button class="btn btn-warning" onClick = "cargaComentarios({$actividad.id});" type="button" data-toggle="modal" data-target="#comAct"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></button></td><!--consulta de comentarios y puntuaciones-->
           <td><button class="btn btn-info" onClick = "infoActividad({$actividad.id});" type="button" data-toggle="modal" data-target="#modificarActividad"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button></td>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 20:06:11
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-24 11:18:35
          compiled from ".\templates\comentarios_act.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4146583382c4be0302-75704927%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '02c9a24cf574b727fc1f3df62fe49f69a8a5482a' => 
     array (
       0 => '.\\templates\\comentarios_act.tpl',
-      1 => 1479898655,
+      1 => 1479978796,
       2 => 'file',
     ),
   ),
@@ -41,14 +41,12 @@ $_smarty_tpl->tpl_vars['dato']->_loop = true;
 
 <table class="table table-striped">
 <tr>
-    <td class="text-center"><p><b><?php echo $_smarty_tpl->tpl_vars['dato']->value['apyno'];?>
+   <td class="text-center"><p><b><?php echo $_smarty_tpl->tpl_vars['dato']->value['apyno'];?>
  </b>dijo: </b><?php echo $_smarty_tpl->tpl_vars['dato']->value['comentario'];?>
 </p></td>
-    <td class="text-right"><?php  $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['dato']->value['puntaje'];
+   <td class="text-right"><?php  $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['dato']->value['puntaje'];
   if ($_smarty_tpl->tpl_vars['i']->value>=1){ for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value>=1; $_smarty_tpl->tpl_vars['i']->value--){
 ?><span class="glyphicon glyphicon-star" aria-hidden="true" style="color: orange"></span> <?php }} ?></td>
-    <td class="text-right"><button type="button" class="label label-danger" onclick="borraComentario('<?php echo $_smarty_tpl->tpl_vars['dato']->value['id'];?>
-')"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
 </tr>
 </table>
 <?php } ?>

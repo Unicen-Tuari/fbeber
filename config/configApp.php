@@ -1,6 +1,6 @@
 <?php
 class ConfigApp{
-//navegacion
+//navegacion 
   public static $ACTION = 'action';
   public static $ACTION_INCLUDE = 'include';
   public static $ACTION_INICIO = 'inicio';
@@ -11,17 +11,24 @@ class ConfigApp{
   public static $ACTION_CONTACTO = "contacto";
   public static $ACTION_OPINIONES = "opiniones";
   public static $ACTION_CUENTA = "cuenta";//OK
-
-//probando
-  public static $ACTION_LOGIN = 'login';
-  public static $ACTION_LOGOUT = 'logout';
-//new
-  public static $ACTION_USUARIO = "usuario";
-  public static $ACTION_AGREGAR_USUARIO = "agregar_usuario";//registrarse
-  public static $ACTION_MOD_USUARIO = "modificar_usuario";//registrarse
-  public static $ACTION_INSCRIBIR = "inscribir";//funca solo la primer act
-//  public static $ACTION_DESINSCRIBIR = "desinscribir";//chan
-  public static $ACTION_AGREGAR_COMENTARIO = "agregar_comentario";//funca en la primer act
   public static $ACTION_COMENTARIOS = "comentarios";//OK
+
+  public static $ACTION_AGREGAR_USUARIO = "agregar_usuario";//registrarse OK
+
+  public static $ACTION_INSCRIBIR = "inscribir";//NO
+
+
+//USUARIO LOGUEADO
+  public static $ACTION_USUARIO = "usuario";
+  public static $ACTION_MOD_USUARIO = "modificar_usuario";
+  public static $ACTION_MIS_COMENTARIOS = "miscomentarios";//OK
+  public static $ACTION_MIS_ACTIVIDADES = "misactividades";//OK
+
+  public static $ACTION_AGREGAR_COMENTARIO = "agregar_comentario";//funca en la primer act
+  public static $ACTION_INFO_COMENTARIO= "infocomentario";
+
+  //B comentario
+  public static $ACTION_BORRAR_COMENTARIO= "borrar_comentario";
+
 }
 ?>

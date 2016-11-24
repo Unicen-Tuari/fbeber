@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 12:05:43
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-24 20:58:14
          compiled from ".\templates\images_act.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25261583387aa57c023-67114022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8dfa4c57de61c2e5f0e09084d8ab488f1f8eeec9' => 
     array (
       0 => '.\\templates\\images_act.tpl',
-      1 => 1479899110,
+      1 => 1480017492,
       2 => 'file',
     ),
   ),
@@ -30,7 +30,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div>
 
 <div  class="modal-body">
-<input type="file" name="imagesToUpload[]" class="form-control" >
 <?php if ($_smarty_tpl->tpl_vars['imagesact']->value==null){?>
 <h1>No existen imagenes en esta actividad</h1>
 <?php }else{ ?>
@@ -39,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['img']->key => $_smarty_tpl->tpl_vars['img']->value){
 $_smarty_tpl->tpl_vars['img']->_loop = true;
 ?>
-<input type="text" name="id_act" id="id_act" value="<?php echo $_smarty_tpl->tpl_vars['img']->value['id_act'];?>
+<input type="hidden" name="id_act" id="id_act" value="<?php echo $_smarty_tpl->tpl_vars['img']->value['id_act'];?>
 ">
 <img src="../images/<?php echo $_smarty_tpl->tpl_vars['img']->value['foto'];?>
 " width="100px" height="100px;" class="zoom" style="margin: 2px">

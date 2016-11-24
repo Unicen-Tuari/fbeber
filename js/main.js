@@ -1,4 +1,4 @@
-function agregaUsuario(){
+function agregaUsuario(){ 
   $.ajax({
     method: "POST",
     url: "index.php?action=agregar_usuario&new_apyno_u=" + $("#new_apyno_u").val() + "&new_email_u=" + $("#new_email_u").val() + "&new_pass_u=" + $("#new_pass_u").val(),
@@ -28,6 +28,56 @@ function agregaComentario(){
     data: $("#agregar_com").serialize(), // DATOS DEL FORM
     success: function(data){
        loadRender("index.php?action=actividades");
+    }
+  });
+}
+//BAJA COMENTARIOS no entra
+//BAJA COMENTARIOS
+function infoComentario(id_comentario){
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=infocomentario&id_comentario="+id_comentario,
+    contentType:'html',
+    cache: false,
+    success: function(data){
+      $('#infoComentario').html(data);
+    }
+  });
+}
+function borraComentario(id_comentario){//OK
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=borrar_comentario&id_comentario="+id_comentario,
+    contentType:'html',
+    cache: false,
+    success: function(data){
+       loadRender("index.php?action=cuenta");
+    }
+  });
+}
+//*********************************************************************************
+//carga todos mis comentarios-experimental
+function cargaMiscomentarios(id_usuario){
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=miscomentarios&id_usuario="+id_usuario,
+    contentType:'html',
+    cache: false,
+    success: function(data){
+      $('#tableMiscomentarios').html(data);
+    }
+  });
+}
+
+//carga todos mis comentarios-experimental
+function cargaMisactividades(id_usuario){
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=misactividades&id_usuario="+id_usuario,
+    contentType:'html',
+    cache: false,
+    success: function(data){
+      $('#tableMisactividades').html(data);
     }
   });
 }

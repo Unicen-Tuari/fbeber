@@ -4,7 +4,7 @@ require('controllers/controller.php');
 require('controllers/controller_usuario.php');
 require('controllers/controller_login.php');
 
-
+ 
 $controller = new controller();
 $controller_usuario = new controller_usuario();
 
@@ -29,7 +29,7 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case configApp::$ACTION_OPINIONES:
       $controller->opiniones();
   break;
-  case configApp::$ACTION_CUENTA:
+  case configApp::$ACTION_CUENTA://pagina del usuario ok
       $controller_usuario->cuenta();
   break;
 
@@ -37,6 +37,22 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case configApp::$ACTION_AGREGAR_COMENTARIO://new -> solo agrega a la primer actividad :/
       $controller_usuario->agregarComentario();
   break;
+  case configApp::$ACTION_MIS_COMENTARIOS://new OK
+    $controller_usuario->miscomentarios();
+  break;
+  //BORRA MI COMENTARIO
+  case configApp::$ACTION_INFO_COMENTARIO://new 
+    $controller_usuario->infocomentario();
+  break;
+  case ConfigApp::$ACTION_BORRAR_COMENTARIO://NEW 
+      $controller_usuario->borrarComentario();
+  break;
+      
+  case configApp::$ACTION_MIS_ACTIVIDADES://new 
+    $controller_usuario->misactividades();
+  break;
+ 
+
  //muestra el usuario del comentario
   case configApp::$ACTION_USUARIO://new -> ok
       $controller_usuario->usuario();
@@ -46,10 +62,7 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   break; 
  
 //AM USUARIO
-  case configApp::$ACTION_INSCRIBIR://inscribir un usuario a una actividad
-    $controller->inscribir();
-  break;
-  case configApp::$ACTION_AGREGAR_USUARIO://new -> ok
+  case configApp::$ACTION_AGREGAR_USUARIO://new -> aun no funciona bien
       $controller_usuario->agregarUsuario();
   break;
   case configApp::$ACTION_MOD_USUARIO://new -> ok

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-21 21:40:04
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-24 11:18:25
          compiled from ".\templates\comentarios_usuario.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1008758335ba4e53cf4-79898214%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9e33544064d95717893540da71ef0e3f90c36653' => 
     array (
       0 => '.\\templates\\comentarios_usuario.tpl',
-      1 => 1479659302,
+      1 => 1479978806,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_58335ba51b9497_58751261',
   'variables' => 
   array (
     'usuario' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'i' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_58335ba51b9497_58751261',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58335ba51b9497_58751261')) {function content_58335ba51b9497_58751261($_smarty_tpl) {?><div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h3>Comentarios de <?php echo $_smarty_tpl->tpl_vars['usuario']->value[0]['apyno'];?>
@@ -48,7 +48,6 @@ $_smarty_tpl->tpl_vars['dato']->_loop = true;
 ?><span class="glyphicon glyphicon-star" aria-hidden="true" style="color: orange"></span> <?php }} ?></td>
     <td class="text-center"><p><?php echo $_smarty_tpl->tpl_vars['dato']->value['comentario'];?>
 </p></td>
-    <td class="text-right"><button type="button" class="label label-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
 </tr>
 </table>
 <?php } ?>

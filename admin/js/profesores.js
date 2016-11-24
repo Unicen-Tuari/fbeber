@@ -9,6 +9,17 @@ function agregaProfe(){//NOver ver ver  ver ver
     }
   });
 }
+function profeActividades(id_profe){//OK
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=profeactividades&id_profe="+id_profe,
+    contentType:'html',
+    cache: false,
+    success: function(data){
+      $('#infoProfeActividades').html(data);
+    }
+  });
+}
 //modifica profesor
 function modProfe(){//OK
   $.ajax({

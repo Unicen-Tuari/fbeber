@@ -4,7 +4,6 @@
 </div>
 
 <div  class="modal-body">
-<input type="file" name="imagesToUpload[]" class="form-control" >
 {if $imagesact == null}
 <h1>No existen imagenes en esta actividad</h1>
 {else}
