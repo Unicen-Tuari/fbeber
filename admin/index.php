@@ -26,8 +26,11 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case configApp::$ACTION_PROFESORES://ok
       $controller_profesores->profesores();
   break;
-  case configApp::$ACTION_USUARIOS://new
+  case configApp::$ACTION_USUARIOS://new OK
     $controller_usuarios->usuarios();
+  break;
+  case configApp::$ACTION_COMENTARIOS://new OK
+    $controller_usuarios->comentarios();
   break;
   
 
@@ -69,6 +72,9 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case configApp::$ACTION_USUARIOS_PROFESOR://new->OK
     $controller_profesores->usuariosprofesor();
   break;
+  case configApp::$ACTION_INFO_COMENTARIO://new
+    $controller_usuarios->infocomentario();
+  break;
 
 //ALTAS, BAJAS Y MODIFICACIONES 
   //ABM ACTIVIDADES
@@ -81,6 +87,9 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   //****************************************************
   case ConfigApp::$ACTION_BORRAR_IMAGEN://NEW
       $controller_actividades->borrarImagen();
+      break;
+   case ConfigApp::$ACTION_BORRAR_COMENTARIO://NEW
+      $controller_usuarios->borrarComentario();
       break;
   //****************************************************
   case ConfigApp::$ACTION_MODIFICAR_ACTIVIDAD://ok ->faltan imagenes

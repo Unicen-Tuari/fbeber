@@ -9,7 +9,7 @@
 <h1>No existen imagenes en esta actividad</h1>
 {else}
 {foreach $imagesact as $img}
-<input type="text" name="id_act" id="id_act" value="{$img.id_act}">
+<input type="hidden" name="id_act" id="id_act" value="{$img.id_act}">
 <img src="../images/{$img.foto}" width="100px" height="100px;" class="zoom" style="margin: 2px">
 <button class="btn btn-danger" onClick = "borraImagen({$img.id});" type="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
 {/foreach}

@@ -7,6 +7,7 @@ class ConfigApp{
   public static $ACTION_ACTIVIDADES = "actividades_admin";
   public static $ACTION_PROFESORES= "profesores_admin";
   public static $ACTION_USUARIOS= "usuarios_admin";
+  public static $ACTION_COMENTARIOS= "comentarios_admin";
 
 //CONSULTAS
   public static $ACTION_PROFE_ACTIVIDADES= "profeactividades";
@@ -18,6 +19,11 @@ class ConfigApp{
   public static $ACTION_ACTIVIDAD= "actividad";
   public static $ACTION_PROFESOR= "profesor";
   public static $ACTION_USUARIO= "usuario";
+  public static $ACTION_INFO_COMENTARIO= "infocomentario";
+
+  //B comentario
+  public static $ACTION_BORRAR_COMENTARIO= "borrar_comentario";
+
 
 //ABM actividad
   public static $ACTION_AGREGAR_ACTIVIDAD = "agregar_actividad";

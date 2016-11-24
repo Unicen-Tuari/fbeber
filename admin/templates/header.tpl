@@ -41,6 +41,7 @@
             <li><a id="actividades_admin" href="#"><b>Actividades</b></a></li>
             <li><a id="profesores_admin" href="#"><b>Profesores</b></a></li>
             <li><a id="usuarios_admin" href="#"><b>Usuarios</b></a></li>
+            <li><a id="comentarios_admin" href="#"><b>Comentarios</b></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

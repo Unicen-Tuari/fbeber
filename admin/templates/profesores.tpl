@@ -1,5 +1,38 @@
     
     <div class="col-md-12">
+    <h1>Administradores</h1>
+    <p>*para eliminar un administrador es necesario quitarle los permisos (modificar)</p>
+    <table class="table table-striped">
+      <tr>
+        <td><b>FOTO</b></td>
+        <td><b>NOMBRE Y APELLIDO</b></td>
+        <td><b>DNI</b></td>
+        <td><b>DESCRIPCIÓN</b></td>
+        <td><b>EMAIL</b></td>
+        <td><b>ACTIVIDAD</b></td>
+        <td><b>DIAS Y HORARIOS</b></td>
+        <td><b>INSCRIPTOS</b></td>
+        <td><b>MODIFICAR</b></td>
+      </tr>
+      {foreach $profesores as $profesor}
+      {if $profesor.is_admin == 0}
+        <tr id="datosActividad">
+          <td><img src="../images/{$profesor.foto}" alt="..." class="img-circle zoom" width="50px" height="50px"></td>
+          <td>{$profesor.apyno}</td>
+          <td>{$profesor.dni}</td>
+          <td>{$profesor.descripcion}</td>
+          <td>{$profesor.email}</td>
+          <td>{$profesor.nombreAct}</td>
+          <td>{$profesor.horarios}</td>
+          <td>{if $profesor.is_admin == 0}-{else}<button class="btn btn-warning" onClick = "cargaInscriptos({$profesor['id']});" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>{/if}</td>
+          <td>
+          <button class="btn btn-info" onClick = "profeActividades({$profesor['id']});" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+          </td>
+        </tr> 
+        {/if} 
+        {/foreach}
+      </table>  
+      
     <h1>Profesores</h1>
     <br>
       <div class="col-md-12 text-center"><button class="btn btn-success" data-toggle="modal" data-target="#agregarProfesor">Agregar Profesor</button>
@@ -41,39 +74,7 @@
     </table>  
     <br>
 
-    <h1>Administradores</h1>
-    <p>*para eliminar un administrador es necesario quitarle los permisos (modificar)</p>
-    <table class="table table-striped">
-      <tr>
-        <td><b>FOTO</b></td>
-        <td><b>NOMBRE Y APELLIDO</b></td>
-        <td><b>DNI</b></td>
-        <td><b>DESCRIPCIÓN</b></td>
-        <td><b>EMAIL</b></td>
-        <td><b>ACTIVIDAD</b></td>
-        <td><b>DIAS Y HORARIOS</b></td>
-        <td><b>INSCRIPTOS</b></td>
-        <td><b>MODIFICAR</b></td>
-      </tr>
-      {foreach $profesores as $profesor}
-      {if $profesor.is_admin == 0}
-        <tr id="datosActividad">
-          <td><img src="../images/{$profesor.foto}" alt="..." class="img-circle zoom" width="50px" height="50px"></td>
-          <td>{$profesor.apyno}</td>
-          <td>{$profesor.dni}</td>
-          <td>{$profesor.descripcion}</td>
-          <td>{$profesor.email}</td>
-          <td>{$profesor.nombreAct}</td>
-          <td>{$profesor.horarios}</td>
-          <td>{if $profesor.is_admin == 0}-{else}<button class="btn btn-warning" onClick = "cargaInscriptos({$profesor['id']});" type="button" data-toggle="modal" data-target="#inscriptosAll"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>{/if}</td>
-          <td>
-          <button class="btn btn-info" onClick = "profeActividades({$profesor['id']});" type="button" data-toggle="modal" data-target="#modificarProfesor"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
-          </td>
-        </tr> 
-        {/if} 
-        {/foreach}
-      </table>  
-</div>
+    </div>
 
 <!--MODALs ABM-->
 <!--Agregar profesor-->

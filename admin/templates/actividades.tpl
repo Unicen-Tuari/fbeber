@@ -23,7 +23,7 @@
       {foreach $actividades as $actividad}
       {if $actividad.id != 1} 
         <tr>
-          <td><button class="btn btn-default" onClick = "imagesAct({$actividad.id});" type="button" data-toggle="modal" data-target="#mostrarImages"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
+          <td><button class="btn btn-default" onClick = "imagesAct({$actividad.id});" type="button" data-toggle="modal" data-target="#mostrarImages"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button></td>
           <td>{$actividad.id}</td>
           <td class="text-uppercase">{$actividad.nombre}</td>
           <td class="text-capitalize">{$actividad.descripcion}</td>

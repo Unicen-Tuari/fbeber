@@ -12,6 +12,29 @@ class controller_usuarios
     $this->model_usuarios = new model_usuarios();
   }
 
+public function comentarios(){
+    $comentarios = $this->model_usuarios->getComentarios();
+    $this->view_usuarios->mostrarComentarios($comentarios);
+  }
+
+public function infocomentario(){
+  if(isset($_REQUEST['id_comentario'])){
+      $id=$_REQUEST['id_comentario'];
+      $comentario = $this->model_usuarios->getComentario($id);
+    $this->view_usuarios->mostrarInfocomentario($comentario);
+  }
+}
+
+public function borrarComentario(){
+    if(isset($_REQUEST['id_comentario'])){
+      $this->model_usuarios->borrarComentario($_REQUEST['id_comentario']);
+    }
+    else{
+      $this->view_usuarios->mostrarError('El comentario que intenta borrar no existe');
+    }
+    $this->comentarios();
+  }
+
 //consulta usuarios correspondiente
   public function usuarios(){
     //$actividades = $this->model_usuarios->getActividades();

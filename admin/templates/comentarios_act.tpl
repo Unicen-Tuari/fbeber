@@ -8,9 +8,8 @@
 
 <table class="table table-striped">
 <tr>
-    <td class="text-center"><p><b>{$dato.apyno} </b>dijo: </b>{$dato.comentario}</p></td>
-    <td class="text-right">{for $i = $dato.puntaje; $i >= 1; $i--}<span class="glyphicon glyphicon-star" aria-hidden="true" style="color: orange"></span> {/for}</td>
-    <td class="text-right"><button type="button" class="label label-danger" onclick="borraComentario('{$dato.id}')"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
+   <td class="text-center"><p><b>{$dato.apyno} </b>dijo: </b>{$dato.comentario}</p></td>
+   <td class="text-right">{for $i = $dato.puntaje; $i >= 1; $i--}<span class="glyphicon glyphicon-star" aria-hidden="true" style="color: orange"></span> {/for}</td>
 </tr>
 </table>
 {/foreach}

@@ -3,6 +3,7 @@ $("#inicio_admin").on("click",function() {loadRender("index.php?action=inicio_ad
 $("#actividades_admin").on("click",function() {loadRender("index.php?action=actividades_admin")});
 $("#profesores_admin").on("click",function() {loadRender("index.php?action=profesores_admin")});
 $("#usuarios_admin").on("click",function() {loadRender("index.php?action=usuarios_admin")});
+$("#comentarios_admin").on("click",function() {loadRender("index.php?action=comentarios_admin")});
 
 
 

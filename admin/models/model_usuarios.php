@@ -4,6 +4,29 @@ require_once('model.php');
 
 class model_usuarios extends model{
 
+//trae todos los comentarios
+public function getComentarios(){
+    $select = $this->db->prepare('SELECT c.comentario, c.puntaje, a.nombre,u.apyno,c.id FROM comentario c, actividad a, usuario u WHERE c.id_act=a.id AND u.id=c.id_usuario');
+    $select->execute();
+    $comentarios=$select->fetchAll(PDO::FETCH_ASSOC);
+    return $comentarios;
+  }
+
+public function getComentario($id){
+    $comentario = array();
+    $select = $this->db->prepare('SELECT * FROM comentario WHERE id=?');
+    $select->execute(array($id));
+    $comentario=$select->fetchAll(PDO::FETCH_ASSOC);
+    return $comentario;
+  }
+
+public function borrarComentario($id_comentario){
+    $consulta = $this->db->prepare('DELETE FROM comentario WHERE id=?');
+    $consulta->execute(array($id_comentario));
+  }
+
+
+
 //trae todos los usuarios
 public function getUsuarios(){
     $select = $this->db->prepare('SELECT * FROM usuario');

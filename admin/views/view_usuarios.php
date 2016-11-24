@@ -3,6 +3,16 @@ require_once('view.php');
 
 class view_usuarios extends view{
 
+public function mostrarComentarios($comentarios){
+    $this->smarty->assign('comentarios',$comentarios);
+    $this->smarty->display('comentarios.tpl');
+  }
+  public function mostrarInfocomentario($comentario){
+    $this->smarty->assign('comentario',$comentario);
+    $this->smarty->display('borrar_comentario.tpl');
+  }
+
+
 //muestra todas las usuarios->OK
 public function mostrarUsuarios($usuarios){
     $this->smarty->assign('usuarios',$usuarios);
