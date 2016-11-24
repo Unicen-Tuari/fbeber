@@ -32,12 +32,12 @@ public function cuenta(){//supuestamente se va a mostrar en mi sesion vemos como
 //agrega -> no funciona ver porque
   public function agregarUsuario(){
     if(isset($_REQUEST['new_apyno_u']) && isset($_REQUEST['new_email_u']) && isset($_REQUEST['new_pass_u'])){
-        $this->model_usuario->agregarUsuario($_REQUEST['new_apyno_u'], $_REQUEST['new_email_u'], $_REQUEST['new_pass_u']);      
+        $this->model_usuario->agregarUsuario($_REQUEST['new_apyno_u'], $_REQUEST['new_email_u'], md5($_REQUEST['new_pass_u']));      
       }
     else{
       $this->view_usuario->mostrarError('cuack');
     }
-    $this->usuario();
+    $this->cuenta();
   }
   
 //modifica usuario

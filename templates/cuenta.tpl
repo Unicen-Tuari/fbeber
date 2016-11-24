@@ -49,7 +49,7 @@
     <input type="hidden" class="form-control" id="upd_id_u" name="upd_id_u" value="{$usuario[0].id}"><br>
     <p>Nombre:</p><input type="text" class="form-control" id="upd_apyno_u" name="upd_apyno_u" value="{$usuario[0].apyno}"><br>
     <p>Contraseña:</p><input type="text" class="form-control" id="upd_email_u" name="upd_email_u" value="{$usuario[0].email}"><br>
-    <p>Contraseña:</p><input type="password" class="form-control" id="upd_pass_u" name="upd_pass_u" value="{$usuario[0].pass}"><br>
+    <p>Contraseña:</p><input type="password" class="form-control" id="upd_pass_u" name="upd_pass_u"><br>
 </div>
 
 <div class="modal-footer">

@@ -2,7 +2,7 @@ function agregaUsuario(){
   $.ajax({
     method: "POST",
     url: "index.php?action=agregar_usuario&new_apyno_u=" + $("#new_apyno_u").val() + "&new_email_u=" + $("#new_email_u").val() + "&new_pass_u=" + $("#new_pass_u").val(),
-    data: $("#agregar_user").serialize(), // DATOS DEL FORM
+    data: $("#add_user").serialize(), // DATOS DEL FORM
     success: function(data){
         alert("Gracias por haberse registrado a nuestro Gimnasio");
     }

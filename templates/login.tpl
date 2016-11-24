@@ -33,7 +33,7 @@
 </div>
 
 
-    <!-- Modal comentarios-->
+<!-- Modal registrarse-->
 <div class="modal fade" id="form_usuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -41,19 +41,23 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h3>Registrarse</h3>
         <div class="modal-body">
           <h4>Complete el siguiente formulario:</h4>
-          <form class="form-signin" method="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" name="txtUser" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" name="txtPass" class="form-control" placeholder="Password" required>
-        
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>        </div>     
+          <form id="add_user" action="" method="POST" enctype="multipart/form-data">
+          <p><br>Nombre y Apellido</p>
+          <input type="text" class="form-control" id="new_apyno_u" name="new_apyno_u"><br>
+          <p><br>Correo Electrónico</p>
+          <input type="text" class="form-control" id="new_email_u" name="new_email_u"><br>
+          <p><br>Contraseña</p>
+          <input type="password" class="form-control" id="new_pass_u" name="new_pass_u"><br>
+                  
+        </div>
+    <div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+  <a class="btn btn-success" href="#" onclick="agregaUsuario()" aria-hidden="true" data-dismiss="modal">Registrarse</a>
+</form>
+         </div>     
       </div>
     </div>
   </div>
 </div>
 
-<div class="col-md-5"></div>
 {include file = "footer.tpl"}
