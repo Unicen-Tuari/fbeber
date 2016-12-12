@@ -4,11 +4,23 @@ require('controllers/controller.php');
 require('controllers/controller_usuario.php');
 require('controllers/controller_login.php');
 
+//probando la api rest para los comentarios
+require_once('controllers/comentariosApi.php');
+
+try{
+  $api = new ComentariosApi($_GET[configApp::$ACTION_INICIO]);
+  //echo $api->processAPI();
+} catch (Exception $e) {
+  echo json_encode(Array('error' => $e->getMessage()));
+}
+// fin de probando
+
  
 $controller = new controller();
 $controller_usuario = new controller_usuario();
 
 switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp::$ACTION_INCLUDE){
+
 
 //NAVEGACION
   case configApp::$ACTION_INCLUDE:
@@ -26,9 +38,10 @@ switch (isset($_GET[configApp::$ACTION]) ? $_GET[configApp::$ACTION] : configApp
   case configApp::$ACTION_CONTACTO:
       $controller->contacto();
   break;
-  case configApp::$ACTION_OPINIONES:
+  /*case configApp::$ACTION_OPINIONES:
       $controller->opiniones();
-  break;
+  break;*/
+
   case configApp::$ACTION_CUENTA://pagina del usuario ok
       $controller_usuario->cuenta();
   break;

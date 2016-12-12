@@ -78,10 +78,7 @@ class controller
     $this->view->mostrarProfesores($profesores);
   }
 
-  public function opiniones(){
-    $comentarios = $this->model->getComentarios();
-    $this->view->mostrarOpiniones($comentarios);
-  }
+  
 
   public function contacto(){
     $this->view->mostrarContacto();
